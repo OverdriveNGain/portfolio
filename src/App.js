@@ -1,9 +1,14 @@
-import './App.css';
+import './css/Wrapper.css';
+import Navbar from './components/Navbar';
+import AboutMe from './components/AboutMe';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello!</h1>
+      <Navbar />
+      <AboutMe />
+      <Footer />
     </div>
   );
 }
