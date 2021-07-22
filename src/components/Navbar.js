@@ -10,7 +10,7 @@ const Navbar = () => {
                     data-bs-target="#navbarNavAltMarkup">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <a className="nav-link px-3 text-primary" href="/">About Me</a>
                         <a className="nav-link px-3 text-primary" href="/">Portfolio</a>
