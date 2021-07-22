@@ -13,14 +13,19 @@ const AboutMe = () => {
                 </div>
             </div>
             <div id="about2">
-                <div className="">
-                    <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light">
-                        <div className="display-1">About Me</div>
-                        <div className="leading-3">I create mobile apps, websites, web apps, mobile games across virtually any platform. I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously.</div>
-
-                        In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,
-                        I get the job done, and more.
-                    </div>
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light bg-warning">
+                    <div className="display-1">About Me</div>
+                    <div className="leading-3">I create mobile apps, websites, web apps, mobile games across virtually any platform. I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously.</div>
+                    <p>In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
+                    <p>I get the job done, and more.</p>
+                </div>
+            </div>
+            <div id="about3">
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light bg-success">
+                    <div className="display-1">About Me</div>
+                    <div className="leading-3">I create mobile apps, websites, web apps, mobile games across virtually any platform. I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously.</div>
+                    <p>In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
+                    <p>I get the job done, and more.</p>
                 </div>
             </div>
         </div>

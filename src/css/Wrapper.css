@@ -17,7 +17,7 @@ body {
     height: 100vh;
 }
 #about-me #about1 .container{
-    height:calc(100vh);
+    height: 100%;
 }
 #sketch-floating-nodes{
     position: absolute;
@@ -26,10 +26,17 @@ body {
     height:150vh;
     z-index:-1;
 }
+#about-me #about2{
+    height: 100vh;
+}
 #about-me #about2 .container{
-    width:100%;
-    top: 100vh;
-    height:calc(100vh);
+    height: 100%;
+}
+#about-me #about3{
+    height: 100vh;
+}
+#about-me #about3 .container{
+    height: 100%;
 }
 
 @import url("Custom.css");
