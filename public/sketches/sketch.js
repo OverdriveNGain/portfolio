@@ -261,7 +261,4 @@ function windowResized() {
   windowHeightRep = 1 / windowHeight;
 
   borderM = new ParticleManager();
-
-  col1 = color(col1[0], col1[1], col1[2]);
-  col2 = color(col2[0], col2[1], col2[2]);
 }
