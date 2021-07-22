@@ -1,12 +1,23 @@
 import { useEffect, useState } from 'react';
 
 const Navbar = () => {
-    const [top, setTop] = useState(true);
+    const [transparent, setTransparent] = useState(true);
 
-    // useEffect()
+    useEffect(() => {
+        const onScroll = e => {
+            setTransparent(e.target.documentElement.scrollTop <= 100);
+        };
+        console.log("added");
+        window.addEventListener("scroll", onScroll);
+
+        return () => {
+            console.log("removed");
+            return window.removeEventListener("scroll", onScroll);
+        };
+    }, [transparent]);
 
     return (
-        <nav className={"navbar navbar-expand-md navbar-light fixed-top " + (top ? "bg-white" : "bg-transparent")}>
+        <nav className={"navbar navbar-expand-md navbar-light fixed-top " + (transparent ? "bg-transparent" : "bg-white")}>
             <div className="container">
                 <a className="navbar-brand" href="/">
                     <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
