@@ -264,6 +264,4 @@ function windowResized() {
 
   col1 = color(col1[0], col1[1], col1[2]);
   col2 = color(col2[0], col2[1], col2[2]);
-
-  sketch.parent('sketch-floating-nodes');
 }
