@@ -1,6 +1,12 @@
+import { useEffect, useState } from 'react';
+
 const Navbar = () => {
+    const [top, setTop] = useState(true);
+
+    // useEffect()
+
     return (
-        <nav className="navbar navbar-expand-md navbar-light bg-transparent fixed-top">
+        <nav className={"navbar navbar-expand-md navbar-light fixed-top " + (top ? "bg-white" : "bg-transparent")}>
             <div className="container">
                 <a className="navbar-brand" href="/">
                     <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
