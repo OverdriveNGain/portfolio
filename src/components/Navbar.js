@@ -7,11 +7,9 @@ const Navbar = () => {
         const onScroll = e => {
             setTransparent(e.target.documentElement.scrollTop <= 100);
         };
-        console.log("added");
         window.addEventListener("scroll", onScroll);
 
         return () => {
-            console.log("removed");
             return window.removeEventListener("scroll", onScroll);
         };
     }, [transparent]);
