@@ -1,4 +1,4 @@
-const s = (sketch) => {
+var landing1Function = (sketch) => {
   // FLOATING POINTS
   class PointManager {
     constructor(sketch) {
@@ -251,4 +251,4 @@ const s = (sketch) => {
 // eslint-disable-next-line no-unused-vars
 let p5_landing =
   // eslint-disable-next-line no-undef
-  new p5(s);
+  new p5(landing1Function);

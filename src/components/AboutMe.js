@@ -2,6 +2,7 @@ import useScript from '../hooks/useScript';
 
 const AboutMe = () => {
     useScript('sketches/landing.js');
+    useScript('sketches/landing2.js');
     return (
         <div id="about-me">
             <div id="about1">
@@ -13,16 +14,17 @@ const AboutMe = () => {
                 </div>
             </div>
             <div id="about2">
-                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light bg-warning">
-                    <div className="display-1">About Me</div>
-                    <div className="leading-3">I create mobile apps, websites, web apps, mobile games across virtually any platform. I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously.</div>
-                    <p>In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light">
+                    <div className="display-1 m-3">About Me</div>
+                    <div className="lead">I create mobile apps, websites, web apps, Unity games to be played on multiple platforms.</div>
+                    <p> I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously. In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
                     <p>I get the job done, and more.</p>
                 </div>
             </div>
             <div id="about3">
-                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center bg-success align-items-stretch border-0">
-                    <div className="display-1 text-light my-5">Projects</div>
+                <div id="landing2" />
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0">
+                    <div className="display-1 text-primary my-5">Projects</div>
                     <div className="row mx-xs-2 mx-md-5">
                         <div className="col-12 col-md-6 mb-4">
                             <a href="/"><div className="card">
