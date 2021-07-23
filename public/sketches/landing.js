@@ -2,18 +2,12 @@
 const md_bp = 768;
 
 let pointM = null;
-// let windowWidth = 500; // TODO: Deal with this
-// let windowHeight = 500; // TODO: Deal with this
 let floatingPointsAreaHeight = null;
 class PointManager {
   constructor(sketch) {
     this.pointCount = sketch.min(sketch.round(sketch.width * sketch.height * 0.00008), 30);
     this.points = [];
     this.regionCount = 4;
-    // this.regions = [];
-    // for (let i = 0; i < this.regionCount * this.regionCount; i++) {
-    //   this.regions.push([]);
-    // }
   }
 
   frame(sketch) {
@@ -25,22 +19,18 @@ class PointManager {
 
   init(sketch) {
     const velMax = 1;
-    // const xUnit = (windowWidth / this.regionCount);
-    // const yUnit = (windowHeight / this.regionCount);
     this.points = [];
     for (let i = 0; i < this.pointCount; i++) {
-      // let x = random(0, windowWidth);
       let x = sketch.random(0, sketch.width / 2);
       let y = sketch.random(0, sketch.height);
       this.points.push(new Point(x, y, sketch.random(-velMax, velMax), sketch.random(-velMax, velMax)));
-      // this.regions[sketch.floor(y / yUnit) * this.regionCount + sketch.floor(x / xUnit)] = i;
     };
   }
 
   draw(sketch) {
     if (sketch.width > md_bp) {
       for (let i = 0; i < this.pointCount; i++) {
-        sketch.stroke(255 + -35 * ((sketch.abs(this.points[i].posx * 2 - sketch.width) / sketch.height)));
+        sketch.stroke(255 + -140 * ((sketch.abs(this.points[i].posx * 2 - sketch.width) / sketch.height)));
         // this.points[i].draw(i);
         sketch.strokeWeight(1);
         this.points[i].drawConnections(sketch, i, this.points);
@@ -48,7 +38,7 @@ class PointManager {
     }
     else {
       for (let i = 0; i < this.pointCount; i++) {
-        sketch.stroke(255 + -150 * ((sketch.abs(this.points[i].posy * 2 - sketch.height) / sketch.width)));
+        sketch.stroke(255 + -140 * ((sketch.abs(this.points[i].posy * 2 - sketch.height) / sketch.width)));
         // this.points[i].draw(i);
         sketch.strokeWeight(1);
         this.points[i].drawConnections(sketch, i, this.points);
@@ -229,8 +219,6 @@ const s = (sketch) => {
     pointM = new PointManager(sketch);
 
     pointM.init(sketch);
-    // sketch.windowWidth = windowWidth;
-    // sketch.windowHeight = windowHeight;
 
     borderM = new ParticleManager(sketch);
     col1 = sketch.color(col1[0], col1[1], col1[2]);
@@ -257,8 +245,6 @@ const s = (sketch) => {
     borderHeight = sketch.round(e.offsetHeight) / 3;
 
     pointM.init(sketch);
-    // windowWidthRep = 1 / windowWidth;
-    // windowHeightRep = 1 / windowHeight;
 
     borderM = new ParticleManager(sketch);
   }
