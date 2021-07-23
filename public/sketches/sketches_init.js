@@ -87,6 +87,7 @@ class ParticleManager {
 
     splash(mouseX, mouseY, pmouseX, pmouseY) {
         let col;
+        let velydif = mouseY - pmouseY;
         if (mouseX === undefined) {
             mouseX = Math.random() * this.width;
             pmouseX = mouseX + (Math.random() * 5);
@@ -102,10 +103,8 @@ class ParticleManager {
             }
         }
         else {
-            col = this.colBot;
+            col = velydif > 0 ? this.colBot : this.colTop;
         }
-
-        let velydif = mouseY - pmouseY;
         let speed = Math.min(Math.hypot(mouseX - pmouseX, mouseY - pmouseY) * 0.1, 10);
         let angle = Math.atan2(mouseY - pmouseY, mouseX - pmouseX)
         const particleCount = Math.min(60, Math.floor(speed * 15));
