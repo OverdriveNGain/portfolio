@@ -121,6 +121,9 @@ var landing1Function = (sketch) => {
       else if (!pbelow && below) {
         sketch.borderM.splash(sketch, sketch.col2);
         // particleM.splash(color(0, 255, 255));
+      } else if (sketch.frameCount > sketch.randomSplashOnFrame) {
+        sketch.borderM.splash(sketch);
+        sketch.randomSplashOnFrame = sketch.borderM.getNextRandomSplash(sketch);
       }
       sketch.borderM.draw(sketch);
       sketch.borderM.step(sketch);
@@ -131,9 +134,32 @@ var landing1Function = (sketch) => {
     }
 
     splash(sketch, col) {
-      let velydif = sketch.mouseY - sketch.pmouseY;
-      let speed = sketch.min(sketch.dist(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY) * 0.1, 10);
-      let angle = sketch.atan2(sketch.mouseY - sketch.pmouseY, sketch.mouseX - sketch.pmouseX)
+      // If only 1 argument is passed, assume a random splash
+      let mouseX, mouseY, pmouseX, pmouseY;
+      if (col === undefined) {
+        mouseX = sketch.random() * sketch.width;
+        pmouseX = mouseX + (sketch.random() * 5);
+        if (sketch.random() > 0.5) {
+          mouseY = sketch.height / 2 - 12;
+          pmouseY = sketch.height / 2 + 12;
+          col = sketch.col1;
+        }
+        else {
+          mouseY = sketch.height / 2 + 12;
+          pmouseY = sketch.height / 2 - 12;
+          col = sketch.col2;
+        }
+        // col = sketch.color(255, 0, 255);
+      }
+      else {
+        mouseX = sketch.mouseX;
+        mouseY = sketch.mouseY;
+        pmouseX = sketch.pmouseX;
+        pmouseY = sketch.pmouseY;
+      }
+      let velydif = mouseY - pmouseY;
+      let speed = sketch.min(sketch.dist(mouseX, mouseY, pmouseX, pmouseY) * 0.1, 10);
+      let angle = sketch.atan2(mouseY - pmouseY, mouseX - pmouseX)
       const particleCount = sketch.min(60, sketch.floor(speed * 15));
       for (let i = 0; i < particleCount; i++) {
         let randomizedAngle = angle + (sketch.PI * sketch.randomGaussian() * 0.2);
@@ -145,7 +171,7 @@ var landing1Function = (sketch) => {
         }
         let rad = i * 1.5;
         let posy = sketch.height - sketch.borderHeight * 0.5 + (velydif > 0 ? -rad : rad) * 0.5;
-        let particle = new Particle(sketch, sketch.pmouseX + sketch.randomGaussian() * 10, posy, velx, vely, col, rad);
+        let particle = new Particle(sketch, pmouseX + sketch.randomGaussian() * 10, posy, velx, vely, col, rad);
         this.particles.push(particle);
       }
     }
@@ -164,6 +190,10 @@ var landing1Function = (sketch) => {
           i--;
         }
       }
+    }
+
+    getNextRandomSplash(sketch) {
+      return sketch.frameCount + 20;
     }
   }
   class Particle {
@@ -219,8 +249,9 @@ var landing1Function = (sketch) => {
 
     sketch.pointM = new PointManager(sketch);
     sketch.pointM.init(sketch);
-
     sketch.borderM = new ParticleManager(sketch);
+    console.log(";" + sketch.borderM.getNextRandomSplash);
+    sketch.randomSplashOnFrame = sketch.borderM.getNextRandomSplash(sketch);
     sketch.col1 = sketch.color(sketch.col1[0], sketch.col1[1], sketch.col1[2]);
     sketch.col2 = sketch.color(sketch.col2[0], sketch.col2[1], sketch.col2[2]);
 
@@ -236,6 +267,8 @@ var landing1Function = (sketch) => {
     sketch.pointM.init(sketch);
 
     sketch.borderM = new ParticleManager(sketch);
+
+    sketch.randomSplashOnFrame = sketch.borderM.getNextRandomSplash(sketch);
   }
 
   sketch.draw = () => {
