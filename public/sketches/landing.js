@@ -171,13 +171,11 @@ var landing1Function = (sketch) => {
   sketch.setup = () => {
     const e = document.getElementById("landing1");
     let canv = sketch.createCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
-    // sketch.floatingPointsAreaHeight = sketch.round(e.offsetHeight) * 0.66666;
     sketch.borderHeight = sketch.round(e.offsetHeight) * 0.66666;
 
-    // sketch.pointM = new PointManager(sketch);
     // eslint-disable-next-line no-undef
     dustM = new DustManager(50, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
-    // sketch.pointM.init(sketch);
+
     sketch.borderM = new ParticleManager(sketch);
     sketch.randomSplashOnFrame = sketch.borderM.getNextRandomSplash(sketch);
     sketch.col1 = sketch.color(sketch.col1[0], sketch.col1[1], sketch.col1[2]);
@@ -192,7 +190,8 @@ var landing1Function = (sketch) => {
     // sketch.floatingPointsAreaHeight = sketch.round(e.offsetHeight) * 0.66666;
     sketch.borderHeight = sketch.round(e.offsetHeight) * 0.66666;
 
-    sketch.pointM.init(sketch);
+    // eslint-disable-next-line no-undef
+    dustM = new DustManager(50, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
 
     sketch.borderM = new ParticleManager(sketch);
 
