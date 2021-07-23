@@ -58,13 +58,10 @@ var landing1Function = (sketch) => {
   }
 
   const borderWaveSplashCheck = () => {
-    const pbelow = sketch.pmouseY > sketch.height - sketch.height * borderArea * 0.5;
-    const below = sketch.mouseY > sketch.height - sketch.height * borderArea * 0.5;
-    if (pbelow && !below) {
-      borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
-    }
-    else if (!pbelow && below) {
-      borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
+    const pbelow = sketch.pmouseY > (sketch.height - sketch.height * borderArea * 0.5);
+    const below = sketch.mouseY > (sketch.height - sketch.height * borderArea * 0.5);
+    if (pbelow !== below) {
+      borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY, 1, 0.4);
     }
   }
 

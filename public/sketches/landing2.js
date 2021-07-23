@@ -16,10 +16,10 @@ var landing2Function = (sketch) => {
         const pbelow = sketch.pmouseY > sketch.height - sketch.height * 0.5;
         const below = sketch.mouseY > sketch.height - sketch.height * 0.5;
         if (pbelow && !below) {
-            borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
+            borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY, 0.4, 0.4);
         }
         else if (!pbelow && below) {
-            borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
+            borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY, 0.4, 0.4);
         }
     }
 

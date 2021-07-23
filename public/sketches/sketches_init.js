@@ -85,7 +85,7 @@ class ParticleManager {
         }
     }
 
-    splash(mouseX, mouseY, pmouseX, pmouseY) {
+    splash(mouseX, mouseY, pmouseX, pmouseY, upMultiplier, downMultiplier) {
         let col, velydif;
         if (mouseX === undefined) {
             mouseX = Math.random() * this.width;
@@ -115,8 +115,10 @@ class ParticleManager {
             let velx = Math.cos(randomizedAngle) * velMod * speed;
             let vely = Math.sin(randomizedAngle) * velMod * Math.min(speed, this.height * 0.02);
             if (vely > 0) {
-                vely *= 0.4;
+                vely *= downMultiplier ?? 1;
             }
+            else
+                vely *= upMultiplier ?? 1;
             let rad = i * 1.5;
             let posy = (this.height + (velydif > 0 ? -rad : rad)) * 0.5;
             let particle = new Particle(pmouseX + this.gaussian() * 10, posy, velx, vely, col, rad);
