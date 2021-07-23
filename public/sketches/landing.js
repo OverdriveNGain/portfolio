@@ -9,7 +9,7 @@ let windowHeightRep = null;
 let floatingPointsAreaHeight = null;
 class PointManager {
   constructor() {
-    this.pointCount = round(width * height * 0.00008);
+    this.pointCount = min(round(width * height * 0.00008), 30);
     this.points = [];
     this.regionCount = 4;
     this.regions = [];
