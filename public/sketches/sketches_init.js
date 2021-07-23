@@ -43,18 +43,21 @@ class Dust {
 }
 
 class ParticleManager {
-    constructor(width, height, gaussianFunction) {
+    constructor(width, height, gaussianFunction, colTop, colBot) {
         this.frame = 0;
         this.particles = [];
         this.randomSplashOnFrame = this.randomSplashInterval();
         this.width = width;
         this.height = height;
         this.gaussian = gaussianFunction;
+        this.colTop = colTop;
+        this.colBot = colBot;
     }
     step() {
         this.frame++;
         if (this.frame === this.randomSplashOnFrame) {
             this.splash();
+            this.randomSplashOnFrame = this.randomSplashOnFrame + this.randomSplashInterval();
         }
 
         for (let i = 0; i < this.particles.length; i++) {
@@ -82,7 +85,7 @@ class ParticleManager {
         }
     }
 
-    splash(mouseX, mouseY, pmouseX, pmouseY, colTop, colBot) {
+    splash(mouseX, mouseY, pmouseX, pmouseY) {
         let col;
         if (mouseX === undefined) {
             mouseX = Math.random() * this.width;
@@ -90,13 +93,16 @@ class ParticleManager {
             if (Math.random() > 0.5) {
                 mouseY = this.height / 2 - 12;
                 pmouseY = this.height / 2 + 12;
-                col = colTop;
+                col = this.colTop;
             }
             else {
                 mouseY = this.height / 2 + 12;
                 pmouseY = this.height / 2 - 12;
-                col = colBot;
+                col = this.colBot;
             }
+        }
+        else {
+            col = this.colBot;
         }
 
         let velydif = mouseY - pmouseY;
