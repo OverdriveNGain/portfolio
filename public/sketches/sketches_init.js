@@ -86,8 +86,7 @@ class ParticleManager {
     }
 
     splash(mouseX, mouseY, pmouseX, pmouseY) {
-        let col;
-        let velydif = mouseY - pmouseY;
+        let col, velydif;
         if (mouseX === undefined) {
             mouseX = Math.random() * this.width;
             pmouseX = mouseX + (Math.random() * 5);
@@ -101,8 +100,10 @@ class ParticleManager {
                 pmouseY = this.height / 2 - 12;
                 col = this.colBot;
             }
+            velydif = mouseY - pmouseY
         }
         else {
+            velydif = mouseY - pmouseY;
             col = velydif > 0 ? this.colBot : this.colTop;
         }
         let speed = Math.min(Math.hypot(mouseX - pmouseX, mouseY - pmouseY) * 0.1, 10);
