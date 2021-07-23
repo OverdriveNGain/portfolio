@@ -38,6 +38,13 @@ body {
 #about-me #about3 .container{
     height: 100%;
 }
+/* a .no-underline{
+    text-decoration: none; */
+/* } */
+
+#about3 a{ 
+    text-decoration: none; 
+}
 
 @import url("Custom.css");
 
