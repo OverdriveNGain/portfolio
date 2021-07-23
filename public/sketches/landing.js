@@ -242,7 +242,7 @@ var landing1Function = (sketch) => {
   sketch.randomSplashOnFrame = null;
 
   sketch.setup = () => {
-    const e = document.getElementById("sketch-floating-nodes");
+    const e = document.getElementById("landing1");
     let canv = sketch.createCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
     sketch.floatingPointsAreaHeight = sketch.round(e.offsetHeight) * 0.66666;
     sketch.borderHeight = sketch.round(e.offsetHeight) * 0.66666;
@@ -255,11 +255,11 @@ var landing1Function = (sketch) => {
     sketch.col1 = sketch.color(sketch.col1[0], sketch.col1[1], sketch.col1[2]);
     sketch.col2 = sketch.color(sketch.col2[0], sketch.col2[1], sketch.col2[2]);
 
-    canv.parent('sketch-floating-nodes');
+    canv.parent('landing1');
   }
 
   sketch.windowResized = () => {
-    const e = document.getElementById("sketch-floating-nodes");
+    const e = document.getElementById("landing1");
     sketch.resizeCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
     sketch.floatingPointsAreaHeight = sketch.round(e.offsetHeight) * 0.66666;
     sketch.borderHeight = sketch.round(e.offsetHeight) * 0.66666;

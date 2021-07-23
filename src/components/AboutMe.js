@@ -6,7 +6,7 @@ const AboutMe = () => {
     return (
         <div id="about-me">
             <div id="about1">
-                <div id="sketch-floating-nodes" />
+                <div id="landing1" />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center">
                     <div className="display-6 pt-5 pb-2 d-inline-block">So let me introduce myself...</div>
                     <div className="display-2 pb-3 d-inline-block">My name is Jeremy,</div>
