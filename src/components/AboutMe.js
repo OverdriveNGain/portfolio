@@ -1,7 +1,7 @@
 import useScript from '../hooks/useScript';
 
 const AboutMe = () => {
-    useScript('sketches/sketch.js');
+    useScript('sketches/landing.js');
     return (
         <div id="about-me">
             <div id="about1">
