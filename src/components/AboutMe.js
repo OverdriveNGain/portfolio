@@ -30,7 +30,7 @@ const AboutMe = () => {
                             <a href="/"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title no-underline">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div></a>
                         </div>
@@ -38,7 +38,7 @@ const AboutMe = () => {
                             <a href="/"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div></a>
                         </div>
@@ -48,7 +48,7 @@ const AboutMe = () => {
                             <a href="/"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title no-underline">Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div></a>
                         </div>
@@ -56,7 +56,7 @@ const AboutMe = () => {
                             <a href="/"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title">Last Card title</h5>
-                                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div></a>
                         </div>
