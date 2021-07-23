@@ -38,7 +38,7 @@ body {
 }
 #landing2{
     position: absolute;
-    top: -48vh; /* 150% of #about1 height  */
+    top: calc(-0.5 * var(--sectionHeight));
     width:100%;
     height:var(--sectionHeight);
     z-index:-1;

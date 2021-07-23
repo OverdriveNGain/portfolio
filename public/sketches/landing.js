@@ -250,7 +250,6 @@ var landing1Function = (sketch) => {
     sketch.pointM = new PointManager(sketch);
     sketch.pointM.init(sketch);
     sketch.borderM = new ParticleManager(sketch);
-    console.log(";" + sketch.borderM.getNextRandomSplash);
     sketch.randomSplashOnFrame = sketch.borderM.getNextRandomSplash(sketch);
     sketch.col1 = sketch.color(sketch.col1[0], sketch.col1[1], sketch.col1[2]);
     sketch.col2 = sketch.color(sketch.col2[0], sketch.col2[1], sketch.col2[2]);

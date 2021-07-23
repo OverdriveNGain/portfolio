@@ -24,7 +24,7 @@ const AboutMe = () => {
             <div id="about3">
                 <div id="landing2" />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0">
-                    <div className="display-1 text-primary my-5">Projects</div>
+                    <div className="display-1 text-primary mb-4">Projects</div>
                     <div className="row mx-xs-2 mx-md-5">
                         <div className="col-12 col-md-6 mb-4">
                             <a href="/"><div className="card">
