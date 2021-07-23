@@ -1,5 +1,4 @@
 const s = (sketch) => {
-
   // FLOATING POINTS
   class PointManager {
     constructor(sketch) {
@@ -28,15 +27,18 @@ const s = (sketch) => {
     draw(sketch) {
       if (sketch.width > sketch.md_bp) {
         for (let i = 0; i < this.pointCount; i++) {
-          sketch.stroke(255 + -140 * ((sketch.abs(this.points[i].posx * 2 - sketch.width) / sketch.height)));
+          sketch.stroke(255 + -140 * ((sketch.abs(this.points[i].posx * 2 - sketch.width) / sketch.width)));
+          // sketch.stroke(255, 0, 0);
           // this.points[i].draw(i);
           sketch.strokeWeight(1);
           this.points[i].drawConnections(sketch, i, this.points);
         };
       }
       else {
+        const pointsHeight = (sketch.height - sketch.borderHeight * 0.5);
         for (let i = 0; i < this.pointCount; i++) {
-          sketch.stroke(255 + -140 * ((sketch.abs(this.points[i].posy * 2 - sketch.height) / sketch.width)));
+          sketch.stroke(255 + -140 * ((sketch.abs(this.points[i].posy * 2 - pointsHeight) / pointsHeight)));
+          // sketch.stroke(255, 0, 255);
           // this.points[i].draw(i);
           sketch.strokeWeight(1);
           this.points[i].drawConnections(sketch, i, this.points);
@@ -225,6 +227,16 @@ const s = (sketch) => {
     canv.parent('sketch-floating-nodes');
   }
 
+  sketch.windowResized = () => {
+    const e = document.getElementById("sketch-floating-nodes");
+    sketch.resizeCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
+    sketch.floatingPointsAreaHeight = sketch.round(e.offsetHeight) * 0.66666;
+    sketch.borderHeight = sketch.round(e.offsetHeight) * 0.66666;
+
+    sketch.pointM.init(sketch);
+
+    sketch.borderM = new ParticleManager(sketch);
+  }
 
   sketch.draw = () => {
     sketch.background(255);
@@ -234,17 +246,6 @@ const s = (sketch) => {
 
     sketch.fill(0);
     sketch.text(sketch.round(sketch.frameRate()), 50, sketch.height - 300);
-  }
-
-  sketch.windowResized = () => {
-    const e = document.getElementById("sketch-floating-nodes");
-    sketch.resizeCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
-    sketch.floatingPointsAreaHeight = sketch.round(e.offsetHeight) * 0.66666;
-    sketch.borderHeight = sketch.round(e.offsetHeight) / 3;
-
-    sketch.pointM.init(sketch);
-
-    sketch.borderM = new ParticleManager(sketch);
   }
 };
 // eslint-disable-next-line no-unused-vars
