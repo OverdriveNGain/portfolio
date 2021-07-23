@@ -8,7 +8,7 @@ const AboutMe = () => {
             <div id="about1">
                 <div id="landing1" />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center">
-                    <div className="display-6 pt-5 pb-2 d-inline-block">So let me introduce myself...</div>
+                    <div className="display-6 pt-5 pb-2 d-inline-block text-muted">So let me introduce myself...</div>
                     <div className="display-2 pb-3 d-inline-block">My name is Jeremy,</div>
                     <div className="display-6 pb-2 d-inline-block">and I am a full-stack software engineer.</div>
                 </div>
