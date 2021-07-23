@@ -11,15 +11,16 @@ class FloatingPointManager {
     for (let i = 0; i < this.pointCount; i++) {
       let x = Math.random() * this.width;
       let y = Math.random() * this.height;
-      this.points.push(new FloatingPoint(x, y, maxvel * 2 * Math.random() - maxvel, maxvel * 2 * Math.random() - maxvel));
+      let nfp = new FloatingPoint(x, y, maxvel * 2 * Math.random() - maxvel, maxvel * 2 * Math.random() - maxvel);
+      this.points.push(nfp);
     };
   }
   step() {
     for (let i = 0; i < this.pointCount; i++) {
       let point = this.points[i];
 
-      point.x += this.vx;
-      point.y += this.vy;
+      point.x += point.vx;
+      point.y += point.vy;
 
       if (point.y < 0)
         point.y += (this.height - 0.1);
@@ -50,32 +51,31 @@ var landing1Function = (sketch) => {
 
   const drawFloatingPoints = (sketch) => {
     if (sketch.width > md_bp) {
+      sketch.strokeWeight(1);
       for (let i = 0; i < floatingPointM.points.length; i++) {
-        sketch.stroke(255 + -140 * ((sketch.abs(floatingPointM.points[i].posx * 2 - sketch.width) / sketch.width)));
+        sketch.stroke(255 + -140 * ((sketch.abs(floatingPointM.points[i].x * 2 - sketch.width) / sketch.width)));
         // sketch.stroke(255, 0, 0);
         // this.points[i].draw(i);
-        sketch.strokeWeight(1);
-        floatingPointM.points[i].drawConnections(sketch, i, floatingPointM.points);
+        drawConnections(sketch, i, floatingPointM.points);
       };
     }
     else {
       const pointsHeight = sketch.height * floatingPointArea;
+      sketch.strokeWeight(1);
       for (let i = 0; i < floatingPointM.points.length; i++) {
-        sketch.stroke(255 + -140 * ((sketch.abs(floatingPointM.points[i].posy * 2 - pointsHeight) / pointsHeight)));
+        sketch.stroke(255 + -140 * ((sketch.abs(floatingPointM.points[i].y * 2 - pointsHeight) / pointsHeight)));
         // sketch.stroke(255, 0, 255);
         // this.points[i].draw(i);
-        sketch.strokeWeight(1);
         drawConnections(sketch, i, floatingPointM.points);
       };
     }
   }
-
   const drawConnections = (sketch, thisI, points) => {
-    for (let i = thisI + 1; i < points.length; i++) {
-      let point = floatingPointM.points[i];
-      if (sketch.abs(point.posx - points[i].posx) < 100 && sketch.abs(point.posy - points[i].posy) < 100) {
-        sketch.line(point.posx, point.posy, points[i].posx, points[i].posy);
-        sketch.line(sketch.width - point.posx, point.posy, sketch.width - points[i].posx, points[i].posy);
+    const point = floatingPointM.points[thisI];
+    for (let i = 1 + thisI; i < points.length; i++) {
+      if (Math.abs(point.x - points[i].x) < 100 && Math.abs(point.y - points[i].y) < 100) {
+        sketch.line(point.x, point.y, points[i].x, points[i].y);
+        // sketch.line(sketch.width - point.x, point.y, sketch.width - points[i].x, points[i].y);
       }
     }
   }
@@ -219,7 +219,7 @@ var landing1Function = (sketch) => {
     sketch.borderHeight = sketch.round(e.offsetHeight) * 0.66666;
 
     // sketch.pointM = new PointManager(sketch);
-    floatingPointM = new FloatingPointManager(100, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
+    floatingPointM = new FloatingPointManager(50, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
     // sketch.pointM.init(sketch);
     sketch.borderM = new ParticleManager(sketch);
     sketch.randomSplashOnFrame = sketch.borderM.getNextRandomSplash(sketch);
@@ -259,113 +259,3 @@ var landing1Function = (sketch) => {
 let p5_landing =
   // eslint-disable-next-line no-undef
   new p5(landing1Function);
-
-
-
-
-  // FLOATING POINTS
-  // class PointManager {
-  //   constructor(sketch) {
-  //     this.pointCount = sketch.min(sketch.round(sketch.width * sketch.height * 0.00008), 30);
-  //     this.points = [];
-  //     this.regionCount = 4;
-  //   }
-
-  //   frame(sketch) {
-  //     sketch.stroke(0);
-  //     sketch.pointM.step(sketch);
-  //     sketch.pointM.draw(sketch);
-  //     sketch.noStroke();
-  //   }
-
-  //   init(sketch) {
-  //     const velMax = 1;
-  //     this.points = [];
-  //     for (let i = 0; i < this.pointCount; i++) {
-  //       let x = sketch.random(0, sketch.width / 2);
-  //       let y = sketch.random(0, sketch.height);
-  //       this.points.push(new Point(x, y, sketch.random(-velMax, velMax), sketch.random(-velMax, velMax)));
-  //     };
-  //   }
-
-  //   draw(sketch) {
-  //     if (sketch.width > md_bp) {
-  //       for (let i = 0; i < this.pointCount; i++) {
-  //         sketch.stroke(255 + -140 * ((sketch.abs(this.points[i].posx * 2 - sketch.width) / sketch.width)));
-  //         // sketch.stroke(255, 0, 0);
-  //         // this.points[i].draw(i);
-  //         sketch.strokeWeight(1);
-  //         this.points[i].drawConnections(sketch, i, this.points);
-  //       };
-  //     }
-  //     else {
-  //       const pointsHeight = (sketch.height - sketch.borderHeight * 0.5);
-  //       for (let i = 0; i < this.pointCount; i++) {
-  //         sketch.stroke(255 + -140 * ((sketch.abs(this.points[i].posy * 2 - pointsHeight) / pointsHeight)));
-  //         // sketch.stroke(255, 0, 255);
-  //         // this.points[i].draw(i);
-  //         sketch.strokeWeight(1);
-  //         this.points[i].drawConnections(sketch, i, this.points);
-  //       };
-  //     }
-  //   }
-
-  //   step(sketch) {
-  //     for (let i = 0; i < this.pointCount; i++) {
-  //       this.points[i].step(sketch);
-  //     };
-  //   }
-  // }
-  // class Point {
-  //   constructor(posx, posy, velx, vely) {
-  //     this.posx = posx;
-  //     this.posy = posy;
-  //     this.velx = velx;
-  //     this.vely = vely;
-  //     this.upperNeighbors = []
-  //   }
-
-  //   static distSquared(x1, y1, x2, y2) {
-  //     let dx = x2 - x1;
-  //     let dy = y2 - y1;
-  //     return dx * dx + dy * dy;
-  //   }
-
-  //   drawConnections(sketch, thisI, points) {
-  //     for (let i = thisI + 1; i < points.length; i++) {
-  //       if (sketch.abs(this.posx - points[i].posx) < 100 && sketch.abs(this.posy - points[i].posy) < 100) {
-  //         sketch.line(this.posx, this.posy, points[i].posx, points[i].posy);
-  //         sketch.line(sketch.width - this.posx, this.posy, sketch.width - points[i].posx, points[i].posy);
-  //       }
-  //     }
-  //   }
-
-  //   draw(sketch, thisI) {
-  //     sketch.strokeWeight(sketch.noise(thisI, sketch.frameCount * 0.01) * 4);
-  //     sketch.point(this.posx, this.posy);
-  //     sketch.point(sketch.width - this.posx, this.posy);
-  //   }
-
-  //   step(sketch) {
-  //     this.posx += this.velx;
-  //     this.posy += this.vely;
-  //     const margin = 50;
-  //     if (sketch.width > md_bp) {
-  //       if (this.posx < -margin)
-  //         this.posx += sketch.width * 0.5 + margin;
-  //       else if (this.posx > sketch.width * 0.5)
-  //         this.posx -= sketch.width * 0.5 - margin;
-  //     }
-  //     else {
-  //       if (this.posx < -margin)
-  //         this.posx += sketch.width + margin * 2;
-  //       else if (this.posx > sketch.width + margin)
-  //         this.posx -= sketch.width - margin * 2;
-  //     }
-
-  //     if (this.posy < -margin)
-  //       this.posy += sketch.floatingPointsAreaHeight + margin * 2;
-  //     else if (this.posy > sketch.floatingPointsAreaHeight + margin)
-  //       this.posy -= sketch.floatingPointsAreaHeight + margin * 2;
-  //   }
-  // }
