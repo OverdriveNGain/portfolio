@@ -1,4 +1,6 @@
-class FloatingPointManager {
+/* eslint-disable no-unused-vars */
+
+class DustManager {
     constructor(pointCount, width, height, maxvel) {
         this.pointCount = pointCount;
         this.points = [];
@@ -9,7 +11,7 @@ class FloatingPointManager {
         for (let i = 0; i < this.pointCount; i++) {
             let x = Math.random() * this.width;
             let y = Math.random() * this.height;
-            let nfp = new FloatingPoint(x, y, maxvel * 2 * Math.random() - maxvel, maxvel * 2 * Math.random() - maxvel);
+            let nfp = new Dust(x, y, maxvel * 2 * Math.random() - maxvel, maxvel * 2 * Math.random() - maxvel);
             this.points.push(nfp);
         };
     }
@@ -31,7 +33,7 @@ class FloatingPointManager {
         };
     }
 }
-class FloatingPoint {
+class Dust {
     constructor(x, y, vx, vy) {
         this.x = x;
         this.y = y;

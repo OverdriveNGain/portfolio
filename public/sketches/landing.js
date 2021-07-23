@@ -3,31 +3,31 @@ var landing1Function = (sketch) => {
   const floatingPointArea = 2 / 3;
   const borderArea = 2 / 3;
   const md_bp = 768;
-  let floatingPointM;
+  let dustM;
 
   const drawFloatingPoints = (sketch) => {
     if (sketch.width > md_bp) {
       sketch.strokeWeight(1);
-      for (let i = 0; i < floatingPointM.points.length; i++) {
-        sketch.stroke(255 + -140 * ((sketch.abs(floatingPointM.points[i].x * 2 - sketch.width) / sketch.width)));
+      for (let i = 0; i < dustM.points.length; i++) {
+        sketch.stroke(255 + -140 * ((sketch.abs(dustM.points[i].x * 2 - sketch.width) / sketch.width)));
         // sketch.stroke(255, 0, 0);
         // this.points[i].draw(i);
-        drawConnections(sketch, i, floatingPointM.points);
+        drawConnections(sketch, i, dustM.points);
       };
     }
     else {
       const pointsHeight = sketch.height * floatingPointArea;
       sketch.strokeWeight(1);
-      for (let i = 0; i < floatingPointM.points.length; i++) {
-        sketch.stroke(255 + -140 * ((sketch.abs(floatingPointM.points[i].y * 2 - pointsHeight) / pointsHeight)));
+      for (let i = 0; i < dustM.points.length; i++) {
+        sketch.stroke(255 + -140 * ((sketch.abs(dustM.points[i].y * 2 - pointsHeight) / pointsHeight)));
         // sketch.stroke(255, 0, 255);
         // this.points[i].draw(i);
-        drawConnections(sketch, i, floatingPointM.points);
+        drawConnections(sketch, i, dustM.points);
       };
     }
   }
   const drawConnections = (sketch, thisI, points) => {
-    const point = floatingPointM.points[thisI];
+    const point = dustM.points[thisI];
     for (let i = 1 + thisI; i < points.length; i++) {
       if (Math.abs(point.x - points[i].x) < 100 && Math.abs(point.y - points[i].y) < 100) {
         sketch.line(point.x, point.y, points[i].x, points[i].y);
@@ -176,7 +176,7 @@ var landing1Function = (sketch) => {
 
     // sketch.pointM = new PointManager(sketch);
     // eslint-disable-next-line no-undef
-    floatingPointM = new FloatingPointManager(50, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
+    dustM = new DustManager(50, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
     // sketch.pointM.init(sketch);
     sketch.borderM = new ParticleManager(sketch);
     sketch.randomSplashOnFrame = sketch.borderM.getNextRandomSplash(sketch);
@@ -202,7 +202,7 @@ var landing1Function = (sketch) => {
   sketch.draw = () => {
     sketch.background(255);
 
-    floatingPointM.step()
+    dustM.step()
     drawFloatingPoints(sketch);
 
     sketch.noStroke();
