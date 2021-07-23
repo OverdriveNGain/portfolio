@@ -84,7 +84,12 @@ var landing1Function = (sketch) => {
     // eslint-disable-next-line no-undef
     dustM = new DustManager(50, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
     // eslint-disable-next-line no-undef
-    borderM = new ParticleManager(sketch.width, sketch.height * borderArea, () => { return sketch.randomGaussian(); });
+    borderM = new ParticleManager(
+      sketch.width,
+      sketch.height * borderArea,
+      () => { return sketch.randomGaussian(); },
+      col1,
+      col2);
 
   }
 
