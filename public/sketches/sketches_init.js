@@ -41,7 +41,6 @@ class Dust {
         this.vy = vy;
     }
 }
-
 class ParticleManager {
     constructor(width, height, gaussianFunction, colTop, colBot) {
         this.frame = 0;
@@ -146,5 +145,97 @@ class Particle {
         this.accy = -vy * r2;
         this.col = col;
         this.rad = rad;
+    }
+}
+
+class QuadTree {
+    constructor(capacity, rect) {
+        this.capacity = capacity;
+        this.rect = rect;
+        this.points = [];
+        this.hasDivisions = false;
+    }
+
+    query(rect, arr) {
+        for (let point of this.points) {
+            if (rect.containsPoint(point))
+                arr.push(point);
+        }
+        if (this.hasDivisions) {
+            this.nw.query(rect, arr);
+            this.ne.query(rect, arr);
+            this.sw.query(rect, arr);
+            this.se.query(rect, arr);
+        }
+    }
+
+    queryUppers(rect, arr, value) {
+        for (let point of this.points) {
+            if (rect.containsPoint(point) && point.i > value)
+                arr.push(point);
+        }
+        if (this.hasDivisions) {
+            this.nw.queryUppers(rect, arr, value);
+            this.ne.queryUppers(rect, arr, value);
+            this.sw.queryUppers(rect, arr, value);
+            this.se.queryUppers(rect, arr, value);
+        }
+    }
+
+    insert(qt) {
+        if (!this.rect.containsPoint(qt))
+            return false
+
+        if (this.points.length < this.capacity) {
+            this.points.push(qt);
+            return true;
+        }
+        else {
+
+            if (!this.hasDivisions) {
+                this.hasDivisions = true;
+                this.nw = new QuadTree(this.capacity, new Rect(this.rect.x - this.rect.w * 0.25, this.rect.y - this.rect.h * 0.25, this.rect.w * 0.5, this.rect.h * 0.5));
+                this.ne = new QuadTree(this.capacity, new Rect(this.rect.x + this.rect.w * 0.25, this.rect.y - this.rect.h * 0.25, this.rect.w * 0.5, this.rect.h * 0.5));
+                this.sw = new QuadTree(this.capacity, new Rect(this.rect.x - this.rect.w * 0.25, this.rect.y + this.rect.h * 0.25, this.rect.w * 0.5, this.rect.h * 0.5));
+                this.se = new QuadTree(this.capacity, new Rect(this.rect.x + this.rect.w * 0.25, this.rect.y + this.rect.h * 0.25, this.rect.w * 0.5, this.rect.h * 0.5));
+            }
+
+            if (!this.nw.insert(qt))
+                if (!this.ne.insert(qt))
+                    if (!this.sw.insert(qt))
+                        this.se.insert(qt)
+            return true;
+        }
+    }
+}
+class Rect {
+    constructor(x, y, w, h) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h
+    }
+
+    intersectsWithRect(rect) {
+        return ((this.rect.x - rect.x) > ((this.rect.w + rect.w) * 0.5)) &&
+            ((this.rect.y - rect.y) > ((this.rect.h + rect.h) * 0.5));
+    }
+
+    containsPoint(point) {
+        if (Math.abs(point.x - this.x) > this.w * 0.5) {
+            return false;
+        }
+        if (Math.abs(point.y - this.y) > this.h * 0.5) {
+            return false;
+        }
+        return true;
+    }
+}
+class QtPoint {
+    constructor(x, y, i, data) {
+        this.x = x;
+        this.y = y;
+        this.i = i;
+        this.data = data;
     }
 }
