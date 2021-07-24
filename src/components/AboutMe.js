@@ -65,6 +65,38 @@ const AboutMe = () => {
                     <button className="btn btn-primary align-self-center m-3">See More Projects</button>
                 </div>
             </div>
+            <div id="about4">
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 bg-light rounded">
+                    <div className="display-1 text-primary mb-4">Services</div>
+                    <div className="row mx-xs-2 mx-md-5">
+                        <div className="col-12 col-md-4 mb-4">
+                            <a href="/"><div className="card">
+                                <div className="card-body m-1 m-md-4">
+                                    <h5 className="card-title no-underline">Card title</h5>
+                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div></a>
+                        </div>
+                        <div className="col-12 col-md-4 mb-4">
+                            <a href="/"><div className="card">
+                                <div className="card-body m-1 m-md-4">
+                                    <h5 className="card-title">Card title</h5>
+                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div></a>
+                        </div>
+                        <div className="col-12 col-md-4 mb-4">
+                            <a href="/"><div className="card">
+                                <div className="card-body m-1 m-md-4">
+                                    <h5 className="card-title">Card title</h5>
+                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     );
 }

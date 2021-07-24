@@ -50,11 +50,17 @@ body {
 #about-me #about3 .container{
     height: 100%;
 }
-/* a .no-underline{
-    text-decoration: none; */
-/* } */
-
 #about3 a{ 
+    text-decoration: none; 
+}
+#about-me #about4{
+    height: var(--sectionHeight);
+    position:relative;
+}
+#about-me #about4 .container{
+    height: 100%;
+}
+#about4 a{ 
     text-decoration: none; 
 }
 
