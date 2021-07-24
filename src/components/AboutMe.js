@@ -114,6 +114,31 @@ const AboutMe = () => {
                         </div></div>
                 </div>
             </div>
+            <div id="about6" className="bg-light">
+                <div className="align-middle container px-0 py-3 text-center d-flex flex-column 
+                justify-content-center align-items-stretch px-4 py-5">
+                    <div className="display-6 text-primary">You need to get something done?</div>
+                    <div className="display-3 text-primary mb-4">Let’s Talk!</div>
+                    <div className="row justify-content-center">
+                        <div className="col col-7 text-start">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="contactName" class="form-label fw-bold text-primary">Name</label>
+                                    <input type="email" class="form-control" id="contactName" placeholder="John Doe" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactEmail" class="form-label fw-bold text-primary">Email</label>
+                                    <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" />
+                                </div>
+                                <div class="mb-3">
+                                    <label for="contactMessage" class="form-label fw-bold text-primary">Message</label>
+                                    <textarea class="form-control" id="contactMessage" rows="3"></textarea>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
