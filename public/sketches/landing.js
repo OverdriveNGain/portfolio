@@ -1,4 +1,5 @@
 var landing1Function = (sketch) => {
+  const DUSTNEIGHBORMAXDIST = 100;
 
   const floatingPointArea = 2 / 3;
   const md_bp = 768;
@@ -19,17 +20,8 @@ var landing1Function = (sketch) => {
     for (let i = 0; i < dustM.points.length; i++) {
       const point = dustM.points[i];
       sketch.stroke(255 + -140 * ((sketch.abs(point[property] * 2 - totalLength) / totalLength)));
-      // sketch.stroke(255, 0, 0);
-      // this.points[i].draw(i);
-
-      // for (let j = 1 + i; j < dustM.points.length; j++) {
-      //   if (Math.abs(point.x - dustM.points[j].x) < 100 && Math.abs(point.y - dustM.points[j].y) < 100) {
-      //     sketch.line(point.x, point.y, dustM.points[j].x, dustM.points[j].y);
-      //   }
-      // }
-
       // eslint-disable-next-line no-undef
-      let neighborRect = new Rect(point.x, point.y, 200, 200);
+      let neighborRect = new Rect(point.x, point.y, DUSTNEIGHBORMAXDIST, DUSTNEIGHBORMAXDIST);
       let neighbors = [];
       dustM.quadtree.queryUppers(neighborRect, neighbors, i);
       for (let neighbor of neighbors) {
@@ -68,6 +60,10 @@ var landing1Function = (sketch) => {
     }
   }
 
+  const getDustCount = (area) => {
+    return area * 0.00008 + 16;
+  }
+
   sketch.setup = () => {
     const e = document.getElementById("landing1");
     let canv = sketch.createCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
@@ -75,8 +71,10 @@ var landing1Function = (sketch) => {
     col1 = sketch.color(col1[0], col1[1], col1[2]);
     col2 = sketch.color(col2[0], col2[1], col2[2]);
 
+
+
     // eslint-disable-next-line no-undef
-    dustM = new DustManager(150, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
+    dustM = new DustManager(Math.round(getDustCount(sketch.height * sketch.width)), sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
     // eslint-disable-next-line no-undef
     borderM = new ParticleManager(
       sketch.width,
@@ -91,9 +89,9 @@ var landing1Function = (sketch) => {
   sketch.windowResized = () => {
     const e = document.getElementById("landing1");
     sketch.resizeCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
-
+    console.log("AREA is " + (sketch.round(e.offsetWidth) * sketch.round(e.offsetHeight)))
     // eslint-disable-next-line no-undef
-    dustM = new DustManager(150, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
+    dustM = new DustManager(Math.round(getDustCount(sketch.height * sketch.width)), sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
     // eslint-disable-next-line no-undef
     borderM = new ParticleManager(
       sketch.width,
