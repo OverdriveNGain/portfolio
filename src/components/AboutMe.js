@@ -65,7 +65,7 @@ const AboutMe = () => {
                         </div>
                     </div>
 
-                    <button className="btn btn-primary align-self-center m-3">See More Projects</button>
+                    <button className="btn btn-primary align-self-center m-3 text-light">See More Projects</button>
                 </div>
             </div>
             <div id="about4">
