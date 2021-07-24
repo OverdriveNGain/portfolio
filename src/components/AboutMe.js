@@ -66,7 +66,7 @@ const AboutMe = () => {
                 </div>
             </div>
             <div id="about4">
-                <div className="align-middle container px-0 py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 bg-light rounded">
+                <div className="align-middle container px-0 py-3 text-center d-flex flex-column justify-content-center align-items-stretch bg-light rounded-3">
                     <div className="display-1 text-primary mb-4">Skills & Services</div>
                     <div className="row mx-md-5">
                         <div className="col-12 col-md-4">
@@ -99,6 +99,20 @@ const AboutMe = () => {
                     </div>
                 </div>
 
+            </div>
+            <div id="about5">
+                <div className="align-middle container px-0 py-3 text-center d-flex flex-column justify-content-center align-items-stretch">
+                    <div className="display-1 text-primary mb-4">Testimonials</div>
+                    <div className="row justify-content-center align-items-center text-center">
+                        <div className="col-7">
+                            <blockquote>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam magni adipisci neque vero! Odit ab, expedita repellat aliquam magnam, vitae sed totam ea sequi eaque, laborum accusantium minima officiis."</blockquote>
+                            <div className="rounded-circle border mx-auto border-primary border-2 my-4" id="testimonial-portrait-holder">
+                                <img src="https://previews.123rf.com/images/gladkov/gladkov1312/gladkov131200051/24403725-closeup-portrait-of-young-man-call-center-employee-with-a-headset-isolated-on-white-background.jpg" alt="Testimonial Person Portrait" />
+                            </div>
+                            <div className="fw-bold">Firstname M. Last</div>
+                            <p className="text-muted">President of Cuba</p>
+                        </div></div>
+                </div>
             </div>
         </div>
     );

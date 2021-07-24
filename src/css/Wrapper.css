@@ -53,6 +53,7 @@ body {
 #about3 a{ 
     text-decoration: none; 
 }
+
 #about-me #about4{
     height: var(--sectionHeight);
     position:relative;
@@ -62,6 +63,28 @@ body {
 }
 #about4 a{ 
     text-decoration: none; 
+}
+
+#about-me #about5{
+    height: var(--sectionHeight);
+}
+#about-me #about5 .container{
+    height: 100%;
+}
+#about5 a{ 
+    text-decoration: none; 
+}
+
+#testimonial-portrait-holder{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+
+#testimonial-portrait-holder img{
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
 }
 
 @import url("Custom.css");
