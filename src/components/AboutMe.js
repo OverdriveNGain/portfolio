@@ -122,17 +122,17 @@ const AboutMe = () => {
                     <div className="row justify-content-center">
                         <div className="col col-7 text-start">
                             <form>
-                                <div class="mb-3">
-                                    <label for="contactName" class="form-label fw-bold text-primary">Name</label>
-                                    <input type="email" class="form-control" id="contactName" placeholder="John Doe" />
+                                <div className="mb-3">
+                                    <label htmlFor="contactName" className="form-label fw-bold text-primary">Name</label>
+                                    <input type="email" className="form-control" id="contactName" placeholder="John Doe" />
                                 </div>
-                                <div class="mb-3">
-                                    <label for="contactEmail" class="form-label fw-bold text-primary">Email</label>
-                                    <input type="email" class="form-control" id="contactEmail" placeholder="name@example.com" />
+                                <div className="mb-3">
+                                    <label htmlFor="contactEmail" className="form-label fw-bold text-primary">Email</label>
+                                    <input type="email" className="form-control" id="contactEmail" placeholder="name@example.com" />
                                 </div>
-                                <div class="mb-3">
-                                    <label for="contactMessage" class="form-label fw-bold text-primary">Message</label>
-                                    <textarea class="form-control" id="contactMessage" rows="3"></textarea>
+                                <div className="mb-3">
+                                    <label htmlFor="contactMessage" className="form-label fw-bold text-primary">Message</label>
+                                    <textarea className="form-control" id="contactMessage" rows="3"></textarea>
                                 </div>
                             </form>
                         </div>
