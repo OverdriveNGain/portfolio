@@ -66,30 +66,33 @@ const AboutMe = () => {
                 </div>
             </div>
             <div id="about4">
-                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 bg-light rounded">
-                    <div className="display-1 text-primary mb-4">Services</div>
-                    <div className="row mx-xs-2 mx-md-5">
-                        <div className="col-12 col-md-4 mb-4">
-                            <a href="/"><div className="card">
+                <div className="align-middle container px-0 py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 bg-light rounded">
+                    <div className="display-1 text-primary mb-4">Skills & Services</div>
+                    <div className="row mx-md-5">
+                        <div className="col-12 col-md-4">
+                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow">
                                 <div className="card-body m-1 m-md-4">
-                                    <h5 className="card-title no-underline">Card title</h5>
+                                    <h5 className="card-title no-underline">Graphic Design</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <small className="text-muted">Adobe Illustrator • Adobe Photoshop • p5.js • Processing • Python</small>
                                 </div>
                             </div></a>
                         </div>
-                        <div className="col-12 col-md-4 mb-4">
-                            <a href="/"><div className="card">
+                        <div className="col-12 col-md-4">
+                            <a href="/"><div className="card border-0 rounded-3 shadow">
                                 <div className="card-body m-1 m-md-4">
-                                    <h5 className="card-title">Card title</h5>
+                                    <h5 className="card-title">Website Development</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <small className="text-muted">HTML • CSS • Javascript • SASS • React • Flutter • Firebase • Bootstrap 5 • git • GitHub</small>
                                 </div>
                             </div></a>
                         </div>
-                        <div className="col-12 col-md-4 mb-4">
-                            <a href="/"><div className="card">
+                        <div className="col-12 col-md-4">
+                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow">
                                 <div className="card-body m-1 m-md-4">
-                                    <h5 className="card-title">Card title</h5>
+                                    <h5 className="card-title">Mobile App Development</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <small className="text-muted">React • Flutter • Adobe XD • Firebase • Unity 3D • git • GitHub</small>
                                 </div>
                             </div></a>
                         </div>
