@@ -1,8 +1,11 @@
+/* eslint-disable no-undef */
 import useScript from '../hooks/useScript';
+// import landing_services_hover from 'public/sketches/landing_sketches.js';
 
 const AboutMe = () => {
     useScript('sketches/landing.js');
     useScript('sketches/landing2.js');
+    useScript('sketches/landing_services.js');
     return (
         <div id="about-me">
             <div id="about1">
@@ -66,11 +69,12 @@ const AboutMe = () => {
                 </div>
             </div>
             <div id="about4">
-                <div className="align-middle container px-0 py-3 text-center d-flex flex-column justify-content-center align-items-stretch bg-light rounded-3">
+                <div id="landing_services" />
+                <div className="align-middle container px-0 py-3 text-center d-flex flex-column justify-content-center align-items-stretch">
                     <div className="display-1 text-primary mb-4">Skills & Services</div>
                     <div className="row mx-md-5">
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow">
+                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 1)}>
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title no-underline">Graphic Design</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -79,7 +83,7 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded-3 shadow">
+                            <a href="/"><div className="card border-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 2)}>
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title">Website Development</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -88,7 +92,7 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow">
+                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 3)}>
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title">Mobile App Development</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
