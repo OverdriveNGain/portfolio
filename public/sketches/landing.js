@@ -21,10 +21,19 @@ var landing1Function = (sketch) => {
       sketch.stroke(255 + -140 * ((sketch.abs(point[property] * 2 - totalLength) / totalLength)));
       // sketch.stroke(255, 0, 0);
       // this.points[i].draw(i);
-      for (let j = 1 + i; j < dustM.points.length; j++) {
-        if (Math.abs(point.x - dustM.points[j].x) < 100 && Math.abs(point.y - dustM.points[j].y) < 100) {
-          sketch.line(point.x, point.y, dustM.points[j].x, dustM.points[j].y);
-        }
+
+      // for (let j = 1 + i; j < dustM.points.length; j++) {
+      //   if (Math.abs(point.x - dustM.points[j].x) < 100 && Math.abs(point.y - dustM.points[j].y) < 100) {
+      //     sketch.line(point.x, point.y, dustM.points[j].x, dustM.points[j].y);
+      //   }
+      // }
+
+      // eslint-disable-next-line no-undef
+      let neighborRect = new Rect(point.x, point.y, 200, 200);
+      let neighbors = [];
+      dustM.quadtree.queryUppers(neighborRect, neighbors, i);
+      for (let neighbor of neighbors) {
+        sketch.line(point.x, point.y, neighbor.x, neighbor.y);
       }
     };
   }
@@ -67,7 +76,7 @@ var landing1Function = (sketch) => {
     col2 = sketch.color(col2[0], col2[1], col2[2]);
 
     // eslint-disable-next-line no-undef
-    dustM = new DustManager(50, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
+    dustM = new DustManager(150, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
     // eslint-disable-next-line no-undef
     borderM = new ParticleManager(
       sketch.width,
@@ -84,7 +93,7 @@ var landing1Function = (sketch) => {
     sketch.resizeCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
 
     // eslint-disable-next-line no-undef
-    dustM = new DustManager(50, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
+    dustM = new DustManager(150, sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
     // eslint-disable-next-line no-undef
     borderM = new ParticleManager(
       sketch.width,
