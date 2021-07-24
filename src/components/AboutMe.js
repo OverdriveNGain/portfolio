@@ -18,7 +18,7 @@ const AboutMe = () => {
             </div>
             <div id="about2">
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light">
-                    <div className="display-1 m-3">About Me</div>
+                    <div className="display-1 m-3 font-title">About Me</div>
                     <div className="lead">I create mobile apps, websites, web apps, Unity games to be played on multiple platforms.</div>
                     <p> I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously. In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
                     <p>I get the job done, and more.</p>
@@ -27,7 +27,7 @@ const AboutMe = () => {
             <div id="about3">
                 <div id="landing2" />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0">
-                    <div className="display-1 text-primary mb-4">Projects</div>
+                    <div className="display-1 text-primary mb-4 font-title">Projects</div>
                     <div className="row mx-xs-2 mx-md-5">
                         <div className="col-12 col-md-6 mb-4">
                             <a href="/"><div className="card">
@@ -71,7 +71,7 @@ const AboutMe = () => {
             <div id="about4">
                 <div id="landing_services" />
                 <div className="align-middle container px-0 py-3 text-center d-flex flex-column justify-content-center align-items-stretch">
-                    <div className="display-1 text-primary mb-4">Skills & Services</div>
+                    <div className="display-1 text-primary mb-4 font-title">Skills & Services</div>
                     <div className="row mx-md-5">
                         <div className="col-12 col-md-4">
                             <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 1)}>
@@ -106,7 +106,7 @@ const AboutMe = () => {
             </div>
             <div id="about5">
                 <div className="align-middle container px-0 py-3 text-center d-flex flex-column justify-content-center align-items-stretch">
-                    <div className="display-1 text-primary mb-4">Testimonials</div>
+                    <div className="display-1 text-primary mb-4 font-title">Testimonials</div>
                     <div className="row justify-content-center align-items-center text-center">
                         <div className="col-7">
                             <blockquote>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam magni adipisci neque vero! Odit ab, expedita repellat aliquam magnam, vitae sed totam ea sequi eaque, laborum accusantium minima officiis."</blockquote>

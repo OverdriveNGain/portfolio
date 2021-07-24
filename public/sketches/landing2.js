@@ -23,7 +23,7 @@ var landing2Function = (sketch) => {
         }
     }
 
-    let col2 = [199, 0, 0];
+    let col2 = [78, 104, 255];
     let col1 = [255, 255, 255];
     let borderM;
 

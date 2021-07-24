@@ -30,7 +30,7 @@ var landing1Function = (sketch) => {
     };
   }
 
-  let col1 = [199, 0, 0];
+  let col1 = [78, 104, 255];
   let col2 = [255, 255, 255];
   const borderArea = 2 / 3;
   let borderM;
