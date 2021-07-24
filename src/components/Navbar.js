@@ -14,8 +14,13 @@ const Navbar = () => {
         };
     }, [transparent]);
 
+    const inlineNavbarStyle = {
+        "background-color": (transparent ? "transparent" : "rgba(255, 255, 255, 0.92)"),
+        "backdrop-filter": (transparent ? "none" : "blur(6px)")
+    };
+    console.log(transparent ? "white" : "background-color: rgba(255, 0, 255, 0.212)");
     return (
-        <nav className={"navbar navbar-expand-md navbar-light fixed-top " + (transparent ? "bg-transparent" : "bg-white")}>
+        <nav className={"navbar navbar-expand-md navbar-light fixed-top"} style={inlineNavbarStyle}>
             <div className="container">
                 <a className="navbar-brand" href="/">
                     <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
