@@ -5,25 +5,23 @@ var landing1Function = (sketch) => {
   let dustM;
 
   const drawFloatingPoints = () => {
+    let totalLength, property;
+    sketch.strokeWeight(1);
     if (sketch.width > md_bp) {
-      sketch.strokeWeight(1);
-      for (let i = 0; i < dustM.points.length; i++) {
-        sketch.stroke(255 + -140 * ((sketch.abs(dustM.points[i].x * 2 - sketch.width) / sketch.width)));
-        // sketch.stroke(255, 0, 0);
-        // this.points[i].draw(i);
-        drawConnections(sketch, i, dustM.points);
-      };
+      totalLength = sketch.width;
+      property = "x";
     }
     else {
-      const pointsHeight = sketch.height * floatingPointArea;
-      sketch.strokeWeight(1);
-      for (let i = 0; i < dustM.points.length; i++) {
-        sketch.stroke(255 + -140 * ((sketch.abs(dustM.points[i].y * 2 - pointsHeight) / pointsHeight)));
-        // sketch.stroke(255, 0, 255);
-        // this.points[i].draw(i);
-        drawConnections(sketch, i, dustM.points);
-      };
+      totalLength = sketch.height * floatingPointArea;
+      property = "y";
     }
+
+    for (let i = 0; i < dustM.points.length; i++) {
+      sketch.stroke(255 + -140 * ((sketch.abs(dustM.points[i][property] * 2 - totalLength) / totalLength)));
+      // sketch.stroke(255, 0, 0);
+      // this.points[i].draw(i);
+      drawConnections(sketch, i, dustM.points);
+    };
   }
   const drawConnections = (sketch, thisI, points) => {
     const point = dustM.points[thisI];
