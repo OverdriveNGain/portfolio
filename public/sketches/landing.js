@@ -17,20 +17,16 @@ var landing1Function = (sketch) => {
     }
 
     for (let i = 0; i < dustM.points.length; i++) {
-      sketch.stroke(255 + -140 * ((sketch.abs(dustM.points[i][property] * 2 - totalLength) / totalLength)));
+      const point = dustM.points[i];
+      sketch.stroke(255 + -140 * ((sketch.abs(point[property] * 2 - totalLength) / totalLength)));
       // sketch.stroke(255, 0, 0);
       // this.points[i].draw(i);
-      drawConnections(sketch, i, dustM.points);
-    };
-  }
-  const drawConnections = (sketch, thisI, points) => {
-    const point = dustM.points[thisI];
-    for (let i = 1 + thisI; i < points.length; i++) {
-      if (Math.abs(point.x - points[i].x) < 100 && Math.abs(point.y - points[i].y) < 100) {
-        sketch.line(point.x, point.y, points[i].x, points[i].y);
-        // sketch.line(sketch.width - point.x, point.y, sketch.width - points[i].x, points[i].y);
+      for (let j = 1 + i; j < dustM.points.length; j++) {
+        if (Math.abs(point.x - dustM.points[j].x) < 100 && Math.abs(point.y - dustM.points[j].y) < 100) {
+          sketch.line(point.x, point.y, dustM.points[j].x, dustM.points[j].y);
+        }
       }
-    }
+    };
   }
 
   let col1 = [199, 0, 0];
@@ -110,6 +106,7 @@ var landing1Function = (sketch) => {
     drawBorderWaves();
 
     sketch.fill(0);
+    sketch.noStroke();
     sketch.text(sketch.round(sketch.frameRate()), 50, sketch.height - 300);
   }
 };

@@ -8,6 +8,7 @@ class DustManager {
         this.width = width;
         this.height = height;
         this.points = [];
+        this.quadtree = new QuadTree(5, new Rect(width / 2, height / 2, width, height));
         for (let i = 0; i < this.pointCount; i++) {
             let x = Math.random() * this.width;
             let y = Math.random() * this.height;
@@ -16,6 +17,7 @@ class DustManager {
         };
     }
     step() {
+        this.quadtree.clear();
         for (let i = 0; i < this.pointCount; i++) {
             let point = this.points[i];
 
@@ -30,6 +32,8 @@ class DustManager {
                 point.x += (this.width - 0.1);
             else if (point.x > this.width)
                 point.x -= (this.width - 0.1);
+
+            this.quadtree.insert(new QtPoint(point.x, point.y, i, null));
         };
     }
 }
@@ -152,6 +156,11 @@ class QuadTree {
     constructor(capacity, rect) {
         this.capacity = capacity;
         this.rect = rect;
+        this.points = [];
+        this.hasDivisions = false;
+    }
+
+    clear() {
         this.points = [];
         this.hasDivisions = false;
     }
