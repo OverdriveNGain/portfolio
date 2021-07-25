@@ -143,8 +143,8 @@ const AboutMe = () => {
             <div id="about6" className="bg-light">
                 <div className="align-middle container px-0 py-3 text-center d-flex flex-column 
                 justify-content-center align-items-stretch px-4 py-5">
-                    <div className="display-6 text-primary">You need to get something done?</div>
-                    <div className="display-3 text-primary mb-4">Let’s Talk!</div>
+                    <div className="display-6 text-primary">Need to get something done?</div>
+                    <div className="display-3 text-primary mb-4 font-title">Let’s Talk!</div>
                     <div className="row justify-content-center">
                         <div className="col col-7 text-start">
                             <form>
