@@ -27,6 +27,11 @@ const AboutMe = () => {
         }, 1000);
     }, [])
 
+    const submitCallback = (e) => {
+        e.preventDefault();
+        console.log(e);
+    }
+
     return (
         <div id="about-me">
             <div id="about1">
@@ -147,19 +152,20 @@ const AboutMe = () => {
                     <div className="display-3 text-primary mb-4 font-title">Let’s Talk!</div>
                     <div className="row justify-content-center">
                         <div className="col col-7 text-start">
-                            <form>
+                            <form onSubmit={(e) => { submitCallback(e) }}>
                                 <div className="mb-3">
                                     <label htmlFor="contactName" className="form-label fw-bold text-primary">Name</label>
-                                    <input type="email" className="form-control" id="contactName" placeholder="John Doe" />
+                                    <input type="name" className="form-control" id="contactName" placeholder="John Doe" name="fname" />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="contactEmail" className="form-label fw-bold text-primary">Email</label>
-                                    <input type="email" className="form-control" id="contactEmail" placeholder="name@example.com" />
+                                    <input type="email" className="form-control" id="contactEmail" placeholder="name@example.com" name="email" />
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="contactMessage" className="form-label fw-bold text-primary">Message</label>
-                                    <textarea className="form-control" id="contactMessage" rows="3"></textarea>
+                                    <textarea className="form-control" id="contactMessage" rows="3" name="message"></textarea>
                                 </div>
+                                <div className="text-center"><button className="btn btn-primary text-light" type="submit"><i class="bi bi-envelope-fill pe-2"></i>Send</button></div>
                             </form>
                         </div>
                     </div>
