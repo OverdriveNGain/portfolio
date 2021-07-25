@@ -264,20 +264,22 @@ class SnowManager {
         for (let i = 0; i < this.count; i++) {
             let snow = this.snow[i];
             snow.y += 1;
-            snow.x += snow.velx;
-            if (leftBound != null) {
-                if (snow.x < leftBound) {
-                    snow.velx += 0.1;
-                }
-                else if (snow.x > rightBound) {
-                    snow.velx -= 0.1;
+            if (!snow.isStatic) {
+                snow.x += snow.velx;
+                if (leftBound != null) {
+                    if (snow.x < leftBound) {
+                        snow.velx += 0.1 * snow.depth;
+                    }
+                    else if (snow.x > rightBound) {
+                        snow.velx -= 0.1 * snow.depth;
+                    }
+                    else {
+                        snow.velx *= 0.98;
+                    }
                 }
                 else {
                     snow.velx *= 0.98;
                 }
-            }
-            else {
-                snow.velx *= 0.98;
             }
             if (snow.y > this.height) {
                 snow.y = -10;
@@ -292,5 +294,7 @@ class Snow {
         this.y = y;
         this.rad = rad;
         this.velx = 0;
+        this.isStatic = Math.random() < 0.2;
+        this.depth = Math.random();
     }
 }
