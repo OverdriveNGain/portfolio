@@ -1,11 +1,23 @@
 /* eslint-disable no-undef */
-import useScript from '../hooks/useScript';
+import { useScript } from '../hooks/useScript';
+import { useEffect } from 'react';
 // import landing_services_hover from 'public/sketches/landing_sketches.js';
 
 const AboutMe = () => {
     useScript('sketches/landing.js');
     useScript('sketches/landing2.js');
     useScript('sketches/landing_services.js');
+
+    window.addEventListener('scroll', function () {
+        var element = document.querySelector('#main-container');
+        var position = element.getBoundingClientRect();
+
+        // checking for partial visibility
+        if (position.top < window.innerHeight && position.bottom >= 0) {
+            console.log('Element is partially visible in screen');
+        }
+    });
+
     return (
         <div id="about-me">
             <div id="about1">
@@ -71,10 +83,10 @@ const AboutMe = () => {
             <div id="about4">
                 <div id="landing_services" />
                 <div className="align-middle container px-0 py-3 text-center d-flex flex-column justify-content-center align-items-stretch">
-                    <div className="display-1 text-primary mb-5 font-title">Skills & Services</div>
-                    <div className="row mx-md-5">
+                    <div className="display-1 text-primary mb-5 font-title text-white">Skills & Services</div>
+                    <div className="row mx-md-5 g-3">
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 1)}>
+                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title no-underline">Graphic Design</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -83,7 +95,7 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 2)}>
+                            <a href="/"><div className="card border-0 border-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title">Website Development</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -92,7 +104,7 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 3)}>
+                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title">Mobile App Development</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

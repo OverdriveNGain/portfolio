@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 
+let spacer = 12;
+
 class DustManager {
     constructor(pointCount, width, height, maxvel) {
         this.pointCount = pointCount;
@@ -151,7 +153,6 @@ class Particle {
         this.rad = rad;
     }
 }
-
 class QuadTree {
     constructor(capacity, rect) {
         this.capacity = capacity;
@@ -246,5 +247,51 @@ class QtPoint {
         this.y = y;
         this.i = i;
         this.data = data;
+    }
+}
+class SnowManager {
+    constructor(width, height, count) {
+        this.width = width;
+        this.height = height;
+        this.count = count
+        this.snow = [];
+        for (let i = 0; i < count; i++) {
+            this.snow.push(new Snow(Math.random() * width, Math.random() * height, Math.random() * 3));
+        }
+    }
+
+    step(leftBound, rightBound) {
+        // console.log("bounds are " + leftBound + " and " + rightBound);
+        for (let i = 0; i < this.count; i++) {
+            let snow = this.snow[i];
+            snow.y += 1;
+            snow.x += snow.velx;
+            if (leftBound != null) {
+                if (snow.x < leftBound) {
+                    snow.velx += 0.1;
+                }
+                else if (snow.x > rightBound) {
+                    snow.velx -= 0.1;
+                }
+                else {
+                    snow.velx *= 0.98;
+                }
+            }
+            else {
+                snow.velx *= 0.98;
+            }
+            if (snow.y > this.height) {
+                snow.y = -10;
+                snow.x = Math.random() * this.width;
+            }
+        }
+    }
+}
+class Snow {
+    constructor(x, y, rad) {
+        this.x = x;
+        this.y = y;
+        this.rad = rad;
+        this.velx = 0;
     }
 }
