@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 let landing1FunctionSetVisible;
 
 var landing1Function = (sketch) => {
@@ -5,7 +6,7 @@ var landing1Function = (sketch) => {
   const floatingPointArea = 2 / 3;
   const md_bp = 768;
   let dustM;
-
+  console.log('defined!');
   landing1FunctionSetVisible = (isVisible) => {
     if (isVisible) {
       sketch.loop();

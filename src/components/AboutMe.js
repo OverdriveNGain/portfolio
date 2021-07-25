@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+import { useEffect } from 'react';
 import useScript from '../hooks/useScript';
 // import { useEffect } from 'react';
 // import landing_services_hover from 'public/sketches/landing_sketches.js';
@@ -8,14 +9,23 @@ const AboutMe = () => {
     useScript('sketches/landing2.js');
     useScript('sketches/landing_services.js');
 
-    window.addEventListener('scroll', function () {
-        let position = document.getElementById('landing1').getBoundingClientRect();
-        landing1FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
-        position = document.getElementById('landing2').getBoundingClientRect();
-        landing2FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
-        position = document.getElementById('landing_services').getBoundingClientRect();
-        landingServicesSetVisible(position.top < window.innerHeight && position.bottom >= 0);
-    });
+    useEffect(() => {
+        window.setTimeout(() => {
+            // listenerAddedState(true);
+            const refreshLoopStates = () => {
+                let position = document.getElementById('landing1').getBoundingClientRect();
+                landing1FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
+                position = document.getElementById('landing2').getBoundingClientRect();
+                landing2FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
+                position = document.getElementById('landing_services').getBoundingClientRect();
+                landingServicesSetVisible(position.top < window.innerHeight && position.bottom >= 0);
+            }
+            refreshLoopStates()
+            window.addEventListener('scroll', function () {
+                refreshLoopStates();
+            });
+        }, 1000);
+    }, [])
 
     return (
         <div id="about-me">
