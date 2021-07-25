@@ -7,10 +7,10 @@ var landingServicesFunction = (sketch) => {
 
     let choiceIndex = -1;
     let snowM;
-
     let containerWidth;
     let sidePadding = spacer * 3;
     let boundsArray = [];
+    const md_bp = 768;
 
     landingServicesSetVisible = (isVisible) => {
         if (isVisible) {
@@ -24,7 +24,7 @@ var landingServicesFunction = (sketch) => {
     sketch.setup = () => {
         const e = document.getElementById("landing_services");
         let canv = sketch.createCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
-        containerWidth = getContainerWidth(sketch.width);
+        containerWidth = getContainerWidthModified(sketch.width);
         setupBoundsArray();
         canv.parent('landing_services');
         sketch.rectMode(sketch.CENTER);
@@ -41,7 +41,8 @@ var landingServicesFunction = (sketch) => {
     sketch.windowResized = () => {
         const e = document.getElementById("landing_services");
         sketch.resizeCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
-        containerWidth = getContainerWidth(sketch.width);
+        containerWidth = getContainerWidthModified(sketch.width);
+        snowM = new SnowManager(sketch.width, sketch.height, 250);
         setupBoundsArray();
     }
 
@@ -50,14 +51,17 @@ var landingServicesFunction = (sketch) => {
         sketch.fill(78, 104, 255);
         sketch.rect(sketch.width * 0.5, sketch.height * 0.5, containerWidth, sketch.height, 30);
         sketch.fill(255);
-        if (choiceIndex > -1)
+        if (choiceIndex > -1 && sketch.width > md_bp) {
+            drawChoiceIndicators();
             snowM.step(boundsArray[choiceIndex][0], boundsArray[choiceIndex][1]);
+        }
         else
             snowM.step(null, null);
         drawSnow();
+
+
         sketch.fill(0);
         sketch.text(Math.round(sketch.frameRate()), 50, 50);
-        drawChoiceIndicators();
     }
     const setupBoundsArray = () => {
         const startPoint = (sketch.width - containerWidth) * 0.5 + (sidePadding);
@@ -76,14 +80,6 @@ var landingServicesFunction = (sketch) => {
             sketch.rect(boundsArray[choiceIndex][0], 0, boundsArray[choiceIndex][1], sketch.height);
             sketch.pop();
         }
-        // sketch.fill(255, 0, 0);
-        // let choiceWidth = (containerWidth - sidePadding * 2) * 0.333;
-        // sketch.push();
-        // sketch.translate(sketch.width * 0.5, 0);
-        // sketch.rect(0, sketch.height * 0.5, choiceWidth - spacer, sketch.height);
-        // sketch.rect(-choiceWidth, sketch.height * 0.5, choiceWidth - spacer, sketch.height);
-        // sketch.rect(choiceWidth, sketch.height * 0.5, choiceWidth - spacer, sketch.height);
-        // sketch.pop();
     }
     const drawSnow = () => {
         // console.log(snowM.snow.length);
@@ -92,9 +88,9 @@ var landingServicesFunction = (sketch) => {
             sketch.circle(snow.x, snow.y, snow.rad, snow.rad);
         }
     }
-    const getContainerWidth = (windowWidth) => {
+    const getContainerWidthModified = (windowWidth) => {
         if (windowWidth < 576)
-            return windowWidth;
+            return windowWidth - 40;
         if (windowWidth < 768)
             return 540;
         if (windowWidth < 992)

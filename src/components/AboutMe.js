@@ -95,7 +95,8 @@ const AboutMe = () => {
                     <div className="display-1 text-primary mb-5 font-title text-white">Skills & Services</div>
                     <div className="row mx-md-5 g-3">
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                            <a href="/"><div className={`card border-0 rounded rounded-on-md shadow`}
+                                onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title no-underline">Graphic Design</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -104,7 +105,7 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 border-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title">Website Development</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -113,7 +114,7 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded-0 rounded-3 shadow" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title">Mobile App Development</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>

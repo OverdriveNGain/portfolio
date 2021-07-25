@@ -256,12 +256,11 @@ class SnowManager {
         this.count = count
         this.snow = [];
         for (let i = 0; i < count; i++) {
-            this.snow.push(new Snow(Math.random() * width, Math.random() * height, Math.random() * 3));
+            this.snow.push(new Snow(Math.random() * width, Math.random() * height, Math.random() * 5));
         }
     }
 
     step(leftBound, rightBound) {
-        // console.log("bounds are " + leftBound + " and " + rightBound);
         for (let i = 0; i < this.count; i++) {
             let snow = this.snow[i];
             snow.y += 1;
