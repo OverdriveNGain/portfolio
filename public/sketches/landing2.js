@@ -1,4 +1,15 @@
+let landing2FunctionSetVisible;
+
 var landing2Function = (sketch) => {
+
+    landing2FunctionSetVisible = (isVisible) => {
+        if (isVisible) {
+            sketch.loop();
+        }
+        else {
+            sketch.noLoop();
+        }
+    }
 
     const drawBorderWaves = () => {
         sketch.fill(col2);

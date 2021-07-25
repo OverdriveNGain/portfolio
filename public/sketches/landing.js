@@ -8,11 +8,9 @@ var landing1Function = (sketch) => {
 
   landing1FunctionSetVisible = (isVisible) => {
     if (isVisible) {
-      console.log('loopin!');
       sketch.loop();
     }
     else {
-      console.log('not loopin >:(');
       sketch.noLoop();
     }
   }

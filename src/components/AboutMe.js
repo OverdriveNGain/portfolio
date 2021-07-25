@@ -9,11 +9,12 @@ const AboutMe = () => {
     useScript('sketches/landing_services.js');
 
     window.addEventListener('scroll', function () {
-        var element = document.getElementById('landing1');
-        var position = element.getBoundingClientRect();
-
-        // checking for partial visibility
+        let position = document.getElementById('landing1').getBoundingClientRect();
         landing1FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
+        position = document.getElementById('landing2').getBoundingClientRect();
+        landing2FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
+        position = document.getElementById('landing_services').getBoundingClientRect();
+        landingServicesSetVisible(position.top < window.innerHeight && position.bottom >= 0);
     });
 
     return (

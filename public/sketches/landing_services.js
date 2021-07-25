@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 
 let landing_services_hover;
+let landingServicesSetVisible;
 
 var landingServicesFunction = (sketch) => {
 
@@ -10,6 +11,15 @@ var landingServicesFunction = (sketch) => {
     let containerWidth;
     let sidePadding = spacer * 3;
     let boundsArray = [];
+
+    landingServicesSetVisible = (isVisible) => {
+        if (isVisible) {
+            sketch.loop();
+        }
+        else {
+            sketch.noLoop();
+        }
+    }
 
     sketch.setup = () => {
         const e = document.getElementById("landing_services");
