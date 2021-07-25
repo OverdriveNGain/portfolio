@@ -82,12 +82,12 @@ body {
     z-index:-1;
 }
 
-#about-me #about5{
-    height: var(--sectionHeight);
+/* #about-me #about5{
+    height: var(--sectionHeight * 0.5);
 }
 #about-me #about5 .container{
     height: 100%;
-}
+} */
 #about5 a{ 
     text-decoration: none; 
 }
