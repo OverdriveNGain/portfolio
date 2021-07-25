@@ -10,21 +10,32 @@ const AboutMe = () => {
     useScript('sketches/landing_services.js');
 
     useEffect(() => {
-        window.setTimeout(() => {
-            // listenerAddedState(true);
-            const refreshLoopStates = () => {
-                let position = document.getElementById('landing1').getBoundingClientRect();
-                landing1FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
-                position = document.getElementById('landing2').getBoundingClientRect();
-                landing2FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
-                position = document.getElementById('landing_services').getBoundingClientRect();
-                landingServicesSetVisible(position.top < window.innerHeight && position.bottom >= 0);
-            }
-            refreshLoopStates()
-            window.addEventListener('scroll', function () {
-                refreshLoopStates();
-            });
-        }, 1000);
+        const waitUntilInit = async () => {
+            let temp;
+            temp = window.setInterval(() => {
+                try {
+                    if (landing1FunctionSetVisible || landing2FunctionSetVisible || landingServicesSetVisible);
+                } catch (e) {
+                    if (e instanceof ReferenceError) {
+                        return;
+                    }
+                }
+                const refreshLoopStates = () => {
+                    let position = document.getElementById('landing1').getBoundingClientRect();
+                    landing1FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
+                    position = document.getElementById('landing2').getBoundingClientRect();
+                    landing2FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
+                    position = document.getElementById('landing_services').getBoundingClientRect();
+                    landingServicesSetVisible(position.top < window.innerHeight && position.bottom >= 0);
+                }
+                refreshLoopStates()
+                window.addEventListener('scroll', function () {
+                    refreshLoopStates();
+                });
+                window.clearInterval(temp);
+            }, 10);
+        }
+        waitUntilInit();
     }, [])
 
     const submitCallback = (e) => {
@@ -103,7 +114,7 @@ const AboutMe = () => {
                             <a href="/"><div className={`card border-0 rounded rounded-on-md shadow`}
                                 onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
-                                    <i class="bi bi-brush display-1"></i>
+                                    <i className="bi bi-brush display-1"></i>
                                     <h5 className="card-title no-underline">Graphic Design</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <small className="text-muted">Adobe Illustrator • Adobe Photoshop • p5.js • Processing • Python</small>
@@ -113,7 +124,7 @@ const AboutMe = () => {
                         <div className="col-12 col-md-4">
                             <a href="/"><div className="card border-0 rounded rounded-on-md shadow" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
-                                    <i class="bi bi-globe2 display-1"></i>
+                                    <i className="bi bi-globe2 display-1"></i>
                                     <h5 className="card-title">Website Development</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <small className="text-muted">HTML • CSS • Javascript • SASS • React • Flutter • Firebase • Bootstrap 5 • git • GitHub</small>
@@ -123,7 +134,7 @@ const AboutMe = () => {
                         <div className="col-12 col-md-4">
                             <a href="/"><div className="card border-0 rounded rounded-on-md shadow" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
-                                    <i class="bi bi-phone display-1"></i>
+                                    <i className="bi bi-phone display-1"></i>
                                     <h5 className="card-title">Mobile App Development</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     <small className="text-muted">React • Flutter • Adobe XD • Firebase • Unity 3D • git • GitHub</small>
@@ -168,7 +179,7 @@ const AboutMe = () => {
                                     <label htmlFor="contactMessage" className="form-label fw-bold text-primary">Message</label>
                                     <textarea className="form-control" id="contactMessage" rows="3" name="message"></textarea>
                                 </div>
-                                <div className="text-center"><button className="btn btn-primary text-light" type="submit"><i class="bi bi-envelope-fill pe-2"></i>Send</button></div>
+                                <div className="text-center"><button className="btn btn-primary text-light" type="submit"><i className="bi bi-envelope-fill pe-2"></i>Send</button></div>
                             </form>
                         </div>
                     </div>
