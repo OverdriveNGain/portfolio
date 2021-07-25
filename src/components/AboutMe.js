@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
-import { useScript } from '../hooks/useScript';
-import { useEffect } from 'react';
+import useScript from '../hooks/useScript';
+// import { useEffect } from 'react';
 // import landing_services_hover from 'public/sketches/landing_sketches.js';
 
 const AboutMe = () => {
@@ -9,13 +9,11 @@ const AboutMe = () => {
     useScript('sketches/landing_services.js');
 
     window.addEventListener('scroll', function () {
-        var element = document.querySelector('#main-container');
+        var element = document.getElementById('landing1');
         var position = element.getBoundingClientRect();
 
         // checking for partial visibility
-        if (position.top < window.innerHeight && position.bottom >= 0) {
-            console.log('Element is partially visible in screen');
-        }
+        landing1FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
     });
 
     return (
