@@ -31,7 +31,7 @@ var landingServicesFunction = (sketch) => {
         sketch.noStroke();
         sketch.background(255);
 
-        snowM = new SnowManager(sketch.width, sketch.height, 150);
+        snowM = new SnowManager(sketch.width, sketch.height, 250);
 
         landing_services_hover = (e, newIndex) => {
             choiceIndex = newIndex;
