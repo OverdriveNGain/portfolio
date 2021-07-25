@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const Navbar = () => {
-    const [transparent, setTransparent] = useState(true);
+    const [transparent, setTransparent] = useState(null); // null means not yet set
 
     useEffect(() => {
         const onScroll = e => {
@@ -14,11 +14,13 @@ const Navbar = () => {
         };
     }, [transparent]);
 
+
     const inlineNavbarStyle = {
-        "backgroundColor": (transparent ? "transparent" : "rgba(255, 255, 255, 0.92)"),
-        "backdropFilter": (transparent ? "none" : "blur(6px)")
+        "backgroundColor": (transparent ?? (document.documentElement.scrollTop <= 100) ?
+            "transparent" : "rgba(255, 255, 255, 0.92)"),
+        "backdropFilter": (transparent ?? (document.documentElement.scrollTop <= 100) ?
+            "none" : "blur(6px)")
     };
-    console.log(transparent ? "white" : "background-color: rgba(255, 0, 255, 0.212)");
     return (
         <nav className={"navbar navbar-expand-md navbar-light fixed-top"} style={inlineNavbarStyle}>
             <div className="container">
