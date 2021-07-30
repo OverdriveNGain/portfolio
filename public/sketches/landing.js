@@ -38,7 +38,6 @@ var landing1Function = (sketch) => {
   sketch.windowResized = () => {
     const e = document.getElementById("landing1");
     sketch.resizeCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
-    console.log("AREA is " + (sketch.round(e.offsetWidth) * sketch.round(e.offsetHeight)))
     // eslint-disable-next-line no-undef
     dustM = new DustManager(Math.round(getDustCount(sketch.height * sketch.width)), sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
     // eslint-disable-next-line no-undef
