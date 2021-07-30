@@ -15,6 +15,8 @@ const AboutMe = () => {
             temp = window.setInterval(() => {
                 try {
                     if (landing1FunctionSetVisible || landing2FunctionSetVisible || landingServicesSetVisible);
+                    else
+                        return;
                 } catch (e) {
                     if (e instanceof ReferenceError) {
                         return;
