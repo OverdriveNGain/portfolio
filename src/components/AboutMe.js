@@ -154,7 +154,7 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="d-none d-md-flex col-8 col-md-6 mb-4">
-                            <a href="/"><div className="card">
+                            <a href="/" className="link-no-underline"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title text-secondary">Last Card title</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
