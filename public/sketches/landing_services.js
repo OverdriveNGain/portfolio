@@ -8,7 +8,7 @@ var landingServicesFunction = (sketch) => {
     let choiceIndex = -1;
     let snowM;
     let containerWidth;
-    let sidePadding = spacer * 3;
+    let sidePadding = spacer * 0;
     let boundsArray = [];
     const md_bp = 768;
 
@@ -27,9 +27,8 @@ var landingServicesFunction = (sketch) => {
         containerWidth = getContainerWidthModified(sketch.width);
         setupBoundsArray();
         canv.parent('landing_services');
-        sketch.rectMode(sketch.CENTER);
+        sketch.rectMode(sketch.CORNERS);
         sketch.noStroke();
-        sketch.background(255);
 
         snowM = new SnowManager(sketch.width, sketch.height, 250);
 
@@ -49,7 +48,7 @@ var landingServicesFunction = (sketch) => {
     sketch.draw = () => {
         sketch.background(255);
         sketch.fill(78, 104, 255);
-        sketch.rect(sketch.width * 0.5, sketch.height * 0.5, containerWidth, sketch.height, 30);
+        sketch.rect(0, 0, sketch.width, sketch.height);
         sketch.fill(255);
         if (choiceIndex > -1 && sketch.width > md_bp) {
             drawChoiceIndicators();
@@ -58,6 +57,12 @@ var landingServicesFunction = (sketch) => {
         else
             snowM.step(null, null);
         drawSnow();
+
+        sketch.strokeWeight(5.0);
+        sketch.stroke(255);
+        sketch.noFill();
+        sketch.rect(-10, 10, sketch.width + 10, sketch.height - 10);
+        sketch.noStroke();
 
 
         sketch.fill(0);
@@ -74,15 +79,12 @@ var landingServicesFunction = (sketch) => {
     }
     const drawChoiceIndicators = () => {
         if (choiceIndex !== -1) {
-            sketch.push();
-            sketch.rectMode(sketch.CORNERS);
             sketch.fill(255, 255, 255, 40);
             sketch.rect(boundsArray[choiceIndex][0], 0, boundsArray[choiceIndex][1], sketch.height);
-            sketch.pop();
         }
     }
     const drawSnow = () => {
-        // console.log(snowM.snow.length);
+        sketch.fill(255);
         for (let i = 0; i < snowM.snow.length; i++) {
             let snow = snowM.snow[i];
             sketch.circle(snow.x, snow.y, snow.rad, snow.rad);
@@ -90,7 +92,7 @@ var landingServicesFunction = (sketch) => {
     }
     const getContainerWidthModified = (windowWidth) => {
         if (windowWidth < 576)
-            return windowWidth - 40;
+            return windowWidth;
         if (windowWidth < 768)
             return 540;
         if (windowWidth < 992)
