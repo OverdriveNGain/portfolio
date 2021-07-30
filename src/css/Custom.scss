@@ -7,6 +7,17 @@ $border-radius-sm:            1.2rem;
 $border-radius-lg:            1.8rem;
 $border-radius-pill:          50rem;
 
-// $spacer:    16px;
+$utilities: (
+  "opacity": (
+    property: opacity,
+    values: (
+      0: 0,
+      25: .25,
+      50: .5,
+      75: .75,
+      100: 1,
+    )
+  )
+);
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
