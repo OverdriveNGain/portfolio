@@ -52,7 +52,7 @@ const AboutMe = () => {
             <div className="container h-100">
                 <div className="d-flex flex-column justify-content-center h-100">
                     <div className="display-1 font-title text-white mb-3 mb-md-5 text-center">Skills & Services</div>
-                    <div className="row g-3">
+                    <div className="row g-3 align-items-center">
                         <div className="col-12 col-md-4">
                             <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4 text-center">
