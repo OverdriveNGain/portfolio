@@ -56,30 +56,45 @@ const AboutMe = () => {
                         <div className="col-12 col-md-4">
                             <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
-                                    <i className="bi bi-brush display-1 text-secondary"></i>
-                                    <h5 className="card-title no-underline text-secondary">Graphic Design</h5>
-                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <small className="text-muted">Adobe Illustrator • Adobe Photoshop • p5.js • Processing • Python</small>
+                                    <div className="row align-items-center justify-content-center">
+                                        <div className="col-2 col-md-8"><i className="bi bi-brush display-1 text-secondary d-none d-md-inline"></i></div>
+                                        <div className="col-12 text-start text-md-center">
+                                            <h5 className="card-title no-underline text-secondary">
+                                                <i className="bi bi-brush text-secondary d-inline d-md-none"></i>     Graphic Design</h5>
+                                            <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <small className="text-muted">Adobe Illustrator • Adobe Photoshop • p5.js • Processing • Python</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
-                                    <i className="bi bi-globe2 display-1 text-secondary"></i>
-                                    <h5 className="card-title text-secondary">Website Development</h5>
-                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <small className="text-muted">HTML • CSS • Javascript • SASS • React • Flutter • Firebase • Bootstrap 5 • git • GitHub</small>
+                                    <div className="row align-items-center justify-content-center">
+                                        <div className="col-2 col-md-8"><i className="bi bi-globe2 display-1 text-secondary d-none d-md-inline"></i></div>
+                                        <div className="col-12 text-start text-md-center">
+                                            <h5 className="card-title no-underline text-secondary">
+                                                <i className="bi bi-globe2 text-secondary d-inline d-md-none"></i>     Website Development</h5>
+                                            <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <small className="text-muted">HTML • CSS • Javascript • SASS • React • Flutter • Firebase • Bootstrap 5 • git • GitHub</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
-                                    <i className="bi bi-phone display-1 text-secondary"></i>
-                                    <h5 className="card-title text-secondary">Mobile App Development</h5>
-                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <small className="text-muted">React • Flutter • Adobe XD • Firebase • Unity 3D • git • GitHub</small>
+                                    <div className="row align-items-center justify-content-center">
+                                        <div className="col-2 col-md-8"><i className="bi bi-phone display-1 text-secondary d-none d-md-inline"></i></div>
+                                        <div className="col-12 text-start text-md-center">
+                                            <h5 className="card-title no-underline text-secondary">
+                                                <i className="bi bi-phone text-secondary d-inline d-md-none"></i>     Mobile App Development</h5>
+                                            <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            <small className="text-muted">React • Flutter • Adobe XD • Firebase • Unity 3D • git • GitHub</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div></a>
                         </div>
