@@ -62,7 +62,7 @@ var landingServicesFunction = (sketch) => {
         sketch.strokeWeight(5.0);
         sketch.stroke(255);
         sketch.noFill();
-        sketch.rect(-10, 10, sketch.width + 10, sketch.height - 10);
+        sketch.rect(-15, 15, sketch.width + 15, sketch.height - 15);
         sketch.noStroke();
 
 
