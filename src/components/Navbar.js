@@ -4,6 +4,9 @@ const Navbar = () => {
     const [transparent, setTransparent] = useState(null); // null means not yet set
 
     useEffect(() => {
+        setTransparent(document.documentElement.scrollTop <= 100);
+    }, []);
+    useEffect(() => {
         const onScroll = e => {
             setTransparent(e.target.documentElement.scrollTop <= 100);
         };
