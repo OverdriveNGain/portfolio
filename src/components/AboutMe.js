@@ -168,7 +168,7 @@ const AboutMe = () => {
             </div>
             {about4}
             <div id="about5">
-                <div className="align-middle container px-0 py-5 my-5 text-center d-flex flex-column justify-content-center align-items-stretch h-100">
+                <div className="align-middle container px-0 my-5 text-center d-flex flex-column justify-content-center align-items-stretch h-100">
                     <div className="display-1 text-primary mb-5 font-title">Testimonials</div>
                     <div className="row justify-content-center align-items-center text-center">
                         <div className="col-7">
