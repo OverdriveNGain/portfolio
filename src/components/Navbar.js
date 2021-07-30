@@ -26,7 +26,7 @@ const Navbar = () => {
     };
     return (
         <nav className="navbar navbar-expand-md navbar-light fixed-top" style={inlineNavbarStyle}>
-            <div className="container">
+            <div className="container px-4">
                 <a className={"navbar-brand" + (transparent ? " opacity-0" : "")} href="/">
                     <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
                     <small className="text-muted">Full-Stack Software Engineer</small>
