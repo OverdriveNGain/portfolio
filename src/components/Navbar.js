@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 
 const Navbar = () => {
     const [transparent, setTransparent] = useState(null); // null means not yet set
+    const transparentThreshold = 300;
 
     useEffect(() => {
-        setTransparent(document.documentElement.scrollTop <= 100);
+        setTransparent(document.documentElement.scrollTop <= transparentThreshold);
     }, []);
     useEffect(() => {
         const onScroll = e => {
-            setTransparent(e.target.documentElement.scrollTop <= 100);
+            setTransparent(e.target.documentElement.scrollTop <= transparentThreshold);
         };
         window.addEventListener("scroll", onScroll);
 
@@ -19,9 +20,9 @@ const Navbar = () => {
 
 
     const inlineNavbarStyle = {
-        "backgroundColor": (transparent ?? (document.documentElement.scrollTop <= 100) ?
+        "backgroundColor": (transparent ?? (document.documentElement.scrollTop <= transparentThreshold) ?
             "transparent" : "rgba(255, 255, 255, 0.92)"),
-        "backdropFilter": (transparent ?? (document.documentElement.scrollTop <= 100) ?
+        "backdropFilter": (transparent ?? (document.documentElement.scrollTop <= transparentThreshold) ?
             "none" : "blur(6px)")
     };
     return (
