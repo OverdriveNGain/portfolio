@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
 
-let spacer = 12;
-
 class DustManager {
     constructor(pointCount, width, height, maxvel) {
         this.pointCount = pointCount;

@@ -23,74 +23,50 @@ body {
     position:relative;
     bottom: 0.4rem;
 }
-
-:root{
-    --sectionHeight: 90vh;
+.link-no-underline {
+    text-decoration: none; 
 }
+
 /* About 1 */
 #about-me #about1{
-    height: var(--sectionHeight);
-}
-#about-me #about1 .container{
-    height: 100%;
+    height: 90vh;
 }
 #landing1{
     position: absolute;
     top:0;
     width:100%;
-    height:calc(1.5 * var(--sectionHeight)); /* 150% of #about1 height  */
+    height:calc(1.5 * 90vh); /* 150% of #about1 height  */
     z-index:-1;
 }
 /* About 2 */
 #about-me #about2{
-    height: var(--sectionHeight);
-}
-#about-me #about2 .container{
-    height: 100%;
+    height: 90vh;
 }
 #landing2{
     position: absolute;
-    top: calc(-0.5 * var(--sectionHeight));
+    top: calc(-0.5 * 90vh);
     width:100%;
-    height:var(--sectionHeight);
+    height:90vh;
     z-index:-1;
 }
 /* About 3 */
 #about-me #about3{
-    height: var(--sectionHeight);
+    height: 90vh;
     position:relative;
-}
-#about-me #about3 .container{
-    height: 100%;
-}
-#about3 a{ 
-    text-decoration: none; 
 }
 /* About 4 */
 #about-me #about4{
-    height: var(--sectionHeight);
-}
-#about4 a{ 
-    text-decoration: none; 
+    height: 100vh;
 }
 #about4 .behind{
     position:absolute;
 }
 #landing_services{
     position: absolute;
+    height:100vh;
     z-index:-1;
 }
 /* About 5 */
-#about-me #about5{
-    height: var(--sectionHeight * 0.5);
-}
-#about-me #about5 .container{
-    height: 100%;
-}
-#about5 a{ 
-    text-decoration: none; 
-}
-
 #testimonial-portrait-holder{
     width: 70px;
     height: 70px;

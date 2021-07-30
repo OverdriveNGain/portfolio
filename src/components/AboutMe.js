@@ -48,17 +48,17 @@ const AboutMe = () => {
 
     const about4 = (
         <div id="about4">
-            <div id="landing_services" className="h-100 w-100 behind" />
+            <div id="landing_services" className=" w-100 behind" />
             <div className="container h-100">
                 <div className="d-flex flex-column justify-content-center h-100">
-                    <div className="display-1 text-center font-title text-white mb-5">Skills & Services</div>
+                    <div className="display-1 font-title text-white mb-3 mb-md-5 text-center">Skills & Services</div>
                     <div className="row g-3">
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
-                                <div className="card-body m-1 m-md-4">
+                            <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                                <div className="card-body m-1 m-md-4 text-center">
                                     <div className="row align-items-center justify-content-center">
                                         <div className="col-2 col-md-8"><i className="bi bi-brush display-1 text-secondary d-none d-md-inline"></i></div>
-                                        <div className="col-12 text-start text-md-center">
+                                        <div className="col-12">
                                             <h5 className="card-title no-underline text-secondary">
                                                 <i className="bi bi-brush text-secondary d-inline d-md-none"></i>     Graphic Design</h5>
                                             <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -69,11 +69,11 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
-                                <div className="card-body m-1 m-md-4">
+                            <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                                <div className="card-body m-1 m-md-4 text-center">
                                     <div className="row align-items-center justify-content-center">
                                         <div className="col-2 col-md-8"><i className="bi bi-globe2 display-1 text-secondary d-none d-md-inline"></i></div>
-                                        <div className="col-12 text-start text-md-center">
+                                        <div className="col-12 text-md-center">
                                             <h5 className="card-title no-underline text-secondary">
                                                 <i className="bi bi-globe2 text-secondary d-inline d-md-none"></i>     Website Development</h5>
                                             <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -84,11 +84,11 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
-                                <div className="card-body m-1 m-md-4">
+                            <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                                <div className="card-body m-1 m-md-4 text-center">
                                     <div className="row align-items-center justify-content-center">
                                         <div className="col-2 col-md-8"><i className="bi bi-phone display-1 text-secondary d-none d-md-inline"></i></div>
-                                        <div className="col-12 text-start text-md-center">
+                                        <div className="col-12 text-md-center">
                                             <h5 className="card-title no-underline text-secondary">
                                                 <i className="bi bi-phone text-secondary d-inline d-md-none"></i>     Mobile App Development</h5>
                                             <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -108,14 +108,14 @@ const AboutMe = () => {
         <div id="about-me">
             <div id="about1">
                 <div id="landing1" />
-                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center">
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center h-100">
                     <div className="display-6 pt-5 pb-2 d-inline-block text-muted">So let me introduce myself...</div>
                     <div className="display-2 pb-3 d-inline-block">My name is <span className="text-primary">Jeremy</span>,</div>
                     <div className="display-6 pb-2 d-inline-block ">and I am a <span className="text-secondary">full-stack software engineer</span>.</div>
                 </div>
             </div>
             <div id="about2">
-                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light">
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light h-100">
                     <div className="display-1 m-3 font-title">About Me</div>
                     <div className="mb-3">I create mobile apps, websites, web apps, Unity games to be played on multiple platforms.</div>
                     <p> I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously. In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
@@ -124,11 +124,11 @@ const AboutMe = () => {
             </div>
             <div id="about3">
                 <div id="landing2" />
-                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0">
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
                     <div className="display-1 text-primary mb-5 font-title">Projects</div>
                     <div className="row mx-xs-2 mx-md-5">
                         <div className="col-12 col-md-6 mb-4">
-                            <a href="/"><div className="card">
+                            <a href="/" className="link-no-underline"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title no-underline text-secondary">Card title</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -136,7 +136,7 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-6 mb-4">
-                            <a href="/"><div className="card">
+                            <a href="/" className="link-no-underline"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title text-secondary">Card title</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -146,7 +146,7 @@ const AboutMe = () => {
                     </div>
                     <div className="row mx-xs-2 mx-md-5">
                         <div className="col-12 col-md-6 mb-4">
-                            <a href="/"><div className="card">
+                            <a href="/" className="link-no-underline"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title no-underline text-secondary">Card title</h5>
                                     <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -168,7 +168,7 @@ const AboutMe = () => {
             </div>
             {about4}
             <div id="about5">
-                <div className="align-middle container px-0 py-5 my-5 text-center d-flex flex-column justify-content-center align-items-stretch">
+                <div className="align-middle container px-0 py-5 my-5 text-center d-flex flex-column justify-content-center align-items-stretch h-100">
                     <div className="display-1 text-primary mb-5 font-title">Testimonials</div>
                     <div className="row justify-content-center align-items-center text-center">
                         <div className="col-7">

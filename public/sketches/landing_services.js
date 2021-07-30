@@ -8,7 +8,6 @@ var landingServicesFunction = (sketch) => {
     let choiceIndex = -1;
     let snowM;
     let containerWidth;
-    let sidePadding = spacer * 0;
     let boundsArray = [];
     const md_bp = 768;
 
@@ -69,8 +68,8 @@ var landingServicesFunction = (sketch) => {
         sketch.text(Math.round(sketch.frameRate()), 50, 50);
     }
     const setupBoundsArray = () => {
-        const startPoint = (sketch.width - containerWidth) * 0.5 + (sidePadding);
-        const choiceWidth = (containerWidth - sidePadding * 2) * 0.333;
+        const startPoint = (sketch.width - containerWidth) * 0.5;
+        const choiceWidth = containerWidth * 0.333;
         boundsArray = [
             [startPoint + choiceWidth * 0, startPoint + choiceWidth * 1],
             [startPoint + choiceWidth * 1, startPoint + choiceWidth * 2],
