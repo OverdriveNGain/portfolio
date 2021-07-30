@@ -115,7 +115,7 @@ const AboutMe = () => {
                 </div>
             </div>
             <div id="about2">
-                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light h-100">
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light h-100 px-5">
                     <div className="display-1 m-3 font-title">About Me</div>
                     <div className="mb-3">I create mobile apps, websites, web apps, Unity games to be played on multiple platforms.</div>
                     <p> I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously. In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
