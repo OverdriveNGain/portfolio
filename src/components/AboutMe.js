@@ -185,20 +185,20 @@ const AboutMe = () => {
                 <div className="align-middle container px-0 py-3 text-center d-flex flex-column 
                 justify-content-center align-items-stretch px-4 py-5">
                     <div className="display-6 text-muted">Need to get something done?</div>
-                    <div className="display-3 text-secondary mb-4 font-title">Let’s Talk!</div>
+                    <div className="display-3 text-primary mb-4 font-title">Let’s Talk!</div>
                     <div className="row justify-content-center">
                         <div className="col col-7 text-start">
                             <form onSubmit={(e) => { submitCallback(e) }}>
                                 <div className="mb-3">
-                                    <label htmlFor="contactName" className="form-label fw-bold text-primary">Name</label>
+                                    <label htmlFor="contactName" className="form-label fw-bold text-secondary">Name</label>
                                     <input type="name" className="form-control" id="contactName" placeholder="John Doe" name="fname" />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="contactEmail" className="form-label fw-bold text-primary">Email</label>
+                                    <label htmlFor="contactEmail" className="form-label fw-bold text-secondary">Email</label>
                                     <input type="email" className="form-control" id="contactEmail" placeholder="name@example.com" name="email" />
                                 </div>
                                 <div className="mb-3">
-                                    <label htmlFor="contactMessage" className="form-label fw-bold text-primary">Message</label>
+                                    <label htmlFor="contactMessage" className="form-label fw-bold text-secondary">Message</label>
                                     <textarea className="form-control" id="contactMessage" rows="3" name="message"></textarea>
                                 </div>
                                 <div className="text-center"><button className="btn btn-primary text-light" type="submit"><i className="bi bi-envelope-fill pe-2"></i>Send</button></div>
