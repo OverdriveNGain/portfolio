@@ -170,15 +170,14 @@ const AboutMe = () => {
             <div id="about5">
                 <div className="align-middle container px-0 my-5 text-center d-flex flex-column justify-content-center align-items-stretch h-100">
                     <div className="display-1 text-primary mb-5 font-title">Testimonials</div>
-                    <div className="row justify-content-center align-items-center text-center">
-                        <div className="col-7">
-                            <blockquote>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam magni adipisci neque vero! Odit ab, expedita repellat aliquam magnam, vitae sed totam ea sequi eaque, laborum accusantium minima officiis."</blockquote>
-                            <div className="rounded-circle border mx-auto border-secondary border-2 my-4" id="testimonial-portrait-holder">
-                                <img src="https://previews.123rf.com/images/gladkov/gladkov1312/gladkov131200051/24403725-closeup-portrait-of-young-man-call-center-employee-with-a-headset-isolated-on-white-background.jpg" alt="Testimonial Person Portrait" />
-                            </div>
-                            <div className="fw-bold">Firstname M. Last</div>
-                            <p className="text-muted">President of Cuba</p>
-                        </div></div>
+                    <div className="px-5">
+                        <blockquote>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam magni adipisci neque vero! Odit ab, expedita repellat aliquam magnam, vitae sed totam ea sequi eaque, laborum accusantium minima officiis."</blockquote>
+                        <div className="rounded-circle border mx-auto border-secondary border-2 my-4" id="testimonial-portrait-holder">
+                            <img src="https://previews.123rf.com/images/gladkov/gladkov1312/gladkov131200051/24403725-closeup-portrait-of-young-man-call-center-employee-with-a-headset-isolated-on-white-background.jpg" alt="Testimonial Person Portrait" />
+                        </div>
+                        <div className="fw-bold">Firstname M. Last</div>
+                        <p className="text-muted">President of Cuba</p>
+                    </div>
                 </div>
             </div>
             <div id="about6" className="bg-light">
