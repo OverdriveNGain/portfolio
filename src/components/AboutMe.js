@@ -69,7 +69,7 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
                                     <div className="row align-items-center justify-content-center">
                                         <div className="col-2 col-md-8"><i className="bi bi-globe2 display-1 text-secondary d-none d-md-inline"></i></div>
@@ -84,7 +84,7 @@ const AboutMe = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
-                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                            <a href="/"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0 text-center" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4">
                                     <div className="row align-items-center justify-content-center">
                                         <div className="col-2 col-md-8"><i className="bi bi-phone display-1 text-secondary d-none d-md-inline"></i></div>
