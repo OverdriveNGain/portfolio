@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+// eslint-disable-next-line no-unused-vars
 let landing1FunctionSetVisible;
 
 var landing1Function = (sketch) => {

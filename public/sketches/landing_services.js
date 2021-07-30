@@ -1,6 +1,8 @@
 /* eslint-disable no-undef */
 
+// eslint-disable-next-line no-unused-vars
 let landing_services_hover;
+// eslint-disable-next-line no-unused-vars
 let landingServicesSetVisible;
 
 var landingServicesFunction = (sketch) => {
