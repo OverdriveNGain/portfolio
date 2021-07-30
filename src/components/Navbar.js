@@ -26,7 +26,7 @@ const Navbar = () => {
             <div className="container">
                 <a className="navbar-brand" href="/">
                     <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
-                    <small>Full-Stack Software Engineer</small>
+                    <small className="text-muted">Full-Stack Software Engineer</small>
                 </a>
                 <button className="navbar-toggler" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup">
