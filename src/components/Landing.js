@@ -32,6 +32,9 @@ const Landing = () => {
                 window.clearInterval(temp);
             }, 10);
         }
+
+        window.scrollTo(0, 0);
+
         waitUntilInit();
         return () => {
             try {

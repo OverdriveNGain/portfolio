@@ -1,4 +1,9 @@
+import { useEffect } from "react";
+
 const AboutMe = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div className="container">
             <div className="row justify-content-center">
