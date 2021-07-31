@@ -30,8 +30,11 @@ const Navbar = () => {
     let transparentCheck = transparentBg && location.pathname === "/";
     const inlineNavbarStyle = {
         "backgroundColor": (transparentCheck ? "transparent" : "rgba(255, 255, 255, 0.92)"),
-        "backdropFilter": (transparentCheck ? "none" : "blur(6px)")
+        "backdropFilter": (transparentCheck ? "none" : "blur(3px)")
     };
+    const expandBgNavSmall = {
+        "backgroundColor": (!transparentCheck ? "transparent" : "rgba(255, 255, 255, 1)"),
+    }
 
     const getNavbarLinkColor = (locationObject, targetPath) => {
         return locationObject.pathname === targetPath ? "text-secondary" : "text-primary";
@@ -49,10 +52,18 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`} to="/aboutme">About Me</Link>
-                        <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/portfolio")}`} to="/">Portfolio</Link>
-                        <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/testimonials")}`} to="/">Testimonials</Link>
-                        <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`} to="/">Contact</Link>
+                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/aboutme")}`} to="/aboutme">About Me</Link>
+                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/aboutme")}`} to="/aboutme" style={expandBgNavSmall}>About Me</Link>
+
+                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/portfolio")}`} to="/">Portfolio</Link>
+                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/portfolio")}`} to="/" style={expandBgNavSmall}>Portfolio</Link>
+
+                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/testimonials")}`} to="/">Testimonials</Link>
+                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/testimonials")}`} to="/" style={expandBgNavSmall}>Testimonials</Link>
+
+                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/contact")}`} to="/">Contact</Link>
+                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/contact")}`} to="/" style={expandBgNavSmall}>Contact</Link>
+
                     </div>
                 </div>
             </div>
