@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 
 // eslint-disable-next-line no-unused-vars
-let landing_services_hover;
+var landing_services_hover;
 // eslint-disable-next-line no-unused-vars
-let landingServicesSetVisible;
+var landingServicesSetVisible;
 
 var landingServicesFunction = (sketch) => {
 
@@ -13,13 +13,25 @@ var landingServicesFunction = (sketch) => {
     let boundsArray = [];
     const md_bp = 768;
 
-    landingServicesSetVisible = (isVisible) => {
-        if (isVisible) {
-            sketch.loop();
+    landingServicesSetVisible = (loopState) => {
+        if (loopState === undefined) {
+            const element = document.getElementById('landing_services');
+            let position = element.getBoundingClientRect();
+            const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
+            if (isVisible) {
+                sketch.loop();
+            }
+            else {
+                sketch.noLoop();
+            }
         }
         else {
-            sketch.noLoop();
+            if (loopState)
+                sketch.loop();
+            else
+                sketch.noLoop();
         }
+
     }
 
     sketch.setup = () => {
@@ -106,6 +118,6 @@ var landingServicesFunction = (sketch) => {
     }
 };
 // eslint-disable-next-line no-unused-vars
-let p5_landing_services =
+var p5_landing_services =
     // eslint-disable-next-line no-undef
     new p5(landingServicesFunction);

@@ -13,15 +13,6 @@ const Landing = () => {
         const waitUntilInit = async () => {
             let temp;
             temp = window.setInterval(() => {
-                try {
-                    if (landingServicesSetVisible);
-                    else
-                        return;
-                } catch (e) {
-                    if (e instanceof ReferenceError) {
-                        return;
-                    }
-                }
                 const refreshLoopStates = () => {
                     if (document.getElementById('landing_services') === null)
                         return;
@@ -30,8 +21,8 @@ const Landing = () => {
                         landing1FunctionSetVisible();
                     if (landing2FunctionSetVisible)
                         landing2FunctionSetVisible();
-                    let position = document.getElementById('landing_services').getBoundingClientRect();
-                    landingServicesSetVisible(position.top < window.innerHeight && position.bottom >= 0);
+                    if (landingServicesSetVisible)
+                        landingServicesSetVisible();
                 }
                 // refreshLoopStates()
                 window.addEventListener('scroll', function () {
@@ -45,6 +36,7 @@ const Landing = () => {
             // TODO: these functions may be undefined
             landing1FunctionSetVisible(false);
             landing2FunctionSetVisible(false);
+            landingServicesSetVisible(false);
         };
     }, [])
 
