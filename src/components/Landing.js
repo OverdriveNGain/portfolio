@@ -14,7 +14,7 @@ const Landing = () => {
             let temp;
             temp = window.setInterval(() => {
                 try {
-                    if (landing2FunctionSetVisible && landingServicesSetVisible);
+                    if (landingServicesSetVisible);
                     else
                         return;
                 } catch (e) {
@@ -23,14 +23,14 @@ const Landing = () => {
                     }
                 }
                 const refreshLoopStates = () => {
-                    if (document.getElementById('landing2') === null || document.getElementById('landing_services') === null)
+                    if (document.getElementById('landing_services') === null)
                         return;
 
                     if (landing1FunctionSetVisible)
                         landing1FunctionSetVisible();
-                    let position = document.getElementById('landing2').getBoundingClientRect();
-                    landing2FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
-                    position = document.getElementById('landing_services').getBoundingClientRect();
+                    if (landing2FunctionSetVisible)
+                        landing2FunctionSetVisible();
+                    let position = document.getElementById('landing_services').getBoundingClientRect();
                     landingServicesSetVisible(position.top < window.innerHeight && position.bottom >= 0);
                 }
                 // refreshLoopStates()
@@ -42,7 +42,9 @@ const Landing = () => {
         }
         waitUntilInit();
         return () => {
+            // TODO: these functions may be undefined
             landing1FunctionSetVisible(false);
+            landing2FunctionSetVisible(false);
         };
     }, [])
 

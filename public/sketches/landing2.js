@@ -3,12 +3,23 @@ let landing2FunctionSetVisible;
 
 var landing2Function = (sketch) => {
 
-    landing2FunctionSetVisible = (isVisible) => {
-        if (isVisible) {
-            sketch.loop();
+    landing2FunctionSetVisible = (loopState) => {
+        if (loopState === undefined) {
+            const element = document.getElementById('landing2');
+            let position = element.getBoundingClientRect();
+            const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
+            if (isVisible)
+                sketch.loop();
+
+            else
+                sketch.noLoop();
+
         }
         else {
-            sketch.noLoop();
+            if (loopState)
+                sketch.loop();
+            else
+                sketch.noLoop();
         }
     }
 
