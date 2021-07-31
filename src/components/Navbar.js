@@ -12,19 +12,18 @@ const Navbar = () => {
 
     const location = useLocation();
 
-    useEffect(() => {
+    const refreshTransparency = () => {
         setTransparentBrand(document.documentElement.scrollTop <= transparentBrandThreshold);
         setTransparentBg(document.documentElement.scrollTop <= transparentBgThreshold);
+    };
+    useEffect(() => {
+        refreshTransparency();
     }, []);
     useEffect(() => {
-        const onScroll = () => {
-            setTransparentBrand(document.documentElement.scrollTop <= transparentBrandThreshold);
-            setTransparentBg(document.documentElement.scrollTop <= transparentBgThreshold);
-        };
-        window.addEventListener("scroll", onScroll);
+        window.addEventListener("scroll", refreshTransparency);
 
         return () => {
-            return window.removeEventListener("scroll", onScroll);
+            return window.removeEventListener("scroll", refreshTransparency);
         };
     }, [transparentBrand, transparentBg]);
 
