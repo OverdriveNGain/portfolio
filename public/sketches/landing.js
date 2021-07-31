@@ -6,7 +6,10 @@ var landing1Function = (sketch) => {
   const floatingPointArea = 2 / 3;
   const md_bp = 768;
   let dustM;
-  landing1FunctionSetVisible = (isVisible) => {
+  landing1FunctionSetVisible = () => {
+    const element = document.getElementById('landing1');
+    let position = element.getBoundingClientRect();
+    const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
     if (isVisible) {
       sketch.loop();
     }
