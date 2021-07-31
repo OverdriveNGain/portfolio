@@ -9,8 +9,8 @@ const AboutMe = () => {
             <div className="row justify-content-center">
                 <div className="col col-md-10 px-4">
                     <p className="py-5" />
-                    <p className="display-1 font-title text-primary mb-3 mb-md-5 text-center">About Me</p>
-                    <p className="mt-5 display-6">Greetings!</p>
+                    <p className="display-1 font-title text-primary text-center">About Me</p>
+                    <p className="mt-4 display-6">Greetings!</p>
                     <p className="indented">
                         <span className="text-secondary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </span>
                         Assumenda nemo labore dolor eaque facilis eius reprehenderit id, quos recusandae distinctio nesciunt blanditiis, consequuntur mollitia molestias. Asperiores obcaecati nam necessitatibus reprehenderit ad consequuntur illo possimus distinctio incidunt delectus similique, provident sapiente non nulla tenetur veritatis dicta eaque molestiae modi, commodi facilis?
