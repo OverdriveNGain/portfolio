@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-let landing2FunctionSetVisible;
+var landing2FunctionSetVisible;
 
 var landing2Function = (sketch) => {
 
@@ -10,10 +10,8 @@ var landing2Function = (sketch) => {
             const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
             if (isVisible)
                 sketch.loop();
-
             else
                 sketch.noLoop();
-
         }
         else {
             if (loopState)
@@ -93,6 +91,6 @@ var landing2Function = (sketch) => {
     }
 };
 // eslint-disable-next-line no-unused-vars
-let p5_landing2 =
+var p5_landing2 =
     // eslint-disable-next-line no-undef
     new p5(landing2Function);

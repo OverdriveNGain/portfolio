@@ -18,12 +18,10 @@ var landingServicesFunction = (sketch) => {
             const element = document.getElementById('landing_services');
             let position = element.getBoundingClientRect();
             const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
-            if (isVisible) {
+            if (isVisible)
                 sketch.loop();
-            }
-            else {
+            else
                 sketch.noLoop();
-            }
         }
         else {
             if (loopState)
