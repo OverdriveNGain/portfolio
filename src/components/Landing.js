@@ -30,10 +30,8 @@ const Landing = () => {
                     }
                 }
                 if (refreshLoopStates() === false) {
-                    console.log("Trying again...");
                 }
                 else {
-                    console.log("Added");
                     window.addEventListener('scroll', function () {
                         refreshLoopStates();
                     });
@@ -46,7 +44,6 @@ const Landing = () => {
 
         waitUntilInit();
         return () => {
-            console.log("Removed");
             window.removeEventListener('scroll', function () {
                 refreshLoopStates();
             });
