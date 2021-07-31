@@ -18,11 +18,8 @@ var landing1Function = (sketch) => {
       else
         sketch.noLoop();
     }
-    else {
-      if (remove) {
-        shouldRemove = true;
-      }
-    }
+    else if (remove)
+      shouldRemove = true;
   }
 
   let element;
