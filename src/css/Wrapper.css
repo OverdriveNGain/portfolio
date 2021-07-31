@@ -20,6 +20,9 @@ body {
 .indented{
     text-indent: 8%;
 }
+.footer-link-contact{
+    fill: white;
+}
 
 .navbar small{
     font-size:1.2rem;
