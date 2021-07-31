@@ -1,20 +1,27 @@
 // eslint-disable-next-line no-unused-vars
-let landing1FunctionSetVisible;
+var landing1FunctionSetVisible;
 
 var landing1Function = (sketch) => {
   const DUSTNEIGHBORMAXDIST = 100;
   const floatingPointArea = 2 / 3;
   const md_bp = 768;
   let dustM;
-  landing1FunctionSetVisible = () => {
-    const element = document.getElementById('landing1');
-    let position = element.getBoundingClientRect();
-    const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
-    if (isVisible) {
-      sketch.loop();
+  landing1FunctionSetVisible = (loopState) => {
+    if (loopState === undefined) {
+      const element = document.getElementById('landing1');
+      let position = element.getBoundingClientRect();
+      const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
+      if (isVisible)
+        sketch.loop();
+
+      else
+        sketch.noLoop();
     }
     else {
-      sketch.noLoop();
+      if (loopState)
+        sketch.loop();
+      else
+        sketch.noLoop();
     }
   }
 
@@ -129,6 +136,6 @@ var landing1Function = (sketch) => {
 
 };
 // eslint-disable-next-line no-unused-vars
-let p5_landing =
+var p5_landing =
   // eslint-disable-next-line no-undef
   new p5(landing1Function);

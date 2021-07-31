@@ -41,6 +41,9 @@ const Landing = () => {
             }, 10);
         }
         waitUntilInit();
+        return () => {
+            landing1FunctionSetVisible(false);
+        };
     }, [])
 
     const submitCallback = (e) => {
