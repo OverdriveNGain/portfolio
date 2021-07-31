@@ -17,14 +17,15 @@ const Landing = () => {
                     if (document.getElementById('landing_services') === null)
                         return;
 
-                    if (landing1FunctionSetVisible)
+                    try {
                         landing1FunctionSetVisible();
-                    if (landing2FunctionSetVisible)
                         landing2FunctionSetVisible();
-                    if (landingServicesSetVisible)
                         landingServicesSetVisible();
+                    } catch (e) {
+                        if (!(e instanceof ReferenceError))
+                            throw e;
+                    }
                 }
-                // refreshLoopStates()
                 window.addEventListener('scroll', function () {
                     refreshLoopStates();
                 });
@@ -33,10 +34,14 @@ const Landing = () => {
         }
         waitUntilInit();
         return () => {
-            // TODO: these functions may be undefined
-            landing1FunctionSetVisible(false);
-            landing2FunctionSetVisible(false);
-            landingServicesSetVisible(false);
+            try {
+                landing1FunctionSetVisible(false);
+                landing2FunctionSetVisible(false);
+                landingServicesSetVisible(false);
+            } catch (e) {
+                if (!(e instanceof ReferenceError))
+                    throw e;
+            }
         };
     }, [])
 
