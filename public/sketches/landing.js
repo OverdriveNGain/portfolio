@@ -6,22 +6,22 @@ var landing1Function = (sketch) => {
   const floatingPointArea = 2 / 3;
   const md_bp = 768;
   let dustM;
-  landing1FunctionSetVisible = (loopState) => {
-    if (loopState === undefined) {
+
+  let shouldRemove = false;
+  landing1FunctionSetVisible = (remove) => {
+    if (remove === undefined) {
       const element = document.getElementById('landing1');
       let position = element.getBoundingClientRect();
       const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
       if (isVisible)
         sketch.loop();
-
       else
         sketch.noLoop();
     }
     else {
-      if (loopState)
-        sketch.loop();
-      else
-        sketch.noLoop();
+      if (remove) {
+        shouldRemove = true;
+      }
     }
   }
 
@@ -72,6 +72,10 @@ var landing1Function = (sketch) => {
   sketch.draw = () => {
     if (element === null)
       return;
+    else if (shouldRemove) {
+      sketch.remove();
+      return;
+    }
     sketch.background(255);
 
     dustM.step()

@@ -51,7 +51,7 @@ const Landing = () => {
                 refreshLoopStates();
             });
             try {
-                landing1FunctionSetVisible(false);
+                landing1FunctionSetVisible(true);
                 landing2FunctionSetVisible(false);
                 landingServicesSetVisible(false);
             } catch (e) {
