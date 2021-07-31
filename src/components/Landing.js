@@ -22,14 +22,23 @@ const Landing = () => {
                         landing2FunctionSetVisible();
                         landingServicesSetVisible();
                     } catch (e) {
-                        if (!(e instanceof ReferenceError))
+                        if (!(e instanceof ReferenceError)) {
                             throw e;
+                        }
+                        else
+                            return false;
                     }
                 }
-                window.addEventListener('scroll', function () {
-                    refreshLoopStates();
-                });
-                window.clearInterval(temp);
+                if (refreshLoopStates() === false) {
+                    console.log("Trying again...");
+                }
+                else {
+                    console.log("Added");
+                    window.addEventListener('scroll', function () {
+                        refreshLoopStates();
+                    });
+                    window.clearInterval(temp);
+                }
             }, 10);
         }
 
@@ -37,6 +46,10 @@ const Landing = () => {
 
         waitUntilInit();
         return () => {
+            console.log("Removed");
+            window.removeEventListener('scroll', function () {
+                refreshLoopStates();
+            });
             try {
                 landing1FunctionSetVisible(false);
                 landing2FunctionSetVisible(false);
