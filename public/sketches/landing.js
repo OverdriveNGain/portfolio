@@ -77,6 +77,11 @@ var landing1Function = (sketch) => {
     dustM.step()
     drawFloatingPoints();
 
+    if (sketch.frameCount < 85) {
+      sketch.fill(255, 255, 255, 255 - sketch.frameCount * 3);
+      sketch.rect(0, 0, sketch.width, sketch.height);
+    }
+
     borderM.step();
     borderWaveSplashCheck();
     drawBorderWaves();
