@@ -17,6 +17,9 @@ body {
     /* font-family: 'McLaren', cursive; */
     font-family: 'Kaushan Script', cursive;
 }
+.indented{
+    text-indent: 8%;
+}
 
 .navbar small{
     font-size:1.2rem;
