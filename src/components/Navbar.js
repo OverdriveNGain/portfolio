@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const Navbar = () => {
-    const [transparent, setTransparent] = useState(null); // null means not yet set
+    const [transparent, setTransparent] = useState(true);
     const transparentThreshold = 300;
 
     useEffect(() => {
@@ -20,10 +20,8 @@ const Navbar = () => {
 
 
     const inlineNavbarStyle = {
-        "backgroundColor": (transparent ?? (document.documentElement.scrollTop <= transparentThreshold) ?
-            "transparent" : "rgba(255, 255, 255, 0.92)"),
-        "backdropFilter": (transparent ?? (document.documentElement.scrollTop <= transparentThreshold) ?
-            "none" : "blur(6px)")
+        "backgroundColor": (transparent ? "transparent" : "rgba(255, 255, 255, 0.92)"),
+        "backdropFilter": (transparent ? "none" : "blur(6px)")
     };
     return (
         <nav className="navbar navbar-expand-md navbar-light fixed-top animated-background-color" style={inlineNavbarStyle}>
