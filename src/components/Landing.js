@@ -4,7 +4,7 @@ import useScript from '../hooks/useScript';
 // import { useEffect } from 'react';
 // import landing_services_hover from 'public/sketches/landing_sketches.js';
 
-const AboutMe = () => {
+const Landing = () => {
     useScript('sketches/landing.js');
     useScript('sketches/landing2.js');
     useScript('sketches/landing_services.js');
@@ -210,5 +210,5 @@ const AboutMe = () => {
     );
 }
 
-export default AboutMe;
+export default Landing;
 

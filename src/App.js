@@ -1,13 +1,13 @@
 import './css/Wrapper.css';
 import Navbar from './components/Navbar';
-import AboutMe from './components/AboutMe';
+import Landing from './components/Landing';
 import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
       <Navbar />
-      <AboutMe />
+      <Landing />
       <Footer />
     </div>
   );
