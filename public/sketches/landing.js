@@ -25,9 +25,14 @@ var landing1Function = (sketch) => {
     }
   }
 
+  let element;
   sketch.setup = () => {
-    const e = document.getElementById("landing1");
-    let canv = sketch.createCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
+    element = document.getElementById("landing1");
+    if (element === null) {
+      sketch.noLoop();
+      return;
+    }
+    const canv = sketch.createCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
 
     col1 = sketch.color(col1[0], col1[1], col1[2]);
     col2 = sketch.color(col2[0], col2[1], col2[2]);
@@ -46,8 +51,12 @@ var landing1Function = (sketch) => {
   }
 
   sketch.windowResized = () => {
-    const e = document.getElementById("landing1");
-    sketch.resizeCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
+    element = document.getElementById("landing1");
+    if (element === null) {
+      sketch.noLoop();
+      return;
+    }
+    sketch.resizeCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
     // eslint-disable-next-line no-undef
     dustM = new DustManager(Math.round(getDustCount(sketch.height * sketch.width)), sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
     // eslint-disable-next-line no-undef
@@ -61,6 +70,8 @@ var landing1Function = (sketch) => {
   }
 
   sketch.draw = () => {
+    if (element === null)
+      return;
     sketch.background(255);
 
     dustM.step()

@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 // eslint-disable-next-line no-unused-vars
 var landing_services_hover;
 // eslint-disable-next-line no-unused-vars
@@ -32,15 +30,21 @@ var landingServicesFunction = (sketch) => {
 
     }
 
+    let element;
     sketch.setup = () => {
-        const e = document.getElementById("landing_services");
-        let canv = sketch.createCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
+        element = document.getElementById("landing_services");
+        if (element === null) {
+            sketch.noLoop();
+            return;
+        }
+        const canv = sketch.createCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
         containerWidth = getContainerWidthModified(sketch.width);
         setupBoundsArray();
         canv.parent('landing_services');
         sketch.rectMode(sketch.CORNERS);
         sketch.noStroke();
 
+        // eslint-disable-next-line no-undef
         snowM = new SnowManager(sketch.width, sketch.height, 250);
 
         landing_services_hover = (e, newIndex) => {
@@ -49,14 +53,21 @@ var landingServicesFunction = (sketch) => {
     }
 
     sketch.windowResized = () => {
-        const e = document.getElementById("landing_services");
-        sketch.resizeCanvas(sketch.round(e.offsetWidth), sketch.round(e.offsetHeight));
+        element = document.getElementById("landing_services");
+        if (element === null) {
+            sketch.noLoop();
+            return;
+        }
+        sketch.resizeCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
         containerWidth = getContainerWidthModified(sketch.width);
+        // eslint-disable-next-line no-undef
         snowM = new SnowManager(sketch.width, sketch.height, 250);
         setupBoundsArray();
     }
 
     sketch.draw = () => {
+        if (element === null)
+            return;
         sketch.background(255);
         sketch.fill(78, 104, 255);
         sketch.rect(0, 0, sketch.width, sketch.height);
