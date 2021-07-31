@@ -23,6 +23,8 @@ const Landing = () => {
                     }
                 }
                 const refreshLoopStates = () => {
+                    if (document.getElementById('landing1') === null || document.getElementById('landing2') === null || document.getElementById('landing_services') === null)
+                        return;
                     let position = document.getElementById('landing1').getBoundingClientRect();
                     landing1FunctionSetVisible(position.top < window.innerHeight && position.bottom >= 0);
                     position = document.getElementById('landing2').getBoundingClientRect();
