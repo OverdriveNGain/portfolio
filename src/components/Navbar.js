@@ -1,4 +1,10 @@
 import { useEffect, useState } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+} from "react-router-dom";
 
 const Navbar = () => {
     const [transparent, setTransparent] = useState(true);
@@ -26,20 +32,20 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-light fixed-top animated-background-color" style={inlineNavbarStyle}>
             <div className="container px-4">
-                <a className={"animated-opacity navbar-brand" + (transparent ? " opacity-0" : "")} href="/">
+                <Link className={"animated-opacity navbar-brand" + (transparent ? " opacity-0" : "")} to="/">
                     <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
                     <small className="text-muted">Full-Stack Software Engineer</small>
-                </a>
+                </Link>
                 <button className="navbar-toggler" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <a className="nav-link px-3 text-primary" href="/">About Me</a>
-                        <a className="nav-link px-3 text-primary" href="/">Portfolio</a>
-                        <a className="nav-link px-3 text-primary" href="/">Testimonials</a>
-                        <a className="nav-link px-3 text-primary" href="/">Contact</a>
+                        <Link className="nav-link px-3 text-primary" to="/aboutme">About Me</Link>
+                        <Link className="nav-link px-3 text-primary" to="/">Portfolio</Link>
+                        <Link className="nav-link px-3 text-primary" to="/">Testimonials</Link>
+                        <Link className="nav-link px-3 text-primary" to="/">Contact</Link>
                     </div>
                 </div>
             </div>
