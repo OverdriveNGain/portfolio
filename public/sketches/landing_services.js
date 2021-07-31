@@ -11,8 +11,9 @@ var landingServicesFunction = (sketch) => {
     let boundsArray = [];
     const md_bp = 768;
 
-    landingServicesSetVisible = (loopState) => {
-        if (loopState === undefined) {
+    let shouldRemove = false;
+    landingServicesSetVisible = (remove) => {
+        if (remove === undefined) {
             const element = document.getElementById('landing_services');
             let position = element.getBoundingClientRect();
             const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
@@ -21,12 +22,8 @@ var landingServicesFunction = (sketch) => {
             else
                 sketch.noLoop();
         }
-        else {
-            if (loopState)
-                sketch.loop();
-            else
-                sketch.noLoop();
-        }
+        else if (remove)
+            shouldRemove = true;
 
     }
 
@@ -68,6 +65,10 @@ var landingServicesFunction = (sketch) => {
     sketch.draw = () => {
         if (element === null)
             return;
+        else if (shouldRemove) {
+            sketch.remove();
+            return;
+        }
         sketch.background(255);
         sketch.fill(78, 104, 255);
         sketch.rect(0, 0, sketch.width, sketch.height);

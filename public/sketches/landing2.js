@@ -3,8 +3,9 @@ var landing2FunctionSetVisible;
 
 var landing2Function = (sketch) => {
 
-    landing2FunctionSetVisible = (loopState) => {
-        if (loopState === undefined) {
+    let shouldRemove = false;
+    landing2FunctionSetVisible = (remove) => {
+        if (remove === undefined) {
             const element = document.getElementById('landing2');
             let position = element.getBoundingClientRect();
             const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
@@ -13,12 +14,8 @@ var landing2Function = (sketch) => {
             else
                 sketch.noLoop();
         }
-        else {
-            if (loopState)
-                sketch.loop();
-            else
-                sketch.noLoop();
-        }
+        else if (remove)
+            shouldRemove = true;
     }
 
     const drawBorderWaves = () => {
@@ -92,6 +89,10 @@ var landing2Function = (sketch) => {
     sketch.draw = () => {
         if (element === null)
             return;
+        else if (shouldRemove) {
+            sketch.remove();
+            return;
+        }
         sketch.background(255);
         borderM.step();
         borderWaveSplashCheck();
