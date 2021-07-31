@@ -74,7 +74,7 @@ const Footer = () => {
                         </svg>
                     </a>
                 </div>
-                <div className="container text-white text-center pt-3">
+                <div className="container text-muted text-center mt-4">
                     © 2021 jeremyamon.com - All Rights Reserved.
                 </div>
             </div>
