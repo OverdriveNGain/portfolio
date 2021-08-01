@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+
 import { useEffect } from 'react';
 import useScript from '../hooks/useScript';
 // import { useEffect } from 'react';
@@ -10,25 +10,29 @@ const Landing = () => {
     useScript('sketches/landing_services.js');
 
     useEffect(() => {
+        const refreshLoopStates = () => {
+            if (document.getElementById('landing_services') === null)
+                return;
+
+            try {
+                // eslint-disable-next-line no-undef
+                landing1FunctionSetVisible();
+                // eslint-disable-next-line no-undef
+                landing2FunctionSetVisible();
+                // eslint-disable-next-line no-undef
+                landingServicesSetVisible();
+            } catch (e) {
+                if (!(e instanceof ReferenceError)) {
+                    throw e;
+                }
+                else
+                    return false;
+            }
+        }
+
         const waitUntilInit = async () => {
             let temp;
             temp = window.setInterval(() => {
-                const refreshLoopStates = () => {
-                    if (document.getElementById('landing_services') === null)
-                        return;
-
-                    try {
-                        landing1FunctionSetVisible();
-                        landing2FunctionSetVisible();
-                        landingServicesSetVisible();
-                    } catch (e) {
-                        if (!(e instanceof ReferenceError)) {
-                            throw e;
-                        }
-                        else
-                            return false;
-                    }
-                }
                 if (refreshLoopStates() === false) {
                 }
                 else {
@@ -48,8 +52,11 @@ const Landing = () => {
                 refreshLoopStates();
             });
             try {
+                // eslint-disable-next-line no-undef
                 landing1FunctionSetVisible(true);
+                // eslint-disable-next-line no-undef
                 landing2FunctionSetVisible(false);
+                // eslint-disable-next-line no-undef
                 landingServicesSetVisible(false);
             } catch (e) {
                 if (!(e instanceof ReferenceError))
@@ -72,6 +79,7 @@ const Landing = () => {
                     <div className="display-1 font-title text-white mb-3 mb-md-5 text-center">Skills & Services</div>
                     <div className="row g-3 align-items-center">
                         <div className="col-12 col-md-4">
+                            {/*eslint-disable-next-line no-undef*/}
                             <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4 text-center">
                                     <div className="row align-items-center justify-content-center">
@@ -87,6 +95,7 @@ const Landing = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
+                            {/*eslint-disable-next-line no-undef*/}
                             <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4 text-center">
                                     <div className="row align-items-center justify-content-center">
@@ -102,6 +111,7 @@ const Landing = () => {
                             </div></a>
                         </div>
                         <div className="col-12 col-md-4">
+                            {/*eslint-disable-next-line no-undef*/}
                             <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
                                 <div className="card-body m-1 m-md-4 text-center">
                                     <div className="row align-items-center justify-content-center">
