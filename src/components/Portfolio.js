@@ -12,13 +12,13 @@ const Portfolio = () => {
         level = level ?? 0;
         const leftIndent = [];
         for (let i = 0; i < level; i++) {
-            leftIndent.push(<p key={i} className="ms-5 me-2"></p>);
+            leftIndent.push(<p key={i} className="ms-4 ms-md-5 me-2"></p>);
         }
         return (<div className="d-flex flex-row align-items-start">
             {
                 leftIndent
             }
-            <p className="ms-5 me-2">•</p>
+            <p className="ms-4 ms-md-5 me-2">•</p>
             <div className="flex-fill">
                 <p className="d-inline-block"> {p}</p>
             </div>
@@ -55,16 +55,16 @@ const Portfolio = () => {
             <div className="row justify-content-center">
                 <div className="col col-md-10 px-4">
                     <p className="py-5" />
-                    <p className="display-1 font-title text-primary text-center mb-5">Portfolio</p>
+                    <p className="display-1 font-title text-primary text-center mb-4">Portfolio</p>
                     <div className="bg-white rounded-3 shadow-lg py-5 container mb-5">
                         <p className="h2 text-primary mb-5 text-center">Jeremy Mattheu D. Amon</p>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-5">
+                        <div className="content pb-3 pt-2 px-2 px-md-5">
                             {toHeader("Professional Goals")}
                             <p className="text-center lead">I am aiming to be a professional software engineer, to allow for more innovative solutions and new technological advances in the future of different businesses in our country, today.</p>
                         </div>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-5">
+                        <div className="content pb-3 pt-2 px-2 px-md-5">
                             {toHeader("Skills & Experience")}
                             <div className="">
                                 {toSkillsHeader("Mobile and Web App Engineer")}
@@ -107,7 +107,7 @@ const Portfolio = () => {
                             </div>
                         </div>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-5">
+                        <div className="content pb-3 pt-2 px-2 px-md-5">
                             {toHeader("Academic History")}
                             <h6 className="text-secondary">University of the Philippines</h6>
                             <p>BS Computer Science | 2023 (Expected Graduation Date)</p>
@@ -117,7 +117,7 @@ const Portfolio = () => {
                             <p>Elementary Education | 2004-2012</p>
                         </div>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-5">
+                        <div className="content pb-3 pt-2 px-2 px-md-5">
                             {toHeader("University Affiliations")}
                             <h6 className="text-secondary">UP CURSOR</h6>
                             <p>Member since December 2019</p>
