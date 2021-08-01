@@ -1,7 +1,10 @@
 import { useEffect } from "react";
+import Nbsp, { Nbspify } from "../helpers/Nbsp";
+import useResize from "../hooks/useResize";
 import useScript from "../hooks/useScript";
 
 const Portfolio = () => {
+    const { dimensions } = useResize();
     useScript('sketches/portfolio_bg.js');
 
     useEffect(() => {
@@ -18,36 +21,40 @@ const Portfolio = () => {
     }, []);
 
     const toSkillsHeader = (t) => {
+        if (dimensions.width < 576)
+            return <div className="text-secondary h4 mt-3 text-center">{t}</div>;
         return <div className="text-secondary h4 mt-3 text-start">{t}</div>;
     }
     const toSkillsBullet = (p, level) => {
         level = level ?? 0;
         const leftIndent = [];
         for (let i = 0; i < level; i++) {
-            leftIndent.push(<p key={i} className="ms-4 ms-md-5 me-2"></p>);
+            leftIndent.push(<p key={i} className="ms-3 ms-md-5 me-2"></p>);
         }
         return (<div className="d-flex flex-row align-items-start">
             {
                 leftIndent
             }
-            <p className="ms-4 ms-md-5 me-2">•</p>
+            <p className="ms-1 ms-sm-3 ms-md-5 me-2">•</p>
             <div className="flex-fill">
                 <p className="d-inline-block"> {p}</p>
             </div>
         </div>);
     }
     const toHeader = (t) => {
+        const isXS = dimensions.width <= 576;
         const dstyle = {
-            top: "60px",
+            top: isXS ? "54px" : "69px",
             padding: "10px 0px",
             backgroundColor: "rgba(255, 255, 255, 0.92)",
             backdropFilter: "blur(3px)"
         };
         return (
             <div style={dstyle} className="sticky-top">
-                <p className="text-muted h1 opacity-50 fw-bold text-center">{t}</p>
+                <p className="text-muted h5 opacity-50 fw-bold text-center">{t}</p>
             </div>
         );
+
     }
     const getBadgeStyle = (b) => {
         switch (b) {
@@ -93,6 +100,12 @@ const Portfolio = () => {
         for (let i = 0; i < skillsArray.length; i++) {
             badges.push(<span key={i} className="badge me-1 mb-1 fw-normal fw-bold" style={getBadgeStyle(skillsArray[i])}>{skillsArray[i]}</span>);
         }
+        if (dimensions.width < 576)
+            return (
+                <div className="mb-3 text-center">
+                    {badges}
+                </div>
+            );
         return (
             <div className="mb-3">
                 {badges}
@@ -104,15 +117,15 @@ const Portfolio = () => {
         <div>
             <div id="portfolio-bg"></div>
             <div className="container" align="center">
-                <div className="px-3 px-sm-5">
+                <div className="px-1 px-sm-5">
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">Portfolio</p>
-                    <div className="bg-white rounded-3 shadow-lg px-4 py-5 mb-5">
-                        <div className="row mx-4 justify-content-center">
+                    <div className="bg-white rounded-3 shadow-lg p-2 p-sm-4 mb-5">
+                        <div className="row justify-content-center ">
                             <div className="col-12 col-md-auto text-center">
-                                <img src="https://i.pinimg.com/236x/76/ef/77/76ef77aa1e8427ae95c2fbd86ba5255b.jpg" className="rounded-circle mb-4 portfolio-pic" alt="Jeremy" />
+                                <img src="https://i.pinimg.com/236x/76/ef/77/76ef77aa1e8427ae95c2fbd86ba5255b.jpg" className="rounded-circle portfolio-pic m-3" alt="Jeremy" />
                             </div>
-                            <div className="col">
+                            <div className="col mx-3 my-0 my-sm-3 px-0">
                                 <div className="flex-fill text-center text-md-start">
                                     <label className="text-secondary h6 mb-0">Name</label>
                                     <p>Jeremy Mattheu D. Amon</p>
@@ -129,10 +142,10 @@ const Portfolio = () => {
                             <p className="text-center">I am aiming to be a professional software engineer, to allow for more innovative solutions and new technological advances in the future of different businesses in our country, today.</p>
                         </div>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-2 px-md-5 text-justify">
+                        <div className="content pb-3 pt-2 px-2 px-md-5" style={{ textAlign: ((dimensions.width > 576) ? "justify" : "start") }}>
                             {toHeader("Skills & Experience")}
                             <div className="">
-                                {toSkillsHeader("Mobile and Web App Engineer")}
+                                {toSkillsHeader(Nbspify("Mobile and Web App Engineer"))}
                                 {toSkillBadges("Flutter, Unity 3D, Firebase, React JS, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap")}
                                 {toSkillsBullet("Uses Flutter for Android, IOs app development, as well as web applications.")}
                                 {toSkillsBullet("Created a student management database for the Colegio de Santo Cristo de Burgos school within the Flutter framework with a Firebase backend.")}
@@ -141,7 +154,7 @@ const Portfolio = () => {
                                 {toSkillsBullet("Developed an online portfolio from scratch using a react framework together with a Bootstrap + SASS format structure")}
                                 {toSkillsBullet("Experienced uploading to the Google Play Store with a Google Play developer account, while having uploaded multiple Unity 3D games")}
 
-                                {toSkillsHeader("Digital Artist and Illustrator")}
+                                {toSkillsHeader(Nbspify("Digital Artist and Illustrator"))}
                                 {toSkillBadges("Adobe Illustrator, Adobe Photoshop, Processing, p5.js, Inkscape")}
                                 {toSkillsBullet("Creates digital designs to be made into products such as stickers, magnets, and vector art for Just Crafts PH, an online sticker shop, where 90% of all social media pubs, and 100% of all sticker designs are developed by him using Adobe Illustrator")}
                                 {toSkillsBullet("Sketches and constructs digital shirt designs and ID lace designs for Trinity University of Asia")}
@@ -159,7 +172,7 @@ const Portfolio = () => {
                                 {toSkillBadges("Python, C#, Git + Github")}
                                 {toSkillsBullet("Writes specific software that can help in a multitude of bulk operations including (but not limited) to the manufacturing of sticker graphics, bulk data manipulation, online website data scraping, etc.")}
 
-                                {toSkillsHeader("Educator and Education Content Creator")}
+                                {toSkillsHeader(Nbspify("Educator and Education Content Creator"))}
                                 {toSkillBadges("Unity 3D, C#, Python")}
                                 {toSkillsBullet("Worked part time at the Coding School Philippines, while educating children and teens on the following courses:")}
                                 {toSkillsBullet("Make Your Own Game with Unity 1 & 2", 1)}
@@ -172,7 +185,7 @@ const Portfolio = () => {
                             </div>
                         </div>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-2 px-md-5 text-start">
+                        <div className={"content pb-3 pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
                             {toHeader("Educational History")}
                             <h6 className="text-secondary mb-0">University of the Philippines</h6>
                             <p>BS Computer Science | 2023 (Expected Graduation Date)</p>
@@ -182,13 +195,13 @@ const Portfolio = () => {
                             <p>Elementary Education | 2004-2012</p>
                         </div>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-2 px-md-5 text-start">
+                        <div className={"content pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
                             {toHeader("University Affiliations")}
                             <h6 className="text-secondary mb-0">UP CURSOR</h6>
                             <p>Member since December 2019</p>
                         </div>
                     </div>
-                    <p className="my-5 pt-5">Alternatively, you can download a pdf version <a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume.pdf?alt=media&token=f2b6309b-dcc2-4605-84f6-8b172c0e3751">here</a></p>
+                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume.pdf?alt=media&token=f2b6309b-dcc2-4605-84f6-8b172c0e3751">here</a></p>
                 </div>
             </div>
         </div>
