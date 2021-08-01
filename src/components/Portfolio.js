@@ -71,11 +71,11 @@ const Portfolio = () => {
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">Portfolio</p>
                     <div className="bg-white rounded-3 shadow-lg py-5 container mb-5">
-                        <div className="row">
-                            <div className="col">
-                                <p className="lead fw-bold text-primary mb-5 text-center">Jeremy Mattheu D. Amon</p>
-                            </div>
-                            <div className="col">
+                        <div className="d-flex flex-row">
+                            <img src="https://i.pinimg.com/236x/76/ef/77/76ef77aa1e8427ae95c2fbd86ba5255b.jpg" className="rounded-circle mx-4 mb-4 portfolio-pic" alt="Jeremy" />
+                            <div className="flex-fill">
+                                <h6 className="text-secondary">Name:</h6>
+                                <p>Jeremy Mattheu D. Amon</p>
                                 <h6 className="text-secondary">Mobile:</h6>
                                 <p>+63 995 963 2500</p>
                                 <h6 className="text-secondary">Email:</h6>
