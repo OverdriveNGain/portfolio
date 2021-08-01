@@ -74,11 +74,11 @@ const Portfolio = () => {
                         <div className="d-flex flex-row">
                             <img src="https://i.pinimg.com/236x/76/ef/77/76ef77aa1e8427ae95c2fbd86ba5255b.jpg" className="rounded-circle mx-4 mb-4 portfolio-pic" alt="Jeremy" />
                             <div className="flex-fill">
-                                <h6 className="text-secondary">Name:</h6>
+                                <label className="text-secondary h6 mb-0">Name</label>
                                 <p>Jeremy Mattheu D. Amon</p>
-                                <h6 className="text-secondary">Mobile:</h6>
+                                <label className="text-secondary h6 mb-0">Mobile</label>
                                 <p>+63 995 963 2500</p>
-                                <h6 className="text-secondary">Email:</h6>
+                                <label className="text-secondary h6 mb-0">Email</label>
                                 <p>jeremyamon@gmail.com</p>
                             </div>
                         </div>
