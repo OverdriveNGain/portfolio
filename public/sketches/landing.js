@@ -4,25 +4,16 @@ var landing1FunctionSetVisible;
 var landing1Function = (sketch) => {
   const DUSTNEIGHBORMAXDIST = 100;
   const floatingPointArea = 2 / 3;
+  const borderArea = 2 / 3;
   const md_bp = 768;
+
   let dustM;
-
   let shouldRemove = false;
-  landing1FunctionSetVisible = (remove) => {
-    if (remove === undefined) {
-      const element = document.getElementById('landing1');
-      let position = element.getBoundingClientRect();
-      const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
-      if (isVisible)
-        sketch.loop();
-      else
-        sketch.noLoop();
-    }
-    else if (remove)
-      shouldRemove = true;
-  }
-
   let element;
+  let col1 = [78, 104, 255];
+  let col2 = [255, 255, 255];
+  let borderM;
+
   sketch.setup = () => {
     element = document.getElementById("landing1");
     if (element === null) {
@@ -92,6 +83,20 @@ var landing1Function = (sketch) => {
     sketch.text(sketch.round(sketch.frameRate()), 50, sketch.height - 300);
   }
 
+  landing1FunctionSetVisible = (remove) => {
+    if (remove === undefined) {
+      const element = document.getElementById('landing1');
+      let position = element.getBoundingClientRect();
+      const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
+      if (isVisible)
+        sketch.loop();
+      else
+        sketch.noLoop();
+    }
+    else if (remove)
+      shouldRemove = true;
+  }
+
   const drawFloatingPoints = () => {
     let totalLength, property;
     sketch.strokeWeight(1);
@@ -116,11 +121,6 @@ var landing1Function = (sketch) => {
       }
     };
   }
-
-  let col1 = [78, 104, 255];
-  let col2 = [255, 255, 255];
-  const borderArea = 2 / 3;
-  let borderM;
 
   const drawBorderWaves = () => {
     sketch.push();
