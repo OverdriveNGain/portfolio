@@ -71,15 +71,19 @@ const Portfolio = () => {
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">Portfolio</p>
                     <div className="bg-white rounded-3 shadow-lg py-5 container mb-5">
-                        <div className="d-flex flex-row">
-                            <img src="https://i.pinimg.com/236x/76/ef/77/76ef77aa1e8427ae95c2fbd86ba5255b.jpg" className="rounded-circle mx-4 mb-4 portfolio-pic" alt="Jeremy" />
-                            <div className="flex-fill">
-                                <label className="text-secondary h6 mb-0">Name</label>
-                                <p>Jeremy Mattheu D. Amon</p>
-                                <label className="text-secondary h6 mb-0">Mobile</label>
-                                <p>+63 995 963 2500</p>
-                                <label className="text-secondary h6 mb-0">Email</label>
-                                <p>jeremyamon@gmail.com</p>
+                        <div className="row mx-4 justify-content-center">
+                            <div className="col-12 col-md-auto text-center">
+                                <img src="https://i.pinimg.com/236x/76/ef/77/76ef77aa1e8427ae95c2fbd86ba5255b.jpg" className="rounded-circle mb-4 portfolio-pic" alt="Jeremy" />
+                            </div>
+                            <div className="col">
+                                <div className="flex-fill text-center text-md-start">
+                                    <label className="text-secondary h6 mb-0">Name</label>
+                                    <p>Jeremy Mattheu D. Amon</p>
+                                    <label className="text-secondary h6 mb-0">Mobile</label>
+                                    <p>+63 995 963 2500</p>
+                                    <label className="text-secondary h6 mb-0">Email</label>
+                                    <p>jeremyamon@gmail.com</p>
+                                </div>
                             </div>
                         </div>
                         <hr className="my-0" />
