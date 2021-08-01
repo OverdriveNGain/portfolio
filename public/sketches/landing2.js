@@ -52,7 +52,13 @@ var landing2Function = (sketch) => {
             sketch.noLoop();
             return;
         }
-        const canv = sketch.createCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
+        const about2 = document.getElementById("about2");
+        const about3 = document.getElementById("about3");
+        element.style.top = `calc(-0.5 * ${about2.offsetHeight}px)`;
+        const canv = sketch.createCanvas(
+            sketch.round(about2.offsetWidth),
+            sketch.round((about2.offsetHeight + about3.offsetHeight) / 2)
+        );
 
         col1 = sketch.color(col1[0], col1[1], col1[2]);
         col2 = sketch.color(col2[0], col2[1], col2[2]);
@@ -75,7 +81,13 @@ var landing2Function = (sketch) => {
             sketch.noLoop();
             return;
         }
-        sketch.resizeCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
+        const about2 = document.getElementById("about2");
+        const about3 = document.getElementById("about3");
+        element.style.top = `calc(-0.5 * ${about2.offsetHeight}px)`;
+        sketch.resizeCanvas(
+            sketch.round(about2.offsetWidth),
+            sketch.round((about2.offsetHeight + about3.offsetHeight) / 2)
+        );
 
         // eslint-disable-next-line no-undef
         borderM = new ParticleManager(

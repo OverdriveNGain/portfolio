@@ -1,11 +1,13 @@
 
-import { useEffect } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 import useScript from '../hooks/useScript';
+import useResize from '../hooks/useResize';
 import Nbsp, { Nbspify } from "../helpers/Nbsp";
 // import { useEffect } from 'react';
 // import landing_services_hover from 'public/sketches/landing_sketches.js';
 
 const Landing = () => {
+    const { dimensions } = useResize();
     useScript('sketches/landing.js');
     useScript('sketches/landing2.js');
     useScript('sketches/landing_services.js');
@@ -65,6 +67,10 @@ const Landing = () => {
             }
         };
     }, [])
+
+    useLayoutEffect(() => {
+        console.log(`:: ${window.innerWidth} x ${window.innerHeight}`);
+    }, [dimensions])
 
     const submitCallback = (e) => {
         e.preventDefault();
