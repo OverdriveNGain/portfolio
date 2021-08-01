@@ -55,11 +55,11 @@ const Navbar = () => {
                         <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/aboutme")}`} to="/aboutme">About Me</Link>
                         <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/aboutme")}`} to="/aboutme" style={expandBgNavSmall}>About Me</Link>
 
+                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/projects")}`} to="/">Projects</Link>
+                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/projects")}`} to="/" style={expandBgNavSmall}>Projects</Link>
+
                         <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/portfolio")}`} to="/">Portfolio</Link>
                         <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/portfolio")}`} to="/" style={expandBgNavSmall}>Portfolio</Link>
-
-                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/testimonials")}`} to="/">Testimonials</Link>
-                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/testimonials")}`} to="/" style={expandBgNavSmall}>Testimonials</Link>
 
                         <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/contact")}`} to="/">Contact</Link>
                         <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/contact")}`} to="/" style={expandBgNavSmall}>Contact</Link>
