@@ -24,6 +24,9 @@ body {
 .footer-link-contact{
     fill: white;
 }
+.navbar-logo-brand{
+    fill: rgb(78, 104, 255);
+}
 .bg-muted{
     background-color: rgb(158, 158, 158);
 }

@@ -3,13 +3,13 @@ import {
     Link,
     useLocation
 } from "react-router-dom";
+import NavbarBrand from './NavbarComponents';
 
 const Navbar = () => {
     const [scrollTop, setScrollTop] = useState(0);
 
     const location = useLocation();
     const refreshScrollTop = () => {
-        // console.log(`Scroll top set to ${document.documentElement.scrollTop}`);
         setScrollTop(document.documentElement.scrollTop);
     }
     const getBgTransparency = () => {
@@ -18,14 +18,6 @@ const Navbar = () => {
                 return scrollTop <= 150;
             case "/portfolio":
                 return scrollTop <= 50;
-            default:
-                return false;
-        }
-    }
-    const getBrandTransparency = () => {
-        switch (location.pathname) {
-            case "/":
-                return scrollTop <= 300;
             default:
                 return false;
         }
@@ -42,7 +34,6 @@ const Navbar = () => {
     }, []);
 
     let isBgTransparent = getBgTransparency();
-    let isBrandTransparent = getBrandTransparency();
     const inlineNavbarStyle = {
         "backgroundColor": (isBgTransparent ? "transparent" : "rgba(255, 255, 255, 0.92)"),
         "backdropFilter": (isBgTransparent ? "none" : "blur(3px)")
@@ -57,10 +48,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-light fixed-top animated-background-color" style={inlineNavbarStyle}>
             <div className="container px-4">
-                <Link className={"animated-opacity navbar-brand" + (isBrandTransparent && location.pathname === "/" ? " opacity-0" : "")} to="/">
-                    <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
-                    <small className="text-muted">Full-Stack Software Engineer</small>
-                </Link>
+                <NavbarBrand location={location} scrollTop={scrollTop} />
                 <button className="navbar-toggler" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup">
                     <span className="navbar-toggler-icon"></span>
