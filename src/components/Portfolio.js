@@ -65,12 +65,11 @@ const Portfolio = () => {
     return (
         <div>
             <div id="portfolio-bg"></div>
-            <div className="container bg-light" />
-            <div className="row justify-content-center">
-                <div className="col col-md-10 px-4">
+            <div className="container" align="center">
+                <div className="px-3 px-sm-5">
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">Portfolio</p>
-                    <div className="bg-white rounded-3 shadow-lg py-5 container mb-5">
+                    <div className="bg-white rounded-3 shadow-lg px-4 py-5 mb-5">
                         <div className="row mx-4 justify-content-center">
                             <div className="col-12 col-md-auto text-center">
                                 <img src="https://i.pinimg.com/236x/76/ef/77/76ef77aa1e8427ae95c2fbd86ba5255b.jpg" className="rounded-circle mb-4 portfolio-pic" alt="Jeremy" />
@@ -92,7 +91,7 @@ const Portfolio = () => {
                             <p className="text-center">I am aiming to be a professional software engineer, to allow for more innovative solutions and new technological advances in the future of different businesses in our country, today.</p>
                         </div>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-2 px-md-5">
+                        <div className="content pb-3 pt-2 px-2 px-md-5 text-start">
                             {toHeader("Skills & Experience")}
                             <div className="">
                                 {toSkillsHeader("Mobile and Web App Engineer")}
@@ -135,17 +134,17 @@ const Portfolio = () => {
                             </div>
                         </div>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-2 px-md-5">
+                        <div className="content pb-3 pt-2 px-2 px-md-5 text-start">
                             {toHeader("Academic History")}
-                            <h6 className="text-secondary">University of the Philippines</h6>
+                            <h6 className="text-secondary mb-0">University of the Philippines</h6>
                             <p>BS Computer Science | 2023 (Expected Graduation Date)</p>
-                            <h6 className="text-secondary">Trinity University of Asia</h6>
+                            <h6 className="text-secondary mb-0">Trinity University of Asia</h6>
                             <p>Junior High School and Senior High School STEM Track | 2012-2018</p>
-                            <h6 className="text-secondary">Asian College of Technology</h6>
+                            <h6 className="text-secondary mb-0">Asian College of Technology</h6>
                             <p>Elementary Education | 2004-2012</p>
                         </div>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-2 px-md-5">
+                        <div className="content pb-3 pt-2 px-2 px-md-5 text-start">
                             {toHeader("University Affiliations")}
                             <h6 className="text-secondary">UP CURSOR</h6>
                             <p>Member since December 2019</p>
