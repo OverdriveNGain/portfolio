@@ -5,7 +5,7 @@ const Portfolio = () => {
     useScript('sketches/portfolio_bg.js');
 
     useEffect(() => {
-        // window.scrollTo(0, 0);
+        window.scrollTo(0, 0);
         return (() => {
             try {
                 // eslint-disable-next-line no-undef
