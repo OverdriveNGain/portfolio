@@ -5,35 +5,52 @@ import {
 } from "react-router-dom";
 
 const Navbar = () => {
-    const [transparentBrand, setTransparentBrand] = useState(true);
-    const [transparentBg, setTransparentBg] = useState(true);
-    const transparentBrandThreshold = 300;
-    const transparentBgThreshold = 150;
+    const [scrollTop, setScrollTop] = useState(0);
 
     const location = useLocation();
+    const refreshScrollTop = () => {
+        // console.log(`Scroll top set to ${document.documentElement.scrollTop}`);
+        setScrollTop(document.documentElement.scrollTop);
+    }
+    const getBgTransparency = () => {
+        switch (location.pathname) {
+            case "/":
+                return scrollTop <= 150;
+            case "/portfolio":
+                return scrollTop <= 100;
+            default:
+                return false;
+        }
+    }
+    const getBrandTransparency = () => {
+        switch (location.pathname) {
+            case "/":
+                // console.log(location.pathname + ":"+ (scrollTop <= 300));
+                return scrollTop <= 300;
+            default:
+                console.log(location.pathname + ":" + (scrollTop <= 300));
+                return false;
+        }
+    }
 
-    const refreshTransparency = () => {
-        setTransparentBrand(document.documentElement.scrollTop <= transparentBrandThreshold);
-        setTransparentBg(document.documentElement.scrollTop <= transparentBgThreshold);
-    };
     useEffect(() => {
-        refreshTransparency();
-    }, []);
-    useEffect(() => {
-        window.addEventListener("scroll", refreshTransparency);
+        refreshScrollTop();
+
+        window.addEventListener("scroll", refreshScrollTop);
 
         return () => {
-            return window.removeEventListener("scroll", refreshTransparency);
+            return window.removeEventListener("scroll", refreshScrollTop);
         };
-    }, [transparentBrand, transparentBg]);
+    }, []);
 
-    let transparentCheck = transparentBg && location.pathname === "/";
+    let isBgTransparent = getBgTransparency();
+    let isBrandTransparent = getBrandTransparency();
     const inlineNavbarStyle = {
-        "backgroundColor": (transparentCheck ? "transparent" : "rgba(255, 255, 255, 0.92)"),
-        "backdropFilter": (transparentCheck ? "none" : "blur(3px)")
+        "backgroundColor": (isBgTransparent ? "transparent" : "rgba(255, 255, 255, 0.92)"),
+        "backdropFilter": (isBgTransparent ? "none" : "blur(3px)")
     };
     const expandBgNavSmall = {
-        "backgroundColor": (!transparentCheck ? "transparent" : "rgba(255, 255, 255, 1)"),
+        "backgroundColor": (!isBgTransparent ? "transparent" : "rgba(255, 255, 255, 1)"),
     }
 
     const getNavbarLinkColor = (locationObject, targetPath) => {
@@ -42,7 +59,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-light fixed-top animated-background-color" style={inlineNavbarStyle}>
             <div className="container px-4">
-                <Link className={"animated-opacity navbar-brand" + (transparentBrand && location.pathname === "/" ? " opacity-0" : "")} to="/">
+                <Link className={"animated-opacity navbar-brand" + (isBrandTransparent && location.pathname === "/" ? " opacity-0" : "")} to="/">
                     <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
                     <small className="text-muted">Full-Stack Software Engineer</small>
                 </Link>
