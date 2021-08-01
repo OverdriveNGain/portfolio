@@ -184,7 +184,7 @@ const Portfolio = () => {
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5 text-start">
                             {toHeader("University Affiliations")}
-                            <h6 className="text-secondary">UP CURSOR</h6>
+                            <h6 className="text-secondary mb-0">UP CURSOR</h6>
                             <p>Member since December 2019</p>
                         </div>
                     </div>
