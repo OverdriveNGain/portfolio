@@ -188,6 +188,7 @@ const Portfolio = () => {
                             <p>Member since December 2019</p>
                         </div>
                     </div>
+                    <p className="my-5 pt-5">Alternatively, you can download a pdf version <a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume.pdf?alt=media&token=f2b6309b-dcc2-4605-84f6-8b172c0e3751">here</a></p>
                 </div>
             </div>
         </div>
