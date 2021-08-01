@@ -57,11 +57,21 @@ const Portfolio = () => {
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">Portfolio</p>
                     <div className="bg-white rounded-3 shadow-lg py-5 container mb-5">
-                        <p className="h2 text-primary mb-5 text-center">Jeremy Mattheu D. Amon</p>
+                        <div className="row">
+                            <div className="col">
+                                <p className="lead fw-bold text-primary mb-5 text-center">Jeremy Mattheu D. Amon</p>
+                            </div>
+                            <div className="col">
+                                <h6 className="text-secondary">Mobile:</h6>
+                                <p>+63 995 963 2500</p>
+                                <h6 className="text-secondary">Email:</h6>
+                                <p>jeremyamon@gmail.com</p>
+                            </div>
+                        </div>
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5">
                             {toHeader("Professional Goals")}
-                            <p className="text-center lead">I am aiming to be a professional software engineer, to allow for more innovative solutions and new technological advances in the future of different businesses in our country, today.</p>
+                            <p className="text-center">I am aiming to be a professional software engineer, to allow for more innovative solutions and new technological advances in the future of different businesses in our country, today.</p>
                         </div>
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5">
