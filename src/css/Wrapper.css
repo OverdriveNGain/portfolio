@@ -26,6 +26,9 @@ body {
 .bg-muted{
     background-color: rgb(158, 158, 158);
 }
+.text-justify{
+    text-align: justify;
+}
 
 .navbar small{
     font-size:1.2rem;

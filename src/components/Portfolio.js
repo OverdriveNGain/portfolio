@@ -129,7 +129,7 @@ const Portfolio = () => {
                             <p className="text-center">I am aiming to be a professional software engineer, to allow for more innovative solutions and new technological advances in the future of different businesses in our country, today.</p>
                         </div>
                         <hr className="my-0" />
-                        <div className="content pb-3 pt-2 px-2 px-md-5 text-start">
+                        <div className="content pb-3 pt-2 px-2 px-md-5 text-justify">
                             {toHeader("Skills & Experience")}
                             <div className="">
                                 {toSkillsHeader("Mobile and Web App Engineer")}
