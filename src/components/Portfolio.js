@@ -173,7 +173,7 @@ const Portfolio = () => {
                         </div>
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5 text-start">
-                            {toHeader("Academic History")}
+                            {toHeader("Educational History")}
                             <h6 className="text-secondary mb-0">University of the Philippines</h6>
                             <p>BS Computer Science | 2023 (Expected Graduation Date)</p>
                             <h6 className="text-secondary mb-0">Trinity University of Asia</h6>
