@@ -18,7 +18,7 @@ const Portfolio = () => {
     }, []);
 
     const toSkillsHeader = (t) => {
-        return <div className="text-secondary h4 mt-3">{t}</div>;
+        return <div className="text-secondary h4 mt-3 text-start">{t}</div>;
     }
     const toSkillsBullet = (p, level) => {
         level = level ?? 0;
