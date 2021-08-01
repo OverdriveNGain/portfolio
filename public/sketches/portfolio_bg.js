@@ -21,7 +21,7 @@ var portfolioBgFunction = (sketch) => {
         sketch.noStroke();
 
         // eslint-disable-next-line no-undef
-        bubbleM = new BubbleManager(sketch.width, sketch.height, 15);
+        bubbleM = new BubbleManager(sketch.width, sketch.height, 25);
     }
 
     sketch.windowResized = () => {
@@ -32,7 +32,7 @@ var portfolioBgFunction = (sketch) => {
         }
         sketch.resizeCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
         // eslint-disable-next-line no-undef
-        bubbleM = new BubbleManager(sketch.width, sketch.height, 15);
+        bubbleM = new BubbleManager(sketch.width, sketch.height, 25);
     }
 
     sketch.draw = () => {
