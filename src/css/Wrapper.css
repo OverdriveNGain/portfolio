@@ -58,12 +58,10 @@ body {
 /* About 1 */
 #about-me #about1{
     height: 90vh;
+    position: relative;
 }
 #landing1{
     position: absolute;
-    top:0;
-    width:100%;
-    height:calc(1.5 * 90vh); /* 150% of #about1 height  */
     z-index:-1;
 }
 /* About 2 */
