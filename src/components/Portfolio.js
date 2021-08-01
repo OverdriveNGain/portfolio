@@ -26,7 +26,7 @@ const Portfolio = () => {
     }
     const toHeader = (t) => {
         const dstyle = {
-            top: "70px",
+            top: "60px",
             padding: "10px 0px",
             backgroundColor: "rgba(255, 255, 255, 0.92)",
             backdropFilter: "blur(3px)"
@@ -56,7 +56,7 @@ const Portfolio = () => {
                 <div className="col col-md-10 px-4">
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-5">Portfolio</p>
-                    <div className="bg-white rounded-3 shadow-lg py-5 container">
+                    <div className="bg-white rounded-3 shadow-lg py-5 container mb-5">
                         <p className="h2 text-primary mb-5 text-center">Jeremy Mattheu D. Amon</p>
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-5">
