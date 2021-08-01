@@ -296,3 +296,41 @@ class Snow {
         this.depth = Math.random();
     }
 }
+class BubbleManager {
+    constructor(width, height, count) {
+        this.width = width;
+        this.height = height;
+        this.count = count;
+        this.bubbles = [];
+        for (let i = 0; i < count; i++) {
+            this.bubbles.push(new Bubble(width, height));
+        }
+    }
+
+    step() {
+        for (let i = 0; i < this.count; i++) {
+            let bubble = this.bubbles[i];
+            bubble.x += bubble.vx;
+            bubble.y += bubble.vy;
+            if (bubble.x + bubble.r < 0 ||
+                bubble.y + bubble.r < 0 || bubble.x - bubble.r > this.width ||
+                bubble.y - bubble.r > this.height)
+                bubble.reset(this.width, this.height);
+        }
+    }
+}
+class Bubble {
+    constructor(width, height) {
+        this.reset(width, height);
+    }
+
+    reset(width, height) {
+        this.x = width / 2;
+        this.y = height / 2;
+        this.r = Math.random() * 200 + 30;
+        let v = Math.random() * 2 + 1;
+        let theta = Math.random() * 3.141592653 * 2;
+        this.vx = Math.cos(theta) * v;
+        this.vy = Math.sin(theta) * v;
+    }
+}

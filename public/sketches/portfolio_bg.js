@@ -7,6 +7,7 @@ var portfolioBgFunction = (sketch) => {
     }
 
     let element;
+    let bubbleM;
     sketch.setup = () => {
         element = document.getElementById("portfolio-bg");
         if (element === null) {
@@ -19,7 +20,7 @@ var portfolioBgFunction = (sketch) => {
         sketch.noStroke();
 
         // eslint-disable-next-line no-undef
-        snowM = new SnowManager(sketch.width, sketch.height, 250);
+        bubbleM = new BubbleManager(sketch.width, sketch.height, 15);
     }
 
     sketch.windowResized = () => {
@@ -30,7 +31,7 @@ var portfolioBgFunction = (sketch) => {
         }
         sketch.resizeCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
         // eslint-disable-next-line no-undef
-        snowM = new SnowManager(sketch.width, sketch.height, 250);
+        bubbleM = new BubbleManager(sketch.width, sketch.height, 15);
     }
 
     sketch.draw = () => {
@@ -41,6 +42,15 @@ var portfolioBgFunction = (sketch) => {
             return;
         }
         sketch.background(255, 255, 255);
+        sketch.fill(0, 0, 255, 10);
+
+        bubbleM.step();
+        for (let i = 0; i < bubbleM.count; i++) {
+            let bubble = bubbleM.bubbles[i];
+            sketch.circle(bubble.x, bubble.y, bubble.r, bubble.r);
+        }
+        sketch.fill(0);
+        sketch.text(sketch.round(sketch.frameRate()), 30, 150);
     }
 };
 // eslint-disable-next-line no-unused-vars
