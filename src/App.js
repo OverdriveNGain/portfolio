@@ -8,6 +8,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
         <Switch>
           <Route path="/aboutme">
             <AboutMe />
+          </Route>
+          <Route path="/contact">
+            <Contact />
           </Route>
           <Route path="/">
             <Landing />

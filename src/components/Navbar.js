@@ -61,8 +61,8 @@ const Navbar = () => {
                         <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/portfolio")}`} to="/">Portfolio</Link>
                         <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/portfolio")}`} to="/" style={expandBgNavSmall}>Portfolio</Link>
 
-                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/contact")}`} to="/">Contact</Link>
-                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/contact")}`} to="/" style={expandBgNavSmall}>Contact</Link>
+                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/contact")}`} to="/contact">Contact</Link>
+                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/contact")}`} to="/contact" style={expandBgNavSmall}>Contact</Link>
 
                     </div>
                 </div>
