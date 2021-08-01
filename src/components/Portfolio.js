@@ -1,8 +1,20 @@
 import { useEffect } from "react";
+import useScript from "../hooks/useScript";
 
 const Portfolio = () => {
+    useScript('sketches/portfolio_bg.js');
+
     useEffect(() => {
         window.scrollTo(0, 0);
+        return (() => {
+            try {
+                // eslint-disable-next-line no-undef
+                portfolioBgStop();
+            } catch (e) {
+                if (!(e instanceof ReferenceError))
+                    throw e;
+            }
+        });
     }, []);
 
     const toSkillsHeader = (t) => {
@@ -51,7 +63,9 @@ const Portfolio = () => {
     }
 
     return (
-        <div className="container bg-light">
+        <div>
+            <div id="portfolio-bg"></div>
+            <div className="container bg-light" />
             <div className="row justify-content-center">
                 <div className="col col-md-10 px-4">
                     <p className="py-5" />
@@ -135,7 +149,6 @@ const Portfolio = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }
