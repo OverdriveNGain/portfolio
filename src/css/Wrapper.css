@@ -23,6 +23,9 @@ body {
 .footer-link-contact{
     fill: white;
 }
+.bg-muted{
+    background-color: rgb(158, 158, 158);
+}
 
 .navbar small{
     font-size:1.2rem;

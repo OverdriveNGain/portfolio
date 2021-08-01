@@ -6,7 +6,7 @@ const Portfolio = () => {
     }, []);
 
     const toSkillsHeader = (t) => {
-        return <h6 className="text-secondary h4 mt-3">{t}</h6>;
+        return <div className="text-secondary h4 mt-3">{t}</div>;
     }
     const toSkillsBullet = (p, level) => {
         level = level ?? 0;
@@ -37,6 +37,18 @@ const Portfolio = () => {
             </div>
         );
     }
+    const toSkillBadges = (s) => {
+        const skillsArray = s.split(",").map((s) => s.trim());
+        const badges = [];
+        for (let i = 0; i < skillsArray.length; i++) {
+            badges.push(<span key={i} className="badge bg-muted me-1 mb-1 fw-normal">{skillsArray[i]}</span>);
+        }
+        return (
+            <div className="mb-3">
+                {badges}
+            </div>
+        );
+    }
 
     return (
         <div className="container bg-light">
@@ -56,7 +68,7 @@ const Portfolio = () => {
                             {toHeader("Skills & Experience")}
                             <div className="">
                                 {toSkillsHeader("Mobile and Web App Engineer")}
-                                <p className="fw-bold text-muted pb-3 fs-6">Flutter, Unity 3D, Firebase, React JS, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap</p>
+                                {toSkillBadges("Flutter, Unity 3D, Firebase, React JS, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap")}
                                 {toSkillsBullet("Uses Flutter for Android, IOs app development, as well as web applications.")}
                                 {toSkillsBullet("Created a student management database for the Colegio de Santo Cristo de Burgos school within the Flutter framework with a Firebase backend.")}
                                 {toSkillsBullet("Experienced with Mobile App/Web App development including optional Firebase integration, including website hosting and Google cloud functions. ")}
@@ -65,7 +77,7 @@ const Portfolio = () => {
                                 {toSkillsBullet("Experienced uploading to the Google Play Store with a Google Play developer account, while having uploaded multiple Unity 3D games")}
 
                                 {toSkillsHeader("Digital Artist and Illustrator")}
-                                <p className="fw-bold text-muted pb-3 fs-6">Adobe Illustrator, Processing, Adobe Photoshop</p>
+                                {toSkillBadges("Adobe Illustrator, Processing, Adobe Photoshop")}
                                 {toSkillsBullet("Creates digital designs to be made into products such as stickers, magnets, and vector art for Just Crafts PH, an online sticker shop, where 90% of all social media pubs, and 100% of all sticker designs are developed by him using Adobe Illustrator")}
                                 {toSkillsBullet("Sketches and constructs digital shirt designs and ID lace designs for Trinity University of Asia")}
                                 {toSkillsBullet("Created billboards and publications for the Colegio de Santo Cristo de Burgosschool, as well as designed the school's yearbooks from 2014 to 2020")}
@@ -73,17 +85,17 @@ const Portfolio = () => {
                                 {toSkillsBullet("Creates computerized digital media using Processing, an open-source graphical library that enables programmers to produce computer-driven digital arts and simulations")}
 
                                 {toSkillsHeader("Game Developer")}
-                                <p className="fw-bold text-muted pb-3 fs-6">Unity 3D, C#</p>
+                                {toSkillBadges("Unity 3D, C#")}
                                 {toSkillsBullet("Creates 2D as well as 3D android games using Unity Game Engine, uploads to the Google Play store under the developer name Jeremy Develops")}
                                 {toSkillsBullet("Self produces all assets used for all games made including sprites and sound files")}
                                 {toSkillsBullet("Utilizes C# in writing video game scripts and behaviors")}
 
                                 {toSkillsHeader("General Programmer")}
-                                <p className="fw-bold text-muted pb-3 fs-6">Python, C#, Git + Github</p>
+                                {toSkillBadges("Python, C#, Git + Github")}
                                 {toSkillsBullet("Writes specific software that can help in a multitude of bulk operations including (but not limited) to the manufacturing of sticker graphics, bulk data manipulation, online website data scraping, etc.")}
 
                                 {toSkillsHeader("Educator and Education Content Creator")}
-                                <p className="fw-bold text-muted pb-3 fs-6">Unity 3D, C#, Python</p>
+                                {toSkillBadges("Unity 3D, C#, Python")}
                                 {toSkillsBullet("Worked part time at the Coding School Philippines, while educating children and teens on the following courses:")}
                                 {toSkillsBullet("Make Your Own Game with Unity 1 & 2", 1)}
                                 {toSkillsBullet("Python For Kids 1 & 2", 1)}
