@@ -17,7 +17,7 @@ const Navbar = () => {
             case "/":
                 return scrollTop <= 150;
             case "/portfolio":
-                return scrollTop <= 100;
+                return scrollTop <= 50;
             default:
                 return false;
         }
@@ -25,10 +25,8 @@ const Navbar = () => {
     const getBrandTransparency = () => {
         switch (location.pathname) {
             case "/":
-                // console.log(location.pathname + ":"+ (scrollTop <= 300));
                 return scrollTop <= 300;
             default:
-                console.log(location.pathname + ":" + (scrollTop <= 300));
                 return false;
         }
     }
