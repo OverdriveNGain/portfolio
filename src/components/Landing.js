@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
 import useScript from '../hooks/useScript';
+import Nbsp, { Nbspify } from "../helpers/Nbsp";
 // import { useEffect } from 'react';
 // import landing_services_hover from 'public/sketches/landing_sketches.js';
 
@@ -143,7 +144,7 @@ const Landing = () => {
                 </div>
             </div>
             <div id="about2">
-                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light h-100 px-5">
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light h-100 px-3 px-sm-5">
                     <div className="display-1 m-3 font-title">About Me</div>
                     <div className="mb-3">I create mobile apps, websites, web apps, Unity games to be played on multiple platforms.</div>
                     <p> I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously. In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
@@ -155,7 +156,7 @@ const Landing = () => {
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
                     <div className="display-1 text-primary mb-5 font-title">Projects</div>
                     <div className="row mx-xs-2 mx-md-5">
-                        <div className="col-12 col-md-6 mb-4">
+                        <div className="col-12 col-md-6 mb-2 mb-sm-4">
                             <a href="/" className="link-no-underline"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title no-underline text-secondary">Card title</h5>
@@ -163,7 +164,7 @@ const Landing = () => {
                                 </div>
                             </div></a>
                         </div>
-                        <div className="col-12 col-md-6 mb-4">
+                        <div className="col-12 col-md-6 mb-2 mb-sm-4">
                             <a href="/" className="link-no-underline"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title text-secondary">Card title</h5>
@@ -173,7 +174,7 @@ const Landing = () => {
                         </div>
                     </div>
                     <div className="row mx-xs-2 mx-md-5">
-                        <div className="col-12 col-md-6 mb-4">
+                        <div className="col-12 col-md-6 mb-2 mb-sm-4">
                             <a href="/" className="link-no-underline"><div className="card">
                                 <div className="card-body m-1 m-md-4">
                                     <h5 className="card-title no-underline text-secondary">Card title</h5>
@@ -211,7 +212,7 @@ const Landing = () => {
             <div id="about6" className="bg-light">
                 <div className="align-middle container px-0 py-3 text-center d-flex flex-column 
                 justify-content-center align-items-stretch px-4 py-5">
-                    <div className="display-6 text-muted">Need to get something done?</div>
+                    <div className="display-6 text-muted">Need to get something<Nbsp />done?</div>
                     <div className="display-3 text-primary mb-4 font-title">Let’s Talk!</div>
                     <div className="row justify-content-center">
                         <div className="col col-7 text-start">
