@@ -16,6 +16,11 @@ class DustManager {
             this.points.push(nfp);
         };
     }
+    resize(width, height) {
+        this.width = width;
+        this.height = height;
+        this.quadtree = new QuadTree(5, new Rect(width / 2, height / 2, width, height));
+    }
     step() {
         this.quadtree.clear();
         for (let i = 0; i < this.pointCount; i++) {

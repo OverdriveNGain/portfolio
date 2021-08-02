@@ -60,7 +60,7 @@ var landing1Function = (sketch) => {
     );
     topAreaHeight = about1.offsetHeight;
     // eslint-disable-next-line no-undef
-    dustM = new DustManager(Math.round(getDustCount(sketch.height * sketch.width)), sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
+    dustM.resize(sketch.width, Math.floor(sketch.height * floatingPointArea));
     // eslint-disable-next-line no-undef
     borderM = new ParticleManager(
       sketch.width,
