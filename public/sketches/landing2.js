@@ -8,6 +8,7 @@ var landing2Function = (sketch) => {
     let borderM;
     let shouldRemove = false;
     let element;
+    let topAreaHeight;
 
     sketch.setup = () => {
         element = document.getElementById("landing2");
@@ -22,7 +23,7 @@ var landing2Function = (sketch) => {
             sketch.round(about2.offsetWidth),
             sketch.round((about2.offsetHeight + about3.offsetHeight) / 2)
         );
-
+        topAreaHeight = about2.offsetHeight * 0.5;
         col1 = sketch.color(col1[0], col1[1], col1[2]);
         col2 = sketch.color(col2[0], col2[1], col2[2]);
 
@@ -30,6 +31,7 @@ var landing2Function = (sketch) => {
         borderM = new ParticleManager(
             sketch.width,
             sketch.height,
+            topAreaHeight,
             () => { return sketch.randomGaussian(); },
             col1,
             col2);
@@ -51,11 +53,12 @@ var landing2Function = (sketch) => {
             sketch.round(about2.offsetWidth),
             sketch.round((about2.offsetHeight + about3.offsetHeight) / 2)
         );
-
+        topAreaHeight = about2.offsetHeight * 0.5;
         // eslint-disable-next-line no-undef
         borderM = new ParticleManager(
             sketch.width,
             sketch.height,
+            topAreaHeight,
             () => { return sketch.randomGaussian(); },
             col1,
             col2);
@@ -94,7 +97,7 @@ var landing2Function = (sketch) => {
     const drawBorderWaves = () => {
         sketch.fill(col2);
         sketch.rectMode(sketch.CORNERS);
-        sketch.rect(0, 0, sketch.width, sketch.height * 0.5);
+        sketch.rect(0, 0, sketch.width, topAreaHeight);
         for (let i = borderM.particles.length - 1; i >= 0; i--) {
             // this.particles[i].draw(sketch);
             let particle = borderM.particles[i];
@@ -104,8 +107,8 @@ var landing2Function = (sketch) => {
     }
 
     const borderWaveSplashCheck = () => {
-        const pbelow = sketch.pmouseY > sketch.height - sketch.height * 0.5;
-        const below = sketch.mouseY > sketch.height - sketch.height * 0.5;
+        const pbelow = sketch.pmouseY > topAreaHeight;
+        const below = sketch.mouseY > topAreaHeight;
         if (pbelow && !below) {
             borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY, 0.4, 0.4);
         }

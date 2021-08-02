@@ -4,7 +4,6 @@ var landing1FunctionSetVisible;
 var landing1Function = (sketch) => {
   const DUSTNEIGHBORMAXDIST = 100;
   const floatingPointArea = 2 / 3;
-  const borderArea = 2 / 3;
   const md_bp = 768;
 
   let dustM;
@@ -13,6 +12,7 @@ var landing1Function = (sketch) => {
   let col1 = [78, 104, 255];
   let col2 = [255, 255, 255];
   let borderM;
+  let topAreaHeight;
 
   sketch.setup = () => {
     element = document.getElementById("landing1");
@@ -26,7 +26,7 @@ var landing1Function = (sketch) => {
       sketch.round(about1.offsetWidth),
       sketch.round(about1.offsetHeight + (about2.offsetHeight * 0.5))
     );
-
+    topAreaHeight = about1.offsetHeight;
     col1 = sketch.color(col1[0], col1[1], col1[2]);
     col2 = sketch.color(col2[0], col2[1], col2[2]);
 
@@ -35,7 +35,8 @@ var landing1Function = (sketch) => {
     // eslint-disable-next-line no-undef
     borderM = new ParticleManager(
       sketch.width,
-      sketch.height * borderArea,
+      sketch.height - topAreaHeight * 0.5,
+      topAreaHeight * 0.5,
       () => { return sketch.randomGaussian(); },
       col1,
       col2);
@@ -55,12 +56,14 @@ var landing1Function = (sketch) => {
       sketch.round(about1.offsetWidth),
       sketch.round(about1.offsetHeight + (about2.offsetHeight * 0.5))
     );
+    topAreaHeight = about1.offsetHeight;
     // eslint-disable-next-line no-undef
     dustM = new DustManager(Math.round(getDustCount(sketch.height * sketch.width)), sketch.width, Math.floor(sketch.height * floatingPointArea), 1);
     // eslint-disable-next-line no-undef
     borderM = new ParticleManager(
       sketch.width,
-      sketch.height * borderArea,
+      sketch.height - topAreaHeight * 0.5,
+      topAreaHeight * 0.5,
       () => { return sketch.randomGaussian(); },
       col1,
       col2);
@@ -134,14 +137,12 @@ var landing1Function = (sketch) => {
 
   const drawBorderWaves = () => {
     sketch.push();
-    sketch.translate(0, sketch.height * (1 - borderArea));
+    sketch.translate(0, topAreaHeight * 0.5);
     sketch.noStroke();
     sketch.fill(col1);
     sketch.rectMode(sketch.CORNERS);
-    const bheight = sketch.height * borderArea;
-    sketch.rect(0, bheight * 0.5, sketch.width, bheight);
+    sketch.rect(0, topAreaHeight * 0.5, sketch.width, sketch.height);
     for (let i = borderM.particles.length - 1; i >= 0; i--) {
-      // this.particles[i].draw(sketch);
       let particle = borderM.particles[i];
       sketch.fill(particle.col);
       sketch.circle(particle.x, particle.y, particle.rad)
@@ -150,8 +151,8 @@ var landing1Function = (sketch) => {
   }
 
   const borderWaveSplashCheck = () => {
-    const pbelow = sketch.pmouseY > (sketch.height - sketch.height * borderArea * 0.5);
-    const below = sketch.mouseY > (sketch.height - sketch.height * borderArea * 0.5);
+    const pbelow = sketch.pmouseY > topAreaHeight;
+    const below = sketch.mouseY > topAreaHeight;
     if (pbelow !== below) {
       borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY, 1, 0.4);
     }

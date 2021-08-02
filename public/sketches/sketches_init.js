@@ -46,9 +46,10 @@ class Dust {
     }
 }
 class ParticleManager {
-    constructor(width, height, gaussianFunction, colTop, colBot) {
+    constructor(width, height, topAreaHeight, gaussianFunction, colTop, colBot) {
         this.frame = 0;
         this.particles = [];
+        this.topAreaHeight = topAreaHeight;
         this.randomSplashOnFrame = this.randomSplashInterval();
         this.width = width;
         this.height = height;
@@ -94,13 +95,13 @@ class ParticleManager {
             mouseX = Math.random() * this.width;
             pmouseX = mouseX + (Math.random() * 5);
             if (Math.random() > 0.5) {
-                mouseY = this.height / 2 - 12;
-                pmouseY = this.height / 2 + 12;
+                mouseY = this.topAreaHeight - 12;
+                pmouseY = this.topAreaHeight + 12;
                 col = this.colTop;
             }
             else {
-                mouseY = this.height / 2 + 12;
-                pmouseY = this.height / 2 - 12;
+                mouseY = this.topAreaHeight + 12;
+                pmouseY = this.topAreaHeight - 12;
                 col = this.colBot;
             }
             velydif = mouseY - pmouseY
@@ -123,7 +124,7 @@ class ParticleManager {
             else
                 vely *= upMultiplier ?? 1;
             let rad = i * 1.5;
-            let posy = (this.height + (velydif > 0 ? -rad : rad)) * 0.5;
+            let posy = this.topAreaHeight + ((velydif > 0 ? -rad : rad)) * 0.5;
             let particle = new Particle(pmouseX + this.gaussian() * 10, posy, velx, vely, col, rad);
             this.particles.push(particle);
         }
