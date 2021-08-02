@@ -332,6 +332,7 @@ class BubbleManager {
             let bubble = this.bubbles[i];
             bubble.x += bubble.vx;
             bubble.y += bubble.vy;
+            bubble.life += 0.01;
             if (bubble.x + bubble.r < 0 ||
                 bubble.y + bubble.r < 0 || bubble.x - bubble.r > this.width ||
                 bubble.y - bubble.r > this.height)
@@ -352,5 +353,6 @@ class Bubble {
         let theta = Math.random() * 3.141592653 * 2;
         this.vx = Math.cos(theta) * v;
         this.vy = Math.sin(theta) * v;
+        this.life = 0;
     }
 }
