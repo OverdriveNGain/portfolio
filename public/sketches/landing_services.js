@@ -5,29 +5,15 @@ var landingServicesSetVisible;
 
 var landingServicesFunction = (sketch) => {
 
+    const md_bp = 768;
+
     let choiceIndex = -1;
     let snowM;
     let containerWidth;
     let boundsArray = [];
-    const md_bp = 768;
-
     let shouldRemove = false;
-    landingServicesSetVisible = (remove) => {
-        if (remove === undefined) {
-            const element = document.getElementById('landing_services');
-            let position = element.getBoundingClientRect();
-            const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
-            if (isVisible)
-                sketch.loop();
-            else
-                sketch.noLoop();
-        }
-        else if (remove)
-            shouldRemove = true;
-
-    }
-
     let element;
+
     sketch.setup = () => {
         element = document.getElementById("landing_services");
         if (element === null) {
@@ -91,6 +77,22 @@ var landingServicesFunction = (sketch) => {
         sketch.fill(0);
         sketch.text(Math.round(sketch.frameRate()), 50, 50);
     }
+
+    landingServicesSetVisible = (remove) => {
+        if (remove === undefined) {
+            const element = document.getElementById('landing_services');
+            let position = element.getBoundingClientRect();
+            const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
+            if (isVisible)
+                sketch.loop();
+            else
+                sketch.noLoop();
+        }
+        else if (remove)
+            shouldRemove = true;
+
+    }
+
     const setupBoundsArray = () => {
         const startPoint = (sketch.width - containerWidth) * 0.5;
         const choiceWidth = containerWidth * 0.333;
