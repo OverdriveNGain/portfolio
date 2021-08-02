@@ -55,47 +55,22 @@ body {
     text-decoration: none; 
 }
 
-/* About 1 */
-#about-me #about1{
-    height: 90vh;
-    position: relative;
-}
-#landing1{
+/* Landing Page */
+#landing1, #landing2, #landing_services{
     position: absolute;
     z-index:-1;
 }
-/* About 2 */
-#about-me #about2{
-    height: 90vh;
-}
-/* About 3 */
-#about-me #about3{
-    height: 90vh;
-    position:relative;
-}
-#landing2{
-    position: absolute;
-    z-index:-1;
-}
-/* About 4 */
-#about-me #about4{
-    height: 100vh;
+#about1, #about3, #about4{
     position:relative;
 }
 #about4 .behind{
     position:absolute;
 }
-#landing_services{
-    position: absolute;
-    z-index:-1;
-}
-/* About 5 */
 #testimonial-portrait-holder{
     width: 70px;
     height: 70px;
     overflow: hidden;
 }
-
 #testimonial-portrait-holder img{
     width: inherit;
     height: inherit;

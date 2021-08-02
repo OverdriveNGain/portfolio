@@ -141,7 +141,7 @@ const Landing = () => {
 
     return (
         <div id="about-me">
-            <div id="about1">
+            <div id="about1" style={{ height: "90vh" }}>
                 <div id="landing1" />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center h-100">
                     <div className="display-6 pt-5 pb-2 d-inline-block text-muted">So let me introduce myself...</div>
@@ -149,7 +149,7 @@ const Landing = () => {
                     <div className="display-6 pb-2 d-inline-block ">and I am a <span className="text-secondary">full-stack software engineer</span>.</div>
                 </div>
             </div>
-            <div id="about2">
+            <div id="about2" style={{ height: "90vh" }}>
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light h-100 px-3 px-sm-5">
                     <div className="display-1 m-3 font-title">About Me</div>
                     <div className="mb-3">I create mobile apps, websites, web apps, Unity games to be played on multiple platforms.</div>
