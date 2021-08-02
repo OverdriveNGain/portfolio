@@ -150,7 +150,7 @@ const Landing = () => {
 
     return (
         <div id="about-me">
-            <div id="about1" style={{ height: "90vh" }}>
+            <div id="about1" style={{ height: breakpointSelector("80vh", null, null, "90vh") }}>
                 <div id="landing1" />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center h-100">
                     <div className="display-6 pt-5 pb-2 d-inline-block text-muted">So let me introduce myself...</div>
