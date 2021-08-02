@@ -20,7 +20,8 @@ var landingServicesFunction = (sketch) => {
             sketch.noLoop();
             return;
         }
-        const canv = sketch.createCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
+        const about4 = document.getElementById("about4");
+        const canv = sketch.createCanvas(sketch.round(about4.offsetWidth), sketch.round(about4.offsetHeight));
         containerWidth = getContainerWidthModified(sketch.width);
         setupBoundsArray();
         canv.parent('landing_services');
@@ -41,7 +42,8 @@ var landingServicesFunction = (sketch) => {
             sketch.noLoop();
             return;
         }
-        sketch.resizeCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
+        const about4 = document.getElementById("about4");
+        sketch.resizeCanvas(sketch.round(about4.offsetWidth), sketch.round(about4.offsetHeight));
         containerWidth = getContainerWidthModified(sketch.width);
         // eslint-disable-next-line no-undef
         snowM = new SnowManager(sketch.width, sketch.height, 250);
