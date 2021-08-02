@@ -3,8 +3,6 @@ import { useEffect, useLayoutEffect } from 'react';
 import useScript from '../hooks/useScript';
 import useResize from '../hooks/useResize';
 import Nbsp from "../helpers/Nbsp";
-// import { useEffect } from 'react';
-// import landing_services_hover from 'public/sketches/landing_sketches.js';
 
 const Landing = () => {
     const { dimensions, breakpointSelector } = useResize();
@@ -69,7 +67,17 @@ const Landing = () => {
     }, [])
 
     useLayoutEffect(() => {
-        console.log(`:: ${window.innerWidth} x ${window.innerHeight}`);
+        try {
+            // eslint-disable-next-line no-undef
+            landing1FunctionResize();
+            // eslint-disable-next-line no-undef
+            landing2FunctionResize();
+            // eslint-disable-next-line no-undef
+            landing3ServicesResize();
+        } catch (e) {
+            if (!(e instanceof ReferenceError))
+                throw e;
+        }
     }, [dimensions])
 
     const submitCallback = (e) => {
@@ -77,24 +85,18 @@ const Landing = () => {
         console.log(e);
     }
 
-    const getSectionPadding = () => {
-        return {
-            padding: `${breakpointSelector(30, 60, null, 80, 100, 120)}px 0px`
-        };
-    }
-
     const about4 = (
         <div id="about4">
             <div id="landing_services" className=" w-100 behind" />
-            <div style={getSectionPadding()}>
+            <div style={{ padding: `${breakpointSelector(60, null, null, 80, 100, 120)}px 0px` }}>
                 <div className="container">
                     <div className="d-flex flex-column justify-content-center">
                         <div className="display-1 font-title text-white mb-3 mb-md-5 text-center">Skills & Services</div>
                         <div className="row g-3 align-items-center">
                             <div className="col-12 col-md-4">
                                 {/*eslint-disable-next-line no-undef*/}
-                                <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
-                                    <div className="card-body m-1 m-md-4 text-center">
+                                <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-1 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                                    <div className="card-body m-1 m-md-4 text-center p-2 p-sm-4">
                                         <div className="row align-items-center justify-content-center">
                                             <div className="col-2 col-md-8"><i className="bi bi-brush display-1 text-secondary d-none d-md-inline"></i></div>
                                             <div className="col-12">
@@ -109,8 +111,8 @@ const Landing = () => {
                             </div>
                             <div className="col-12 col-md-4">
                                 {/*eslint-disable-next-line no-undef*/}
-                                <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
-                                    <div className="card-body m-1 m-md-4 text-center">
+                                <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-1 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                                    <div className="card-body m-1 m-md-4 text-center p-2 p-sm-4">
                                         <div className="row align-items-center justify-content-center">
                                             <div className="col-2 col-md-8"><i className="bi bi-globe2 display-1 text-secondary d-none d-md-inline"></i></div>
                                             <div className="col-12 text-md-center">
@@ -125,8 +127,8 @@ const Landing = () => {
                             </div>
                             <div className="col-12 col-md-4">
                                 {/*eslint-disable-next-line no-undef*/}
-                                <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
-                                    <div className="card-body m-1 m-md-4 text-center">
+                                <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-1 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                                    <div className="card-body m-1 m-md-4 text-center p-2 p-sm-4">
                                         <div className="row align-items-center justify-content-center">
                                             <div className="col-2 col-md-8"><i className="bi bi-phone display-1 text-secondary d-none d-md-inline"></i></div>
                                             <div className="col-12 text-md-center">
@@ -157,7 +159,7 @@ const Landing = () => {
                 </div>
             </div>
             <div id="about2">
-                <div style={getSectionPadding()}>
+                <div style={{ padding: `${breakpointSelector(30, 60, null, 80, 100, 120)}px 0px` }}>
                     <div className="align-middle container py-3 text-center text-light h-100 px-3 px-sm-5">
                         <div className="display-1 m-3 font-title">About Me</div>
                         <div className="mb-3">I create mobile apps, websites, web apps, Unity games to be played on multiple platforms.</div>
@@ -167,7 +169,7 @@ const Landing = () => {
                 </div>
             </div>
             <div id="about3">
-                <div style={getSectionPadding()}>
+                <div style={{ padding: `${breakpointSelector(10, 30, null, 80, 100, 120)}px 0px` }}>
                     <div id="landing2" />
                     <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
                         <div className="display-1 text-primary m-3 font-title">Projects</div>
@@ -233,7 +235,7 @@ const Landing = () => {
                     <div className="display-6 text-muted">Need to get something<Nbsp />done?</div>
                     <div className="display-3 text-primary mb-4 font-title">Let’s Talk!</div>
                     <div className="row justify-content-center">
-                        <div className="col col-7 text-start">
+                        <div className="col col-sm-7 text-start">
                             <form onSubmit={(e) => { submitCallback(e) }}>
                                 <div className="mb-3">
                                     <label htmlFor="contactName" className="form-label fw-bold text-secondary">Name</label>
