@@ -2,7 +2,7 @@
 import { useEffect, useLayoutEffect } from 'react';
 import useScript from '../hooks/useScript';
 import useResize from '../hooks/useResize';
-import Nbsp, { Nbspify } from "../helpers/Nbsp";
+import Nbsp from "../helpers/Nbsp";
 // import { useEffect } from 'react';
 // import landing_services_hover from 'public/sketches/landing_sketches.js';
 
