@@ -7,7 +7,7 @@ import Nbsp from "../helpers/Nbsp";
 // import landing_services_hover from 'public/sketches/landing_sketches.js';
 
 const Landing = () => {
-    const { dimensions } = useResize();
+    const { dimensions, breakpointSelector } = useResize();
     useScript('sketches/landing.js');
     useScript('sketches/landing2.js');
     useScript('sketches/landing_services.js');
@@ -77,61 +77,68 @@ const Landing = () => {
         console.log(e);
     }
 
+    const getSectionPadding = () => {
+        return {
+            padding: `${breakpointSelector(30, 60, null, 80, 100, 120)}px 0px`
+        };
+    }
 
     const about4 = (
         <div id="about4">
             <div id="landing_services" className=" w-100 behind" />
-            <div className="container h-100">
-                <div className="d-flex flex-column justify-content-center h-100">
-                    <div className="display-1 font-title text-white mb-3 mb-md-5 text-center">Skills & Services</div>
-                    <div className="row g-3 align-items-center">
-                        <div className="col-12 col-md-4">
-                            {/*eslint-disable-next-line no-undef*/}
-                            <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
-                                <div className="card-body m-1 m-md-4 text-center">
-                                    <div className="row align-items-center justify-content-center">
-                                        <div className="col-2 col-md-8"><i className="bi bi-brush display-1 text-secondary d-none d-md-inline"></i></div>
-                                        <div className="col-12">
-                                            <h5 className="card-title no-underline text-secondary">
-                                                <i className="bi bi-brush text-secondary d-inline d-md-none"></i>     Graphic Design</h5>
-                                            <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <small className="text-muted">Adobe Illustrator • Adobe Photoshop • p5.js • Processing • Python</small>
+            <div style={getSectionPadding()}>
+                <div className="container">
+                    <div className="d-flex flex-column justify-content-center">
+                        <div className="display-1 font-title text-white mb-3 mb-md-5 text-center">Skills & Services</div>
+                        <div className="row g-3 align-items-center">
+                            <div className="col-12 col-md-4">
+                                {/*eslint-disable-next-line no-undef*/}
+                                <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 0)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                                    <div className="card-body m-1 m-md-4 text-center">
+                                        <div className="row align-items-center justify-content-center">
+                                            <div className="col-2 col-md-8"><i className="bi bi-brush display-1 text-secondary d-none d-md-inline"></i></div>
+                                            <div className="col-12">
+                                                <h5 className="card-title no-underline text-secondary">
+                                                    <i className="bi bi-brush text-secondary d-inline d-md-none"></i>     Graphic Design</h5>
+                                                <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <small className="text-muted">Adobe Illustrator • Adobe Photoshop • p5.js • Processing • Python</small>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div></a>
-                        </div>
-                        <div className="col-12 col-md-4">
-                            {/*eslint-disable-next-line no-undef*/}
-                            <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
-                                <div className="card-body m-1 m-md-4 text-center">
-                                    <div className="row align-items-center justify-content-center">
-                                        <div className="col-2 col-md-8"><i className="bi bi-globe2 display-1 text-secondary d-none d-md-inline"></i></div>
-                                        <div className="col-12 text-md-center">
-                                            <h5 className="card-title no-underline text-secondary">
-                                                <i className="bi bi-globe2 text-secondary d-inline d-md-none"></i>     Website Development</h5>
-                                            <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <small className="text-muted">HTML • CSS • Javascript • SASS • React • Flutter • Firebase • Bootstrap 5 • git • GitHub</small>
+                                </div></a>
+                            </div>
+                            <div className="col-12 col-md-4">
+                                {/*eslint-disable-next-line no-undef*/}
+                                <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 1)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                                    <div className="card-body m-1 m-md-4 text-center">
+                                        <div className="row align-items-center justify-content-center">
+                                            <div className="col-2 col-md-8"><i className="bi bi-globe2 display-1 text-secondary d-none d-md-inline"></i></div>
+                                            <div className="col-12 text-md-center">
+                                                <h5 className="card-title no-underline text-secondary">
+                                                    <i className="bi bi-globe2 text-secondary d-inline d-md-none"></i>     Website Development</h5>
+                                                <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <small className="text-muted">HTML • CSS • Javascript • SASS • React • Flutter • Firebase • Bootstrap 5 • git • GitHub</small>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div></a>
-                        </div>
-                        <div className="col-12 col-md-4">
-                            {/*eslint-disable-next-line no-undef*/}
-                            <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
-                                <div className="card-body m-1 m-md-4 text-center">
-                                    <div className="row align-items-center justify-content-center">
-                                        <div className="col-2 col-md-8"><i className="bi bi-phone display-1 text-secondary d-none d-md-inline"></i></div>
-                                        <div className="col-12 text-md-center">
-                                            <h5 className="card-title no-underline text-secondary">
-                                                <i className="bi bi-phone text-secondary d-inline d-md-none"></i>     Mobile App Development</h5>
-                                            <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                            <small className="text-muted">React • Flutter • Adobe XD • Firebase • Unity 3D • git • GitHub</small>
+                                </div></a>
+                            </div>
+                            <div className="col-12 col-md-4">
+                                {/*eslint-disable-next-line no-undef*/}
+                                <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-3 mx-md-0" onMouseOver={(e) => landing_services_hover(e, 2)} onMouseOut={(e) => landing_services_hover(e, -1)}>
+                                    <div className="card-body m-1 m-md-4 text-center">
+                                        <div className="row align-items-center justify-content-center">
+                                            <div className="col-2 col-md-8"><i className="bi bi-phone display-1 text-secondary d-none d-md-inline"></i></div>
+                                            <div className="col-12 text-md-center">
+                                                <h5 className="card-title no-underline text-secondary">
+                                                    <i className="bi bi-phone text-secondary d-inline d-md-none"></i>     Mobile App Development</h5>
+                                                <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <small className="text-muted">React • Flutter • Adobe XD • Firebase • Unity 3D • git • GitHub</small>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div></a>
+                                </div></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -150,55 +157,60 @@ const Landing = () => {
                 </div>
             </div>
             <div id="about2">
-                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center text-light h-100 px-3 px-sm-5">
-                    <div className="display-1 m-3 font-title">About Me</div>
-                    <div className="mb-3">I create mobile apps, websites, web apps, Unity games to be played on multiple platforms.</div>
-                    <p> I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously. In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
-                    <p className="lead fw-bold">I get the job done, and more.</p>
+                <div style={getSectionPadding()}>
+                    <div className="align-middle container py-3 text-center text-light h-100 px-3 px-sm-5">
+                        <div className="display-1 m-3 font-title">About Me</div>
+                        <div className="mb-3">I create mobile apps, websites, web apps, Unity games to be played on multiple platforms.</div>
+                        <p> I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously. In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
+                        <p className="lead fw-bold">I get the job done, and more.</p>
+                    </div>
                 </div>
             </div>
             <div id="about3">
-                <div id="landing2" />
-                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
-                    <div className="display-1 text-primary mb-5 font-title">Projects</div>
-                    <div className="row mx-xs-2 mx-md-5">
-                        <div className="col-12 col-md-6 mb-2 mb-sm-4">
-                            <a href="/" className="link-no-underline"><div className="card">
-                                <div className="card-body m-1 m-md-4">
-                                    <h5 className="card-title no-underline text-secondary">Card title</h5>
-                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div></a>
+                <div style={getSectionPadding()}>
+                    <div id="landing2" />
+                    <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
+                        <div className="display-1 text-primary m-3 font-title">Projects</div>
+                        <div className="row mx-xs-2 mx-md-5">
+                            <div className="col-12 col-md-6 mb-2 mb-sm-4">
+                                <a href="/" className="link-no-underline"><div className="card">
+                                    <div className="card-body m-1 m-md-4">
+                                        <h5 className="card-title no-underline text-secondary">Card title</h5>
+                                        <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div></a>
+                            </div>
+                            <div className="col-12 col-md-6 mb-2 mb-sm-4">
+                                <a href="/" className="link-no-underline"><div className="card">
+                                    <div className="card-body m-1 m-md-4">
+                                        <h5 className="card-title text-secondary">Card title</h5>
+                                        <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div></a>
+                            </div>
                         </div>
-                        <div className="col-12 col-md-6 mb-2 mb-sm-4">
-                            <a href="/" className="link-no-underline"><div className="card">
-                                <div className="card-body m-1 m-md-4">
-                                    <h5 className="card-title text-secondary">Card title</h5>
-                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div></a>
+                        <div className="row mx-xs-2 mx-md-5">
+                            <div className="col-12 col-md-6 mb-2 mb-sm-4">
+                                <a href="/" className="link-no-underline"><div className="card">
+                                    <div className="card-body m-1 m-md-4">
+                                        <h5 className="card-title no-underline text-secondary">Card title</h5>
+                                        <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div></a>
+                            </div>
+                            <div className="d-none d-md-flex col-8 col-md-6 mb-4">
+                                <a href="/" className="link-no-underline"><div className="card">
+                                    <div className="card-body m-1 m-md-4">
+                                        <h5 className="card-title text-secondary">Last Card title</h5>
+                                        <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div></a>
+                            </div>
                         </div>
-                    </div>
-                    <div className="row mx-xs-2 mx-md-5">
-                        <div className="col-12 col-md-6 mb-2 mb-sm-4">
-                            <a href="/" className="link-no-underline"><div className="card">
-                                <div className="card-body m-1 m-md-4">
-                                    <h5 className="card-title no-underline text-secondary">Card title</h5>
-                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div></a>
-                        </div>
-                        <div className="d-none d-md-flex col-8 col-md-6 mb-4">
-                            <a href="/" className="link-no-underline"><div className="card">
-                                <div className="card-body m-1 m-md-4">
-                                    <h5 className="card-title text-secondary">Last Card title</h5>
-                                    <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                </div>
-                            </div></a>
-                        </div>
+
+                        <button className="btn btn-primary align-self-center m-3 text-light">See More Projects</button>
                     </div>
 
-                    <button className="btn btn-primary align-self-center m-3 text-light">See More Projects</button>
                 </div>
             </div>
             {about4}

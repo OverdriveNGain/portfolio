@@ -5,6 +5,23 @@ const useResize = () => {
         height: window.innerHeight,
         width: window.innerWidth
     })
+
+    const breakpointSelector = (xs, sm, md, lg, xl, xxl) => {
+        let toReturn = xs;
+        let width = dimensions.width;
+        if (sm != null && width >= 576)
+            toReturn = sm;
+        if (md != null && width >= 768)
+            toReturn = md;
+        if (lg != null && width >= 992)
+            toReturn = lg;
+        if (xl != null && width >= 1200)
+            toReturn = xl;
+        if (xxl != null && width >= 1400)
+            toReturn = xxl;
+        return toReturn;
+    }
+
     useEffect(() => {
         const handleResize = () => {
             setDimensions({
@@ -32,7 +49,7 @@ const useResize = () => {
         }
     }, [dimensions]);
 
-    return { dimensions };
+    return { dimensions, breakpointSelector };
 };
 
 export default useResize;
