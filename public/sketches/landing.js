@@ -1,5 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 var landing1FunctionSetVisible;
+// eslint-disable-next-line no-unused-vars
+var landing1FunctionResize;
 
 var landing1Function = (sketch) => {
   const DUSTNEIGHBORMAXDIST = 100;
@@ -109,6 +111,7 @@ var landing1Function = (sketch) => {
     else if (remove)
       shouldRemove = true;
   }
+  landing1FunctionResize = () => { sketch.windowResized(); }
 
   const drawFloatingPoints = () => {
     let totalLength, property;

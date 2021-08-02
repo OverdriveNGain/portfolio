@@ -1,5 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 var landing2FunctionSetVisible;
+// eslint-disable-next-line no-unused-vars
+var landing2FunctionResize;
 
 var landing2Function = (sketch) => {
 
@@ -92,6 +94,9 @@ var landing2Function = (sketch) => {
         }
         else if (remove)
             shouldRemove = true;
+    }
+    landing2FunctionResize = () => {
+        sketch.windowResized();
     }
 
     const drawBorderWaves = () => {

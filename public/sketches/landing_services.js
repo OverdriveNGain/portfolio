@@ -2,6 +2,8 @@
 var landing_services_hover;
 // eslint-disable-next-line no-unused-vars
 var landingServicesSetVisible;
+// eslint-disable-next-line no-unused-vars
+var landing3ServicesResize;
 
 var landingServicesFunction = (sketch) => {
 
@@ -92,7 +94,9 @@ var landingServicesFunction = (sketch) => {
         }
         else if (remove)
             shouldRemove = true;
-
+    }
+    landing3ServicesResize = () => {
+        sketch.windowResized();
     }
 
     const setupBoundsArray = () => {
