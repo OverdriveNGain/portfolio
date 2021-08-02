@@ -26,7 +26,8 @@ const Portfolio = () => {
         return <div className="text-secondary h4 mt-3 text-start">{t}</div>;
     }
     const toSkillsBullet = (p, level) => {
-        level = level ?? 0;
+        if (level == null)
+            level = 0;
         const leftIndent = [];
         for (let i = 0; i < level; i++) {
             leftIndent.push(<p key={i} className="ms-3 ms-md-5 me-2"></p>);

@@ -119,10 +119,13 @@ class ParticleManager {
             let velx = Math.cos(randomizedAngle) * velMod * speed;
             let vely = Math.sin(randomizedAngle) * velMod * Math.min(speed, this.height * 0.02);
             if (vely > 0) {
-                vely *= downMultiplier ?? 1;
+                if (downMultiplier != null)
+                    vely *= downMultiplier;
             }
-            else
-                vely *= upMultiplier ?? 1;
+            else {
+                if (upMultiplier != null)
+                    vely *= upMultiplier;
+            }
             let rad = i * 1.5;
             let posy = this.topAreaHeight + ((velydif > 0 ? -rad : rad)) * 0.5;
             let particle = new Particle(pmouseX + this.gaussian() * 10, posy, velx, vely, col, rad);
