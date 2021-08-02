@@ -62,6 +62,11 @@ class ParticleManager {
         this.colTop = colTop;
         this.colBot = colBot;
     }
+    resize(width, height, topAreaHeight) {
+        this.topAreaHeight = topAreaHeight;
+        this.width = width;
+        this.height = height;
+    }
     step() {
         this.frame++;
         if (this.frame === this.randomSplashOnFrame) {
@@ -266,7 +271,10 @@ class SnowManager {
             this.snow.push(new Snow(Math.random() * width, Math.random() * height, Math.random() * 5));
         }
     }
-
+    resize(width, height,) {
+        this.width = width;
+        this.height = height;
+    }
     step(leftBound, rightBound) {
         for (let i = 0; i < this.count; i++) {
             let snow = this.snow[i];
@@ -315,7 +323,10 @@ class BubbleManager {
             this.bubbles.push(new Bubble(width, height));
         }
     }
-
+    resize(width, height) {
+        this.width = width;
+        this.height = height;
+    }
     step() {
         for (let i = 0; i < this.count; i++) {
             let bubble = this.bubbles[i];

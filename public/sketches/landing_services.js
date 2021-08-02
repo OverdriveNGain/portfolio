@@ -48,7 +48,7 @@ var landingServicesFunction = (sketch) => {
         sketch.resizeCanvas(sketch.round(about4.offsetWidth), sketch.round(about4.offsetHeight));
         containerWidth = getContainerWidthModified(sketch.width);
         // eslint-disable-next-line no-undef
-        snowM = new SnowManager(sketch.width, sketch.height, 250);
+        snowM.resize(sketch.width, sketch.height);
         setupBoundsArray();
     }
 

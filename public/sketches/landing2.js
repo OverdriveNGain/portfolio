@@ -57,13 +57,10 @@ var landing2Function = (sketch) => {
         );
         topAreaHeight = about2.offsetHeight * 0.5;
         // eslint-disable-next-line no-undef
-        borderM = new ParticleManager(
+        borderM.resize(
             sketch.width,
             sketch.height,
-            topAreaHeight,
-            () => { return sketch.randomGaussian(); },
-            col1,
-            col2);
+            topAreaHeight);
     }
 
     sketch.draw = () => {

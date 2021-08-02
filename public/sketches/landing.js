@@ -62,13 +62,10 @@ var landing1Function = (sketch) => {
     // eslint-disable-next-line no-undef
     dustM.resize(sketch.width, Math.floor(sketch.height * floatingPointArea));
     // eslint-disable-next-line no-undef
-    borderM = new ParticleManager(
+    borderM.resize(
       sketch.width,
       sketch.height - topAreaHeight * 0.5,
-      topAreaHeight * 0.5,
-      () => { return sketch.randomGaussian(); },
-      col1,
-      col2);
+      topAreaHeight * 0.5);
 
   }
 
