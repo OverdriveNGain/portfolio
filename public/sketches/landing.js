@@ -32,7 +32,7 @@ var landing1Function = (sketch) => {
     const about2 = document.getElementById("about2");
     const canv = sketch.createCanvas(
       sketch.ceil(about1.offsetWidth),
-      sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.5)),
+      sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.5)) + 1,
       sketch.WEBGL
     );
     topAreaHeight = about1.offsetHeight;
