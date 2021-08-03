@@ -2,6 +2,8 @@
 var portfolioBgStop;
 
 var portfolioBgFunction = (sketch) => {
+    const fontFile = "sketches/fonts/Montserrat-Regular.otf";
+
     let shouldRemove = false;
     portfolioBgStop = (remove) => {
         shouldRemove = true;
@@ -9,19 +11,27 @@ var portfolioBgFunction = (sketch) => {
 
     let element;
     let bubbleM;
+    let debugFont;
+
+    sketch.preload = () => {
+        debugFont = sketch.loadFont(fontFile, () => { }, (e) => { console.log(e) });
+    }
+
     sketch.setup = () => {
         element = document.getElementById("portfolio-bg");
         if (element === null) {
             sketch.noLoop();
             return;
         }
-        const canv = sketch.createCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight));
+        const canv = sketch.createCanvas(sketch.round(element.offsetWidth), sketch.round(element.offsetHeight), sketch.WEBGL);
         canv.parent('portfolio-bg');
         sketch.rectMode(sketch.CORNERS);
         sketch.noStroke();
 
         // eslint-disable-next-line no-undef
         bubbleM = new BubbleManager(sketch.width, sketch.height, 25);
+
+        sketch.textFont(debugFont);
     }
 
     sketch.windowResized = () => {
@@ -42,6 +52,7 @@ var portfolioBgFunction = (sketch) => {
             sketch.remove();
             return;
         }
+        sketch.translate(-sketch.width / 2, -sketch.height / 2);
         sketch.background(255, 255, 255);
 
         bubbleM.step();
@@ -51,6 +62,7 @@ var portfolioBgFunction = (sketch) => {
             sketch.circle(bubble.x, bubble.y, bubble.r, bubble.r);
         }
         sketch.fill(0);
+        sketch.translate(0, 0, 10);
         sketch.text(sketch.round(sketch.frameRate()), 30, 150);
     }
 };

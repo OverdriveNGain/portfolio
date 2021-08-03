@@ -5,12 +5,19 @@ var landing2FunctionResize;
 
 var landing2Function = (sketch) => {
 
+    const fontFile = "sketches/fonts/Montserrat-Regular.otf";
+
     let col2 = [78, 104, 255];
     let col1 = [255, 255, 255];
     let borderM;
     let shouldRemove = false;
     let element;
     let topAreaHeight;
+    let debugFont;
+
+    sketch.preload = () => {
+        debugFont = sketch.loadFont(fontFile, () => { }, (e) => { console.log(e) });
+    }
 
     sketch.setup = () => {
         element = document.getElementById("landing2");
@@ -23,7 +30,8 @@ var landing2Function = (sketch) => {
         element.style.top = `calc(-0.5 * ${about2.offsetHeight}px)`;
         const canv = sketch.createCanvas(
             sketch.round(about2.offsetWidth),
-            sketch.round((about2.offsetHeight + about3.offsetHeight) / 2)
+            sketch.round((about2.offsetHeight + about3.offsetHeight) / 2),
+            sketch.WEBGL
         );
         topAreaHeight = about2.offsetHeight * 0.5;
         col1 = sketch.color(col1[0], col1[1], col1[2]);
@@ -40,6 +48,8 @@ var landing2Function = (sketch) => {
 
         sketch.noStroke();
         canv.parent('landing2');
+
+        sketch.textFont(debugFont);
     }
 
     sketch.windowResized = () => {
@@ -70,12 +80,14 @@ var landing2Function = (sketch) => {
             sketch.remove();
             return;
         }
+        sketch.translate(-sketch.width / 2, -sketch.height / 2);
         sketch.background(255);
         borderM.step();
         borderWaveSplashCheck();
         drawBorderWaves();
 
         sketch.fill(0);
+        sketch.translate(0, 0, 10);
         sketch.text(sketch.round(sketch.frameRate()), 50, sketch.height - 300);
     }
 

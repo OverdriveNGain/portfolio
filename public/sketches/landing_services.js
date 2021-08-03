@@ -8,6 +8,7 @@ var landing3ServicesResize;
 var landingServicesFunction = (sketch) => {
 
     const md_bp = 768;
+    const fontFile = "sketches/fonts/Montserrat-Regular.otf";
 
     let choiceIndex = -1;
     let snowM;
@@ -15,6 +16,11 @@ var landingServicesFunction = (sketch) => {
     let boundsArray = [];
     let shouldRemove = false;
     let element;
+    let debugFont;
+
+    sketch.preload = () => {
+        debugFont = sketch.loadFont(fontFile, () => { }, (e) => { console.log(e) });
+    }
 
     sketch.setup = () => {
         element = document.getElementById("landing_services");
@@ -23,7 +29,7 @@ var landingServicesFunction = (sketch) => {
             return;
         }
         const about4 = document.getElementById("about4");
-        const canv = sketch.createCanvas(sketch.round(about4.offsetWidth), sketch.round(about4.offsetHeight));
+        const canv = sketch.createCanvas(sketch.round(about4.offsetWidth), sketch.round(about4.offsetHeight), sketch.WEBGL);
         containerWidth = getContainerWidthModified(sketch.width);
         setupBoundsArray();
         canv.parent('landing_services');
@@ -36,6 +42,8 @@ var landingServicesFunction = (sketch) => {
         landing_services_hover = (e, newIndex) => {
             choiceIndex = newIndex;
         }
+
+        sketch.textFont(debugFont);
     }
 
     sketch.windowResized = () => {
@@ -59,6 +67,7 @@ var landingServicesFunction = (sketch) => {
             sketch.remove();
             return;
         }
+        sketch.translate(-sketch.width / 2, -sketch.height / 2);
         sketch.background(255);
         sketch.fill(78, 104, 255);
         sketch.rect(0, 0, sketch.width, sketch.height);
@@ -79,6 +88,7 @@ var landingServicesFunction = (sketch) => {
 
 
         sketch.fill(0);
+        sketch.translate(0, 0, 10);
         sketch.text(Math.round(sketch.frameRate()), 50, 50);
     }
 
