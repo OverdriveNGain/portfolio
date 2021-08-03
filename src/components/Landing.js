@@ -163,9 +163,8 @@ const Landing = () => {
             <div id="about1" style={{ height: breakpointSelector("80vh", null, null, "90vh") }}>
                 <div id="landing1" />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center h-100">
-                    <div className="display-6 pt-5 pb-2 d-inline-block text-muted">So let me introduce myself...</div>
-                    <div className="display-2 pb-3 d-inline-block">My name is <span className="text-primary">Jeremy</span>,</div>
-                    <div className="display-6 pb-2 d-inline-block ">and I am a <span className="text-secondary">full-stack software engineer</span>.</div>
+                    <div className="display-6 pt-5 pb-2 d-inline-block text-muted fs-5 fs-md-4">So let me introduce myself...</div>
+                    <div className="display-4 px-3 pb-3 d-inline-block">My name is <span className="text-primary">Jeremy</span>, and I am a <span className="text-secondary">full-stack software<Nbsp />engineer</span>.</div>
                 </div>
             </div>
             <div id="about2">
