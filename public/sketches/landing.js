@@ -4,10 +4,13 @@ var landing1FunctionSetVisible;
 var landing1FunctionResize;
 
 var landing1Function = (sketch) => {
-  const DUSTNEIGHBORMAXDIST = 250;
+  const DUSTNEIGHBORMAXDIST = 200;
   const floatingPointArea = 2 / 3;
   const md_bp = 768;
   const fontFile = "sketches/fonts/Montserrat-Regular.otf";
+  const getDustCount = (area) => {
+    return area * 0.00002 + 16;
+  }
 
   let dustM;
   let shouldRemove = false;
@@ -32,7 +35,7 @@ var landing1Function = (sketch) => {
     const about2 = document.getElementById("about2");
     const canv = sketch.createCanvas(
       sketch.ceil(about1.offsetWidth),
-      sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.5)) + 1,
+      sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.5)) + 5,
       sketch.WEBGL
     );
     // sketch.frameRate(30);
@@ -91,9 +94,9 @@ var landing1Function = (sketch) => {
     sketch.translate(-sketch.width / 2, -sketch.height / 2);
     sketch.background(255);
 
-    // dustM.step()
-    // drawFloatingPoints();
-
+    dustM.step()
+    drawFloatingPoints();
+    sketch.translate(0, 0, 10);
     if (sketch.frameCount < 85) {
       sketch.fill(255, 255, 255, 255 - sketch.frameCount * 3);
       sketch.rect(0, 0, sketch.width, sketch.height);
@@ -138,8 +141,7 @@ var landing1Function = (sketch) => {
     // sketch.strokeWeight(3);
     for (let i = 0; i < dustM.points.length; i++) {
       const point = dustM.points[i];
-      sketch.stroke(255 + -140 * ((sketch.abs(point[property] * 2 - totalLength) / totalLength)));
-      // sketch.point(point.x, point.y);
+      sketch.stroke(255 + -50 * ((sketch.abs(point[property] * 2 - totalLength) / totalLength)));
       // eslint-disable-next-line no-undef
       let neighborRect = new Rect(point.x, point.y, DUSTNEIGHBORMAXDIST, DUSTNEIGHBORMAXDIST);
       let neighbors = [];
@@ -147,16 +149,8 @@ var landing1Function = (sketch) => {
       let m = point.x;
       let n = point.y;
       for (let j = 0; j < neighbors.length; j++) {
-        // sketch.line(point.x, point.y, point.x + 200, point.y + 180);
         sketch.line(m, n, neighbors[j].x, neighbors[j].y);
-        // sketch.line(0, 0, neighbors[j].x, neighbors[j].y);
-        // sketch.line(point.x, point.y, neighbors[j].x, neighbors[j].y);
       }
-      // for (let neighbor of neighbors) {
-      //   // sketch.point(point.x + 30, point.y);
-      //   sketch.line(point.x, point.y, point.x, point.y + 10);
-      //   // sketch.line(point.x, point.y, neighbor.x, neighbor.y);
-      // }
     };
   }
 
@@ -181,12 +175,6 @@ var landing1Function = (sketch) => {
     if (pbelow !== below) {
       borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
     }
-  }
-
-  const getDustCount = (area) => {
-    // return area * 0.00008 + 16;
-    return area * 0.00002 + 20
-    // return 50;
   }
 
 };

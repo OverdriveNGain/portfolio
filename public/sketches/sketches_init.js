@@ -73,10 +73,10 @@ class ParticleManager {
         this.frame++;
         if (this.frame === this.randomSplashOnFrame) {
             this.splash();
-            this.randomSplashOnFrame = this.randomSplashOnFrame + this.randomSplashInterval();
+            this.randomSplashOnFrame += this.randomSplashInterval();
         }
-
-        for (let i = 0; i < this.particles.length; i++) {
+        let len = this.particles.length;
+        for (let i = 0; i < len; i++) {
             let particle = this.particles[i];
 
             particle.x += particle.vx;
@@ -96,6 +96,7 @@ class ParticleManager {
 
             if (particle.rad < 0.8) {
                 this.particles.splice(i, 1);
+                len--;
                 i--;
             }
         }
@@ -105,7 +106,7 @@ class ParticleManager {
         let col, velydif;
         if (mouseX === undefined) {
             mouseX = Math.random() * this.width;
-            pmouseX = mouseX + (Math.random() * 5);
+            pmouseX = mouseX;
             if (Math.random() > 0.5) {
                 mouseY = this.topAreaHeight - 12;
                 pmouseY = this.topAreaHeight + 12;
@@ -122,23 +123,23 @@ class ParticleManager {
             velydif = mouseY - pmouseY;
             col = velydif > 0 ? this.colBot : this.colTop;
         }
-        let speed = Math.min(Math.hypot(mouseX - pmouseX, mouseY - pmouseY) * 0.1, 10);
-        let angle = Math.atan2(mouseY - pmouseY, mouseX - pmouseX)
-        const particleCount = Math.min(60, Math.floor(speed * 15));
+        let speed = Math.max(Math.abs(mouseX - pmouseX), Math.abs(mouseY - pmouseY));
+        const particleCount = Math.min(40, Math.floor(speed * 3));
         for (let i = 0; i < particleCount; i++) {
-            let randomizedAngle = angle + (Math.PI * this.gaussian() * 0.2);
-            let velMod = Math.abs(this.gaussian());
-            let velx = Math.cos(randomizedAngle) * velMod * speed;
-            let vely = Math.sin(randomizedAngle) * velMod * Math.min(speed, this.height * 0.02);
-            if (vely > 0) {
+            let g1 = this.gaussian()
+            let g2 = this.gaussian();
+            let random1 = g1 * 20 - 10;
+            let random2 = g2 * 20 - 10;
+            let velMod = Math.random();
+            let velx = (mouseX - pmouseX + random1) * velMod * 0.1;
+            let vely = (mouseY - pmouseY + random2) * velMod * 0.1;
+            if (vely > 0)
                 vely *= this.downMultiplier;
-            }
-            else {
+            else
                 vely *= this.upMultiplier;
-            }
             let rad = i * 1.5;
             let posy = this.topAreaHeight + ((velydif > 0 ? -rad : rad)) * 0.5;
-            let particle = new Particle(pmouseX + this.gaussian() * 10, posy, velx, vely, col, rad);
+            let particle = new Particle(pmouseX + g1 * 30, posy, velx, vely, col, rad);
             this.particles.push(particle);
         }
     }
