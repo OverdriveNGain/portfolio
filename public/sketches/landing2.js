@@ -124,15 +124,24 @@ var landing2Function = (sketch) => {
         }
     }
 
+    let pFrameMouseX = -1;
+    let pFrameMouseY = -1;
+    let lastMouseMoveOnFrame = -1;
     const borderWaveSplashCheck = () => {
         const pbelow = sketch.pmouseY > topAreaHeight;
         const below = sketch.mouseY > topAreaHeight;
-        if (pbelow && !below) {
-            borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
+        if (pbelow !== below) {
+            if (Math.abs(sketch.frameCount - lastMouseMoveOnFrame) < 5) {
+                borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
+            }
         }
-        else if (!pbelow && below) {
-            borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
+
+        if (pFrameMouseX !== sketch.mouseX || pFrameMouseY !== sketch.mouseY) {
+            lastMouseMoveOnFrame = sketch.frameCount;
         }
+
+        pFrameMouseX = sketch.mouseX;
+        pFrameMouseY = sketch.mouseY;
     }
 };
 // eslint-disable-next-line no-unused-vars
