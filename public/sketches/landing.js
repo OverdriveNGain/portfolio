@@ -60,28 +60,49 @@ var landing1Function = (sketch) => {
     sketch.textFont(debugFont);
   }
 
-  sketch.windowResized = () => {
-    if (element == null)
-      return;
-    element = document.getElementById("landing1");
-    if (element === null) {
-      sketch.noLoop();
+  let running = false;
+  let promise = false;
+  const debounce = (func) => {
+    if (running) {
+      promise = true;
       return;
     }
-    const about1 = document.getElementById("about1");
-    const about2 = document.getElementById("about2");
-    sketch.resizeCanvas(
-      sketch.ceil(about1.offsetWidth),
-      sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.5))
-    );
-    topAreaHeight = about1.offsetHeight;
-    // eslint-disable-next-line no-undef
-    dustM.resize(sketch.width, Math.floor(sketch.height * floatingPointArea));
-    // eslint-disable-next-line no-undef
-    borderM.resize(
-      sketch.width,
-      sketch.height - topAreaHeight * 0.5,
-      topAreaHeight * 0.5);
+    running = true;
+    func();
+    setTimeout(() => {
+      running = false;
+      if (promise) {
+        promise = false;
+        debounce(func);
+      }
+    }, 1000);
+  }
+
+  sketch.windowResized = () => {
+    debounce(() => {
+      console.log("mmm");
+      if (element == null)
+        return;
+      element = document.getElementById("landing1");
+      if (element === null) {
+        sketch.noLoop();
+        return;
+      }
+      const about1 = document.getElementById("about1");
+      const about2 = document.getElementById("about2");
+      sketch.resizeCanvas(
+        sketch.ceil(about1.offsetWidth),
+        sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.5))
+      );
+      topAreaHeight = about1.offsetHeight;
+      // eslint-disable-next-line no-undef
+      dustM.resize(sketch.width, Math.floor(sketch.height * floatingPointArea));
+      // eslint-disable-next-line no-undef
+      borderM.resize(
+        sketch.width,
+        sketch.height - topAreaHeight * 0.5,
+        topAreaHeight * 0.5);
+    })
   }
 
   sketch.draw = () => {
