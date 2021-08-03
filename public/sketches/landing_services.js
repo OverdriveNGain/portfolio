@@ -39,10 +39,6 @@ var landingServicesFunction = (sketch) => {
         // eslint-disable-next-line no-undef
         snowM = new SnowManager(sketch.width, sketch.height, 250);
 
-        landing_services_hover = (e, newIndex) => {
-            choiceIndex = newIndex;
-        }
-
         sketch.textFont(debugFont);
     }
 
@@ -107,6 +103,9 @@ var landingServicesFunction = (sketch) => {
     }
     landing3ServicesResize = () => {
         sketch.windowResized();
+    }
+    landing_services_hover = (e, newIndex) => {
+        choiceIndex = newIndex;
     }
 
     const setupBoundsArray = () => {
