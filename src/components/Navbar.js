@@ -3,10 +3,12 @@ import {
     Link,
     useLocation
 } from "react-router-dom";
+import useResize from '../hooks/useResize';
 import NavbarBrand from './NavbarComponents';
 
 const Navbar = () => {
     const [scrollTop, setScrollTop] = useState(0);
+    const { breakpointSelector } = useResize();
 
     const location = useLocation();
     const refreshScrollTop = () => {
@@ -55,17 +57,18 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/aboutme")}`} to="/aboutme">About Me</Link>
-                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/aboutme")}`} to="/aboutme" style={expandBgNavSmall}>About Me</Link>
-
-                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/projects")}`} to="/projects">Projects</Link>
-                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/projects")}`} to="/projects" style={expandBgNavSmall}>Projects</Link>
-
-                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/portfolio")}`} to="/portfolio">Portfolio</Link>
-                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/portfolio")}`} to="/portfolio" style={expandBgNavSmall}>Portfolio</Link>
-
-                        <Link className={`nav-link px-3 d-none d-md-block bg-md-success ${getNavbarLinkColor(location, "/contact")}`} to="/contact">Contact</Link>
-                        <Link className={`nav-link px-3 d-md-none ${getNavbarLinkColor(location, "/contact")}`} to="/contact" style={expandBgNavSmall}>Contact</Link>
+                        {breakpointSelector(
+                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`} to="/aboutme" style={expandBgNavSmall}>About Me</Link>, null, null,
+                            <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/aboutme")}`} to="/aboutme">About Me</Link>)}
+                        {breakpointSelector(
+                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/projects")}`} to="/projects" style={expandBgNavSmall}>Projects</Link>, null, null,
+                            <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/projects")}`} to="/projects">Projects</Link>)}
+                        {breakpointSelector(
+                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/portfolio")}`} to="/portfolio" style={expandBgNavSmall}>Portfolio</Link>, null, null,
+                            <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/portfolio")}`} to="/portfolio">Portfolio</Link>)}
+                        {breakpointSelector(
+                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`} to="/contact" style={expandBgNavSmall}>Contact</Link>, null, null,
+                            <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/contact")}`} to="/contact">Contact</Link>)}
 
                     </div>
                 </div>
