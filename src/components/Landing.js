@@ -31,14 +31,27 @@ const Landing = () => {
             }
         }
 
+        let running = false;
+        const debounce = (func) => {
+            if (running)
+                return;
+            running = true;
+            func();
+            setTimeout(() => {
+                running = false;
+            }, 300);
+        }
+
         const waitUntilInit = async () => {
             let temp;
             temp = window.setInterval(() => {
                 if (refreshLoopStates() === false) {
                 }
                 else {
-                    window.addEventListener('scroll', function () {
-                        refreshLoopStates();
+                    window.addEventListener('scroll', () => {
+                        debounce(() => {
+                            refreshLoopStates();
+                        });
                     });
                     window.clearInterval(temp);
                 }
