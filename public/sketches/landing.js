@@ -7,6 +7,7 @@ var landing1Function = (sketch) => {
   const DUSTNEIGHBORMAXDIST = 100;
   const floatingPointArea = 2 / 3;
   const md_bp = 768;
+  const fontFile = "sketches/fonts/Montserrat-Regular.otf";
 
   let dustM;
   let shouldRemove = false;
@@ -15,6 +16,11 @@ var landing1Function = (sketch) => {
   let col2 = [255, 255, 255];
   let borderM;
   let topAreaHeight;
+  let debugFont;
+
+  sketch.preload = () => {
+    debugFont = sketch.loadFont(fontFile, () => { }, (e) => { console.log(e) });
+  }
 
   sketch.setup = () => {
     element = document.getElementById("landing1");
@@ -26,7 +32,8 @@ var landing1Function = (sketch) => {
     const about2 = document.getElementById("about2");
     const canv = sketch.createCanvas(
       sketch.round(about1.offsetWidth),
-      sketch.round(about1.offsetHeight + (about2.offsetHeight * 0.5))
+      sketch.round(about1.offsetHeight + (about2.offsetHeight * 0.5)),
+      sketch.WEBGL
     );
     topAreaHeight = about1.offsetHeight;
     col1 = sketch.color(col1[0], col1[1], col1[2]);
@@ -44,6 +51,8 @@ var landing1Function = (sketch) => {
       col2);
 
     canv.parent('landing1');
+
+    sketch.textFont(debugFont);
   }
 
   sketch.windowResized = () => {
@@ -76,6 +85,7 @@ var landing1Function = (sketch) => {
       sketch.remove();
       return;
     }
+    sketch.translate(-sketch.width / 2, -sketch.height / 2);
     sketch.background(255);
 
     dustM.step()
@@ -92,7 +102,7 @@ var landing1Function = (sketch) => {
 
     sketch.fill(0);
     sketch.noStroke();
-    sketch.text(sketch.round(sketch.frameRate()), 50, sketch.height - 300);
+    sketch.text(sketch.round(sketch.frameRate()), 20, 100);
   }
 
   landing1FunctionSetVisible = (remove) => {
@@ -122,16 +132,28 @@ var landing1Function = (sketch) => {
       property = "y";
     }
 
+    // sketch.strokeWeight(3);
     for (let i = 0; i < dustM.points.length; i++) {
       const point = dustM.points[i];
       sketch.stroke(255 + -140 * ((sketch.abs(point[property] * 2 - totalLength) / totalLength)));
+      // sketch.point(point.x, point.y);
       // eslint-disable-next-line no-undef
       let neighborRect = new Rect(point.x, point.y, DUSTNEIGHBORMAXDIST, DUSTNEIGHBORMAXDIST);
       let neighbors = [];
       dustM.quadtree.queryUppers(neighborRect, neighbors, i);
-      for (let neighbor of neighbors) {
-        sketch.line(point.x, point.y, neighbor.x, neighbor.y);
+      let m = point.x;
+      let n = point.y;
+      for (let j = 0; j < neighbors.length; j++) {
+        // sketch.line(point.x, point.y, point.x + 200, point.y + 180);
+        sketch.line(m, n, neighbors[j].x, neighbors[j].y);
+        // sketch.line(0, 0, neighbors[j].x, neighbors[j].y);
+        // sketch.line(point.x, point.y, neighbors[j].x, neighbors[j].y);
       }
+      // for (let neighbor of neighbors) {
+      //   // sketch.point(point.x + 30, point.y);
+      //   sketch.line(point.x, point.y, point.x, point.y + 10);
+      //   // sketch.line(point.x, point.y, neighbor.x, neighbor.y);
+      // }
     };
   }
 
@@ -160,6 +182,8 @@ var landing1Function = (sketch) => {
 
   const getDustCount = (area) => {
     return area * 0.00008 + 16;
+    // return area * 0.00002 + 10
+    // return 50;
   }
 
 };
