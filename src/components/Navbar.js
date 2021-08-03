@@ -49,7 +49,6 @@ const Navbar = () => {
     }
 
     const navbarLinkClick = () => {
-        console.log("Hello!");
         document.getElementById('nav-toggle').click();
     }
     return (
