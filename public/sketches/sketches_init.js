@@ -51,7 +51,7 @@ class Dust {
     }
 }
 class ParticleManager {
-    constructor(width, height, topAreaHeight, gaussianFunction, colTop, colBot) {
+    constructor(width, height, topAreaHeight, gaussianFunction, colTop, colBot, upMultiplier, downMultiplier) {
         this.frame = 0;
         this.particles = [];
         this.topAreaHeight = topAreaHeight;
@@ -61,6 +61,8 @@ class ParticleManager {
         this.gaussian = gaussianFunction;
         this.colTop = colTop;
         this.colBot = colBot;
+        this.upMultiplier = upMultiplier;
+        this.downMultiplier = downMultiplier;
     }
     resize(width, height, topAreaHeight) {
         this.topAreaHeight = topAreaHeight;
@@ -84,12 +86,12 @@ class ParticleManager {
             particle.rad -= 0.3;
 
             if (particle.startvy < 0) {
-                if (particle.y > particle.starty && particle.vy > 0)
-                    particle.rad -= 0.8;
+                if (particle.y > particle.starty)
+                    particle.rad -= 2.0;
             }
             else {
-                if (particle.y < particle.starty && particle.vy < 0)
-                    particle.rad -= 0.8;
+                if (particle.y < particle.starty)
+                    particle.rad -= 2.0;
             }
 
             if (particle.rad < 0.8) {
@@ -99,7 +101,7 @@ class ParticleManager {
         }
     }
 
-    splash(mouseX, mouseY, pmouseX, pmouseY, upMultiplier, downMultiplier) {
+    splash(mouseX, mouseY, pmouseX, pmouseY) {
         let col, velydif;
         if (mouseX === undefined) {
             mouseX = Math.random() * this.width;
@@ -129,12 +131,10 @@ class ParticleManager {
             let velx = Math.cos(randomizedAngle) * velMod * speed;
             let vely = Math.sin(randomizedAngle) * velMod * Math.min(speed, this.height * 0.02);
             if (vely > 0) {
-                if (downMultiplier != null)
-                    vely *= downMultiplier;
+                vely *= this.downMultiplier;
             }
             else {
-                if (upMultiplier != null)
-                    vely *= upMultiplier;
+                vely *= this.upMultiplier;
             }
             let rad = i * 1.5;
             let posy = this.topAreaHeight + ((velydif > 0 ? -rad : rad)) * 0.5;
@@ -144,13 +144,13 @@ class ParticleManager {
     }
 
     randomSplashInterval() {
-        return 20;
+        return 40;
     }
 }
 class Particle {
     constructor(x, y, vx, vy, col, rad) {
-        const r1 = Math.random() * 0.03 + 0.01;
-        const r2 = Math.random() * 0.03 + 0.01;
+        const r1 = Math.random() * 0.06 + 0.03;
+        const r2 = Math.random() * 0.06 + 0.03;
         this.starty = y;
         this.startvy = vy;
         this.x = x;
@@ -159,7 +159,7 @@ class Particle {
         this.vy = vy;
         // this.accx = -vx * sketch.random(0.01, 0.04);
         // this.accy = -vy * sketch.random(0.01, 0.04);
-        this.accx = -vx * r1;
+        this.accx = 0;
         this.accy = -vy * r2;
         this.col = col;
         this.rad = rad;

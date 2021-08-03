@@ -4,7 +4,7 @@ var landing1FunctionSetVisible;
 var landing1FunctionResize;
 
 var landing1Function = (sketch) => {
-  const DUSTNEIGHBORMAXDIST = 100;
+  const DUSTNEIGHBORMAXDIST = 250;
   const floatingPointArea = 2 / 3;
   const md_bp = 768;
   const fontFile = "sketches/fonts/Montserrat-Regular.otf";
@@ -35,6 +35,7 @@ var landing1Function = (sketch) => {
       sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.5)) + 1,
       sketch.WEBGL
     );
+    // sketch.frameRate(30);
     topAreaHeight = about1.offsetHeight;
     col1 = sketch.color(col1[0], col1[1], col1[2]);
     col2 = sketch.color(col2[0], col2[1], col2[2]);
@@ -48,7 +49,8 @@ var landing1Function = (sketch) => {
       topAreaHeight * 0.5,
       () => { return sketch.randomGaussian(); },
       col1,
-      col2);
+      col2,
+      1, 0.2);
 
     canv.parent('landing1');
 
@@ -89,8 +91,8 @@ var landing1Function = (sketch) => {
     sketch.translate(-sketch.width / 2, -sketch.height / 2);
     sketch.background(255);
 
-    dustM.step()
-    drawFloatingPoints();
+    // dustM.step()
+    // drawFloatingPoints();
 
     if (sketch.frameCount < 85) {
       sketch.fill(255, 255, 255, 255 - sketch.frameCount * 3);
@@ -177,13 +179,13 @@ var landing1Function = (sketch) => {
     const pbelow = sketch.pmouseY > topAreaHeight;
     const below = sketch.mouseY > topAreaHeight;
     if (pbelow !== below) {
-      borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY, 1, 0.4);
+      borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
     }
   }
 
   const getDustCount = (area) => {
-    return area * 0.00008 + 16;
-    // return area * 0.00002 + 10
+    // return area * 0.00008 + 16;
+    return area * 0.00002 + 20
     // return 50;
   }
 

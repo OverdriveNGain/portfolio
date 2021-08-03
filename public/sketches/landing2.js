@@ -33,6 +33,7 @@ var landing2Function = (sketch) => {
             sketch.round((about2.offsetHeight + about3.offsetHeight) / 2),
             sketch.WEBGL
         );
+        // sketch.frameRate(30);
         topAreaHeight = about2.offsetHeight * 0.5;
         col1 = sketch.color(col1[0], col1[1], col1[2]);
         col2 = sketch.color(col2[0], col2[1], col2[2]);
@@ -44,7 +45,8 @@ var landing2Function = (sketch) => {
             topAreaHeight,
             () => { return sketch.randomGaussian(); },
             col1,
-            col2);
+            col2,
+            0.2, 0.2);
 
         sketch.noStroke();
         canv.parent('landing2');
@@ -126,10 +128,10 @@ var landing2Function = (sketch) => {
         const pbelow = sketch.pmouseY > topAreaHeight;
         const below = sketch.mouseY > topAreaHeight;
         if (pbelow && !below) {
-            borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY, 0.4, 0.4);
+            borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
         }
         else if (!pbelow && below) {
-            borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY, 0.4, 0.4);
+            borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
         }
     }
 };
