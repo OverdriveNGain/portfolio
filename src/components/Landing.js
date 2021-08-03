@@ -32,13 +32,20 @@ const Landing = () => {
         }
 
         let running = false;
+        let promise = false;
         const debounce = (func) => {
-            if (running)
+            if (running) {
+                promise = true;
                 return;
+            }
             running = true;
             func();
             setTimeout(() => {
                 running = false;
+                if (promise) {
+                    promise = false;
+                    debounce(func);
+                }
             }, 300);
         }
 
