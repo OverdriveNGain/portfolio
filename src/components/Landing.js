@@ -119,7 +119,7 @@ const Landing = () => {
                             <div className="col-12 col-md-4">
                                 {/*eslint-disable-next-line no-undef*/}
                                 <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-1 mx-md-0" onMouseOver={(e) => landingServicesHoverHandler(e, 0)} onMouseOut={(e) => landingServicesHoverHandler(e, -1)}>
-                                    <div className="card-body m-1 m-md-4 text-center p-2 p-sm-4">
+                                    <div className="card-body m-2 m-md-4 text-center p-2 p-sm-4">
                                         <div className="row align-items-center justify-content-center">
                                             <div className="col-2 col-md-8"><i className="bi bi-brush display-1 text-secondary d-none d-md-inline"></i></div>
                                             <div className="col-12">
@@ -135,7 +135,7 @@ const Landing = () => {
                             <div className="col-12 col-md-4">
                                 {/*eslint-disable-next-line no-undef*/}
                                 <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-1 mx-md-0" onMouseOver={(e) => landingServicesHoverHandler(e, 1)} onMouseOut={(e) => landingServicesHoverHandler(e, -1)}>
-                                    <div className="card-body m-1 m-md-4 text-center p-2 p-sm-4">
+                                    <div className="card-body m-2 m-md-4 text-center p-2 p-sm-4">
                                         <div className="row align-items-center justify-content-center">
                                             <div className="col-2 col-md-8"><i className="bi bi-globe2 display-1 text-secondary d-none d-md-inline"></i></div>
                                             <div className="col-12 text-md-center">
@@ -151,7 +151,7 @@ const Landing = () => {
                             <div className="col-12 col-md-4">
                                 {/*eslint-disable-next-line no-undef*/}
                                 <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-1 mx-md-0" onMouseOver={(e) => landingServicesHoverHandler(e, 2)} onMouseOut={(e) => landingServicesHoverHandler(e, -1)}>
-                                    <div className="card-body m-1 m-md-4 text-center p-2 p-sm-4">
+                                    <div className="card-body m-2 m-md-4 text-center p-2 p-sm-4">
                                         <div className="row align-items-center justify-content-center">
                                             <div className="col-2 col-md-8"><i className="bi bi-phone display-1 text-secondary d-none d-md-inline"></i></div>
                                             <div className="col-12 text-md-center">
