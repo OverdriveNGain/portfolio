@@ -177,8 +177,10 @@ const Landing = () => {
                 <div id="landing1" />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center h-100">
                     <div className="display-6 pt-5 pb-2 d-inline-block text-muted fs-5 fs-md-4">So let me introduce myself...</div>
-                    <div className="display-4 px-3 pb-3 d-inline-block">My name is <span className="text-primary">Jeremy</span>, and I am a <span className="text-secondary">full-stack software<Nbsp />engineer</span>.</div>
+                    <div className="display-4 px-3 pb-3 d-inline-block">My name is <span className="text-primary">Jeremy</span>, and I am a <span className="text-secondary">full&#8209;stack software<Nbsp />engineer</span>.</div>
                 </div>
+
+
             </div>
             <div id="about2">
                 <div style={{ padding: `${breakpointSelector(30, 60, null, 80, 100, 120)}px 0px` }}>
