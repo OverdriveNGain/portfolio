@@ -46,7 +46,7 @@ var landing2Function = (sketch) => {
             () => { return sketch.randomGaussian(); },
             col1,
             col2,
-            0.2, 0.2);
+            0.5, 0.5);
 
         sketch.noStroke();
         canv.parent('landing2');

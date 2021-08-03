@@ -53,7 +53,7 @@ var landing1Function = (sketch) => {
       () => { return sketch.randomGaussian(); },
       col1,
       col2,
-      1, 0.2);
+      1, 0.5);
 
     canv.parent('landing1');
 
@@ -169,12 +169,24 @@ var landing1Function = (sketch) => {
     sketch.pop();
   }
 
+  let pFrameMouseX = -1;
+  let pFrameMouseY = -1;
+  let lastMouseMoveOnFrame = -1;
   const borderWaveSplashCheck = () => {
     const pbelow = sketch.pmouseY > topAreaHeight;
     const below = sketch.mouseY > topAreaHeight;
     if (pbelow !== below) {
-      borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
+      if (Math.abs(sketch.frameCount - lastMouseMoveOnFrame) < 5) {
+        borderM.splash(sketch.mouseX, sketch.mouseY, sketch.pmouseX, sketch.pmouseY);
+      }
     }
+
+    if (pFrameMouseX !== sketch.mouseX || pFrameMouseY !== sketch.mouseY) {
+      lastMouseMoveOnFrame = sketch.frameCount;
+    }
+
+    pFrameMouseX = sketch.mouseX;
+    pFrameMouseY = sketch.mouseY;
   }
 
 };

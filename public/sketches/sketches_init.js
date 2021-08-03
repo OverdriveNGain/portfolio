@@ -123,7 +123,7 @@ class ParticleManager {
             velydif = mouseY - pmouseY;
             col = velydif > 0 ? this.colBot : this.colTop;
         }
-        let speed = Math.max(Math.abs(mouseX - pmouseX), Math.abs(mouseY - pmouseY));
+        let speed = Math.min(Math.max(Math.abs(mouseX - pmouseX), Math.abs(mouseY - pmouseY)), 50);
         const particleCount = Math.min(40, Math.floor(speed * 3));
         for (let i = 0; i < particleCount; i++) {
             let g1 = this.gaussian()
@@ -131,8 +131,8 @@ class ParticleManager {
             let random1 = g1 * 20 - 10;
             let random2 = g2 * 20 - 10;
             let velMod = Math.random();
-            let velx = (mouseX - pmouseX + random1) * velMod * 0.1;
-            let vely = (mouseY - pmouseY + random2) * velMod * 0.1;
+            let velx = (mouseX - pmouseX + random1) * velMod * 0.07;
+            let vely = (mouseY - pmouseY + random2) * velMod * 0.07;
             if (vely > 0)
                 vely *= this.downMultiplier;
             else
@@ -150,8 +150,8 @@ class ParticleManager {
 }
 class Particle {
     constructor(x, y, vx, vy, col, rad) {
-        const r1 = Math.random() * 0.06 + 0.03;
-        const r2 = Math.random() * 0.06 + 0.03;
+        const r1 = Math.random() * 0.05 + 0.025;
+        const r2 = Math.random() * 0.05 + 0.025;
         this.starty = y;
         this.startvy = vy;
         this.x = x;
@@ -161,7 +161,7 @@ class Particle {
         // this.accx = -vx * sketch.random(0.01, 0.04);
         // this.accy = -vy * sketch.random(0.01, 0.04);
         this.accx = 0;
-        this.accy = -vy * r2;
+        this.accy = Math.sign(vy) * -0.1;
         this.col = col;
         this.rad = rad;
     }
