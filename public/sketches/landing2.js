@@ -53,6 +53,8 @@ var landing2Function = (sketch) => {
     }
 
     sketch.windowResized = () => {
+        if (element == null)
+            return;
         element = document.getElementById("landing2");
         if (element === null) {
             sketch.noLoop();

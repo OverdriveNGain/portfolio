@@ -35,6 +35,8 @@ var portfolioBgFunction = (sketch) => {
     }
 
     sketch.windowResized = () => {
+        if (element == null)
+            return;
         element = document.getElementById("portfolio-bg");
         if (element === null) {
             sketch.noLoop();

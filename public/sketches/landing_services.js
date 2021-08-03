@@ -43,6 +43,8 @@ var landingServicesFunction = (sketch) => {
     }
 
     sketch.windowResized = () => {
+        if (element == null)
+            return;
         element = document.getElementById("landing_services");
         if (element === null) {
             sketch.noLoop();

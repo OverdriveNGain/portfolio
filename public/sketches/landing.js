@@ -56,6 +56,8 @@ var landing1Function = (sketch) => {
   }
 
   sketch.windowResized = () => {
+    if (element == null)
+      return;
     element = document.getElementById("landing1");
     if (element === null) {
       sketch.noLoop();
@@ -75,7 +77,6 @@ var landing1Function = (sketch) => {
       sketch.width,
       sketch.height - topAreaHeight * 0.5,
       topAreaHeight * 0.5);
-
   }
 
   sketch.draw = () => {
