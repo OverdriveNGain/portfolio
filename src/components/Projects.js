@@ -107,9 +107,9 @@ const Projects = () => {
                 };
             }
             toReturn.push(<div key={project.id} style={tileDivStyle} className="d-inline-block position-absolute p-1 animated-all">
-                <div className="shadow p-3 rounded bg-warning h-100">
+                <div className="shadow p-3 rounded bg-light h-100">
                     <div>{project.title}</div>
-                    <small>{project.languages}</small>
+                    <small className="text-muted">{project.languages.join(", ")}</small>
                 </div>
             </div>);
         }
