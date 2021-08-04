@@ -15,20 +15,20 @@ const Contact = () => {
                 (
                     <div className="col-lg-4 bg-light p-5">
                         <p className="d-lg-block p-5" />
-                        <div class="pb-4">
-                            <i class="bi bi-envelope-fill pe-3"></i>
+                        <div className="pb-4">
+                            <i className="bi bi-envelope-fill pe-3"></i>
                             <span className="">jeremyamon@gmail.com</span>
                         </div>
-                        <div class="pb-4">
-                            <i class="bi bi-linkedin pe-3"></i>
+                        <div className="pb-4">
+                            <i className="bi bi-linkedin pe-3"></i>
                             <span className=""><a href="https://www.linkedin.com/in/jeremy-amon-b0548a124/">Jeremy Amon on LinkedIn</a></span>
                         </div>
-                        <div class="pb-4">
-                            <i class="bi bi-github pe-3"></i>
+                        <div className="pb-4">
+                            <i className="bi bi-github pe-3"></i>
                             <span className=""><a href="https://github.com/OverdriveNGain">Jeremy Amon on Github</a></span>
                         </div>
-                        <div class="pb-4">
-                            <i class="bi bi-phone-fill pe-3"></i>
+                        <div className="pb-4">
+                            <i className="bi bi-phone-fill pe-3"></i>
                             <span className="">+63 995 963 2500</span>
                         </div>
                     </div>));
@@ -39,20 +39,20 @@ const Contact = () => {
                     <div className="bg-light">
                         <div className="container p-4 text-center">
                             <div className="row ps-4 ps-sm-0 justify-content-center">
-                                <div class="pb-4 col-12 col-sm-6">
-                                    <i class="bi bi-envelope-fill pe-3"></i>
+                                <div className="pb-4 col-12 col-sm-6">
+                                    <i className="bi bi-envelope-fill pe-3"></i>
                                     <span className="">jeremyamon@gmail.com</span>
                                 </div>
-                                <div class="pb-4 col-12 col-sm-6">
-                                    <i class="bi bi-phone-fill pe-3"></i>
+                                <div className="pb-4 col-12 col-sm-6">
+                                    <i className="bi bi-phone-fill pe-3"></i>
                                     <span className="">+63 995 963 2500</span>
                                 </div>
-                                <div class="pb-4 col-12 col-sm-6">
-                                    <i class="bi bi-linkedin pe-3"></i>
+                                <div className="pb-4 col-12 col-sm-6">
+                                    <i className="bi bi-linkedin pe-3"></i>
                                     <span className=""><a href="https://www.linkedin.com/in/jeremy-amon-b0548a124/">Jeremy Amon on LinkedIn</a></span>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <i class="bi bi-github pe-3"></i>
+                                <div className="col-12 col-sm-6">
+                                    <i className="bi bi-github pe-3"></i>
                                     <span className=""><a href="https://github.com/OverdriveNGain">Jeremy Amon on Github</a></span>
                                 </div>
                             </div>
