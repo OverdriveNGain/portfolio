@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AboutMe = () => {
     useEffect(() => {
@@ -11,16 +12,26 @@ const AboutMe = () => {
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center">About Me</p>
                     <p className="mt-4 display-6">Greetings!</p>
-                    <p className="indented">
-                        <span className="text-secondary">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </span>
-                        Assumenda nemo labore dolor eaque facilis eius reprehenderit id, quos recusandae distinctio nesciunt blanditiis, consequuntur mollitia molestias. Asperiores obcaecati nam necessitatibus reprehenderit ad consequuntur illo possimus distinctio incidunt delectus similique, provident sapiente non nulla tenetur veritatis dicta eaque molestiae modi, commodi facilis?
+                    <p className="mb-3">
+                        My name is Jeremy, and I am a full-stack developer. I create websites, mobile apps, and software that help in a multitude of tasks, for everyone to use. I enjoy programming and logic problems, so I happily enjoy my time whenever I create various projects in my free time.
                     </p>
-                    <p className="indented">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis libero dolorum unde modi id numquam corporis temporibus officia. Cumque quod, modi unde ex, quibusdam, ad minima facilis blanditiis sapiente et fugiat porro? Assumenda autem, cumque illum aspernatur quod est voluptates rerum. Neque veritatis officia sed dolor dolorem corrupti, odit magnam qui. <span className="text-primary">Modi ratione earum libero, commodi similique illo error ipsum</span>. at laudantium assumenda ab ipsa id. Laborum expedita aut quidem sunt cum fuga corrupti obcaecati, dolores enim hic aperiam itaque.
+                    <p className="mb-3">
+                        In essence, I create software with a focus on accuracy and performance. I provide well-documented commits to my repositories, and I dive deep into whatever framework I dive into. I believe that the quality of a system is only as good as the quality of its subparts, and following that belief system in engineering accessible software and applications will lead to better quality outputs.
                     </p>
-                    <p className="indented">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis deserunt quasi praesentium repellat placeat dicta vitae voluptatum. Architecto voluptatum modi asperiores quaerat sed nemo alias. Explicabo animi ab debitis, recusandae consequuntur sunt atque, fuga soluta sit magni consequatur ex dolor repellendus molestias <span className="text-secondary">magnam ullam</span>, at temporibus deserunt cumque. Quia ea vel magnam expedita architecto. Perferendis magnam dolorem, rerum excepturi dolorum, ex molestias nam aliquid fugiat ipsam est ratione eos laborum, placeat fuga voluptatum dolores mollitia velit corporis pariatur explicabo quam enim error? Voluptatibus quidem aliquam facere illum. Alias labore reiciendis provident odit. Mollitia accusantium omnis voluptatum fugiat. Laborum recusandae aliquam incidunt earum amet fuga sequi. Dolor, earum debitis molestias dolores facilis sint cumque eius id, libero ea magnam tempora nam!
+                    <p className="mb-3">
+                        My passion for programming sparked when I first wanted to create my own computer game. When I was 11, I used Game Maker Studio 1 to try and create simple games using sprites made in Inkscape. Although I wasn't able to finish any projects due to school homework, I am thankful for the experience because I have learned a lot of programming concepts from studying Game Maker’s programming language, GML.
                     </p>
+                    <p className="mb-3">
+                        A few years later, I taught myself how to use another freely available game engine, Unity 3D. This time, I was able to finish a few games using that platform. Although they were simple games, I did all of the work myself, including sprite creation using Adobe Illustrator, SFX using Audacity, and uploading APKs to the Google Play Store. Of course, my games didn’t go viral, but I am especially thankful for the skills that I have learned because of Unity as well, as I was able to use these skills in other aspects of my life (which included creating pub mats for school projects, creating billboards for a school, and designing T-shirts and ID laces every semester)
+                    </p>
+                    <p className="mb-3">
+                        Fast forward to today, I have grown a lot more in terms of the frameworks and tools that I use for not only games but also for websites and mobile applications. I can create a website for your business that focuses on user experience and ease of use, or I can develop your mobile app that provides convenience to your customers to which they truly deserve. I work well in teams, and I learn fast in any environment that you assign to me.
+                    </p>
+                    <Link to="/contact">
+                        <p className="">
+                            Let’s grab a cup of coffee sometime!
+                        </p>
+                    </Link>
                     <p className="py-5" />
                 </div>
             </div>
