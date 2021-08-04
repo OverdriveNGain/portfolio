@@ -9,7 +9,7 @@ const Projects = () => {
         "Unity 3D",
         "Firebase",
         "React JS",
-        "Git + Github",
+        "Git",
         "HTML",
         "CSS",
         "Javascript",
@@ -27,7 +27,7 @@ const Projects = () => {
         {
             id: 1,
             title: "Website Portfolio",
-            languages: ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js"]
+            languages: ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js", "Git"]
         },
         {
             id: 2,
@@ -76,8 +76,8 @@ const Projects = () => {
             return true;
         }
         let toReturn = [];
-        const cols = breakpointSelector(1, 2, 3);
-        const height = breakpointSelector(100, 150, 200);
+        const cols = breakpointSelector(2, 2, 3, 4);
+        const height = breakpointSelector(150, 150, 200);
         const width = `${Math.floor(100 / cols)}`;
         let projectsToDisplay;
         // if (filters.length === 0)
@@ -136,20 +136,16 @@ const Projects = () => {
     }
     return (
         <div className="container">
-            <div className="row justify-content-center">
-                <div className="col col-md-10 px-4">
-                    <p className="py-5" />
-                    <p className="display-1 font-title text-primary text-center">Projects</p>
-                    <input className="form-control my-4" type="text" placeholder="Search for Projects" aria-label="default input example" />
-                    <small className="d-block text-muted mb-2">Filters:</small>
-                    <div className="text-center">
-                        {getFilterButtons()}
-                    </div>
-                    <hr />
-                    {getProjectTiles()}
-                    <div className="p-4" />
-                </div>
+            <p className="py-5" />
+            <p className="display-1 font-title text-primary text-center">Projects</p>
+            <input className="form-control my-4" type="text" placeholder="Search for Projects" aria-label="default input example" />
+            <small className="d-block text-muted mb-2">Filters:</small>
+            <div className="text-center">
+                {getFilterButtons()}
             </div>
+            <hr />
+            {getProjectTiles()}
+            <div className="p-4" />
         </div>
     );
 }
