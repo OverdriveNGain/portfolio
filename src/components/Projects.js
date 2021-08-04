@@ -48,6 +48,7 @@ const Projects = () => {
             languages: ["Flutter"]
         },
     ]
+
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
@@ -65,44 +66,60 @@ const Projects = () => {
     }
 
     const getProjectTiles = () => {
+        const isProjectShown = (project) => {
+            for (let filter of filters) {
+                if (!project.languages.includes(filter))
+                    return false;
+            }
+            return true;
+        }
         let toReturn = [];
         const cols = 3;
         const height = "200";
         const width = `${Math.floor(100 / cols)}`;
         let projectsToDisplay;
-        if (filters.length === 0)
-            projectsToDisplay = projects;
-        else
-            projectsToDisplay = projects.filter((project) => {
-                for (let filter of filters) {
-                    if (!project.languages.includes(filter))
-                        return false;
-                }
-                return true;
-            })
-        toReturn = projectsToDisplay.map((data, i) => {
-            const leftOffset = `${Math.floor(i % cols) * width}%`;
-            const topOffset = `${Math.floor(i / cols) * height}px`;
-            const tileDivStyle = {
-                width: width + "%",
-                height: height + "px",
-                left: leftOffset,
-                top: topOffset
-            };
-            return (<div key={data.id} style={tileDivStyle} className="d-inline-block position-absolute p-1">
+        // if (filters.length === 0)
+        projectsToDisplay = projects;
+        // else
+        //     projectsToDisplay = projects.filter(isProjectShown)
+
+        let shownIndex = 0;
+        for (let i = 0; i < projectsToDisplay.length; i++) {
+            let project = projectsToDisplay[i];
+            let tileDivStyle;
+            if (isProjectShown(project)) {
+                tileDivStyle = {
+                    width: width + "%",
+                    height: height + "px",
+                    left: `${Math.floor(shownIndex % cols) * width}%`,
+                    top: `${Math.floor(shownIndex / cols) * height}px`,
+                    opacity: '1'
+                };
+                shownIndex++;
+            }
+            else {
+                tileDivStyle = {
+                    width: width + "%",
+                    height: height + "px",
+                    left: "0px",
+                    top: "0px",
+                    opacity: '0'
+                };
+            }
+            toReturn.push(<div key={project.id} style={tileDivStyle} className="d-inline-block position-absolute p-1 animated-all">
                 <div className="shadow p-3 rounded bg-warning h-100">
-                    <div>{data.title}</div>
-                    <small>{data.languages}</small>
+                    <div>{project.title}</div>
+                    <small>{project.languages}</small>
                 </div>
             </div>);
-        })
+        }
 
         return <div style={{
             position: "relative",
             top: "0px",
             width: "100%",
-            height: (height * Math.ceil(projectsToDisplay.length / cols)) + "px",
-        }}>{toReturn}</div>;
+            height: (height * Math.ceil(shownIndex / cols)) + "px",
+        }} class="animated-all">{toReturn}</div>;
     }
 
     const getFilterButtons = () => {
