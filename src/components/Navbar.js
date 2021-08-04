@@ -45,7 +45,7 @@ const Navbar = () => {
     }
 
     const getNavbarLinkColor = (locationObject, targetPath) => {
-        return locationObject.pathname === targetPath ? "text-secondary" : "text-primary";
+        return locationObject.pathname.includes(targetPath) ? "text-secondary" : "text-primary";
     }
 
     const navbarLinkClick = () => {
