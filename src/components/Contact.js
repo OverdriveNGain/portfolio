@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import useResize from '../hooks/useResize';
 
 const Contact = () => {
-    const { dimensions, breakpointSelector } = useResize();
+    const { breakpointSelector } = useResize();
     const submitCallback = (e) => {
 
     }
