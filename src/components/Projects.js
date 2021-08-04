@@ -19,7 +19,6 @@ const Projects = () => {
         "Adobe Photoshop",
         "Processing",
         "p5.js",
-        "Inkscape",
         "C#",
         "Python"
     ]
