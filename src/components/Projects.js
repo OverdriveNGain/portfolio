@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
+import { Link } from "react-router-dom";
 
 const Projects = () => {
     const [filters, setFilters] = useState([]);
@@ -24,28 +25,33 @@ const Projects = () => {
     ]
     const projects = [
         {
-            id: 1,
+            id: "website-portfolio",
             title: "Website Portfolio",
-            languages: ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js", "Git"]
+            description: "This website, actually!",
+            languages: ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js", "Git"],
         },
         {
-            id: 2,
+            id: "money-counter",
             title: "Money Counter",
+            description: "A simple app for counting money",
             languages: ["Flutter"]
         },
         {
-            id: 3,
+            id: "buwad-republic",
             title: "Buwad Republic",
+            description: "A promotional website for a growing dried fish business",
             languages: ["Flutter", "Firebase"]
         },
         {
-            id: 4,
+            id: "loose-blocks",
             title: "Loose Blocks",
+            description: "A classic game without the training wheels",
             languages: ["Unity 3D", "Adobe Illustrator"]
         },
         {
-            id: 5,
+            id: "just-crafts-ph",
             title: "Just Crafts PH App",
+            description: "A mobile app that showcases a sticker business' designs",
             languages: ["Flutter"]
         },
     ]
@@ -108,10 +114,12 @@ const Projects = () => {
                 };
             }
             toReturn.push(<div key={project.id} style={tileDivStyle} className="d-inline-block position-absolute p-1 animated-all">
-                <div className="shadow p-3 rounded bg-light h-100">
-                    <div>{project.title}</div>
-                    <small className="text-muted">{project.languages.join(", ")}</small>
-                </div>
+                <Link to={`/projects/${project.id}`} className="link-no-underline">
+                    <div className="shadow p-3 rounded bg-light h-100">
+                        <div>{project.title}</div>
+                        <small className="text-muted">{project.description}</small>
+                    </div>
+                </Link>
             </div>);
         }
 
