@@ -19,16 +19,40 @@ const Projects = () => {
         "p5.js",
         "Inkscape",
         "C#",
-        "Git + Github",
         "Python"
+    ]
+    const projects = [
+        {
+            id: 1,
+            title: "Website Portfolio",
+            languages: ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js"]
+        },
+        {
+            id: 2,
+            title: "Money Counter",
+            languages: ["Flutter"]
+        },
+        {
+            id: 3,
+            title: "Buwad Republic",
+            languages: ["Flutter", "Firebase"]
+        },
+        {
+            id: 4,
+            title: "Loose Blocks",
+            languages: ["Unity 3D", "Adobe Illustrator"]
+        },
+        {
+            id: 5,
+            title: "Just Crafts PH App",
+            languages: ["Flutter"]
+        },
     ]
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
 
     const onFilterButtonToggle = (name, newState) => {
-        console.log(`Toggling ${name} to ${newState}`);
-        console.log(":" + filters);
         let newFilterList;
         if (newState) {
             newFilterList = [...filters];
@@ -38,7 +62,47 @@ const Projects = () => {
             newFilterList = filters.filter((f) => f !== name);
         }
         setFilters(newFilterList);
-        console.log("::" + newFilterList);
+    }
+
+    const getProjectTiles = () => {
+        let toReturn = [];
+        const cols = 3;
+        const height = "200";
+        const width = `${Math.floor(100 / cols)}`;
+        let projectsToDisplay;
+        if (filters.length === 0)
+            projectsToDisplay = projects;
+        else
+            projectsToDisplay = projects.filter((project) => {
+                for (let filter of filters) {
+                    if (!project.languages.includes(filter))
+                        return false;
+                }
+                return true;
+            })
+        toReturn = projectsToDisplay.map((data, i) => {
+            const leftOffset = `${Math.floor(i % cols) * width}%`;
+            const topOffset = `${Math.floor(i / cols) * height}px`;
+            const tileDivStyle = {
+                width: width + "%",
+                height: height + "px",
+                left: leftOffset,
+                top: topOffset
+            };
+            return (<div key={data.id} style={tileDivStyle} className="d-inline-block position-absolute p-1">
+                <div className="shadow p-3 rounded bg-warning h-100">
+                    <div>{data.title}</div>
+                    <small>{data.languages}</small>
+                </div>
+            </div>);
+        })
+
+        return <div style={{
+            position: "relative",
+            top: "0px",
+            width: "100%",
+            height: (height * Math.ceil(projectsToDisplay.length / cols)) + "px",
+        }}>{toReturn}</div>;
     }
 
     const getFilterButtons = () => {
@@ -59,11 +123,12 @@ const Projects = () => {
                     <p className="display-1 font-title text-primary text-center">Projects</p>
                     <input className="form-control my-4" type="text" placeholder="Search for Projects" aria-label="default input example" />
                     <small className="d-block text-muted mb-2">Filters:</small>
-                    <div>
+                    <div className="text-center">
                         {getFilterButtons()}
                     </div>
                     <hr />
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ab magni dolorum quod vitae eligendi a officiis error corrupti culpa dicta sequi suscipit aliquid, facilis magnam. Quaerat unde officiis impedit!</div>
+                    {getProjectTiles()}
+                    <div className="p-4" />
                 </div>
             </div>
         </div>
