@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
-import { Link } from "react-router-dom";
+import {
+    Link,
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
 
 const Projects = () => {
     const [filters, setFilters] = useState([]);
@@ -53,7 +58,7 @@ const Projects = () => {
             title: "Just Crafts PH App",
             description: "A mobile app that showcases a sticker business' designs",
             languages: ["Flutter"]
-        },
+        }
     ]
 
     useEffect(() => {
@@ -144,15 +149,22 @@ const Projects = () => {
     return (
         <div className="container">
             <p className="py-5" />
-            <p className="display-1 font-title text-primary text-center">Projects</p>
-            <input className="form-control my-4" type="text" placeholder="Search for Projects" aria-label="default input example" />
-            <small className="d-block text-muted mb-2">Filters:</small>
-            <div className="text-center">
-                {getFilterButtons()}
-            </div>
-            <hr />
-            {getProjectTiles()}
-            <div className="p-4" />
+            <Switch>
+                <Route path="/projects" exact>
+                    <p className="display-1 font-title text-primary text-center">Projects</p>
+                    <input className="form-control my-4" type="text" placeholder="Search for Projects" aria-label="default input example" />
+                    <small className="d-block text-muted mb-2">Filters:</small>
+                    <div className="text-center">
+                        {getFilterButtons()}
+                    </div>
+                    <hr />
+                    {getProjectTiles()}
+                    <div className="p-4" />
+                </Route>
+                <Route path="/">
+                    <h2>Project!</h2>
+                </Route>
+            </Switch>
         </div>
     );
 }

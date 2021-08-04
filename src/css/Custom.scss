@@ -12,7 +12,7 @@ $border-radius-pill:          50rem;
 
 // Create your own map
 $custom-colors: (
-  "muted": #999
+  "muted": #888
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
