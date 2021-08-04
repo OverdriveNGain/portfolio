@@ -18,7 +18,7 @@ const Navbar = () => {
         switch (location.pathname) {
             case "/":
                 return breakpointSelector(false, null, null, scrollTop <= 150);
-            case "/portfolio":
+            case "/cv":
                 return scrollTop <= 50;
             default:
                 return false;
@@ -72,10 +72,10 @@ const Navbar = () => {
                             <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/projects")}`}
                                 to="/projects">Projects</Link>)}
                         {breakpointSelector(
-                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/portfolio")}`}
-                                onClick={navbarLinkClick} to="/portfolio" style={expandBgNavSmall}>Portfolio</Link>, null, null,
-                            <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/portfolio")}`}
-                                to="/portfolio">Portfolio</Link>)}
+                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/cv")}`}
+                                onClick={navbarLinkClick} to="/cv" style={expandBgNavSmall}>CV</Link>, null, null,
+                            <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/cv")}`}
+                                to="/cv">CV</Link>)}
                         {breakpointSelector(
                             <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`}
                                 onClick={navbarLinkClick} to="/contact" style={expandBgNavSmall}>Contact</Link>, null, null,

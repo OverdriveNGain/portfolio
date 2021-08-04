@@ -120,7 +120,7 @@ const Portfolio = () => {
             <div className="container" align="center">
                 <div className="px-1 px-sm-5">
                     <p className="py-5" />
-                    <p className="display-1 font-title text-primary text-center mb-4">Portfolio</p>
+                    <p className="display-1 font-title text-primary text-center mb-4">CV</p>
                     <div className="bg-white rounded-3 shadow-lg p-2 p-sm-4 mb-5">
                         <div className="row justify-content-center ">
                             <div className="col-12 col-md-auto text-center">
