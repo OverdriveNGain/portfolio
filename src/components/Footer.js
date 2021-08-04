@@ -46,34 +46,7 @@ const Footer = () => {
     return (
         <footer>
             <div className="bg-dark p-5 text-center">
-                <p className="text-muted mb-4"><i>"Quality means doing it right when no-one one is looking."   — Henry Ford</i></p>
-                <div>
-                    <a href="https://www.facebook.com/jeremy.m.amon/" className="m-2">
-                        <svg className="footer-link-contact" viewBox="0 0 200 200" width="30" height="30">
-                            {facebookPath}
-                        </svg>
-                    </a>
-                    <a href="https://twitter.com/JeremyTheDev/" className="m-2">
-                        <svg className="footer-link-contact" viewBox="0 0 200 200" width="30" height="30">
-                            {twitterPath}
-                        </svg>
-                    </a>
-                    <a href="mailto:jeremyamon@gmail.com" className="m-2">
-                        <svg className="footer-link-contact" viewBox="0 0 200 200" width="30" height="30">
-                            {mailPath}
-                        </svg>
-                    </a>
-                    <a href="https://github.com/OverdriveNGain" className="m-2">
-                        <svg className="footer-link-contact" viewBox="0 0 200 200" width="30" height="30">
-                            {githubPath}
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jeremy-mattheu-amon-b0548a124/" className="m-2">
-                        <svg className="footer-link-contact" viewBox="0 0 200 200" width="30" height="30">
-                            {linkedinPath}
-                        </svg>
-                    </a>
-                </div>
+                <p className="text-white mb-4"><i>"Quality means doing it right when no-one one is looking."   — Henry Ford</i></p>
                 <div className="container text-muted text-center mt-4">
                     © 2021 jeremyamon.com - All Rights Reserved.
                 </div>
