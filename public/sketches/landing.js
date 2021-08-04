@@ -28,7 +28,7 @@ var landing1Function = (sketch) => {
   sketch.setup = () => {
     element = document.getElementById("landing1");
     if (element === null) {
-      sketch.noLoop();
+      shouldRemove = true;
       return;
     }
     const about1 = document.getElementById("about1");
@@ -105,12 +105,12 @@ var landing1Function = (sketch) => {
   }
 
   sketch.draw = () => {
-    if (element === null)
-      return;
-    else if (shouldRemove) {
+    if (shouldRemove) {
       sketch.remove();
       return;
     }
+    else if (element === null)
+      return;
     sketch.translate(-sketch.width / 2, -sketch.height / 2);
     sketch.background(255);
 

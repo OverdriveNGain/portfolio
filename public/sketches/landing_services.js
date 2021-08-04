@@ -25,7 +25,7 @@ var landingServicesFunction = (sketch) => {
     sketch.setup = () => {
         element = document.getElementById("landing_services");
         if (element === null) {
-            sketch.noLoop();
+            shouldRemove = true;
             return;
         }
         const about4 = document.getElementById("about4");
@@ -59,12 +59,12 @@ var landingServicesFunction = (sketch) => {
     }
 
     sketch.draw = () => {
-        if (element === null)
-            return;
-        else if (shouldRemove) {
+        if (shouldRemove) {
             sketch.remove();
             return;
         }
+        else if (element === null)
+            return;
         sketch.translate(-sketch.width / 2, -sketch.height / 2);
         sketch.background(255);
         sketch.fill(78, 104, 255);
