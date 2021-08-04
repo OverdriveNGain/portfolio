@@ -54,7 +54,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-md navbar-light fixed-top animated-background-color" style={inlineNavbarStyle}>
             <div className="container px-4">
-                <NavbarBrand location={location} scrollTop={scrollTop} />
+                <NavbarBrand location={location} scrollTop={scrollTop} navbarLinkClick={navbarLinkClick} />
                 <button className="navbar-toggler" data-bs-toggle="collapse"
                     data-bs-target="#navbarNavAltMarkup" id="nav-toggle">
                     <span className="navbar-toggler-icon"></span>
@@ -65,7 +65,7 @@ const Navbar = () => {
                             <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`}
                                 onClick={navbarLinkClick} to="/aboutme" style={expandBgNavSmall}>About Me</Link>, null, null,
                             <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/aboutme")}`}
-                                to="/aboutme">About Me</Link>)}
+                                to="/aboutme" >About Me</Link>)}
                         {breakpointSelector(
                             <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/projects")}`}
                                 onClick={navbarLinkClick} to="/projects" style={expandBgNavSmall}>Projects</Link>, null, null,

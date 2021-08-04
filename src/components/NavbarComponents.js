@@ -2,7 +2,7 @@ import {
     Link
 } from "react-router-dom";
 
-const NavbarBrand = ({ location, scrollTop }) => {
+const NavbarBrand = ({ location, scrollTop, navbarLinkClick }) => {
     const logoPath = (<path d="M170.7,29.3C152.6,11.2,127.6,0,100,0S47.4,11.2,29.3,29.3C11.2,47.4,0,72.4,0,100c0,55.2,44.8,100,100,100
 	c27.6,0,52.6-11.2,70.7-29.3c18.1-18.1,29.3-43.1,29.3-70.7S188.8,47.4,170.7,29.3z M61.3,164c-7.4,0-14.8,0.8-20.9-4.5
 	c-4-3.5-6-8-6.5-13.1c-0.6-7.4-0.8-14.8-1.3-22.1c-0.2-3.3-0.7-6.6-1.5-9.7c-1.4-5.2-4.8-8.2-10.3-8.6c-0.3,0-0.7,0-1-0.1
@@ -31,7 +31,7 @@ const NavbarBrand = ({ location, scrollTop }) => {
     let isBrandTransparent = getBrandTransparency();
 
     return (
-        <Link className={"animated-opacity navbar-brand" + (isBrandTransparent && location.pathname === "/" ? " opacity-0" : "")} to="/">
+        <Link className={"animated-opacity navbar-brand" + (isBrandTransparent && location.pathname === "/" ? " opacity-0" : "")} to="/" onClick={navbarLinkClick}>
             <div className="d-none d-sm-block">
                 <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
                 <small className="text-muted">Full-Stack Software Engineer</small>
