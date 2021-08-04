@@ -161,7 +161,7 @@ var landing1Function = (sketch) => {
     // sketch.strokeWeight(3);
     for (let i = 0; i < dustM.points.length; i++) {
       const point = dustM.points[i];
-      sketch.stroke(255 + -50 * ((sketch.abs(point[property] * 2 - totalLength) / totalLength)));
+      sketch.stroke(255 + -100 * ((sketch.abs(point[property] * 2 - totalLength) / totalLength)));
       // eslint-disable-next-line no-undef
       let neighborRect = new Rect(point.x, point.y, DUSTNEIGHBORMAXDIST, DUSTNEIGHBORMAXDIST);
       let neighbors = [];
