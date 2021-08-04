@@ -34,7 +34,7 @@ const NavbarBrand = ({ location, scrollTop, navbarLinkClick }) => {
         <Link className={"animated-opacity navbar-brand" + (isBrandTransparent && location.pathname === "/" ? " opacity-0" : "")} to="/" onClick={navbarLinkClick}>
             <div className="d-none d-sm-block">
                 <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
-                <small className="text-muted">Full-Stack Software Engineer</small>
+                <small className="text-muted">Full-Stack Developer</small>
             </div>
             <div className="d-sm-none">
                 <svg className="navbar-logo-brand" viewBox="0 0 200 200" width="35" height="35">
