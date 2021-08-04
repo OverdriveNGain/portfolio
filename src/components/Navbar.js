@@ -17,7 +17,7 @@ const Navbar = () => {
     const getBgTransparency = () => {
         switch (location.pathname) {
             case "/":
-                return scrollTop <= 150;
+                return breakpointSelector(false, null, null, scrollTop <= 150);
             case "/portfolio":
                 return scrollTop <= 50;
             default:
