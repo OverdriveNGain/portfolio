@@ -26,6 +26,7 @@
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
+  --bs-muted: #999;
   --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
@@ -3563,6 +3564,47 @@ fieldset:disabled .btn {
   border-color: #212529;
 }
 
+.btn-muted {
+  color: #000;
+  background-color: #999;
+  border-color: #999;
+}
+
+.btn-muted:hover {
+  color: #000;
+  background-color: #a8a8a8;
+  border-color: #a3a3a3;
+}
+
+.btn-check:focus + .btn-muted, .btn-muted:focus {
+  color: #000;
+  background-color: #a8a8a8;
+  border-color: #a3a3a3;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(130, 130, 130, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(130, 130, 130, 0.5);
+}
+
+.btn-check:checked + .btn-muted,
+.btn-check:active + .btn-muted, .btn-muted:active, .btn-muted.active,
+.show > .btn-muted.dropdown-toggle {
+  color: #000;
+  background-color: #adadad;
+  border-color: #a3a3a3;
+}
+
+.btn-check:checked + .btn-muted:focus,
+.btn-check:active + .btn-muted:focus, .btn-muted:active:focus, .btn-muted.active:focus,
+.show > .btn-muted.dropdown-toggle:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(130, 130, 130, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(130, 130, 130, 0.5);
+}
+
+.btn-muted:disabled, .btn-muted.disabled {
+  color: #000;
+  background-color: #999;
+  border-color: #999;
+}
+
 .btn-outline-primary {
   color: #4e68ff;
   border-color: #4e68ff;
@@ -3832,6 +3874,40 @@ fieldset:disabled .btn {
 
 .btn-outline-dark:disabled, .btn-outline-dark.disabled {
   color: #212529;
+  background-color: transparent;
+}
+
+.btn-outline-muted {
+  color: #999;
+  border-color: #999;
+}
+
+.btn-outline-muted:hover {
+  color: #000;
+  background-color: #999;
+  border-color: #999;
+}
+
+.btn-check:focus + .btn-outline-muted, .btn-outline-muted:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(153, 153, 153, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(153, 153, 153, 0.5);
+}
+
+.btn-check:checked + .btn-outline-muted,
+.btn-check:active + .btn-outline-muted, .btn-outline-muted:active, .btn-outline-muted.active, .btn-outline-muted.dropdown-toggle.show {
+  color: #000;
+  background-color: #999;
+  border-color: #999;
+}
+
+.btn-check:checked + .btn-outline-muted:focus,
+.btn-check:active + .btn-outline-muted:focus, .btn-outline-muted:active:focus, .btn-outline-muted.active:focus, .btn-outline-muted.dropdown-toggle.show:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(153, 153, 153, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(153, 153, 153, 0.5);
+}
+
+.btn-outline-muted:disabled, .btn-outline-muted.disabled {
+  color: #999;
   background-color: transparent;
 }
 
@@ -5511,6 +5587,16 @@ fieldset:disabled .btn {
   color: #101214;
 }
 
+.alert-muted {
+  color: #5c5c5c;
+  background-color: #ebebeb;
+  border-color: #e0e0e0;
+}
+
+.alert-muted .alert-link {
+  color: #4a4a4a;
+}
+
 @-webkit-keyframes progress-bar-stripes {
   0% {
     background-position-x: 1rem;
@@ -5970,6 +6056,22 @@ fieldset:disabled .btn {
   color: #fff;
   background-color: #141619;
   border-color: #141619;
+}
+
+.list-group-item-muted {
+  color: #5c5c5c;
+  background-color: #ebebeb;
+}
+
+.list-group-item-muted.list-group-item-action:hover, .list-group-item-muted.list-group-item-action:focus {
+  color: #5c5c5c;
+  background-color: #d4d4d4;
+}
+
+.list-group-item-muted.list-group-item-action.active {
+  color: #fff;
+  background-color: #5c5c5c;
+  border-color: #5c5c5c;
 }
 
 .btn-close {
@@ -7163,6 +7265,14 @@ fieldset:disabled .btn {
   color: #1a1e21;
 }
 
+.link-muted {
+  color: #999;
+}
+
+.link-muted:hover, .link-muted:focus {
+  color: #adadad;
+}
+
 .ratio {
   position: relative;
   width: 100%;
@@ -7566,6 +7676,10 @@ fieldset:disabled .btn {
 
 .border-dark {
   border-color: #212529 !important;
+}
+
+.border-muted {
+  border-color: #999 !important;
 }
 
 .border-white {
@@ -8472,16 +8586,16 @@ fieldset:disabled .btn {
   color: #212529 !important;
 }
 
+.text-muted {
+  color: #6c757d !important;
+}
+
 .text-white {
   color: #fff !important;
 }
 
 .text-body {
   color: #212529 !important;
-}
-
-.text-muted {
-  color: #6c757d !important;
 }
 
 .text-black-50 {
@@ -8526,6 +8640,10 @@ fieldset:disabled .btn {
 
 .bg-dark {
   background-color: #212529 !important;
+}
+
+.bg-muted {
+  background-color: #999 !important;
 }
 
 .bg-body {

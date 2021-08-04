@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import useResize from '../hooks/useResize';
 
 const Projects = () => {
     const [filters, setFilters] = useState([]);
+    const { breakpointSelector } = useResize();
     const allFilters = [
         "Flutter",
         "Unity 3D",
@@ -74,8 +76,8 @@ const Projects = () => {
             return true;
         }
         let toReturn = [];
-        const cols = 3;
-        const height = "200";
+        const cols = breakpointSelector(1, 2, 3);
+        const height = breakpointSelector(100, 150, 200);
         const width = `${Math.floor(100 / cols)}`;
         let projectsToDisplay;
         // if (filters.length === 0)
@@ -119,16 +121,16 @@ const Projects = () => {
             top: "0px",
             width: "100%",
             height: (height * Math.ceil(shownIndex / cols)) + "px",
-        }} class="animated-all">{toReturn}</div>;
+        }} className="animated-all">{toReturn}</div>;
     }
 
     const getFilterButtons = () => {
         return allFilters.map((filter, i) => {
             if (filters.includes(filter)) {
-                return <button key={i} className="btn btn-primary text-white me-2 mb-2" onClick={() => { onFilterButtonToggle(filter, false) }}>{filter}</button>;
+                return <button key={i} className="btn btn-sm btn-primary text-white me-2 mb-2" onClick={() => { onFilterButtonToggle(filter, false) }}>{filter}</button>;
             }
             else {
-                return <button key={i} className="btn btn-outline-primary me-2 mb-2" onClick={() => { onFilterButtonToggle(filter, true) }}>{filter}</button>;
+                return <button key={i} className="btn btn-sm btn-outline-muted me-2 mb-2" onClick={() => { onFilterButtonToggle(filter, true) }}>{filter}</button>;
             }
         })
     }

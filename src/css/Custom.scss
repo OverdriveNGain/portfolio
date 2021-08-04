@@ -7,6 +7,15 @@ $border-radius-sm:            1.2rem;
 $border-radius-lg:            1.8rem;
 $border-radius-pill:          50rem;
 
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+// Create your own map
+$custom-colors: (
+  "muted": #999
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
 $utilities: (
   "opacity": (
     property: opacity,
