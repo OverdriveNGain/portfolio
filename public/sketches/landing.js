@@ -80,7 +80,6 @@ var landing1Function = (sketch) => {
 
   sketch.windowResized = () => {
     debounce(() => {
-      console.log("mmm");
       if (element == null)
         return;
       element = document.getElementById("landing1");
