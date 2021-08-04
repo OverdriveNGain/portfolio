@@ -6,11 +6,12 @@
 /* @import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
-body {
+.App {
     /* font-family: 'Montserrat', sans-serif; */
     font-family: 'Montserrat', sans-serif;
     /* font-size: 48px; */
     min-height: 100vh;
+    position:relative;
   }
 
 .font-title{
