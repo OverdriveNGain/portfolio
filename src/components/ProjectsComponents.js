@@ -1,4 +1,4 @@
-// import { useState } from "react";
+import { useState } from "react";
 import useRequest from "../hooks/useRequest";
 import {
     useParams,
@@ -6,6 +6,7 @@ import {
 
 const ProjectDetailsPage = ({ projectData }) => {
     let { id } = useParams();
+    const [imageI, setImageI] = useState(0);
     const { response } = useRequest(`http://localhost:3001/projects/${id}`, projectData != null);
 
     let proj;
@@ -59,7 +60,7 @@ const ProjectDetailsPage = ({ projectData }) => {
         if (proj.img != null) {
             return (
                 <p>
-                    <img src={proj.img[0]} alt="dog" className="w-100" />
+                    <img src={proj.img[imageI]} alt="dog" className="w-100" />
                 </p>
             );
         }
@@ -67,10 +68,40 @@ const ProjectDetailsPage = ({ projectData }) => {
         // return <img src={`https://picsum.photos/seed/${proj.title}/600/350/`} alt="dog" className="w-100" />
     }
 
+    const mouseOverPreviewHandler = (index) => {
+        setImageI(index);
+    }
+
+    const getImagePreviews = () => {
+        if (proj.img == null) {
+            return <div></div>;
+        }
+
+        let toReturn = [];
+
+        for (let i = 0; i < proj.img.length; i++) {
+            let opacity = 0.5;
+            if (i === imageI)
+                opacity = 1;
+            let _style = {
+                width: "100%",
+                opacity: opacity
+            };
+            toReturn.push(
+                <img key={i} src={proj.img[i]} alt={`${proj.title} preview ${i}`} style={_style} onMouseOver={() => { mouseOverPreviewHandler(i) }} />
+            );
+        }
+
+        return toReturn;
+    }
+
     return (
         <div>
             <div className="row">
-                <div className="col-8">
+                <div className="col-1 p-0">
+                    {getImagePreviews()}
+                </div>
+                <div className="col-7">
                     {getImageArea()}
                 </div>
                 <div className="col-4">
