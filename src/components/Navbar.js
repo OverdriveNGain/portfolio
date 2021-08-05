@@ -50,7 +50,7 @@ const Navbar = () => {
 
     const navbarLinkClick = () => {
         const navToggle = document.getElementById('nav-toggle');
-        if (!navToggle.classList.contains('collapsed'))
+        if (navToggle.getAttribute("aria-expanded") === "true")
             navToggle.click();
     }
     return (
@@ -58,7 +58,7 @@ const Navbar = () => {
             <div className="container px-4">
                 <NavbarBrand location={location} scrollTop={scrollTop} navbarLinkClick={navbarLinkClick} />
                 <button className="navbar-toggler" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNavAltMarkup" id="nav-toggle">
+                    data-bs-target="#navbarNavAltMarkup" id="nav-toggle" aria-expanded="false">
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
