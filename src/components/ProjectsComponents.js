@@ -55,13 +55,25 @@ const ProjectDetailsPage = ({ projectData }) => {
         return <div></div>;
     }
 
+    const getImageArea = () => {
+        if (proj.img != null) {
+            return (
+                <p>
+                    <img src={proj.img[0]} alt="dog" className="w-100" />
+                </p>
+            );
+        }
+        return <div></div>;
+        // return <img src={`https://picsum.photos/seed/${proj.title}/600/350/`} alt="dog" className="w-100" />
+    }
+
     return (
         <div>
             <div className="row">
-                <div className="col">
-                    <img src={`https://picsum.photos/seed/${proj.title}/600/350/`} alt="dog" className="w-100" />
+                <div className="col-8">
+                    {getImageArea()}
                 </div>
-                <div className="col">
+                <div className="col-4">
                     <h2>{proj.title}</h2>
                     <p>{proj.descLong}</p>
                     {getGitHubLink()}
