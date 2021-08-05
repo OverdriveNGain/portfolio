@@ -5,7 +5,8 @@
             "title": "Website Portfolio",
             "descShort": "This website, actually!",
             "descLong": "The website you are on right now is built upon a React.js framework accompanied styling from Bootstrap 5, and p5.js for sketch backgrounds.",
-            "languages": ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js", "Git"]
+            "languages": ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js", "Git"],
+            "github": "https://github.com/OverdriveNGain/portfolio"
         },
         {
             "id": "money-counter",
