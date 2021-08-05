@@ -1,0 +1,34 @@
+{
+    "projects":[
+        {
+            "id": "website-portfolio",
+            "title": "Website Portfolio",
+            "description": "This website, actually!",
+            "languages": ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js", "Git"]
+        },
+        {
+            "id": "money-counter",
+            "title": "Money Counter",
+            "description": "A simple app for counting money",
+            "languages": ["Flutter"]
+        },
+        {
+            "id": "buwad-republic",
+            "title": "Buwad Republic",
+            "description": "A promotional website for a growing dried fish business",
+            "languages": ["Flutter", "Firebase"]
+        },
+        {
+            "id": "loose-blocks",
+            "title": "Loose Blocks",
+            "description": "A classic game without the training wheels",
+            "languages": ["Unity 3D", "Adobe Illustrator"]
+        },
+        {
+            "id": "just-crafts-ph",
+            "title": "Just Crafts PH App",
+            "description": "A mobile app that showcases a sticker business' designs",
+            "languages": ["Flutter"]
+        }
+    ]
+}
