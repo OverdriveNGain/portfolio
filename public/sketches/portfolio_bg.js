@@ -63,9 +63,9 @@ var portfolioBgFunction = (sketch) => {
             sketch.fill(0, 0, 255, Math.min(Math.round(8 * bubble.life), 8));
             sketch.circle(bubble.x, bubble.y, bubble.r, bubble.r);
         }
-        sketch.fill(0);
-        sketch.translate(0, 0, 10);
-        sketch.text(sketch.round(sketch.frameRate()), 30, 150);
+        // sketch.fill(0);
+        // sketch.translate(0, 0, 10);
+        // sketch.text(sketch.round(sketch.frameRate()), 30, 150);
     }
 };
 // eslint-disable-next-line no-unused-vars

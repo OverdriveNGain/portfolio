@@ -90,9 +90,9 @@ var landing2Function = (sketch) => {
         borderWaveSplashCheck();
         drawBorderWaves();
 
-        sketch.fill(0);
-        sketch.translate(0, 0, 10);
-        sketch.text(sketch.round(sketch.frameRate()), 50, sketch.height - 300);
+        // sketch.fill(0);
+        // sketch.translate(0, 0, 10);
+        // sketch.text(sketch.round(sketch.frameRate()), 50, sketch.height - 300);
     }
 
     landing2FunctionSetVisible = (remove) => {

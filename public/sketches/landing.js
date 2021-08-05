@@ -125,9 +125,9 @@ var landing1Function = (sketch) => {
     borderWaveSplashCheck();
     drawBorderWaves();
 
-    sketch.fill(0);
-    sketch.noStroke();
-    sketch.text(sketch.round(sketch.frameRate()), 20, 100);
+    // sketch.fill(0);
+    // sketch.noStroke();
+    // sketch.text(sketch.round(sketch.frameRate()), 20, 100);
   }
 
   landing1FunctionSetVisible = (remove) => {

@@ -85,9 +85,9 @@ var landingServicesFunction = (sketch) => {
         sketch.noStroke();
 
 
-        sketch.fill(0);
-        sketch.translate(0, 0, 10);
-        sketch.text(Math.round(sketch.frameRate()), 50, 50);
+        // sketch.fill(0);
+        // sketch.translate(0, 0, 10);
+        // sketch.text(Math.round(sketch.frameRate()), 50, 50);
     }
 
     landingServicesSetVisible = (remove) => {
