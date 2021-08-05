@@ -35,7 +35,13 @@
             "descShort": "A classic game without the training wheels",
             "descLong": "A classic game without the training wheels. This game was one of the few projects that I have completed with Unity 3D; complete with self-produced assets. The game is currently still available on the Google Play store.",
             "languages": ["Unity 3D", "Adobe Illustrator"],
-            "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.looseblocks"
+            "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.looseblocks",
+            "img": [
+                "https://drive.google.com/uc?id=1bI_fOm0DWA1Gnu1B4O3z7T5Z5IhaAYvE",
+                "https://drive.google.com/uc?id=1S2ZZpoXhNBY3_ClNMtLVAJUWYX2cwa6A",
+                "https://drive.google.com/uc?id=13j1W3_MknfUzaRNySZ8d4EmNZgSHgoWN",
+                "https://drive.google.com/uc?id=1ivtWxkplYa1N6Ijvi5Csjam0q-LF8YPn"
+            ]
         },
         {
             "id": "just-crafts-ph",

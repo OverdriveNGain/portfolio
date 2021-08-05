@@ -56,22 +56,6 @@ const ProjectDetailsPage = ({ projectData }) => {
         return <div></div>;
     }
 
-    const getImageArea = () => {
-        if (proj.img != null) {
-            return (
-                <p>
-                    <img src={proj.img[imageI]} alt="dog" className="w-100" />
-                </p>
-            );
-        }
-        return <div></div>;
-        // return <img src={`https://picsum.photos/seed/${proj.title}/600/350/`} alt="dog" className="w-100" />
-    }
-
-    const mouseOverPreviewHandler = (index) => {
-        setImageI(index);
-    }
-
     const getImagePreviews = () => {
         if (proj.img == null) {
             return <div></div>;
@@ -84,7 +68,9 @@ const ProjectDetailsPage = ({ projectData }) => {
             if (i === imageI)
                 opacity = 1;
             let _style = {
-                width: "100%",
+                width: "70px",
+                height: "70px",
+                objectFit: "cover",
                 opacity: opacity
             };
             toReturn.push(
@@ -95,27 +81,76 @@ const ProjectDetailsPage = ({ projectData }) => {
         return toReturn;
     }
 
+    const getImageArea = () => {
+        if (proj.img != null) {
+            return (
+                <div className="d-flex flex-col justify-content-center">
+                    <d className="d-flex flex-column">
+                        {getImagePreviews()}
+                    </d>
+                    <div style={{ height: "100vh" }}>
+                        <img src={proj.img[imageI]} alt="dog" style={{
+                            maxHeight: "80%",
+                            maxWidth: "100%"
+                        }} />
+                    </div>
+                </div>
+            );
+        }
+        return <div></div>;
+        // return <img src={`https://picsum.photos/seed/${proj.title}/600/350/`} alt="dog" className="w-100" />
+    }
+
+    const mouseOverPreviewHandler = (index) => {
+        setImageI(index);
+    }
+
     return (
         <div>
             <div className="row">
-                <div className="col-1 p-0">
-                    {getImagePreviews()}
+                <div className="col">
+                    <div className="flex-fill">
+                        {getImageArea()}
+                    </div>
                 </div>
-                <div className="col-7">
-                    {getImageArea()}
+                <div className="col">
+                    <div className="flex-fill d-inline">
+                        <h2>{proj.title}</h2>
+                        <p>{proj.descLong}</p>
+                        {getGitHubLink()}
+                        {getPlaystoreLink()}
+                        {getWebsiteLink()}
+                        <div>This project uses the following frameworks and tools:</div>
+                        <p className="text-muted fw-bold">{proj.languages.join(", ")}</p>
+                    </div>
                 </div>
-                <div className="col-4">
-                    <h2>{proj.title}</h2>
-                    <p>{proj.descLong}</p>
-                    {getGitHubLink()}
-                    {getPlaystoreLink()}
-                    {getWebsiteLink()}
-                    <div>This project uses the following frameworks and tools:</div>
-                    <p className="text-muted fw-bold">{proj.languages.join(", ")}</p>
-                </div>
+
+
             </div>
         </div>
     );
 }
+
+// return (
+//     <div>
+//         <div className="d-flex flex-row">
+//             <div className="d-flex flex-column me-1">
+//                 {getImagePreviews()}
+//             </div>
+//             <div className="flex-grow-1">
+//                 {getImageArea()}
+//             </div>
+//             <div className="flex-grow-1 d-inline">
+//                 <h2>{proj.title}</h2>
+//                 <p>{proj.descLong}</p>
+//                 {getGitHubLink()}
+//                 {getPlaystoreLink()}
+//                 {getWebsiteLink()}
+//                 <div>This project uses the following frameworks and tools:</div>
+//                 <p className="text-muted fw-bold">{proj.languages.join(", ")}</p>
+//             </div>
+//         </div>
+//     </div>
+// );
 
 export default ProjectDetailsPage;
