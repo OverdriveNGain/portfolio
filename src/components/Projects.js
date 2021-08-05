@@ -95,7 +95,7 @@ const Projects = () => {
                 <Link to={`/projects/${project.id}`} className="link-no-underline" onClick={() => { projectTileClickHandler(project) }}>
                     <div className="shadow p-3 rounded bg-light h-100">
                         <div>{project.title}</div>
-                        <small className="text-muted">{project.description}</small>
+                        <small className="text-muted">{project.descShort}</small>
                     </div>
                 </Link>
             </div>);

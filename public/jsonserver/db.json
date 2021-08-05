@@ -3,31 +3,36 @@
         {
             "id": "website-portfolio",
             "title": "Website Portfolio",
-            "description": "This website, actually!",
+            "descShort": "This website, actually!",
+            "descLong": "The website you are on right now is built upon a React.js framework accompanied styling from Bootstrap 5, and p5.js for sketch backgrounds.",
             "languages": ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js", "Git"]
         },
         {
             "id": "money-counter",
             "title": "Money Counter",
-            "description": "A simple app for counting money",
+            "descShort": "A simple app for counting money",
+            "descLong": "A simple android application that helps in counting physical cash. It is a lightweight app built upon the Flutter framework.",
             "languages": ["Flutter"]
         },
         {
             "id": "buwad-republic",
             "title": "Buwad Republic",
-            "description": "A promotional website for a growing dried fish business",
+            "descShort": "A promotional website for a growing dried fish business",
+            "descLong": "A promotional website for a growing dried fish business started by both of my parents. It uses the Flutter framework to build the actual web application.",
             "languages": ["Flutter", "Firebase"]
         },
         {
             "id": "loose-blocks",
             "title": "Loose Blocks",
-            "description": "A classic game without the training wheels",
+            "descShort": "A classic game without the training wheels",
+            "descLong": "A classic game without the training wheels. This game was one of the few projects that I have completed with Unity 3D; complete with self-produced assets. The game is currently still available on the Google Play store.",
             "languages": ["Unity 3D", "Adobe Illustrator"]
         },
         {
             "id": "just-crafts-ph",
             "title": "Just Crafts PH App",
-            "description": "A mobile app that showcases a sticker business' designs",
+            "descShort": "A mobile app that showcases a sticker business' designs",
+            "descLong": "This mobile apps showcases the sticker designs of Just Crafts PH, a sticker business which provides various designs and sticker categories.",
             "languages": ["Flutter"]
         }
     ]

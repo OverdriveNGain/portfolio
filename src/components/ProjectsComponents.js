@@ -23,8 +23,9 @@ const ProjectDetailsPage = ({ projectData }) => {
                 </div>
                 <div className="col">
                     <h2>{proj.title}</h2>
-                    <p>{proj.description}</p>
-                    <p className="text-muted">{proj.languages.join(", ")}</p>
+                    <p>{proj.descLong}</p>
+                    <div>This project uses the following frameworks and tools:</div>
+                    <p className="text-muted fw-bold">{proj.languages.join(", ")}</p>
                 </div>
             </div>
         </div>
