@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
+import useRequest from "../hooks/useRequest";
 import {
     Link,
-    BrowserRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
+import ProjectDetailsPage from "./ProjectsComponents";
 
 const Projects = () => {
     const [filters, setFilters] = useState([]);
+    const [currentProjectData, setCurrentProjectData] = useState(null);
     const { breakpointSelector } = useResize();
+    const { response } = useRequest("http://localhost:3001/projects");
     const allFilters = [
         "Flutter",
         "Unity 3D",
@@ -28,38 +31,6 @@ const Projects = () => {
         "C#",
         "Python"
     ]
-    const projects = [
-        {
-            id: "website-portfolio",
-            title: "Website Portfolio",
-            description: "This website, actually!",
-            languages: ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js", "Git"],
-        },
-        {
-            id: "money-counter",
-            title: "Money Counter",
-            description: "A simple app for counting money",
-            languages: ["Flutter"]
-        },
-        {
-            id: "buwad-republic",
-            title: "Buwad Republic",
-            description: "A promotional website for a growing dried fish business",
-            languages: ["Flutter", "Firebase"]
-        },
-        {
-            id: "loose-blocks",
-            title: "Loose Blocks",
-            description: "A classic game without the training wheels",
-            languages: ["Unity 3D", "Adobe Illustrator"]
-        },
-        {
-            id: "just-crafts-ph",
-            title: "Just Crafts PH App",
-            description: "A mobile app that showcases a sticker business' designs",
-            languages: ["Flutter"]
-        }
-    ]
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -77,6 +48,10 @@ const Projects = () => {
         setFilters(newFilterList);
     }
 
+    const projectTileClickHandler = (project) => {
+        setCurrentProjectData(project);
+    }
+
     const getProjectTiles = () => {
         const isProjectShown = (project) => {
             for (let filter of filters) {
@@ -89,11 +64,9 @@ const Projects = () => {
         const cols = breakpointSelector(2, 2, 3, 4);
         const height = breakpointSelector(150, 150, 200);
         const width = `${Math.floor(100 / cols)}`;
-        let projectsToDisplay;
-        // if (filters.length === 0)
-        projectsToDisplay = projects;
-        // else
-        //     projectsToDisplay = projects.filter(isProjectShown)
+        let projectsToDisplay = [];
+        if (response != null)
+            projectsToDisplay = response;
 
         let shownIndex = 0;
         for (let i = 0; i < projectsToDisplay.length; i++) {
@@ -119,7 +92,7 @@ const Projects = () => {
                 };
             }
             toReturn.push(<div key={project.id} style={tileDivStyle} className="d-inline-block position-absolute p-1 animated-all">
-                <Link to={`/projects/${project.id}`} className="link-no-underline">
+                <Link to={`/projects/${project.id}`} className="link-no-underline" onClick={() => { projectTileClickHandler(project) }}>
                     <div className="shadow p-3 rounded bg-light h-100">
                         <div>{project.title}</div>
                         <small className="text-muted">{project.description}</small>
@@ -161,8 +134,8 @@ const Projects = () => {
                     {getProjectTiles()}
                     <div className="p-4" />
                 </Route>
-                <Route path="/">
-                    <h2>Project!</h2>
+                <Route path="/projects/:id">
+                    <ProjectDetailsPage projectData={currentProjectData} />
                 </Route>
             </Switch>
         </div>
