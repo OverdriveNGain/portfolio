@@ -20,14 +20,16 @@
             "title": "Buwad Republic",
             "descShort": "A promotional website for a growing dried fish business",
             "descLong": "A promotional website for a growing dried fish business started by both of my parents. It uses the Flutter framework to build the actual web application.",
-            "languages": ["Flutter", "Firebase"]
+            "languages": ["Flutter", "Firebase"],
+            "website": "https://buwad-republic.web.app/"
         },
         {
             "id": "loose-blocks",
             "title": "Loose Blocks",
             "descShort": "A classic game without the training wheels",
             "descLong": "A classic game without the training wheels. This game was one of the few projects that I have completed with Unity 3D; complete with self-produced assets. The game is currently still available on the Google Play store.",
-            "languages": ["Unity 3D", "Adobe Illustrator"]
+            "languages": ["Unity 3D", "Adobe Illustrator"],
+            "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.looseblocks"
         },
         {
             "id": "just-crafts-ph",

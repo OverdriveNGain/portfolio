@@ -20,8 +20,34 @@ const ProjectDetailsPage = ({ projectData }) => {
         if (proj.github != null) {
             return (
                 <p>
-                    <a href="https://github.com/OverdriveNGain/portfolio" target="_blank" rel="noopener noreferrer">
+                    <a href={proj.github} target="_blank" rel="noopener noreferrer">
                         Open this project in Github
+                    </a>
+                </p>
+            );
+        }
+        return <div></div>;
+    }
+
+    const getPlaystoreLink = () => {
+        if (proj.playstore != null) {
+            return (
+                <p>
+                    <a href={proj.playstore} target="_blank" rel="noopener noreferrer">
+                        See this project on the Google Play Store
+                    </a>
+                </p>
+            );
+        }
+        return <div></div>;
+    }
+
+    const getWebsiteLink = () => {
+        if (proj.website != null) {
+            return (
+                <p>
+                    <a href={proj.website} target="_blank" rel="noopener noreferrer">
+                        Open this project in a new tab
                     </a>
                 </p>
             );
@@ -39,6 +65,8 @@ const ProjectDetailsPage = ({ projectData }) => {
                     <h2>{proj.title}</h2>
                     <p>{proj.descLong}</p>
                     {getGitHubLink()}
+                    {getPlaystoreLink()}
+                    {getWebsiteLink()}
                     <div>This project uses the following frameworks and tools:</div>
                     <p className="text-muted fw-bold">{proj.languages.join(", ")}</p>
                 </div>
