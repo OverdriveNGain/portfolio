@@ -2,7 +2,6 @@
 var landing1FunctionSetVisible;
 // eslint-disable-next-line no-unused-vars
 var landing1FunctionResize;
-
 var landing1Function = (sketch) => {
   const DUSTNEIGHBORMAXDIST = 200;
   const floatingPointArea = 2 / 3;
