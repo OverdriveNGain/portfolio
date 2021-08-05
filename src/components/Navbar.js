@@ -49,7 +49,9 @@ const Navbar = () => {
     }
 
     const navbarLinkClick = () => {
-        document.getElementById('nav-toggle').click();
+        const navToggle = document.getElementById('nav-toggle');
+        if (!navToggle.classList.contains('collapsed'))
+            navToggle.click();
     }
     return (
         <nav className="navbar navbar-expand-md navbar-light fixed-top animated-background-color" style={inlineNavbarStyle}>
