@@ -1,11 +1,16 @@
 
 import { useEffect, useLayoutEffect } from 'react';
+import useRequest from "../hooks/useRequest";
 import useScript from '../hooks/useScript';
 import useResize from '../hooks/useResize';
 import Nbsp from "../helpers/Nbsp";
+import {
+    Link,
+} from "react-router-dom";
 
 const Landing = () => {
     const { dimensions, breakpointSelector } = useResize();
+    const { response } = useRequest(`http://localhost:3001/projects`);
     useScript('sketches/landing.js');
     useScript('sketches/landing2.js');
     useScript('sketches/landing_services.js');
@@ -178,6 +183,26 @@ const Landing = () => {
         </div>
     );
 
+    const getProjectTile = (index) => {
+        if (response == null)
+            return (<div className="col-12 col-md-6 mb-2 mb-sm-4">
+                <div className="card">
+                    <div className="card-body m-1 m-md-4">
+                        <h5 className="card-title no-underline text-secondary"> </h5>
+                        <p className="card-text text-dark">Loading...</p>
+                    </div>
+                </div>
+            </div>);
+        return (<div className="col-12 col-md-6 mb-2 mb-sm-4">
+            <Link to={`/projects/${response[index].id}`} className="link-no-underline"><div className="card">
+                <div className="card-body m-1 m-md-4">
+                    <h5 className="card-title no-underline text-secondary">{response[index].title}</h5>
+                    <p className="card-text text-dark">{response[index].descShort}</p>
+                </div>
+            </div></Link>
+        </div>);
+    }
+
     return (
         <div id="about-me">
             <div id="about1" style={{ height: breakpointSelector("80vh", null, null, "90vh") }}>
@@ -203,43 +228,17 @@ const Landing = () => {
                     <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
                         <div className="display-1 text-primary m-3 font-title">Projects</div>
                         <div className="row mx-xs-2 mx-md-5">
-                            <div className="col-12 col-md-6 mb-2 mb-sm-4">
-                                <a href="/" className="link-no-underline"><div className="card">
-                                    <div className="card-body m-1 m-md-4">
-                                        <h5 className="card-title no-underline text-secondary">Card title</h5>
-                                        <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div></a>
-                            </div>
-                            <div className="col-12 col-md-6 mb-2 mb-sm-4">
-                                <a href="/" className="link-no-underline"><div className="card">
-                                    <div className="card-body m-1 m-md-4">
-                                        <h5 className="card-title text-secondary">Card title</h5>
-                                        <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div></a>
-                            </div>
+                            {getProjectTile(0)}
+                            {getProjectTile(1)}
                         </div>
                         <div className="row mx-xs-2 mx-md-5">
-                            <div className="col-12 col-md-6 mb-2 mb-sm-4">
-                                <a href="/" className="link-no-underline"><div className="card">
-                                    <div className="card-body m-1 m-md-4">
-                                        <h5 className="card-title no-underline text-secondary">Card title</h5>
-                                        <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div></a>
-                            </div>
-                            <div className="d-none d-md-flex col-8 col-md-6 mb-4">
-                                <a href="/" className="link-no-underline"><div className="card">
-                                    <div className="card-body m-1 m-md-4">
-                                        <h5 className="card-title text-secondary">Last Card title</h5>
-                                        <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    </div>
-                                </div></a>
-                            </div>
+                            {getProjectTile(2)}
+                            {getProjectTile(3)}
                         </div>
 
-                        <button className="btn btn-primary align-self-center m-3 text-light">See More Projects</button>
+                        <Link to="/projects">
+                            <button className="btn btn-primary align-self-center m-3 text-light">See More Projects ❯</button>
+                        </Link>
                     </div>
 
                 </div>
