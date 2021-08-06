@@ -15,9 +15,9 @@ const ProjectDetailsPage = ({ projectData }) => {
     let proj;
     if (projectData != null)
         proj = projectData;
-    if (response != null)
+    else if (response != null)
         proj = response;
-    if (proj == null)
+    else
         return (<div>Loading...</div>);
 
     const getGitHubLink = () => {
@@ -133,27 +133,4 @@ const ProjectDetailsPage = ({ projectData }) => {
         </div>
     );
 }
-
-// return (
-//     <div>
-//         <div className="d-flex flex-row">
-//             <div className="d-flex flex-column me-1">
-//                 {getImagePreviews()}
-//             </div>
-//             <div className="flex-grow-1">
-//                 {getImageArea()}
-//             </div>
-//             <div className="flex-grow-1 d-inline">
-//                 <h2>{proj.title}</h2>
-//                 <p>{proj.descLong}</p>
-//                 {getGitHubLink()}
-//                 {getPlaystoreLink()}
-//                 {getWebsiteLink()}
-//                 <div>This project uses the following frameworks and tools:</div>
-//                 <p className="text-muted fw-bold">{proj.languages.join(", ")}</p>
-//             </div>
-//         </div>
-//     </div>
-// );
-
 export default ProjectDetailsPage;
