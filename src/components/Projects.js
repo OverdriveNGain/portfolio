@@ -122,7 +122,8 @@ const Projects = () => {
     }
     return (
         <div className="container">
-            <p className="py-5" />
+            <p className="py-4 py-md-5" />
+            <p className="py-2 py-md-0" />
             <Switch>
                 <Route path="/projects" exact>
                     <p className="display-1 font-title text-primary text-center">Projects</p>

@@ -58,9 +58,26 @@
     -o-transition: all 0.4s ease-in-out;
     transition: all 0.4s ease-in-out;
 }
+.button-highlights{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+.button-highlights:hover{
+    background-color: white;
+}
+.button-highlights:active{
+    background-color: grey;
+}
+.button-highlights:disabled{
+    opacity: 0;
+}
 
 .link-no-underline {
     text-decoration: none; 
+}
+.flex-fill-fixed{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex: 1;
 }
 
 /* Landing Page */
