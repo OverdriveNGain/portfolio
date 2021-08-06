@@ -66,22 +66,22 @@ const Navbar = () => {
                         {breakpointSelector(
                             <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`}
                                 onClick={navbarLinkClick} to="/aboutme" style={expandBgNavSmall}>About Me</Link>, null, null,
-                            <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/aboutme")}`}
+                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`}
                                 to="/aboutme" >About Me</Link>)}
                         {breakpointSelector(
                             <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/projects")}`}
                                 onClick={navbarLinkClick} to="/projects" style={expandBgNavSmall}>Projects</Link>, null, null,
-                            <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/projects")}`}
+                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/projects")}`}
                                 to="/projects">Projects</Link>)}
                         {breakpointSelector(
                             <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/cv")}`}
                                 onClick={navbarLinkClick} to="/cv" style={expandBgNavSmall}>CV</Link>, null, null,
-                            <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/cv")}`}
+                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/cv")}`}
                                 to="/cv">CV</Link>)}
                         {breakpointSelector(
                             <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`}
                                 onClick={navbarLinkClick} to="/contact" style={expandBgNavSmall}>Contact</Link>, null, null,
-                            <Link className={`nav-link px-3 bg-md-success ${getNavbarLinkColor(location, "/contact")}`}
+                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`}
                                 to="/contact">Contact</Link>)}
 
                     </div>
