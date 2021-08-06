@@ -7,13 +7,13 @@ import {
 const ProjectDetailsPage = ({ projectData }) => {
     let { id } = useParams();
     const [imageI, setImageI] = useState(0);
-    const { response } = useRequest(`http://localhost:3001/projects/${id}`, projectData != null);
+    const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects/${id}`, projectData != null);
 
     let proj;
     if (projectData != null)
         proj = projectData;
     if (response != null)
-        proj = response;
+        proj = response.data;
     if (proj == null)
         return (<div>Loading...</div>);
 
