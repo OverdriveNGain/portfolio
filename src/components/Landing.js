@@ -10,7 +10,9 @@ import {
 
 const Landing = () => {
     const { dimensions, breakpointSelector } = useResize();
-    const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects`);
+    const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects`, {
+        alt: "http://localhost:3004/data"
+    });
     useScript('sketches/landing.js');
     useScript('sketches/landing2.js');
     useScript('sketches/landing_services.js');
@@ -193,12 +195,11 @@ const Landing = () => {
                     </div>
                 </div>
             </div>);
-        const projects = response.data;
         return (<div className="col-12 col-md-6 mb-2 mb-sm-4">
-            <Link to={`/projects/${projects[index].id}`} className="link-no-underline"><div className="card">
+            <Link to={`/projects/${response[index].id}`} className="link-no-underline"><div className="card">
                 <div className="card-body m-1 m-md-4">
-                    <h5 className="card-title no-underline text-secondary">{projects[index].title}</h5>
-                    <p className="card-text text-dark">{projects[index].descShort}</p>
+                    <h5 className="card-title no-underline text-secondary">{response[index].title}</h5>
+                    <p className="card-text text-dark">{response[index].descShort}</p>
                 </div>
             </div></Link>
         </div>);

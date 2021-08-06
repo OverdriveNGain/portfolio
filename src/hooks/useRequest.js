@@ -1,19 +1,35 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-const useRequest = (uri, ignore) => {
+//options
+// {
+//     enable: true,
+//     alt: "http://localhost:3004"
+// }
+const useRequest = (uri, options = {}) => {
     const [response, setResponse] = useState(null);
 
     useEffect(() => {
         const getDataFromServer = async () => {
-            if (ignore === true)
+            const jsonDB = true;
+
+            if (options.enable === true)
                 return;
-            axios.get(uri).then((res) => {
+            let uriToUse = uri;
+            if (jsonDB) {
+                if (options.alt != null)
+                    uriToUse = options.alt;
+                else
+                    console.error(`useRequest: jsonDB flat is set to true, but an alternate URI is not provided for the following URI: ${uri}`);
+            }
+
+            console.log("Get request to " + uriToUse);
+            axios.get(uriToUse).then((res) => {
                 setResponse(res.data);
             });
         }
         getDataFromServer();
-    }, [ignore, uri]);
+    }, [uri, options.alt, options.enable]);
     return { response };
 };
 
