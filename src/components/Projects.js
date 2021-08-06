@@ -12,7 +12,7 @@ const Projects = () => {
     const [filters, setFilters] = useState([]);
     const [currentProjectData, setCurrentProjectData] = useState(null);
     const { breakpointSelector } = useResize();
-    const { response } = useRequest("http://localhost:3001/projects");
+    const { response } = useRequest("https://portfolio-api-jeremy.web.app/projects");
     const allFilters = [
         "Flutter",
         "Unity 3D",
@@ -66,8 +66,8 @@ const Projects = () => {
         const width = `${Math.floor(100 / cols)}`;
         let projectsToDisplay = [];
         if (response != null)
-            projectsToDisplay = response;
-
+            projectsToDisplay = response.data;
+        console.log(projectsToDisplay);
         let shownIndex = 0;
         for (let i = 0; i < projectsToDisplay.length; i++) {
             let project = projectsToDisplay[i];
