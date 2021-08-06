@@ -3,10 +3,12 @@ import useRequest from "../hooks/useRequest";
 import {
     useParams,
 } from "react-router-dom";
+import useResize from "../hooks/useResize";
 
 const ProjectDetailsPage = ({ projectData }) => {
     let { id } = useParams();
     const [imageI, setImageI] = useState(0);
+    const { breakpointSelector } = useResize();
     const [imageIsLoading, setImageIsLoading] = useState(true);
     const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects/${id}`, {
         enable: projectData != null,
@@ -99,11 +101,11 @@ const ProjectDetailsPage = ({ projectData }) => {
 
         if (proj.img != null) {
             return (
-                <div><div className="mb-3 position-relative">
-                    <img src={proj.img[imageI]} alt="dog" style={{
-                        maxHeight: "80vh",
+                <div><div className="mb-3 position-relative" style={{ textAlign: "center" }}>
+                    <img src={proj.img[imageI]} alt="dog" className="animated-all-quick" style={{
+                        maxHeight: tern(horizontal, "80vh", breakpointSelector("50vh", null, "80vh")),
                         maxWidth: "100%",
-                        opacity: tern(imageIsLoading, "0.5", "1")
+                        opacity: tern(imageIsLoading, "0", "1")
                     }} onLoad={() => {
                         mainImageLoad();
                     }} />
@@ -112,14 +114,14 @@ const ProjectDetailsPage = ({ projectData }) => {
                         style={{ top: "0px", width: "40px" }}
                         disabled={imageI === 0}
                         onClick={() => { previewSetRelative(-1); }}>
-                        <i class="bi bi-caret-left-fill"></i>
+                        <i className="bi bi-caret-left-fill"></i>
                     </button>
                     <button className="d-flex flex-column justify-content-center h-100
                      position-absolute text-center d-md-none btn button-highlights rounded-0"
                         style={{ top: "0px", right: "0px", width: "40px" }}
                         disabled={imageI === proj.img.length - 1}
                         onClick={() => { previewSetRelative(1); }}>
-                        <i class="bi bi-caret-right-fill"></i>
+                        <i className="bi bi-caret-right-fill"></i>
                     </button>
                 </div>
                     <div className="text-muted text-center m-2 d-md-none" style={{ fontSize: "small" }}>Tap image for fullscreen</div>
@@ -151,12 +153,12 @@ const ProjectDetailsPage = ({ projectData }) => {
                 {getImagePreviews()}
             </span>
             <span className="row">
-                <div className={tern(horizontal, "col-12", "col-4")}>
+                <div className={tern(horizontal, "col-12", "col-12 col-sm-4")}>
                     <div className="flex-fill-fixed">
                         {getImageArea(horizontal)}
                     </div>
                 </div>
-                <div className={tern(horizontal, "col-12", "col-8")}>
+                <div className={tern(horizontal, "col-12", "col-12 col-sm-8")}>
                     <div className="flex-fill-fixed d-inline">
                         <h2>{proj.title}</h2>
                         <p>{proj.descLong}</p>
