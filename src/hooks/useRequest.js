@@ -10,6 +10,8 @@ const useRequest = (uri, options = {}) => {
     const [response, setResponse] = useState(null);
 
     useEffect(() => {
+        if (response != null)
+            return;
         const getDataFromServer = async () => {
             const jsonDB = true;
 
@@ -29,7 +31,7 @@ const useRequest = (uri, options = {}) => {
             });
         }
         getDataFromServer();
-    }, [uri, options.alt, options.enable]);
+    }, [response, uri, options.alt, options.enable]);
     return { response };
 };
 
