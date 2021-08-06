@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from "react";
+import { useState } from "react";
 import useRequest from "../hooks/useRequest";
 import {
     useParams,
@@ -7,6 +7,7 @@ import {
 const ProjectDetailsPage = ({ projectData }) => {
     let { id } = useParams();
     const [imageI, setImageI] = useState(0);
+    const [imageIsLoading, setImageIsLoading] = useState(true);
     const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects/${id}`, {
         enable: projectData != null,
         alt: `http://localhost:3004/data/${id}`
@@ -27,7 +28,7 @@ const ProjectDetailsPage = ({ projectData }) => {
     }
 
     const mainImageLoad = () => {
-        console.log("DONE");
+        setImageIsLoading(false);
     }
 
     const getGitHubLink = () => {
@@ -101,7 +102,8 @@ const ProjectDetailsPage = ({ projectData }) => {
                 <div><div className="mb-3 position-relative">
                     <img src={proj.img[imageI]} alt="dog" style={{
                         maxHeight: "80vh",
-                        maxWidth: "100%"
+                        maxWidth: "100%",
+                        opacity: tern(imageIsLoading, "0.5", "1")
                     }} onLoad={() => {
                         mainImageLoad();
                     }} />
@@ -129,9 +131,13 @@ const ProjectDetailsPage = ({ projectData }) => {
     }
 
     const mouseOverPreviewHandler = (index) => {
-        setImageI(index);
+        if (index !== imageI) {
+            setImageIsLoading(true);
+            setImageI(index);
+        }
     }
     const previewSetRelative = (val) => {
+        setImageIsLoading(true);
         setImageI(imageI + val)
     }
 
