@@ -9,7 +9,7 @@ const ProjectDetailsPage = ({ projectData }) => {
     let { id } = useParams();
     const [imageI, setImageI] = useState(0);
     const { breakpointSelector } = useResize();
-    const [imageIsLoading, setImageIsLoading] = useState(true);
+    // const [imageIsLoading, setImageIsLoading] = useState(true);
     const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects/${id}`, {
         enable: projectData != null,
         alt: `http://localhost:3004/data/${id}`
@@ -29,9 +29,9 @@ const ProjectDetailsPage = ({ projectData }) => {
         return e2;
     }
 
-    const mainImageLoad = () => {
-        setImageIsLoading(false);
-    }
+    // const mainImageLoad = () => {
+    //     setImageIsLoading(false);
+    // }
 
     const getGitHubLink = () => {
         if (proj.github != null) {
@@ -98,17 +98,28 @@ const ProjectDetailsPage = ({ projectData }) => {
     }
 
     const getImageArea = (horizontal) => {
+        const getImageArray = () => {
+            const toReturn = [];
 
+            for (let i = 0; i < proj.img.length; i++) {
+                let thisClassName = tern(i === imageI, "", "d-none");
+                toReturn.push(
+                    <img key={i} src={proj.img[i]} alt="dog" className={thisClassName} style={{
+                        maxHeight: tern(horizontal, "80vh", breakpointSelector("50vh", null, "80vh")),
+                        maxWidth: "100%",
+                        // opacity: tern(imageIsLoading, "0", "1")
+                    }} onLoad={() => {
+                        // mainImageLoad();
+                    }} />
+                );
+            }
+
+            return toReturn;
+        }
         if (proj.img != null) {
             return (
                 <div><div className="mb-3 position-relative" style={{ textAlign: "center" }}>
-                    <img src={proj.img[imageI]} alt="dog" className="animated-all-quick" style={{
-                        maxHeight: tern(horizontal, "80vh", breakpointSelector("50vh", null, "80vh")),
-                        maxWidth: "100%",
-                        opacity: tern(imageIsLoading, "0", "1")
-                    }} onLoad={() => {
-                        mainImageLoad();
-                    }} />
+                    {getImageArray()}
                     <button className="d-flex flex-column justify-content-center h-100 
                     position-absolute text-center d-md-none btn button-highlights rounded-0"
                         style={{ top: "0px", width: "40px" }}
@@ -134,12 +145,12 @@ const ProjectDetailsPage = ({ projectData }) => {
 
     const mouseOverPreviewHandler = (index) => {
         if (index !== imageI) {
-            setImageIsLoading(true);
+            // setImageIsLoading(true);
             setImageI(index);
         }
     }
     const previewSetRelative = (val) => {
-        setImageIsLoading(true);
+        // setImageIsLoading(true);
         setImageI(imageI + val)
     }
 
