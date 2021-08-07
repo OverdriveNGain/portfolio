@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
+import { fromJsonDB } from "./db_debug";
 
 //options
 // {
@@ -13,19 +14,17 @@ const useRequest = (uri, options = {}) => {
         if (response != null)
             return;
         const getDataFromServer = async () => {
-            const jsonDB = false;
-
             if (options.enable === true)
                 return;
             let uriToUse = uri;
-            if (jsonDB) {
+            if (fromJsonDB) {
                 if (options.alt != null)
                     uriToUse = options.alt;
                 else
                     console.error(`useRequest: jsonDB flat is set to true, but an alternate URI is not provided for the following URI: ${uri}`);
             }
             axios.get(uriToUse).then((res) => {
-                if (jsonDB)
+                if (fromJsonDB)
                     setResponse(res.data);
                 else
                     setResponse(res.data.data);
