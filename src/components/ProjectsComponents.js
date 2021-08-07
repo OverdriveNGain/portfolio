@@ -172,9 +172,9 @@ const ProjectDetailsPage = ({ projectData }) => {
                 <div className={tern(horizontal, "col-12", "col-12 col-sm-8")}>
                     <div className="flex-fill-fixed d-inline">
                         <h2>{proj.title}</h2>
-                        {proj.descLong.split("\\n").map((line) => {
+                        {proj.descLong.split("\\n").map((line, i) => {
                             return (
-                                <p>{line}</p>
+                                <p key={i}>{line}</p>
                             );
                         })}
                         <hr />
