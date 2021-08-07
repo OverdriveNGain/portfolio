@@ -13,7 +13,7 @@ const useRequest = (uri, options = {}) => {
         if (response != null)
             return;
         const getDataFromServer = async () => {
-            const jsonDB = true;
+            const jsonDB = false;
 
             if (options.enable === true)
                 return;
@@ -24,10 +24,11 @@ const useRequest = (uri, options = {}) => {
                 else
                     console.error(`useRequest: jsonDB flat is set to true, but an alternate URI is not provided for the following URI: ${uri}`);
             }
-
-            console.log("Get request to " + uriToUse);
             axios.get(uriToUse).then((res) => {
-                setResponse(res.data);
+                if (jsonDB)
+                    setResponse(res.data);
+                else
+                    setResponse(res.data.data);
             });
         }
         getDataFromServer();
