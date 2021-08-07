@@ -46,6 +46,36 @@
             "imgPortrait": true
         },
         {
+            "id": "cell-trace",
+            "title": "Cell Trace",
+            "descShort": "A simple mobile puzzle game",
+            "descLong": "This is a game created in late 2019 that was created using Unity 3D. This was my first mobile game application at the time, and it was during Christmas break. The aim of the game is to clear out the cells on the board without lifting your finger.",
+            "languages": ["Unity 3D", "Adobe Illustrator"],
+            "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.celltrace",
+            "img": [
+                "https://drive.google.com/uc?id=1T7Eu6_OAzt9H2o4rgH4pE5BwP9SHa2hp",
+                "https://drive.google.com/uc?id=1MRNwUd5v74Fg9vxgpkG5JrTNfyzRwgW8",
+                "https://drive.google.com/uc?id=1ob-Vhs04d9zfA0cU8_HaCBCZIfePLEA3",
+                "https://drive.google.com/uc?id=1MhgifHRS_pdrtqVZXgyvoNCOO07U6zkG"
+            ],
+            "imgPortrait": true
+        },
+        {
+            "id": "loose-tower",
+            "title": "Loose Tower",
+            "descShort": "A 3D mobile game where you create a tower",
+            "descLong": "This is a game created in early 2020 that was created using Unity 3D. This was done during my free time in my early college years. The aim of the game is to stack a tower as high as possible without letting it crash down. It is inspired by the games Tetris and Stack.",
+            "languages": ["Unity 3D", "Adobe Illustrator"],
+            "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.loosetower",
+            "img": [
+                "https://drive.google.com/uc?id=1ZfDGpPkO1mduScsUl_WbdfCUN2beYFFA",
+                "https://drive.google.com/uc?id=1q-tHsPYNj0zPbC7m8zj-iCIO3BkrM39-",
+                "https://drive.google.com/uc?id=1py_vTEWEfxhGwQQRfqcowCSmPmfnpQCO",
+                "https://drive.google.com/uc?id=1NJ5i0T1s0AZMp7rkEkw3Fhdr6kd6e7zA"
+            ],
+            "imgPortrait": true
+        },
+        {
             "id": "just-crafts-ph",
             "title": "Just Crafts PH App",
             "descShort": "A mobile app that showcases a sticker business' designs",
