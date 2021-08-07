@@ -343,12 +343,18 @@ class BubbleManager {
 }
 class Bubble {
     constructor(width, height) {
-        this.reset(width, height);
+        this.reset(width, height, true);
     }
 
-    reset(width, height) {
-        this.x = width / 2;
-        this.y = height / 2;
+    reset(width, height, random) {
+        if (random === true) {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+        }
+        else {
+            this.x = width / 2;
+            this.y = height / 2;
+        }
         this.r = Math.random() * 200 + 30;
         let v = Math.random() * 2 + 1;
         let theta = Math.random() * 3.141592653 * 2;
