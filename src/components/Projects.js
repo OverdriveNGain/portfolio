@@ -137,7 +137,7 @@ const Projects = () => {
                     <div className="p-4" />
                 </Route>
                 <Route path="/projects/:id">
-                    <ProjectDetailsPage projectData={currentProjectData} />
+                    <ProjectDetailsPage projectData={currentProjectData} backFunction={() => { setCurrentProjectData(null); }} />
                 </Route>
             </Switch>
         </div>

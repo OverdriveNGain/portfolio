@@ -4,8 +4,11 @@ import {
     useParams,
 } from "react-router-dom";
 import useResize from "../hooks/useResize";
+import {
+    Link
+} from "react-router-dom";
 
-const ProjectDetailsPage = ({ projectData }) => {
+const ProjectDetailsPage = ({ projectData, backFunction }) => {
     let { id } = useParams();
     const [imageI, setImageI] = useState(0);
     const { breakpointSelector } = useResize();
@@ -159,34 +162,37 @@ const ProjectDetailsPage = ({ projectData }) => {
         horizontal = false;
 
     return (
-        <div className="d-flex flex-row mx-3">
-            <span className="d-flex flex-column d-none d-md-inline me-2" style={{ width: "70px" }}>
-                {getImagePreviews()}
-            </span>
-            <span className="row">
-                <div className={tern(horizontal, "col-12", "col-12 col-sm-4")}>
-                    <div className="flex-fill-fixed">
-                        {getImageArea(horizontal)}
+        <div>
+            <div className="container mb-3"><Link to={"/projects"} className="">Back to Projects</Link></div>
+            <div className="d-flex flex-row mx-3">
+                <span className="d-flex flex-column d-none d-md-inline me-2" style={{ width: "70px" }}>
+                    {getImagePreviews()}
+                </span>
+                <span className="row">
+                    <div className={tern(horizontal, "col-12", "col-12 col-sm-4")}>
+                        <div className="flex-fill-fixed">
+                            {getImageArea(horizontal)}
+                        </div>
                     </div>
-                </div>
-                <div className={tern(horizontal, "col-12", "col-12 col-sm-8")}>
-                    <div className="flex-fill-fixed d-inline">
-                        <h2>{proj.title}</h2>
-                        {proj.descLong.split("\\n").map((line, i) => {
-                            return (
-                                <p key={i}>{line}</p>
-                            );
-                        })}
-                        <hr />
-                        {getPlaystoreLink()}
-                        {getWebsiteLink()}
-                        {getGitHubLink()}
-                        <div>This project uses the following frameworks and tools:</div>
-                        <p className="text-muted fw-bold mb-5">{proj.languages.join(", ")}</p>
+                    <div className={tern(horizontal, "col-12", "col-12 col-sm-8")}>
+                        <div className="flex-fill-fixed d-inline">
+                            <h2>{proj.title}</h2>
+                            {proj.descLong.split("\\n").map((line, i) => {
+                                return (
+                                    <p key={i}>{line}</p>
+                                );
+                            })}
+                            <hr />
+                            {getPlaystoreLink()}
+                            {getWebsiteLink()}
+                            {getGitHubLink()}
+                            <div>This project uses the following frameworks and tools:</div>
+                            <p className="text-muted fw-bold mb-5">{proj.languages.join(", ")}</p>
+                        </div>
                     </div>
-                </div>
-            </span>
-        </div >
+                </span>
+            </div >
+        </div>
     );
 }
 export default ProjectDetailsPage;
