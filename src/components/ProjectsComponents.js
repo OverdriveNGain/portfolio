@@ -178,9 +178,9 @@ const ProjectDetailsPage = ({ projectData }) => {
                             );
                         })}
                         <hr />
-                        {getGitHubLink()}
                         {getPlaystoreLink()}
                         {getWebsiteLink()}
+                        {getGitHubLink()}
                         <div>This project uses the following frameworks and tools:</div>
                         <p className="text-muted fw-bold mb-5">{proj.languages.join(", ")}</p>
                     </div>
