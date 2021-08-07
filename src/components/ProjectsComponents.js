@@ -58,7 +58,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
             return (
                 <p>
                     <a href={proj.playstore} target="_blank" rel="noopener noreferrer">
-                        See this project on the Google Play Store
+                        See this app on the Google Play Store
                     </a>
                 </p>
             );
