@@ -57,13 +57,14 @@ const Navbar = () => {
 
     const navbarLinkClick = () => {
         const navToggle = document.getElementById('nav-toggle');
-        if (navbarExpanded)
+        if (navToggle.getAttribute("aria-expanded") === "true")
             navToggle.click();
         setNavbarExpanded(false);
     }
 
     const navbarTogglerHandler = () => {
-        setNavbarExpanded(!navbarExpanded);
+        const navToggle = document.getElementById('nav-toggle');
+        setNavbarExpanded(navToggle.getAttribute("aria-expanded") === "true");
     }
 
     const getNavLinks = () => {
@@ -77,7 +78,6 @@ const Navbar = () => {
                 <Link key={i} className={`nav-link px-3 ${getNavbarLinkColor(location, routes[i])}`}
                     to={routes[i]}>{titles[i]}</Link>))
         }
-        console.log(navs.length);
         return (
             <div className="navbar-nav">
                 {navs}
