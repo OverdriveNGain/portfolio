@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useRequest from "../hooks/useRequest";
 import {
     useParams,
@@ -17,6 +17,10 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         enable: projectData != null,
         alt: `http://localhost:3004/data/${id}`
     });
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     let proj;
     if (projectData != null)
