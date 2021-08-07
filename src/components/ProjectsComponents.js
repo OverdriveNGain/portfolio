@@ -186,12 +186,13 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
                                     <p key={i}>{line}</p>
                                 );
                             })}
+                            <div>This project uses the following frameworks and tools:</div>
+                            <p className="text-muted fw-bold">{proj.languages.join(", ")}</p>
                             <hr />
                             {getPlaystoreLink()}
                             {getWebsiteLink()}
                             {getGitHubLink()}
-                            <div>This project uses the following frameworks and tools:</div>
-                            <p className="text-muted fw-bold mb-5">{proj.languages.join(", ")}</p>
+                            <p className="mb-5" />
                         </div>
                     </div>
                 </span>
