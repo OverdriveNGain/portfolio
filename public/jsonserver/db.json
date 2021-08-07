@@ -10,11 +10,19 @@
             "github": "https://github.com/OverdriveNGain/portfolio"
         },
         {
-            "id": "money-counter",
-            "title": "Money Counter",
-            "descShort": "A simple app for counting money",
-            "descLong": "A simple android application that helps in counting physical cash. It is a lightweight app built upon the Flutter framework.",
-            "languages": ["Flutter"]
+            "id": "simple-money-counter",
+            "title": "Simple Money Counter",
+            "descShort": "A simple money counter app with a ready to use calculator at any time",
+            "descLong": "This is a simple android application that helps you counts physical cash with single taps for each denomination. The app also includes an easy-to-access calculator at a moments notice.",
+            "languages": ["Flutter"],
+            "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.simplemoneycounter",
+            "github": "https://github.com/OverdriveNGain/counter-calc",
+            "img": [
+                "https://drive.google.com/uc?id=1LDQwo0PF8nGWi1lasNa6R_Jb1nw2LgS3",
+                "https://drive.google.com/uc?id=1lHo9kgjF-uh8vNjrwnMFvclfBmmjW2O6",
+                "https://drive.google.com/uc?id=1X1vtdNIJyhUzwM9mdQrzyzrL4AiDRNH-"
+            ],
+            "imgPortrait": true
         },
         {
             "id": "buwad-republic",
