@@ -167,7 +167,9 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
 
     return (
         <div>
-            <div className="container mb-3"><Link to={"/projects"} className="">Back to Projects</Link></div>
+            <div className="mb-3 container">
+                <Link to="/projects" className="btn btn-outline-primary btn-sm link-no-underline px-3"><i class="bi bi-caret-left-fill"></i> Back to Projects</Link>
+            </div>
             <div className="d-flex flex-row mx-3">
                 <span className="d-flex flex-column d-none d-md-inline me-2" style={{ width: "70px" }}>
                     {getImagePreviews()}
