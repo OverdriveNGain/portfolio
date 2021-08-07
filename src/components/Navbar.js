@@ -66,6 +66,33 @@ const Navbar = () => {
         setNavbarExpanded(!navbarExpanded);
     }
 
+    const getNavLinks = () => {
+        return (
+            <div>
+                {breakpointSelector(
+                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`}
+                        onClick={navbarLinkClick} to="/aboutme">About Me</Link>, null, null,
+                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`}
+                        to="/aboutme" >About Me</Link>)}
+                {breakpointSelector(
+                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/projects")}`}
+                        onClick={navbarLinkClick} to="/projects">Projects</Link>, null, null,
+                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/projects")}`}
+                        to="/projects">Projects</Link>)}
+                {breakpointSelector(
+                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/cv")}`}
+                        onClick={navbarLinkClick} to="/cv">CV</Link>, null, null,
+                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/cv")}`}
+                        to="/cv">CV</Link>)}
+                {breakpointSelector(
+                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`}
+                        onClick={navbarLinkClick} to="/contact">Contact</Link>, null, null,
+                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`}
+                        to="/contact">Contact</Link>)}
+            </div>
+        );
+    }
+
     return (
         <nav className="navbar navbar-expand-md navbar-light fixed-top animated-background-color" style={getInlineNavbarStyle()}>
             <div className="container px-4">
@@ -76,27 +103,7 @@ const Navbar = () => {
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
-                        {breakpointSelector(
-                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`}
-                                onClick={navbarLinkClick} to="/aboutme">About Me</Link>, null, null,
-                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`}
-                                to="/aboutme" >About Me</Link>)}
-                        {breakpointSelector(
-                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/projects")}`}
-                                onClick={navbarLinkClick} to="/projects">Projects</Link>, null, null,
-                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/projects")}`}
-                                to="/projects">Projects</Link>)}
-                        {breakpointSelector(
-                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/cv")}`}
-                                onClick={navbarLinkClick} to="/cv">CV</Link>, null, null,
-                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/cv")}`}
-                                to="/cv">CV</Link>)}
-                        {breakpointSelector(
-                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`}
-                                onClick={navbarLinkClick} to="/contact">Contact</Link>, null, null,
-                            <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`}
-                                to="/contact">Contact</Link>)}
-
+                        {getNavLinks()}
                     </div>
                 </div>
             </div>
