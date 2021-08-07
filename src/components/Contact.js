@@ -38,7 +38,7 @@ const Contact = () => {
                 (
                     <div className="bg-light">
                         <div className="container p-4 text-center">
-                            <div className="row ps-4 ps-sm-0 justify-content-center">
+                            <div className="row px-3 ps-sm-0 justify-content-center">
                                 <div className="pb-4 col-12 col-sm-6">
                                     <i className="bi bi-envelope-fill pe-3"></i>
                                     <span className="">jeremyamon@gmail.com</span>
