@@ -67,28 +67,20 @@ const Navbar = () => {
     }
 
     const getNavLinks = () => {
+        const routes = ["/aboutme", "/projects", "/cv", "contact"];
+        const titles = ["About Me", "Projects", "CV", "Contact Me"];
+        const navs = [];
+        for (let i = 0; i < titles.length; i++) {
+            navs.push(breakpointSelector(
+                <Link key={i} className={`nav-link px-3 ${getNavbarLinkColor(location, routes[i])}`}
+                    onClick={() => { navbarLinkClick(); }} to={routes[i]}>{titles[i]}</Link>, null, null,
+                <Link key={i} className={`nav-link px-3 ${getNavbarLinkColor(location, routes[i])}`}
+                    to={routes[i]}>{titles[i]}</Link>))
+        }
+        console.log(navs.length);
         return (
-            <div>
-                {breakpointSelector(
-                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`}
-                        onClick={navbarLinkClick} to="/aboutme">About Me</Link>, null, null,
-                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/aboutme")}`}
-                        to="/aboutme" >About Me</Link>)}
-                {breakpointSelector(
-                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/projects")}`}
-                        onClick={navbarLinkClick} to="/projects">Projects</Link>, null, null,
-                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/projects")}`}
-                        to="/projects">Projects</Link>)}
-                {breakpointSelector(
-                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/cv")}`}
-                        onClick={navbarLinkClick} to="/cv">CV</Link>, null, null,
-                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/cv")}`}
-                        to="/cv">CV</Link>)}
-                {breakpointSelector(
-                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`}
-                        onClick={navbarLinkClick} to="/contact">Contact</Link>, null, null,
-                    <Link className={`nav-link px-3 ${getNavbarLinkColor(location, "/contact")}`}
-                        to="/contact">Contact</Link>)}
+            <div className="navbar-nav">
+                {navs}
             </div>
         );
     }
@@ -102,9 +94,7 @@ const Navbar = () => {
                     <span className="navbar-toggler-icon" onClick={() => { navbarTogglerHandler(); }}></span>
                 </button>
                 <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        {getNavLinks()}
-                    </div>
+                    {getNavLinks()}
                 </div>
             </div>
         </nav>
