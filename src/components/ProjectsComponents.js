@@ -171,7 +171,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
                 <Link to="/projects" className="btn btn-outline-primary btn-sm link-no-underline px-3"><i class="bi bi-caret-left-fill"></i> Back to Projects</Link>
             </div>
             <div className="d-flex flex-row mx-3">
-                <span className="d-flex flex-column d-none d-md-inline me-2" style={{ width: "70px" }}>
+                <span className="d-flex flex-column d-none d-md-inline me-2" style={{ width: tern(proj.img == null || proj.img.length === 0, "0px", "70px") }}>
                     {getImagePreviews()}
                 </span>
                 <span className="row">
