@@ -172,7 +172,12 @@ const ProjectDetailsPage = ({ projectData }) => {
                 <div className={tern(horizontal, "col-12", "col-12 col-sm-8")}>
                     <div className="flex-fill-fixed d-inline">
                         <h2>{proj.title}</h2>
-                        <p>{proj.descLong}</p>
+                        {proj.descLong.split("\\n").map((line) => {
+                            return (
+                                <p>{line}</p>
+                            );
+                        })}
+                        <hr />
                         {getGitHubLink()}
                         {getPlaystoreLink()}
                         {getWebsiteLink()}
