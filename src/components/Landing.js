@@ -1,7 +1,6 @@
 
 import { useLayoutEffect } from 'react';
 import useRequest from "../hooks/useRequest";
-import useScript from '../hooks/useScript';
 import useResize from '../hooks/useResize';
 import Nbsp from "../helpers/Nbsp";
 import {
@@ -10,32 +9,19 @@ import {
 import About4 from './LandingComponents';
 import Landing1, { Landing1RefreshState } from './sketches/Landing1';
 import Landing2, { Landing2RefreshState } from './sketches/Landing2';
+import { Landing3RefreshState } from './sketches/Landing3';
 
 const Landing = () => {
     const { dimensions, breakpointSelector } = useResize();
     const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects`, {
         alt: "http://localhost:3004/data"
     });
-    useScript('sketches/landing_services.js', 1000);
 
     useLayoutEffect(() => {
         const refreshLoopStates = () => {
-            if (document.getElementById('landing_services') === null)
-                return;
-
             Landing1RefreshState();
             Landing2RefreshState();
-
-            try {
-                // eslint-disable-next-line no-undef
-                landingServicesSetVisible();
-            } catch (e) {
-                if (!(e instanceof ReferenceError)) {
-                    throw e;
-                }
-                else
-                    return false;
-            }
+            Landing3RefreshState();
         }
 
         let running = false;
@@ -81,24 +67,11 @@ const Landing = () => {
             });
             Landing1RefreshState(true);
             Landing2RefreshState(true);
-            try {
-                // eslint-disable-next-line no-undef
-                landingServicesSetVisible(false);
-            } catch (e) {
-                if (!(e instanceof ReferenceError))
-                    throw e;
-            }
+            Landing3RefreshState(true);
         };
     }, [])
 
     useLayoutEffect(() => {
-        try {
-            // eslint-disable-next-line no-undef
-            landing3ServicesResize();
-        } catch (e) {
-            if (!(e instanceof ReferenceError))
-                throw e;
-        }
     }, [dimensions])
 
     const submitCallback = (e) => {

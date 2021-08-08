@@ -1,16 +1,11 @@
 import useResize from "../hooks/useResize";
+import Landing3, { Landing3Hover } from "./sketches/Landing3";
 
 const About4 = () => {
     const { breakpointSelector } = useResize();
 
     const landingServicesHoverHandler = (e, value) => {
-        try {
-            /*eslint-disable-next-line no-undef*/
-            landing_services_hover(e, value);
-        } catch (e) {
-            if (!(e instanceof ReferenceError))
-                throw e;
-        }
+        Landing3Hover(e, value);
     }
 
     const tiles = [];
@@ -28,7 +23,6 @@ const About4 = () => {
     ]
     for (let i = 0; i < 3; i++) {
         tiles.push(<div key={i} className="col-12 col-md-4">
-            {/*eslint-disable-next-line no-undef*/}
             <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-1 mx-md-0" onMouseOver={(e) => landingServicesHoverHandler(e, i)} onMouseOut={(e) => landingServicesHoverHandler(e, -1)}>
                 <div className="card-body text-center">
                     <div className="row align-items-center justify-content-center">
@@ -46,7 +40,7 @@ const About4 = () => {
     }
     return (
         <div id="about4">
-            <div id="landing_services" className=" w-100 behind" />
+            <Landing3 />
             <div style={{ padding: `${breakpointSelector(60, null, null, 80, 100, 120)}px 0px` }}>
                 <div className="container">
                     <div className="d-flex flex-column justify-content-center">
