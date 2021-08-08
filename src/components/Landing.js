@@ -1,5 +1,5 @@
 
-import { useEffect, useLayoutEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import useRequest from "../hooks/useRequest";
 import useScript from '../hooks/useScript';
 import useResize from '../hooks/useResize';
@@ -8,7 +8,7 @@ import {
     Link,
 } from "react-router-dom";
 import About4 from './LandingComponents';
-import Landing1 from './sketches/Landing1';
+import Landing1, { Landing1RefreshState } from './sketches/Landing1';
 
 const Landing = () => {
     const { dimensions, breakpointSelector } = useResize();
@@ -19,14 +19,13 @@ const Landing = () => {
     useScript('sketches/landing2.js', 500);
     useScript('sketches/landing_services.js', 1000);
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         const refreshLoopStates = () => {
             if (document.getElementById('landing_services') === null)
                 return;
 
             try {
-                // eslint-disable-next-line no-undef
-                landing1FunctionSetVisible();
+                Landing1RefreshState();
                 // eslint-disable-next-line no-undef
                 landing2FunctionSetVisible();
                 // eslint-disable-next-line no-undef
@@ -83,7 +82,7 @@ const Landing = () => {
             });
             try {
                 // eslint-disable-next-line no-undef
-                landing1FunctionSetVisible(true);
+                Landing1RefreshState(true);
                 // eslint-disable-next-line no-undef
                 landing2FunctionSetVisible(false);
                 // eslint-disable-next-line no-undef
@@ -97,8 +96,6 @@ const Landing = () => {
 
     useLayoutEffect(() => {
         try {
-            // eslint-disable-next-line no-undef
-            landing1FunctionResize();
             // eslint-disable-next-line no-undef
             landing2FunctionResize();
             // eslint-disable-next-line no-undef

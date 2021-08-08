@@ -4,6 +4,8 @@ import { ParticleManager, DustManager, Rect } from "./Managers";
 
 const DUSTNEIGHBORMAXDIST = 200;
 const floatingPointArea = 2 / 3;
+let col1Vals = [78, 104, 255];
+let col2Vals = [255, 255, 255];
 const md_bp = 768;
 const getDustCount = (area) => {
     return area * 0.00002 + 16;
@@ -12,8 +14,8 @@ const getDustCount = (area) => {
 let p5;
 let shouldRemove = false;
 let element;
-let col1 = [78, 104, 255];
-let col2 = [255, 255, 255];
+let col1;
+let col2;
 let borderM;
 let dustM;
 let topAreaHeight;
@@ -44,7 +46,9 @@ const drawFloatingPoints = () => {
     };
 }
 
-const landing1FunctionSetVisible = (remove) => {
+const Landing1RefreshState = (remove) => {
+    if (p5 == null)
+        return;
     if (remove === undefined) {
         const element = document.getElementById('landing1');
         let position = element.getBoundingClientRect();
@@ -57,7 +61,6 @@ const landing1FunctionSetVisible = (remove) => {
     else if (remove)
         shouldRemove = true;
 }
-const landing1FunctionResize = () => { p5.windowResized(); }
 
 const drawBorderWaves = () => {
     p5.push();
@@ -118,6 +121,8 @@ const borderWaveSplashCheck = () => {
 
 const Landing1 = () => {
     const setup = (sketch) => {
+        shouldRemove = false;
+
         p5 = sketch;
         element = document.getElementById("landing1");
         if (element === null) {
@@ -132,8 +137,8 @@ const Landing1 = () => {
             p5.WEBGL
         );
         topAreaHeight = about1.offsetHeight;
-        col1 = p5.color(col1[0], col1[1], col1[2]);
-        col2 = p5.color(col2[0], col2[1], col2[2]);
+        col1 = p5.color(col1Vals[0], col1Vals[1], col1Vals[2]);
+        col2 = p5.color(col2Vals[0], col2Vals[1], col2Vals[2]);
 
         dustM = new DustManager(Math.round(getDustCount(p5.height * p5.width)), p5.width, Math.floor(p5.height * floatingPointArea), 1);
         borderM = new ParticleManager(
@@ -202,5 +207,5 @@ const Landing1 = () => {
     );
 }
 
-export { landing1FunctionSetVisible, landing1FunctionResize };
+export { Landing1RefreshState };
 export default Landing1;
