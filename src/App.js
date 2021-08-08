@@ -16,8 +16,14 @@ import GenericBackground from './components/sketches/GenericBackground';
 function App() {
   return (
     <div className="App">
-      <GenericBackground />
       <Router>
+        <Switch>
+          <Route path={["/aboutme", "/contact", "/projects", "/cv"]}>
+            <GenericBackground />
+          </Route>
+        </Switch>
+        <Switch>
+        </Switch>
         <Navbar />
         <Switch>
           <Route path="/aboutme">
@@ -35,7 +41,6 @@ function App() {
           <Route path="/">
             <Landing />
           </Route>
-
         </Switch>
         <Footer />
       </Router>
