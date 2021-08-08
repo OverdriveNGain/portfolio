@@ -139,7 +139,7 @@ const Landing = () => {
                                             <div className="col-12">
                                                 <h5 className="card-title no-underline text-secondary">
                                                     <i className="bi bi-brush text-secondary d-inline d-md-none"></i>     Graphic Design</h5>
-                                                <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <p className="card-text text-dark">Graphic eye-candy to catch viewer's attention, and to present your information, profesionally.</p>
                                                 <small className="text-muted">Adobe Illustrator • Adobe Photoshop • p5.js • Processing • Python</small>
                                             </div>
                                         </div>
@@ -155,7 +155,7 @@ const Landing = () => {
                                             <div className="col-12 text-md-center">
                                                 <h5 className="card-title no-underline text-secondary">
                                                     <i className="bi bi-globe2 text-secondary d-inline d-md-none"></i>     Website Development</h5>
-                                                <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <p className="card-text text-dark">Fast and responsive websites for your business, built with modern designs.</p>
                                                 <small className="text-muted">HTML • CSS • Javascript • SASS • React • Flutter • Firebase • Bootstrap 5 • git • GitHub</small>
                                             </div>
                                         </div>
@@ -171,7 +171,7 @@ const Landing = () => {
                                             <div className="col-12 text-md-center">
                                                 <h5 className="card-title no-underline text-secondary">
                                                     <i className="bi bi-phone text-secondary d-inline d-md-none"></i>     Mobile App Development</h5>
-                                                <p className="card-text text-dark">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                                <p className="card-text text-dark">Mobile software to bring convenience your brand can provide, to you audience's pocket.</p>
                                                 <small className="text-muted">React • Flutter • Adobe XD • Firebase • Unity 3D • git • GitHub</small>
                                             </div>
                                         </div>
