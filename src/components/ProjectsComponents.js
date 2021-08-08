@@ -11,6 +11,7 @@ import {
 const ProjectDetailsPage = ({ projectData, backFunction }) => {
     let { id } = useParams();
     const [imageI, setImageI] = useState(0);
+    const [fullscreen, setFullscreen] = useState(false);
     const { breakpointSelector } = useResize();
     // const [imageIsLoading, setImageIsLoading] = useState(true);
     const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects/${id}`, {
@@ -110,13 +111,20 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
 
             for (let i = 0; i < proj.img.length; i++) {
                 let thisClassName = tern(i === imageI, "", "d-none");
-                toReturn.push(
-                    <img key={i} src={proj.img[i]} alt="dog" className={thisClassName} style={{
+                let style = tern(
+                    fullscreen,
+                    {
+                        maxHeight: "100vh",
+                        maxWidth: "100wh",
+                    },
+                    {
                         maxHeight: tern(horizontal, "80vh", breakpointSelector("50vh", null, "80vh")),
                         maxWidth: "100%",
-                        // opacity: tern(imageIsLoading, "0", "1")
-                    }} onLoad={() => {
-                        // mainImageLoad();
+                    }
+                )
+                toReturn.push(
+                    <img key={i} src={proj.img[i]} alt="dog" className={thisClassName} style={style} onClick={() => {
+                        setFullscreen(!fullscreen);
                     }} />
                 );
             }
@@ -124,24 +132,26 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
             return toReturn;
         }
         if (proj.img != null) {
+            const className = tern(fullscreen, "position-fixed w-100 h-100 text-center", "mb-3 position-relative")
+            const style = tern(fullscreen, { left: "0px", top: "0px", zIndex: "2000", backgroundColor: "rgba(0,0,0,0.8)" }, { textAlign: "center" });
+            const buttonClassName = "d-flex flex-column justify-content-center h-100 position-absolute text-center btn button-highlights rounded-0" + tern(fullscreen, "", " d-md-none");
             return (
-                <div><div className="mb-3 position-relative" style={{ textAlign: "center" }}>
-                    {getImageArray()}
-                    <button className="d-flex flex-column justify-content-center h-100 
-                    position-absolute text-center d-md-none btn button-highlights rounded-0"
-                        style={{ top: "0px", width: "40px" }}
-                        disabled={imageI === 0}
-                        onClick={() => { previewSetRelative(-1); }}>
-                        <i className="bi bi-caret-left-fill"></i>
-                    </button>
-                    <button className="d-flex flex-column justify-content-center h-100
-                     position-absolute text-center d-md-none btn button-highlights rounded-0"
-                        style={{ top: "0px", right: "0px", width: "40px" }}
-                        disabled={imageI === proj.img.length - 1}
-                        onClick={() => { previewSetRelative(1); }}>
-                        <i className="bi bi-caret-right-fill"></i>
-                    </button>
-                </div>
+                <div>
+                    <div className={className} style={style}>
+                        {getImageArray()}
+                        <button className={buttonClassName}
+                            style={{ top: "0px", width: "40px" }}
+                            disabled={imageI === 0}
+                            onClick={() => { previewSetRelative(-1); }}>
+                            <i className="bi bi-caret-left-fill"></i>
+                        </button>
+                        <button className={buttonClassName}
+                            style={{ top: "0px", right: "0px", width: "40px" }}
+                            disabled={imageI === proj.img.length - 1}
+                            onClick={() => { previewSetRelative(1); }}>
+                            <i className="bi bi-caret-right-fill"></i>
+                        </button>
+                    </div>
                     <div className="text-muted text-center m-2 d-md-none" style={{ fontSize: "small" }}>Tap image for fullscreen</div>
                 </div>
             );
