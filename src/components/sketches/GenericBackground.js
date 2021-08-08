@@ -37,7 +37,7 @@ const GenericBackground = () => {
         bubbleM.step();
         for (let i = 0; i < bubbleM.count; i++) {
             let bubble = bubbleM.bubbles[i];
-            p5.fill(0, 0, 255, Math.min(Math.round(8 * bubble.life), 8));
+            p5.fill(0, 0, 255, Math.min(Math.round(8 * bubble.life), 5));
             p5.circle(bubble.x, bubble.y, bubble.r, bubble.r);
         }
     };
