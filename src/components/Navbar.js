@@ -68,7 +68,7 @@ const Navbar = () => {
     }
 
     const getNavLinks = () => {
-        const routes = ["/aboutme", "/projects", "/cv", "contact"];
+        const routes = ["/aboutme", "/projects", "/cv", "/contact"];
         const titles = ["About Me", "Projects", "CV", "Contact Me"];
         const navs = [];
         for (let i = 0; i < titles.length; i++) {
