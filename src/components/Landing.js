@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 import About4 from './LandingComponents';
 import Landing1, { Landing1RefreshState } from './sketches/Landing1';
+import Landing2, { Landing2RefreshState } from './sketches/Landing2';
 
 const Landing = () => {
     const { dimensions, breakpointSelector } = useResize();
@@ -24,10 +25,10 @@ const Landing = () => {
             if (document.getElementById('landing_services') === null)
                 return;
 
+            Landing1RefreshState();
+            Landing2RefreshState();
+
             try {
-                Landing1RefreshState();
-                // eslint-disable-next-line no-undef
-                landing2FunctionSetVisible();
                 // eslint-disable-next-line no-undef
                 landingServicesSetVisible();
             } catch (e) {
@@ -80,11 +81,9 @@ const Landing = () => {
             window.removeEventListener('scroll', function () {
                 refreshLoopStates();
             });
+            Landing1RefreshState(true);
+            Landing2RefreshState(true);
             try {
-                // eslint-disable-next-line no-undef
-                Landing1RefreshState(true);
-                // eslint-disable-next-line no-undef
-                landing2FunctionSetVisible(false);
                 // eslint-disable-next-line no-undef
                 landingServicesSetVisible(false);
             } catch (e) {
@@ -96,8 +95,6 @@ const Landing = () => {
 
     useLayoutEffect(() => {
         try {
-            // eslint-disable-next-line no-undef
-            landing2FunctionResize();
             // eslint-disable-next-line no-undef
             landing3ServicesResize();
         } catch (e) {
