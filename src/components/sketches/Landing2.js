@@ -50,6 +50,10 @@ let Landing2RefreshState = (remove) => {
         return;
     if (remove === undefined) {
         const element = document.getElementById('landing2');
+        if (element == null) {
+            shouldRemove = true;
+            return;
+        }
         let position = element.getBoundingClientRect();
         const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
         if (isVisible)
