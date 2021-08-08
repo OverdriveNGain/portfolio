@@ -7,6 +7,7 @@ import Nbsp from "../helpers/Nbsp";
 import {
     Link,
 } from "react-router-dom";
+import About4 from './LandingComponents';
 
 const Landing = () => {
     const { dimensions, breakpointSelector } = useResize();
@@ -111,66 +112,6 @@ const Landing = () => {
         e.preventDefault();
         console.log(e);
     }
-
-    const landingServicesHoverHandler = (e, value) => {
-        try {
-            /*eslint-disable-next-line no-undef*/
-            landing_services_hover(e, value);
-        } catch (e) {
-            if (!(e instanceof ReferenceError))
-                throw e;
-        }
-    }
-
-    const getAbout4 = () => {
-        const tiles = [];
-        const tileIcon = ["bi bi-brush", "bi bi-globe2", "bi bi-phone"];
-        const tileTitle = ["     Graphic Design", "     Website Development", "     Mobile App Development"]
-        const tileDesc = [
-            "Graphic eye-candy to catch viewer's attention, and to present your information, profesionally.",
-            "Fast and responsive websites for your business, built with modern designs.",
-            "Mobile software to bring convenience your brand can provide, to you audience's pocket."
-        ]
-        const tileTools = [
-            "Adobe Illustrator • Adobe Photoshop • p5.js • Processing • Python",
-            "HTML • CSS • Javascript • SASS • React • Flutter • Firebase • Bootstrap 5 • git • GitHub",
-            "React • Flutter • Adobe XD • Firebase • Unity 3D • git • GitHub"
-        ]
-        for (let i = 0; i < 3; i++) {
-            tiles.push(<div key={i} className="col-12 col-md-4">
-                {/*eslint-disable-next-line no-undef*/}
-                <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-1 mx-md-0" onMouseOver={(e) => landingServicesHoverHandler(e, 0)} onMouseOut={(e) => landingServicesHoverHandler(e, -1)}>
-                    <div className="card-body m-2 m-md-4 text-center p-2 p-sm-4">
-                        <div className="row align-items-center justify-content-center">
-                            <div className="col-2 col-md-8"><i className={`${tileIcon[i]} display-1 text-secondary d-none d-md-inline`}></i></div>
-                            <div className="col-12">
-                                <h5 className="card-title no-underline text-secondary">
-                                    <i className={`${tileIcon[i]} text-secondary d-inline d-md-none`}></i>{tileTitle[i]}</h5>
-                                <p className="card-text text-dark">{tileDesc[i]}</p>
-                                <small className="text-muted">{tileTools[i]}</small>
-                            </div>
-                        </div>
-                    </div>
-                </div></a>
-            </div>)
-        }
-        return (
-            <div id="about4">
-                <div id="landing_services" className=" w-100 behind" />
-                <div style={{ padding: `${breakpointSelector(60, null, null, 80, 100, 120)}px 0px` }}>
-                    <div className="container">
-                        <div className="d-flex flex-column justify-content-center">
-                            <div className="display-1 font-title text-white mb-3 mb-md-5 text-center">Skills & Services</div>
-                            <div className="row g-3 align-items-center">
-                                {tiles}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-
     const getProjectTile = (index) => {
         if (response == null)
             return (<div className="col-12 col-md-6 mb-2 mb-sm-4">
@@ -231,7 +172,7 @@ const Landing = () => {
 
                 </div>
             </div>
-            {getAbout4()}
+            <About4 />
             <div id="about5">
                 <div className="align-middle container px-0 my-5 text-center d-flex flex-column justify-content-center align-items-stretch h-100">
                     <div className="display-1 text-primary mb-5 font-title">Testimonials</div>
