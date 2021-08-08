@@ -108,13 +108,6 @@
     height: inherit;
     object-fit: cover;
 }
-/* Portfolio */
-#portfolio-bg{
-    height: 100vh;
-    width: 100%;
-    position: fixed;
-    z-index:-1;
-}
 .portfolio-pic{
     width:150px;
     height:150px;

@@ -11,7 +11,7 @@ import {
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Portfolio from './components/Portfolio';
-import GenericBackground from './components/GenericBackground';
+import GenericBackground from './components/sketches/GenericBackground';
 
 function App() {
   return (
