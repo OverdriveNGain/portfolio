@@ -14,8 +14,8 @@ const Landing = () => {
         alt: "http://localhost:3004/data"
     });
     useScript('sketches/landing.js');
-    useScript('sketches/landing2.js');
-    useScript('sketches/landing_services.js');
+    useScript('sketches/landing2.js', 500);
+    useScript('sketches/landing_services.js', 1000);
 
     useEffect(() => {
         const refreshLoopStates = () => {
