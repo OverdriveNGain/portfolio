@@ -16,8 +16,6 @@ const Landing = () => {
     const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects`, {
         alt: "http://localhost:3004/data"
     });
-    // useScript('sketches/landing.js');
-    useScript('sketches/landing2.js', 500);
     useScript('sketches/landing_services.js', 1000);
 
     useLayoutEffect(() => {
@@ -149,7 +147,7 @@ const Landing = () => {
             </div>
             <div id="about3">
                 <div style={{ padding: `${breakpointSelector(10, 30, null, 80, 100, 120)}px 0px` }}>
-                    <div id="landing2" />
+                    <Landing2 />
                     <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
                         <div className="display-1 text-primary m-3 font-title">Projects</div>
                         <div className="row mx-xs-2 mx-md-5 gx-2">

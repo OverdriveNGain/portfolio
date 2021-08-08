@@ -63,6 +63,7 @@ let Landing2RefreshState = (remove) => {
 
 const Landing2 = () => {
     const setup = (sketch) => {
+        shouldRemove = false;
         p5 = sketch;
         element = document.getElementById("landing2");
         if (element === null) {
@@ -118,6 +119,7 @@ const Landing2 = () => {
     }
 
     const draw = () => {
+        console.log("landing2 draaw");
         if (shouldRemove) {
             p5.remove();
             return;
