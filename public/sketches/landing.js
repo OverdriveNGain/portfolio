@@ -34,7 +34,7 @@ var landing1Function = (sketch) => {
     const about2 = document.getElementById("about2");
     const canv = sketch.createCanvas(
       sketch.ceil(about1.offsetWidth),
-      sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.5)) + 5,
+      sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.6)),
       sketch.WEBGL
     );
     // sketch.frameRate(30);
@@ -90,7 +90,7 @@ var landing1Function = (sketch) => {
       const about2 = document.getElementById("about2");
       sketch.resizeCanvas(
         sketch.ceil(about1.offsetWidth),
-        sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.5))
+        sketch.ceil(about1.offsetHeight + (about2.offsetHeight * 0.6))
       );
       topAreaHeight = about1.offsetHeight;
       // eslint-disable-next-line no-undef
