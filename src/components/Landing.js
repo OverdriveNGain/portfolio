@@ -112,9 +112,9 @@ const Landing = () => {
         e.preventDefault();
         console.log(e);
     }
-    const getProjectTile = (index) => {
+    const getProjectTile = (id) => {
         if (response == null)
-            return (<div className="col-12 col-md-6 mb-2 mb-sm-4">
+            return (<div className="col-12 col-md-6 mb-2">
                 <div className="card">
                     <div className="card-body m-1 m-md-4">
                         <h5 className="card-title no-underline text-secondary"> </h5>
@@ -122,11 +122,12 @@ const Landing = () => {
                     </div>
                 </div>
             </div>);
-        return (<div className="col-12 col-md-6 mb-2 mb-sm-4">
-            <Link to={`/projects/${response[index].id}`} className="link-no-underline"><div className="card">
+        const proj = response.find((p) => p.id === id);
+        return (<div className="col-12 col-md-6 mb-2">
+            <Link to={`/projects/${id}`} className="link-no-underline"><div className="card">
                 <div className="card-body m-1 m-md-4">
-                    <h5 className="card-title no-underline text-secondary">{response[index].title}</h5>
-                    <p className="card-text text-dark">{response[index].descShort}</p>
+                    <h5 className="card-title no-underline text-secondary">{proj.title}</h5>
+                    <p className="card-text text-dark">{proj.descShort}</p>
                 </div>
             </div></Link>
         </div>);
@@ -156,13 +157,13 @@ const Landing = () => {
                     <div id="landing2" />
                     <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
                         <div className="display-1 text-primary m-3 font-title">Projects</div>
-                        <div className="row mx-xs-2 mx-md-5">
-                            {getProjectTile(0)}
-                            {getProjectTile(1)}
+                        <div className="row mx-xs-2 mx-md-5 gx-2">
+                            {getProjectTile('loose-blocks')}
+                            {getProjectTile('buwad-republic')}
                         </div>
-                        <div className="row mx-xs-2 mx-md-5">
-                            {getProjectTile(2)}
-                            {getProjectTile(3)}
+                        <div className="row mx-xs-2 mx-md-5 gx-2">
+                            {getProjectTile('simple-money-counter')}
+                            {breakpointSelector(<span />, null, getProjectTile('cell-trace'))}
                         </div>
 
                         <Link to="/projects">
