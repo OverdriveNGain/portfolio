@@ -65,6 +65,21 @@
     -o-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
 }
+.button-highlights-fullscreen{
+    color: rgba(255, 255, 255, 0.692);
+    text-shadow: 2px 0px 5px rgba(0, 0, 0, 0.404);
+    font-size: 500%;
+    /* 20 Ruby */
+}
+.button-highlights-fullscreen:hover{
+    color: rgb(255, 255, 255);
+}
+.button-highlights-fullscreen:active{
+    color: rgb(148, 148, 148);
+}
+.button-highlights-fullscreen:disabled{
+    opacity: 0;
+}
 .button-highlights{
     background-color: rgba(255, 255, 255, 0.12);
 }
@@ -77,6 +92,7 @@
 .button-highlights:disabled{
     opacity: 0;
 }
+
 .unselectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;

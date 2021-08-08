@@ -110,7 +110,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
             const toReturn = [];
 
             for (let i = 0; i < proj.img.length; i++) {
-                let thisClassName = tern(i === imageI, "", "d-none");
+                let thisClassName = "unselectable" + tern(i === imageI, "", " d-none");
                 let style = tern(
                     fullscreen,
                     {
@@ -132,8 +132,22 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
             return toReturn;
         }
         if (proj.img != null) {
-            const className = tern(fullscreen, "position-fixed w-100 h-100 text-center", "mb-3 position-relative")
-            const style = tern(fullscreen, { left: "0px", top: "0px", zIndex: "2000", backgroundColor: "rgba(0,0,0,0.8)" }, { textAlign: "center" });
+            if (fullscreen) {
+                return (
+                    <div>
+                        <div className={"position-fixed w-100 h-100 text-center"} style={{ left: "0px", top: "0px", zIndex: "2000", backgroundColor: "rgba(0,0,0,0.8)" }}>
+                            {getImageArray()}
+                            <i className={"bi bi-caret-left-fill button-highlights-fullscreen animated-all-quick position-absolute" + tern(imageI === 0, " d-none", "")}
+                                onClick={() => { previewSetRelative(-1); }} style={{ left: "15px", top: "43%" }} />
+                            <i className={"bi bi-caret-right-fill button-highlights-fullscreen animated-all-quick position-absolute" + tern(imageI === proj.img.length - 1, " d-none", "")}
+                                onClick={() => { previewSetRelative(1); }} style={{ right: "15px", top: "43%" }} />
+                            <i class="bi bi-x button-highlights-fullscreen animated-all-quick position-absolute" style={{ top: "0px", right: "15px" }} onClick={() => { setFullscreen(false) }}></i>
+                        </div>
+                    </div>
+                );
+            }
+            const className = "mb-3 position-relative"
+            const style = { textAlign: "center" };
             const buttonClassName = "d-flex flex-column justify-content-center h-100 position-absolute text-center btn button-highlights rounded-0" + tern(fullscreen, "", " d-md-none");
             return (
                 <div>
@@ -152,7 +166,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
                             <i className="bi bi-caret-right-fill"></i>
                         </button>
                     </div>
-                    <div className="text-muted text-center m-2 d-md-none" style={{ fontSize: "small" }}>Tap image for fullscreen</div>
+                    <div className="text-muted text-center mt-2 mb-4" style={{ fontSize: "small" }}>Tap image for fullscreen</div>
                 </div>
             );
         }
