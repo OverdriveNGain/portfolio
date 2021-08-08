@@ -66,13 +66,13 @@
     transition: all 0.15s ease-in-out;
 }
 .button-highlights-fullscreen{
-    color: rgba(255, 255, 255, 0.692);
-    text-shadow: 2px 0px 5px rgba(0, 0, 0, 0.404);
+    color: rgba(255, 255, 255);
+    text-shadow: 1px 0px 5px rgba(0, 0, 0, 0.7);
     font-size: 500%;
     /* 20 Ruby */
 }
 .button-highlights-fullscreen:hover{
-    color: rgb(255, 255, 255);
+    color: rgb(176, 188, 255);
 }
 .button-highlights-fullscreen:active{
     color: rgb(148, 148, 148);

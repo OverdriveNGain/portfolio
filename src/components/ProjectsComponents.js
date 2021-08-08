@@ -135,7 +135,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
             if (fullscreen) {
                 return (
                     <div>
-                        <div className={"position-fixed w-100 h-100 text-center"} style={{ left: "0px", top: "0px", zIndex: "2000", backgroundColor: "rgba(0,0,0,0.8)" }}>
+                        <div className={"position-fixed w-100 h-100 text-center d-flex flex-column justify-content-center"} style={{ left: "0px", top: "0px", zIndex: "2000", backgroundColor: "rgba(0,0,0,0.8)" }}>
                             {getImageArray()}
                             <i className={"bi bi-caret-left-fill button-highlights-fullscreen animated-all-quick position-absolute" + tern(imageI === 0, " d-none", "")}
                                 onClick={() => { previewSetRelative(-1); }} style={{ left: "15px", top: "43%" }} />
