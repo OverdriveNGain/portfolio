@@ -119,7 +119,6 @@ const Landing2 = () => {
     }
 
     const draw = () => {
-        console.log("landing2 draaw");
         if (shouldRemove) {
             p5.remove();
             return;
