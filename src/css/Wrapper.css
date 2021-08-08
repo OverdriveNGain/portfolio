@@ -26,7 +26,7 @@
     fill: white;
 }
 .navbar-logo-brand{
-    fill: rgb(78, 104, 255);
+    fill: rgb(255, 255, 255);
 }
 .bg-muted{
     background-color: rgb(158, 158, 158);
@@ -68,7 +68,7 @@
 .button-highlights-fullscreen{
     color: rgba(255, 255, 255);
     text-shadow: 1px 0px 5px rgba(0, 0, 0, 0.7);
-    font-size: 500%;
+    font-size: 350%;
     /* 20 Ruby */
 }
 .button-highlights-fullscreen:hover{
