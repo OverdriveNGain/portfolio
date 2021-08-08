@@ -34,11 +34,9 @@ const Navbar = () => {
                 if (scrollTop <= 150)
                     isBgTransparent = true;
                 break;
-            case "/cv":
+            default:
                 if (scrollTop <= 50)
                     isBgTransparent = true;
-                break;
-            default:
                 break;
         }
 
