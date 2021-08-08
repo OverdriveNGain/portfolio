@@ -1,23 +1,12 @@
 import { useEffect } from "react";
 import Nbsp, { Nbspify } from "../helpers/Nbsp";
 import useResize from "../hooks/useResize";
-import useScript from "../hooks/useScript";
 
 const Portfolio = () => {
     const { dimensions } = useResize();
-    useScript('sketches/portfolio_bg.js');
 
     useEffect(() => {
         window.scrollTo(0, 0);
-        return (() => {
-            try {
-                // eslint-disable-next-line no-undef
-                portfolioBgStop();
-            } catch (e) {
-                if (!(e instanceof ReferenceError))
-                    throw e;
-            }
-        });
     }, []);
 
     const toSkillsHeader = (t) => {
@@ -116,7 +105,6 @@ const Portfolio = () => {
 
     return (
         <div>
-            <div id="portfolio-bg"></div>
             <div className="container" align="center">
                 <div className="px-1 px-sm-5">
                     <p className="py-5" />

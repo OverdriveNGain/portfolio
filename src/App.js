@@ -11,10 +11,12 @@ import {
 import Contact from './components/Contact';
 import Projects from './components/Projects';
 import Portfolio from './components/Portfolio';
+import GenericBackground from './components/GenericBackground';
 
 function App() {
   return (
     <div className="App">
+      <GenericBackground />
       <Router>
         <Navbar />
         <Switch>
