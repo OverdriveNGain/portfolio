@@ -64,7 +64,7 @@ const Projects = () => {
         }
         let toReturn = [];
         const cols = breakpointSelector(1, 2, 3, 4);
-        const height = breakpointSelector(100, 150, 200);
+        const height = breakpointSelector(140, 150, 200);
         const width = `${Math.floor(100 / cols)}`;
         let projectsToDisplay = [];
         if (response != null)
