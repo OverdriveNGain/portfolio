@@ -8,13 +8,14 @@ import {
     Link,
 } from "react-router-dom";
 import About4 from './LandingComponents';
+import Landing1 from './sketches/Landing1';
 
 const Landing = () => {
     const { dimensions, breakpointSelector } = useResize();
     const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects`, {
         alt: "http://localhost:3004/data"
     });
-    useScript('sketches/landing.js');
+    // useScript('sketches/landing.js');
     useScript('sketches/landing2.js', 500);
     useScript('sketches/landing_services.js', 1000);
 
@@ -136,7 +137,7 @@ const Landing = () => {
     return (
         <div id="about-me">
             <div id="about1" style={{ height: breakpointSelector("80vh", null, null, "90vh") }}>
-                <div id="landing1" />
+                <Landing1 />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center h-100">
                     <div className="display-6 pt-5 pb-2 d-inline-block text-muted fs-5 fs-md-4">So let me introduce myself...</div>
                     <div className="display-4 px-3 pb-3 d-inline-block">My name is <span className="text-primary">Jeremy</span>, and I am a <span className="text-secondary">full&#8209;stack<Nbsp />developer</span></div>

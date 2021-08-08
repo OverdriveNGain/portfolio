@@ -88,7 +88,7 @@
 }
 
 /* Landing Page */
-#landing1, #landing2, #landing_services{
+#landing2, #landing_services{
     position: absolute;
     z-index:-1;
 }
