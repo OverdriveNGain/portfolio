@@ -162,7 +162,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
                             <i className="bi bi-caret-right-fill"></i>
                         </button>, <div />)}
                     </div>
-                    <div className="text-muted text-center mt-2 mb-4" style={{ fontSize: "small" }}>Tap image for fullscreen</div>
+                    {tern(proj.img != null && imagesLoaded === proj.img.length, <div className="text-muted text-center mt-2 mb-4" style={{ fontSize: "small" }}>Tap image for fullscreen</div>, <div></div>)}
                 </div>
             );
         }
