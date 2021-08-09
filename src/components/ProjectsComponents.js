@@ -7,6 +7,7 @@ import useResize from "../hooks/useResize";
 import {
     Link
 } from "react-router-dom";
+import { tern } from "./helpers/Helpers";
 
 const ProjectDetailsPage = ({ projectData, backFunction }) => {
     const { id } = useParams();
@@ -18,12 +19,6 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         enable: projectData != null,
         alt: `http://localhost:3004/data/${id}`
     });
-
-    const tern = (cond, e1, e2) => {
-        if (cond)
-            return e1;
-        return e2;
-    }
 
     const getGitHubLink = (proj) => tern(
         proj.github != null,
