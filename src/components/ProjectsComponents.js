@@ -166,7 +166,6 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         setImageI(imageI + val)
     }
     const keyDownHandler = (e, proj) => {
-        console.log("handler");
         if (e.key === "ArrowRight") {
             // console.log(`${proj != null}   ${proj.img != null}   ${imagesLoaded === proj.img.length}   ${imageI < proj.img.length - 1}`)
             if (proj != null && proj.img != null && imagesLoaded === proj.img.length && imageI < proj.img.length - 1)
@@ -175,6 +174,10 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         else if (e.key === "ArrowLeft") {
             if (proj != null && proj.img != null && imagesLoaded === proj.img.length && imageI > 0)
                 setImageI(imageI - 1);
+        }
+        else if (e.key === "Escape") {
+            if (fullscreen)
+                setFullscreen(false);
         }
     }
 
@@ -188,12 +191,9 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-
-        console.log('added event');
         const callback = (e) => { keyDownHandler(e, proj) };
         window.addEventListener('keydown', callback);
         return () => {
-            console.log('removedevent');
             window.removeEventListener('keydown', callback)
         }
     });
