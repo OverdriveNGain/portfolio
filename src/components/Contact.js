@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
 import axios from 'axios';
+import { tern } from "./helpers/Helpers";
 
 const Contact = () => {
     const [formEmail, setFormEmail] = useState('');
     const [formName, setFormName] = useState('');
     const [formBody, setFormBody] = useState('');
 
-    const [requestStatus, setRequestStatus] = useState(null);
+    const [modalMessage, setModalMessage] = useState(null);
+    const [sendButtonLabel, setSendButtonLabel] = useState("Send");
 
     const { breakpointSelector } = useResize();
 
@@ -22,21 +24,61 @@ const Contact = () => {
     }
 
     const submitCallback = (e) => {
+        const openModal = () => {
+            document.getElementById("modalButton").click();
+        }
         e.preventDefault();
-        console.log({
-            email: formEmail,
-            name: formName,
-            body: formBody
-        });
-        axios.post('https://portfolio-api-jeremy.web.app/sendmail', null, {
-            params: {
+        if (formEmail.trim().length === 0) {
+            setModalMessage("Please enter an email");
+            openModal();
+        }
+        else if (formName.trim().length === 0) {
+            setModalMessage("Please enter your name");
+            openModal();
+        }
+        else if (formBody.trim().length === 0) {
+            setModalMessage("Please enter your message");
+            openModal();
+        }
+        else {
+            setSendButtonLabel("Please wait...");
+            console.log({
                 email: formEmail,
                 name: formName,
                 body: formBody
-            }
-        }).then((response) => {
-            console.log(response);
-        })
+            });
+            axios.post('https://portfolio-api-jeremy.web.app/sendmail', null, {
+                params: {
+                    email: formEmail,
+                    name: formName,
+                    body: formBody
+                }
+            }).then((response) => {
+                setModalMessage("Message successfully sent!");
+                setSendButtonLabel("Send");
+                openModal();
+            })
+        }
+    }
+
+    const getModal = () => {
+        return <div>
+            <button id="modalButton" type="button" className="d-none" data-bs-toggle="modal" data-bs-target="#sendConfirmModal" />
+            <div className="modal fade" id="sendConfirmModal" tabindex="-1" aria-labelledby="sendConfirmModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-body">
+                            <div className="text-center my-5">
+                                {modalMessage}
+                            </div>
+                            <div className="text-center mt-3">
+                                <button type="button" className="btn btn-primary text-white" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     }
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -93,16 +135,7 @@ const Contact = () => {
     }
     return (
         <div>
-            <div style={{
-                position: "absolute",
-                color: "rgba(0, 0, 0, 0.5)",
-                left: "0px",
-                right: "0px",
-                top: "0px",
-                bottom: "0px",
-            }}>
-
-            </div>
+            {getModal()}
             <div className="container">
                 <div className="px-lg-5">
                     <div className="row">
@@ -122,7 +155,7 @@ const Contact = () => {
                                         <div className="mb-3">
                                             <textarea className="form-control" id="contactMessage" placeholder="Type your message here..." rows="10" name="message" value={formBody} onChange={onBodyChange} ></textarea>
                                         </div>
-                                        <div className="text-center"><button className="btn btn-primary text-light" type="submit"><i className="bi bi-envelope-fill pe-2"></i>Send</button></div>
+                                        <div className="text-center"><button className="btn btn-primary text-light" disabled={sendButtonLabel !== "Send"} type="submit"><i className="bi bi-envelope-fill pe-2"></i>{sendButtonLabel}</button></div>
                                     </form>
                                 </div>
                             </div>
