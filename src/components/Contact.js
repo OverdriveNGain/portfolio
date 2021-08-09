@@ -1,10 +1,28 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
 
 const Contact = () => {
-    const { breakpointSelector } = useResize();
-    const submitCallback = (e) => {
+    const [formEmail, setFormEmail] = useState('');
+    const [formName, setFormName] = useState('');
+    const [formBody, setFormBody] = useState('');
 
+    const { breakpointSelector } = useResize();
+
+    const onNameChange = (e) => {
+        setFormName(e.target.value);
+    }
+    const onEmailChange = (e) => {
+        setFormEmail(e.target.value);
+    }
+    const onBodyChange = (e) => {
+        setFormBody(e.target.value);
+    }
+
+    const submitCallback = (e) => {
+        e.preventDefault();
+        console.log(formEmail);
+        console.log(formName);
+        console.log(formBody);
     }
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -72,13 +90,13 @@ const Contact = () => {
                                 <div className="">
                                     <form onSubmit={(e) => { submitCallback(e) }}>
                                         <div className="mb-3">
-                                            <input type="name" className="form-control" id="contactName" placeholder="Your Name" name="fname" />
+                                            <input type="email" className="form-control" id="contactEmail" placeholder="Your Email" name="email" value={formEmail} onChange={onEmailChange} />
                                         </div>
                                         <div className="mb-3">
-                                            <input type="email" className="form-control" id="contactEmail" placeholder="Your Email" name="email" />
+                                            <input type="name" className="form-control" id="contactName" placeholder="Your Name" name="fname" value={formName} onChange={onNameChange} />
                                         </div>
                                         <div className="mb-3">
-                                            <textarea className="form-control" id="contactMessage" placeholder="Type your message here..." rows="10" name="message"></textarea>
+                                            <textarea className="form-control" id="contactMessage" placeholder="Type your message here..." rows="10" name="message" value={formBody} onChange={onBodyChange} ></textarea>
                                         </div>
                                         <div className="text-center"><button className="btn btn-primary text-light" type="submit"><i className="bi bi-envelope-fill pe-2"></i>Send</button></div>
                                     </form>
