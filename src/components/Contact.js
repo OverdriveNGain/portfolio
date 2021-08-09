@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
+import axios from 'axios';
 
 const Contact = () => {
     const [formEmail, setFormEmail] = useState('');
     const [formName, setFormName] = useState('');
     const [formBody, setFormBody] = useState('');
+
+    const [requestStatus, setRequestStatus] = useState(null);
 
     const { breakpointSelector } = useResize();
 
@@ -20,9 +23,20 @@ const Contact = () => {
 
     const submitCallback = (e) => {
         e.preventDefault();
-        console.log(formEmail);
-        console.log(formName);
-        console.log(formBody);
+        console.log({
+            email: formEmail,
+            name: formName,
+            body: formBody
+        });
+        axios.post('https://portfolio-api-jeremy.web.app/sendmail', null, {
+            params: {
+                email: formEmail,
+                name: formName,
+                body: formBody
+            }
+        }).then((response) => {
+            console.log(response);
+        })
     }
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -79,6 +93,16 @@ const Contact = () => {
     }
     return (
         <div>
+            <div style={{
+                position: "absolute",
+                color: "rgba(0, 0, 0, 0.5)",
+                left: "0px",
+                right: "0px",
+                top: "0px",
+                bottom: "0px",
+            }}>
+
+            </div>
             <div className="container">
                 <div className="px-lg-5">
                     <div className="row">
