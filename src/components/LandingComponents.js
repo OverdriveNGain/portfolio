@@ -1,5 +1,9 @@
 import useResize from "../hooks/useResize";
+import Landing2 from './sketches/Landing2';
 import Landing3, { Landing3Hover } from "./sketches/Landing3";
+import {
+    Link,
+} from "react-router-dom";
 
 const About4 = () => {
     const { breakpointSelector } = useResize();
@@ -55,4 +59,53 @@ const About4 = () => {
     );
 }
 
-export default About4;
+const About3 = ({ response }) => {
+    const { breakpointSelector } = useResize();
+
+    const getProjectTile = (id) => {
+        if (response == null)
+            return (<div className="col-12 col-md-6 mb-2">
+                <div className="card">
+                    <div className="card-body m-1 m-md-4">
+                        <h5 className="card-title no-underline text-secondary"> </h5>
+                        <p className="card-text text-dark">Loading...</p>
+                    </div>
+                </div>
+            </div>);
+        const proj = response.find((p) => p.id === id);
+        return (<div className="col-12 col-md-6 mb-2">
+            <Link to={`/projects/${id}`} className="link-no-underline"><div className="card">
+                <div className="card-body m-1 m-md-4">
+                    <h5 className="card-title no-underline text-secondary">{proj.title}</h5>
+                    <p className="card-text text-dark">{proj.descShort}</p>
+                </div>
+            </div></Link>
+        </div>);
+    }
+
+    return (
+        <div id="about3">
+            <div style={{ padding: `${breakpointSelector(10, 30, null, 80, 100, 120)}px 0px` }}>
+                <Landing2 />
+                <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
+                    <div className="display-1 text-primary m-3 font-title">Projects</div>
+                    <div className="row mx-xs-2 mx-md-5 gx-2">
+                        {getProjectTile('loose-blocks')}
+                        {getProjectTile('buwad-republic')}
+                    </div>
+                    <div className="row mx-xs-2 mx-md-5 gx-2">
+                        {getProjectTile('simple-money-counter')}
+                        {breakpointSelector(<span />, null, getProjectTile('cell-trace'))}
+                    </div>
+
+                    <Link to="/projects">
+                        <button className="btn btn-primary align-self-center m-3 text-light">See More Projects ❯</button>
+                    </Link>
+                </div>
+
+            </div>
+        </div>
+    );
+}
+
+export { About3, About4 };

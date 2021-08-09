@@ -3,12 +3,9 @@ import { useLayoutEffect } from 'react';
 import useRequest from "../hooks/useRequest";
 import useResize from '../hooks/useResize';
 import Nbsp from "../helpers/Nbsp";
-import {
-    Link,
-} from "react-router-dom";
-import About4 from './LandingComponents';
+import { About3, About4 } from './LandingComponents';
 import Landing1, { Landing1RefreshState } from './sketches/Landing1';
-import Landing2, { Landing2RefreshState } from './sketches/Landing2';
+import { Landing2RefreshState } from './sketches/Landing2';
 import { Landing3RefreshState } from './sketches/Landing3';
 
 const Landing = () => {
@@ -78,26 +75,6 @@ const Landing = () => {
         e.preventDefault();
         console.log(e);
     }
-    const getProjectTile = (id) => {
-        if (response == null)
-            return (<div className="col-12 col-md-6 mb-2">
-                <div className="card">
-                    <div className="card-body m-1 m-md-4">
-                        <h5 className="card-title no-underline text-secondary"> </h5>
-                        <p className="card-text text-dark">Loading...</p>
-                    </div>
-                </div>
-            </div>);
-        const proj = response.find((p) => p.id === id);
-        return (<div className="col-12 col-md-6 mb-2">
-            <Link to={`/projects/${id}`} className="link-no-underline"><div className="card">
-                <div className="card-body m-1 m-md-4">
-                    <h5 className="card-title no-underline text-secondary">{proj.title}</h5>
-                    <p className="card-text text-dark">{proj.descShort}</p>
-                </div>
-            </div></Link>
-        </div>);
-    }
 
     return (
         <div id="about-me">
@@ -118,27 +95,7 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
-            <div id="about3">
-                <div style={{ padding: `${breakpointSelector(10, 30, null, 80, 100, 120)}px 0px` }}>
-                    <Landing2 />
-                    <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
-                        <div className="display-1 text-primary m-3 font-title">Projects</div>
-                        <div className="row mx-xs-2 mx-md-5 gx-2">
-                            {getProjectTile('loose-blocks')}
-                            {getProjectTile('buwad-republic')}
-                        </div>
-                        <div className="row mx-xs-2 mx-md-5 gx-2">
-                            {getProjectTile('simple-money-counter')}
-                            {breakpointSelector(<span />, null, getProjectTile('cell-trace'))}
-                        </div>
-
-                        <Link to="/projects">
-                            <button className="btn btn-primary align-self-center m-3 text-light">See More Projects ❯</button>
-                        </Link>
-                    </div>
-
-                </div>
-            </div>
+            <About3 response={response} />
             <About4 />
             <div id="about5">
                 <div className="align-middle container px-0 my-5 text-center d-flex flex-column justify-content-center align-items-stretch h-100">
