@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 
 const ProjectDetailsPage = ({ projectData, backFunction }) => {
-    let { id } = useParams();
+    const { id } = useParams();
     const [imageI, setImageI] = useState(0);
     const [fullscreen, setFullscreen] = useState(false);
     const { breakpointSelector } = useResize();
@@ -19,25 +19,13 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         alt: `http://localhost:3004/data/${id}`
     });
 
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
-
-    let proj;
-    if (projectData != null)
-        proj = projectData;
-    else if (response != null)
-        proj = response;
-    else
-        return (<div>Loading...</div>);
-
     const tern = (cond, e1, e2) => {
         if (cond)
             return e1;
         return e2;
     }
 
-    const getGitHubLink = () => tern(
+    const getGitHubLink = (proj) => tern(
         proj.github != null,
         <p><a href={proj.github} target="_blank" rel="noopener noreferrer">
             Open this project in Github
@@ -45,21 +33,21 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         <div />
     );
 
-    const getPlaystoreLink = () => tern(
+    const getPlaystoreLink = (proj) => tern(
         proj.playstore != null,
         <p><a href={proj.playstore} target="_blank" rel="noopener noreferrer">
             See this app on the Google Play Store
         </a></p>,
         <div></div>);
 
-    const getWebsiteLink = () => tern(
+    const getWebsiteLink = (proj) => tern(
         proj.website != null,
         <p><a href={proj.website} target="_blank" rel="noopener noreferrer">
             Open this project in a new tab
         </a></p>,
         <div></div>);
 
-    const getImagePreviews = () => {
+    const getImagePreviews = (proj) => {
         if (proj.img == null)
             return <div />;
 
@@ -83,12 +71,12 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         return toReturn;
     }
 
-    const getImageArea = (horizontal) => {
+    const getImageArea = (horizontal, proj) => {
         const getImageArray = () => {
             const toReturn = [];
 
             if (imagesLoaded < proj.img.length) {
-                toReturn.push(<p>Loading images...</p>);
+                toReturn.push(<p key={-1}>Loading images...</p>);
             }
 
             for (let i = 0; i < proj.img.length; i++) {
@@ -177,6 +165,41 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
     const previewSetRelative = (val) => {
         setImageI(imageI + val)
     }
+    const keyDownHandler = (e, proj) => {
+        console.log("handler");
+        if (e.key === "ArrowRight") {
+            // console.log(`${proj != null}   ${proj.img != null}   ${imagesLoaded === proj.img.length}   ${imageI < proj.img.length - 1}`)
+            if (proj != null && proj.img != null && imagesLoaded === proj.img.length && imageI < proj.img.length - 1)
+                setImageI(imageI + 1);
+        }
+        else if (e.key === "ArrowLeft") {
+            if (proj != null && proj.img != null && imagesLoaded === proj.img.length && imageI > 0)
+                setImageI(imageI - 1);
+        }
+    }
+
+
+    let proj;
+
+    if (projectData != null)
+        proj = projectData;
+    else if (response != null)
+        proj = response;
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+
+        console.log('added event');
+        const callback = (e) => { keyDownHandler(e, proj) };
+        window.addEventListener('keydown', callback);
+        return () => {
+            console.log('removedevent');
+            window.removeEventListener('keydown', callback)
+        }
+    });
+
+    if (proj == null)
+        return (<div>Loading...</div>);
 
     let horizontal = true;
     if (proj.imgPortrait === true)
@@ -189,12 +212,12 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
             </div>
             <div className="d-flex flex-row mx-3">
                 <span className="d-flex flex-column d-none d-md-inline me-2" style={{ width: tern(proj.img == null || proj.img.length === 0, "0px", "70px") }}>
-                    {getImagePreviews()}
+                    {getImagePreviews(proj)}
                 </span>
                 <span className="row">
                     <div className={tern(horizontal, "col-12", "col-12 col-sm-4")}>
                         <div className="flex-fill-fixed">
-                            {getImageArea(horizontal)}
+                            {getImageArea(horizontal, proj)}
                         </div>
                     </div>
                     <div className={tern(horizontal, "col-12", "col-12 col-sm-8")}>
@@ -208,9 +231,9 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
                             <div>This project uses the following frameworks and tools:</div>
                             <p className="text-muted fw-bold">{proj.languages.join(", ")}</p>
                             <hr />
-                            {getPlaystoreLink()}
-                            {getWebsiteLink()}
-                            {getGitHubLink()}
+                            {getPlaystoreLink(proj)}
+                            {getWebsiteLink(proj)}
+                            {getGitHubLink(proj)}
                             <p className="mb-5" />
                         </div>
                     </div>
