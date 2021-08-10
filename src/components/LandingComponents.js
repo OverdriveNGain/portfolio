@@ -5,6 +5,8 @@ import {
     Link,
 } from "react-router-dom";
 import Nbsp from "../helpers/Nbsp";
+import { useState } from "react";
+import axios from 'axios';
 
 const About4 = () => {
     const { breakpointSelector } = useResize();
@@ -110,13 +112,85 @@ const About3 = ({ response }) => {
 }
 
 const About6 = () => {
+    const [formEmail, setFormEmail] = useState('');
+    const [formName, setFormName] = useState('');
+    const [formBody, setFormBody] = useState('');
+
+    const [modalMessage, setModalMessage] = useState(null);
+    const [sendButtonLabel, setSendButtonLabel] = useState("Send");
+
     const submitCallback = (e) => {
+        const openModal = () => {
+            document.getElementById("modalButton").click();
+        }
         e.preventDefault();
-        console.log(e);
+        if (formEmail.trim().length === 0) {
+            setModalMessage("Please enter an email");
+            openModal();
+        }
+        else if (formName.trim().length === 0) {
+            setModalMessage("Please enter your name");
+            openModal();
+        }
+        else if (formBody.trim().length === 0) {
+            setModalMessage("Please enter your message");
+            openModal();
+        }
+        else {
+            setSendButtonLabel("Please wait...");
+            console.log({
+                email: formEmail,
+                name: formName,
+                body: formBody
+            });
+            axios.post('https://portfolio-api-jeremy.web.app/sendmail', null, {
+                params: {
+                    email: formEmail,
+                    name: formName,
+                    body: formBody
+                }
+            }).then((response) => {
+                setModalMessage("Message successfully sent!");
+                setSendButtonLabel("Send");
+                openModal();
+            })
+        }
     }
+
+    const onNameChange = (e) => {
+        setFormName(e.target.value);
+    }
+    const onEmailChange = (e) => {
+        setFormEmail(e.target.value);
+    }
+    const onBodyChange = (e) => {
+        setFormBody(e.target.value);
+    }
+
+    const getModal = () => {
+        return <div>
+            <button id="modalButton" type="button" className="d-none" data-bs-toggle="modal" data-bs-target="#sendConfirmModal" />
+            <div className="modal fade" id="sendConfirmModal" tabIndex="-1" aria-labelledby="sendConfirmModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-body">
+                            <div className="text-center my-5">
+                                {modalMessage}
+                            </div>
+                            <div className="text-center mt-3">
+                                <button type="button" className="btn btn-primary text-white" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
 
     return (
         <div id="about6" className="bg-light">
+            {getModal()}
             <div className="align-middle container px-0 py-3 text-center d-flex flex-column 
                 justify-content-center align-items-stretch px-4 py-5">
                 <div className="display-6 text-muted">Need to get something<Nbsp />done?</div>
@@ -125,18 +199,18 @@ const About6 = () => {
                     <div className="col col-sm-7 text-start">
                         <form onSubmit={(e) => { submitCallback(e) }}>
                             <div className="mb-3">
-                                <label htmlFor="contactName" className="form-label fw-bold text-secondary">Name</label>
-                                <input type="name" className="form-control" id="contactName" placeholder="John Doe" name="fname" />
+                                <label htmlFor="contactEmail" className="form-label fw-bold text-secondary">Email</label>
+                                <input type="email" value={formEmail} className="form-control" id="contactEmail" placeholder="name@example.com" name="email" onChange={onEmailChange} />
                             </div>
                             <div className="mb-3">
-                                <label htmlFor="contactEmail" className="form-label fw-bold text-secondary">Email</label>
-                                <input type="email" className="form-control" id="contactEmail" placeholder="name@example.com" name="email" />
+                                <label htmlFor="contactName" className="form-label fw-bold text-secondary">Name</label>
+                                <input type="name" value={formName} className="form-control" id="contactName" placeholder="John Doe" name="fname" onChange={onNameChange} />
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="contactMessage" className="form-label fw-bold text-secondary">Message</label>
-                                <textarea className="form-control" id="contactMessage" rows="3" name="message"></textarea>
+                                <textarea className="form-control" value={formBody} id="contactMessage" rows="3" name="message" onChange={onBodyChange}></textarea>
                             </div>
-                            <div className="text-center"><button className="btn btn-primary text-light" type="submit"><i className="bi bi-envelope-fill pe-2"></i>Send</button></div>
+                            <div className="text-center"><button className="btn btn-primary text-light" disabled={sendButtonLabel !== "Send"} type="submit"><i className="bi bi-envelope-fill pe-2"></i>{sendButtonLabel}</button></div>
                         </form>
                     </div>
                 </div>
