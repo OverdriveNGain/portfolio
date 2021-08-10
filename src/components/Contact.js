@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
 import axios from 'axios';
-import { tern } from "./helpers/Helpers";
 
 const Contact = () => {
     const [formEmail, setFormEmail] = useState('');
