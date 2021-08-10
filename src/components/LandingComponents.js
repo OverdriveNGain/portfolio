@@ -30,7 +30,7 @@ const About4 = () => {
     ]
     for (let i = 0; i < 3; i++) {
         tiles.push(<div key={i} className="col-12 col-md-4">
-            <a href="/" className="link-no-underline"><div className="card border-0 rounded rounded-on-md shadow mx-1 mx-md-0" onMouseOver={(e) => landingServicesHoverHandler(e, i)} onMouseOut={(e) => landingServicesHoverHandler(e, -1)}>
+            <div className="card border-0 rounded rounded-on-md shadow mx-1 mx-md-0" onMouseOver={(e) => landingServicesHoverHandler(e, i)} onMouseOut={(e) => landingServicesHoverHandler(e, -1)}>
                 <div className="card-body text-center">
                     <div className="row align-items-center justify-content-center">
                         <div className="col-2 col-md-8"><i className={`${tileIcon[i]} display-1 text-secondary d-none d-md-inline`}></i></div>
@@ -42,7 +42,7 @@ const About4 = () => {
                         </div>
                     </div>
                 </div>
-            </div></a>
+            </div>
         </div>)
     }
     return (
