@@ -19,7 +19,7 @@ const Landing = () => {
         "Jeremy",
         " , and I am a ",
         "full‑stack developer"
-    ], 50, 1000);
+    ], 35, 1000);
 
     useLayoutEffect(() => {
         const refreshLoopStates = () => {

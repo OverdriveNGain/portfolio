@@ -31,7 +31,7 @@ const useTypewriter = (spans, delay, initDelay) => {
                     innerSpanI: x,
                     spanI: y
                 });
-        }, d + Math.round(Math.random() * 10 - 5))
+        }, d)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [twPos]);
 
