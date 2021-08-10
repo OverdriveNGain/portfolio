@@ -20,18 +20,18 @@ const Projects = () => {
         "Unity 3D",
         "Firebase",
         "React JS",
-        "Git",
-        "HTML",
-        "CSS",
-        "Javascript",
-        "SASS",
+        // "HTML",
+        // "CSS",
+        // "Javascript",
+        // "SASS",
         "Bootstrap",
-        "Adobe Illustrator",
-        "Adobe Photoshop",
-        "Processing",
+        // "Adobe Illustrator",
+        // "Adobe Photoshop",
+        // "Processing",
         "p5.js",
-        "C#",
-        "Python"
+        // "C#",
+        "Python",
+        "Git"
     ]
 
     useEffect(() => {
