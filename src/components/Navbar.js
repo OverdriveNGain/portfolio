@@ -84,7 +84,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className="navbar navbar-expand-md navbar-light fixed-top animated-background-color" style={getInlineNavbarStyle()}>
+        <nav id="navbar-main" className="navbar navbar-expand-md navbar-light fixed-top animated-background-color" style={getInlineNavbarStyle()}>
             <div className="container px-4">
                 <NavbarBrand location={location} scrollTop={scrollTop} navbarLinkClick={navbarLinkClick} />
                 <button className="navbar-toggler" data-bs-toggle="collapse"

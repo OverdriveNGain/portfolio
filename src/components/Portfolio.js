@@ -34,7 +34,7 @@ const Portfolio = () => {
     const toHeader = (t) => {
         const isXS = dimensions.width <= 576;
         const dstyle = {
-            top: isXS ? "54px" : "69px",
+            top: isXS ? "54px" : "56px",
             padding: "10px 0px",
             backgroundColor: "rgba(255, 255, 255, 0.92)",
             backdropFilter: "blur(3px)"
