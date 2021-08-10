@@ -63,7 +63,7 @@ const Contact = () => {
     const getModal = () => {
         return <div>
             <button id="modalButton" type="button" className="d-none" data-bs-toggle="modal" data-bs-target="#sendConfirmModal" />
-            <div className="modal fade" id="sendConfirmModal" tabindex="-1" aria-labelledby="sendConfirmModalLabel" aria-hidden="true">
+            <div className="modal fade" id="sendConfirmModal" tabIndex="-1" aria-labelledby="sendConfirmModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-body">
