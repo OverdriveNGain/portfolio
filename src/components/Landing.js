@@ -92,7 +92,7 @@ const Landing = () => {
             </div>
             <About3 response={response} />
             <About4 />
-            <div id="about5">
+            <div id="about5" className="d-none">
                 <div className="align-middle container px-0 my-5 text-center d-flex flex-column justify-content-center align-items-stretch h-100">
                     <div className="display-1 text-primary mb-5 font-title">Testimonials</div>
                     <div className="px-5">

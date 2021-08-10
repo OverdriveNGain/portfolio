@@ -189,7 +189,7 @@ const About6 = () => {
 
 
     return (
-        <div id="about6" className="bg-light">
+        <div id="about6" className="">
             {getModal()}
             <div className="align-middle container px-0 py-3 text-center d-flex flex-column 
                 justify-content-center align-items-stretch px-4 py-5">
