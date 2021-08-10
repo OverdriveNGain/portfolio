@@ -32,15 +32,11 @@ const Portfolio = () => {
         </div>);
     }
     const toHeader = (t) => {
-        const isXS = dimensions.width <= 576;
         const dstyle = {
-            top: isXS ? "54px" : "56px",
             padding: "10px 0px",
-            backgroundColor: "rgba(255, 255, 255, 0.92)",
-            backdropFilter: "blur(3px)"
         };
         return (
-            <div style={dstyle} className="sticky-top">
+            <div style={dstyle}>
                 <p className="text-muted h5 opacity-50 fw-bold text-center">{t}</p>
             </div>
         );

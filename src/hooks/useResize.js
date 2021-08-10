@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useResize = () => {
+const useResize = (callback) => {
     const [dimensions, setDimensions] = useState({
         height: window.innerHeight,
         width: window.innerWidth
@@ -28,6 +28,8 @@ const useResize = () => {
                 height: window.innerHeight,
                 width: window.innerWidth
             });
+            if (callback != null)
+                callback();
         }
 
         let timer;
@@ -47,7 +49,7 @@ const useResize = () => {
         return () => {
             window.removeEventListener('resize', debouncedHandleResize);
         }
-    }, [dimensions]);
+    }, [dimensions, callback]);
 
     return { dimensions, breakpointSelector };
 };
