@@ -2,18 +2,24 @@
 import { useLayoutEffect } from 'react';
 import useRequest from "../hooks/useRequest";
 import useResize from '../hooks/useResize';
-import Nbsp from "../helpers/Nbsp";
 import { About3, About4, About6 } from './LandingComponents';
 import Landing1, { Landing1RefreshState } from './sketches/Landing1';
 import { Landing2RefreshState } from './sketches/Landing2';
 import { Landing3RefreshState } from './sketches/Landing3';
-import Typewriter from './Typewriter';
+import useTypewriter from "../hooks/useTypewriter";
 
 const Landing = () => {
-    const { dimensions, breakpointSelector } = useResize();
+    const { breakpointSelector } = useResize();
     const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects`, {
         alt: "http://localhost:3004/data"
     });
+
+    const [twSpan] = useTypewriter([
+        "My name is ",
+        "Jeremy",
+        " , and I am a ",
+        "full‑stack developer"
+    ], 50, 1000);
 
     useLayoutEffect(() => {
         const refreshLoopStates = () => {
@@ -69,16 +75,18 @@ const Landing = () => {
         };
     }, [])
 
-    useLayoutEffect(() => {
-    }, [dimensions])
-
     return (
         <div id="about-me">
             <div id="about1" style={{ height: breakpointSelector("80vh", null, null, "90vh") }}>
                 <Landing1 />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center h-100">
                     <div className="display-6 pt-5 pb-2 d-inline-block text-muted fs-5 fs-md-4">So let me introduce myself...</div>
-                    <Typewriter />
+                    <div className="display-4 px-3 pb-3 d-inline-block">
+                        <span>{twSpan(0)}</span>
+                        <span className="text-primary">{twSpan(1)}</span>
+                        <span>{twSpan(2)}</span>
+                        <span className="text-secondary">{twSpan(3)}</span>
+                    </div>
                 </div>
             </div>
             <div id="about2">
