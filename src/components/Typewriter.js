@@ -4,7 +4,7 @@ const spans = [
     "My name is ",
     "Jeremy",
     " , and I am a ",
-    "full&#8209;stack&#160;developer"
+    "full‑stack developer"
 ];
 
 const Typewriter = () => {
