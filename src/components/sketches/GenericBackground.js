@@ -9,6 +9,26 @@ let portfolioBgStop = (remove) => {
     shouldRemove = true;
 };
 
+//{
+let running = false;
+let promise = false;
+const debounce = (func) => {
+    if (running) {
+        promise = true;
+        return;
+    }
+    running = true;
+    func();
+    setTimeout(() => {
+        running = false;
+        if (promise) {
+            promise = false;
+            debounce(func);
+        }
+    }, 1000);
+}
+//}
+
 const GenericBackground = () => {
     const setup = (sketch, canvasParentRef) => {
         p5 = sketch;
@@ -21,9 +41,10 @@ const GenericBackground = () => {
     };
 
     const windowResized = () => {
-        p5.resizeCanvas(p5.round(window.offsetWidth), p5.round(window.offsetHeight));
-        // eslint-disable-next-line no-undef
-        bubbleM.resize(p5.width, p5.height);
+        debounce(() => {
+            p5.resizeCanvas(p5.round(window.innerWidth), p5.round(window.innerHeight));
+            bubbleM.resize(p5.width, p5.height);
+        })
     }
 
     const draw = () => {
