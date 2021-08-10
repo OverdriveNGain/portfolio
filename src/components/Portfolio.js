@@ -127,6 +127,16 @@ const Portfolio = () => {
                             <p className="text-center">I am aiming to be a professional software engineer, to allow for more innovative solutions and new technological advances in the future of different businesses in our country, today.</p>
                         </div>
                         <hr className="my-0" />
+                        <div className={"content pb-3 pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
+                            {toHeader("Educational History")}
+                            <h6 className="text-secondary mb-0">University of the Philippines</h6>
+                            <p>BS Computer Science | 2023 (Expected Graduation Date)</p>
+                            <h6 className="text-secondary mb-0">Trinity University of Asia</h6>
+                            <p>Junior High School and Senior High School STEM Track | 2012-2018</p>
+                            <h6 className="text-secondary mb-0">Asian College of Technology</h6>
+                            <p>Elementary Education | 2004-2012</p>
+                        </div>
+                        <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5" style={{ textAlign: ((dimensions.width > 576) ? "justify" : "start") }}>
                             {toHeader("Skills & Experience")}
                             <div className="">
@@ -170,23 +180,13 @@ const Portfolio = () => {
                             </div>
                         </div>
                         <hr className="my-0" />
-                        <div className={"content pb-3 pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
-                            {toHeader("Educational History")}
-                            <h6 className="text-secondary mb-0">University of the Philippines</h6>
-                            <p>BS Computer Science | 2023 (Expected Graduation Date)</p>
-                            <h6 className="text-secondary mb-0">Trinity University of Asia</h6>
-                            <p>Junior High School and Senior High School STEM Track | 2012-2018</p>
-                            <h6 className="text-secondary mb-0">Asian College of Technology</h6>
-                            <p>Elementary Education | 2004-2012</p>
-                        </div>
-                        <hr className="my-0" />
                         <div className={"content pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
                             {toHeader("University Affiliations")}
                             <h6 className="text-secondary mb-0">UP CURSOR</h6>
                             <p>Member since December 2019</p>
                         </div>
                     </div>
-                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume.pdf?alt=media&token=f2b6309b-dcc2-4605-84f6-8b172c0e3751">here</a></p>
+                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume.pdf?alt=media&token=768cf66f-a4e2-4997-93de-fb02595461d0">here</a></p>
                 </div>
             </div>
         </div>
