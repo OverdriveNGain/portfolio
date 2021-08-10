@@ -208,7 +208,7 @@ const About6 = () => {
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="contactMessage" className="form-label fw-bold text-secondary">Message</label>
-                                <textarea className="form-control" value={formBody} id="contactMessage" rows="3" name="message" onChange={onBodyChange}></textarea>
+                                <textarea className="form-control" value={formBody} id="contactMessage" rows="8" name="message" onChange={onBodyChange}></textarea>
                             </div>
                             <div className="text-center"><button className="btn btn-primary text-light" disabled={sendButtonLabel !== "Send"} type="submit"><i className="bi bi-envelope-fill pe-2"></i>{sendButtonLabel}</button></div>
                         </form>
