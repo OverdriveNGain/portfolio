@@ -108,7 +108,7 @@ const Portfolio = () => {
                     <div className="bg-white rounded-3 shadow-lg p-2 p-sm-4 mb-5">
                         <div className="row justify-content-center ">
                             <div className="col-12 col-md-auto text-center">
-                                <img src="https://i.pinimg.com/236x/76/ef/77/76ef77aa1e8427ae95c2fbd86ba5255b.jpg" className="rounded-circle portfolio-pic m-3" alt="Jeremy" />
+                                <img src="https://drive.google.com/uc?id=1-JhEApFN6ssYHG04MLXmYd1wWhEx7UiR" className="rounded-circle portfolio-pic m-3" alt="Jeremy" />
                             </div>
                             <div className="col mx-3 my-0 my-sm-3 px-0">
                                 <div className="flex-fill text-center text-md-start">
