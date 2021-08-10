@@ -36,7 +36,7 @@ const NavbarBrand = ({ location, scrollTop, navbarLinkClick }) => {
                 <div className="fw-bold text-primary b-0">Jeremy Mattheu D. Amon</div>
                 <small className="text-muted">Full-Stack Developer</small>
             </div>
-            <div className="d-sm-none">
+            <div className="d-sm-none" style={{ fill: "green" }}>
                 <svg className="navbar-logo-brand" viewBox="0 0 200 200" width="35" height="35">
                     {logoPath}
                 </svg>
