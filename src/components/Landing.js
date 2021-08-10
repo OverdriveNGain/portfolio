@@ -7,6 +7,7 @@ import { About3, About4, About6 } from './LandingComponents';
 import Landing1, { Landing1RefreshState } from './sketches/Landing1';
 import { Landing2RefreshState } from './sketches/Landing2';
 import { Landing3RefreshState } from './sketches/Landing3';
+import Typewriter from './Typewriter';
 
 const Landing = () => {
     const { dimensions, breakpointSelector } = useResize();
@@ -77,7 +78,7 @@ const Landing = () => {
                 <Landing1 />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center h-100">
                     <div className="display-6 pt-5 pb-2 d-inline-block text-muted fs-5 fs-md-4">So let me introduce myself...</div>
-                    <div className="display-4 px-3 pb-3 d-inline-block">My name is <span className="text-primary">Jeremy</span>, and I am a <span className="text-secondary">full&#8209;stack<Nbsp />developer</span></div>
+                    <Typewriter />
                 </div>
             </div>
             <div id="about2">
