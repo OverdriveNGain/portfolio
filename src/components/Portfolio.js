@@ -76,6 +76,10 @@ const Portfolio = () => {
                 return { backgroundColor: "rgb(0,30,54)", color: "rgb(49,168,255)" };
             case "Inkscape":
                 return { backgroundColor: "rgb(224, 224, 224)", color: "black" };
+            case "Webflow":
+                return { backgroundColor: "rgb(67, 83, 255)", color: "white" };
+            case "tailwindcss":
+                return { backgroundColor: "rgb(11, 182, 212)", color: "white" };
             default:
                 return { backgroundColor: "black", color: "white" };
         }
@@ -106,11 +110,11 @@ const Portfolio = () => {
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">CV</p>
                     <div className="bg-white rounded-3 shadow-lg p-2 p-sm-4 mb-5">
-                        <div className="row justify-content-center ">
-                            <div className="col-12 col-md-auto text-center">
+                        <div className="d-flex flex-column flex-md-row justify-content-center ">
+                            <div className="text-center">
                                 <img src="https://drive.google.com/uc?id=1-JhEApFN6ssYHG04MLXmYd1wWhEx7UiR" className="rounded-circle portfolio-pic m-3" alt="Jeremy" />
                             </div>
-                            <div className="col mx-3 my-0 my-sm-3 px-0">
+                            <div className="flex-fill mx-3 my-0 my-sm-3 px-0">
                                 <div className="flex-fill text-center text-md-start">
                                     <label className="text-secondary h6 mb-0">Name</label>
                                     <p>Jeremy Mattheu D. Amon</p>
@@ -129,10 +133,13 @@ const Portfolio = () => {
                         <hr className="my-0" />
                         <div className={"content pb-3 pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
                             {toHeader("Educational History")}
-                            <h6 className="text-secondary mb-0">University of the Philippines</h6>
+                            {/* {toSkillsHeader("University of the Philippines Diliman")} */}
+                            <h6 className="text-secondary mb-0">University of the Philippines Diliman</h6>
                             <p>BS Computer Science | 2023 (Expected Graduation Date)</p>
+                            {/* {toSkillsHeader("Trinity University of Asia")} */}
                             <h6 className="text-secondary mb-0">Trinity University of Asia</h6>
                             <p>Junior High School and Senior High School STEM Track | 2012-2018</p>
+                            {/* {toSkillsHeader("Asian College of Technology")} */}
                             <h6 className="text-secondary mb-0">Asian College of Technology</h6>
                             <p>Elementary Education | 2004-2012</p>
                         </div>
@@ -140,12 +147,12 @@ const Portfolio = () => {
                         <div className="content pb-3 pt-2 px-2 px-md-5" style={{ textAlign: ((dimensions.width > 576) ? "justify" : "start") }}>
                             {toHeader("Skills & Experience")}
                             <div className="">
-                                {toSkillsHeader(Nbspify("Mobile and Web App Engineer"))}
-                                {toSkillBadges("Flutter, Unity 3D, Firebase, React JS, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap")}
+                                {toSkillsHeader(Nbspify("Mobile and Web App Developer"))}
+                                {toSkillBadges("React JS, Flutter, Unity 3D, Firebase, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap, Webflow, tailwindcss")}
                                 {toSkillsBullet("Uses Flutter for Android, IOs app development, as well as web applications.")}
                                 {toSkillsBullet("Created a student management database for the Colegio de Santo Cristo de Burgos school within the Flutter framework with a Firebase backend.")}
+                                {toSkillsBullet("Managed in updating the Kairos Core NFT Minting Launch frontend layout for better responsive design, better element interactivity, and dynamic JavaScript countdown timer")}
                                 {toSkillsBullet("Experienced with Mobile App/Web App development including optional Firebase integration, including website hosting and Google cloud functions. ")}
-                                {toSkillsBullet("Capable of working SASS, which compiles to manageable and maintainable CSS")}
                                 {toSkillsBullet("Developed an online portfolio from scratch using a react framework together with a Bootstrap + SASS format structure")}
                                 {toSkillsBullet("Experienced uploading to the Google Play Store with a Google Play developer account, while having uploaded multiple Unity 3D games")}
 
@@ -153,9 +160,23 @@ const Portfolio = () => {
                                 {toSkillBadges("Adobe Illustrator, Adobe Photoshop, Processing, p5.js, Inkscape")}
                                 {toSkillsBullet("Creates digital designs to be made into products such as stickers, magnets, and vector art for Just Crafts PH, an online sticker shop, where 90% of all social media pubs, and 100% of all sticker designs are developed by him using Adobe Illustrator")}
                                 {toSkillsBullet("Sketches and constructs digital shirt designs and ID lace designs for Trinity University of Asia")}
-                                {toSkillsBullet("Created billboards and publications for the Colegio de Santo Cristo de Burgosschool, as well as designed the school's yearbooks from 2014 to 2020")}
-                                {toSkillsBullet("Produces own sprite assets for game development")}
+                                {toSkillsBullet("Created billboards and publications for the Colegio de Santo Cristo de Burgos school, as well as designed the school's yearbooks from 2014 to 2020")}
                                 {toSkillsBullet("Creates computerized digital media using Processing, an open-source graphical library that enables programmers to produce computer-driven digital arts and simulations")}
+
+                                {toSkillsHeader(Nbspify("Educator and Education Content Creator"))}
+                                {toSkillBadges("Unity 3D, C#, Python, Java")}
+                                {toSkillsBullet("Worked part time at the Coding School Philippines, while educating children and teens on the following courses:")}
+                                {toSkillsBullet("Make Your Own Game with Unity 1 & 2", 1)}
+                                {toSkillsBullet("Python For Kids 1 & 2", 1)}
+                                {toSkillsBullet("Python For Teens 1 & 2", 1)}
+                                {toSkillsBullet("Intro to C# Programming", 1)}
+                                {toSkillsBullet("Intro to Google Apps", 1)}
+                                {toSkillsBullet("Revamped and structured the 'Intro to C# Programming' 10-hour programming course")}
+                                {toSkillsBullet("Comanaged the 2021 TCS Coding Masters Coding Competition")}
+                                {toSkillsBullet("Teached part time in Colegio de Santo Cristo de Burgos, teaching and creating course material for different Information Technology and Computer Science subjects, including the following:")}
+                                {toSkillsBullet("Computer Programming 1", 1)}
+                                {toSkillsBullet("Object-Oriented Programming", 1)}
+                                {toSkillsBullet("Data Structures and Algorithms", 1)}
 
                                 {toSkillsHeader("Game Developer")}
                                 {toSkillBadges("Unity 3D, C#")}
@@ -166,27 +187,20 @@ const Portfolio = () => {
                                 {toSkillsHeader("General Programmer")}
                                 {toSkillBadges("Python, C#, Git + Github")}
                                 {toSkillsBullet("Writes specific software that can help in a multitude of bulk operations including (but not limited) to the manufacturing of sticker graphics, bulk data manipulation, online website data scraping, etc.")}
-
-                                {toSkillsHeader(Nbspify("Educator and Education Content Creator"))}
-                                {toSkillBadges("Unity 3D, C#, Python")}
-                                {toSkillsBullet("Worked part time at the Coding School Philippines, while educating children and teens on the following courses:")}
-                                {toSkillsBullet("Make Your Own Game with Unity 1 & 2", 1)}
-                                {toSkillsBullet("Python For Kids 1 & 2", 1)}
-                                {toSkillsBullet("Python For Teens 1 & 2", 1)}
-                                {toSkillsBullet("Intro to C# Programming", 1)}
-                                {toSkillsBullet("Intro to Google Apps", 1)}
-                                {toSkillsBullet("Revamped and structured the 'Intro to C# Programming' 10-hour programming course")}
-                                {toSkillsBullet("Comanaged the 2021 TCS Coding Masters Coding Competition")}
                             </div>
                         </div>
                         <hr className="my-0" />
                         <div className={"content pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
                             {toHeader("University Affiliations")}
+                            {/* {toSkillsHeader("UP CURSOR")} */}
                             <h6 className="text-secondary mb-0">UP CURSOR</h6>
                             <p>Member since December 2019</p>
+                            {/* {toSkillsHeader("UP CREST")} */}
+                            <h6 className="text-secondary mb-0">UP CREST</h6>
+                            <p>Member since November 2021</p>
                         </div>
                     </div>
-                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume.pdf?alt=media&token=768cf66f-a4e2-4997-93de-fb02595461d0">here</a></p>
+                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%202.pdf?alt=media&token=d1f93515-8925-4fb8-b1a6-9d80a13abe23">here</a></p>
                 </div>
             </div>
         </div>
