@@ -71,9 +71,9 @@ const Navbar = () => {
         const navs = [];
         for (let i = 0; i < titles.length; i++) {
             navs.push(breakpointSelector(
-                <Link key={i} className={`nav-link px-3 ${getNavbarLinkColor(location, routes[i])}`}
+                <Link key={i} className={`nav-link px-3 animated-all anim-hover-lighten ${getNavbarLinkColor(location, routes[i])}`}
                     onClick={() => { navbarLinkClick(); }} to={routes[i]}>{titles[i]}</Link>, null, null,
-                <Link key={i} className={`nav-link px-3 ${getNavbarLinkColor(location, routes[i])}`}
+                <Link key={i} className={`nav-link px-3 animated-all anim-hover-lighten ${getNavbarLinkColor(location, routes[i])}`}
                     to={routes[i]}>{titles[i]}</Link>))
         }
         return (

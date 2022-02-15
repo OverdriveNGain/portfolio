@@ -92,7 +92,7 @@ const Projects = () => {
                     opacity: '0'
                 };
             }
-            toReturn.push(<div key={project.id} style={tileDivStyle} className="d-inline-block position-absolute p-1 animated-all">
+            toReturn.push(<div key={project.id} style={tileDivStyle} className="d-inline-block position-absolute p-1 animated-all anim-hover-lighten-light">
                 <Link to={`/projects/${project.id}`} className="link-no-underline" onClick={() => { projectTileClickHandler(project) }}>
                     <div className="shadow p-3 rounded bg-light h-100">
                         <div>{project.title}</div>

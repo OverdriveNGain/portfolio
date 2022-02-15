@@ -86,6 +86,13 @@
     opacity: 0;
 }
 
+.anim-hover-lighten-light:hover{
+    filter: brightness(130%)
+}
+.anim-hover-lighten:hover{
+    filter: brightness(170%)
+}
+
 .unselectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
