@@ -93,12 +93,12 @@ const About3 = ({ response }) => {
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
                     <div className="display-1 text-primary m-3 font-title">Projects</div>
                     <div className="row mx-xs-2 mx-md-5 gx-2">
-                        {getProjectTile('simple-money-counter')}
-                        {getProjectTile('buwad-republic')}
+                        {getProjectTile('kairoscore')}
+                        {getProjectTile('up-crest-25')}
                     </div>
                     <div className="row mx-xs-2 mx-md-5 gx-2">
                         {getProjectTile('loose-blocks')}
-                        {breakpointSelector(<span />, null, getProjectTile('cell-trace'))}
+                        {breakpointSelector(<span />, null, getProjectTile('simple-money-counter'))}
                     </div>
 
                     <Link to="/projects">
