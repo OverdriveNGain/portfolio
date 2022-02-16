@@ -38,7 +38,7 @@ const useResize = (callback) => {
                 clearTimeout(timer);
                 timer = setTimeout(() => {
                     func();
-                }, 300);
+                }, 50);
             };
         }
 

@@ -43,7 +43,7 @@ const Landing = () => {
                     promise = false;
                     debounce(func);
                 }
-            }, 300);
+            }, 50);
         }
 
         const waitUntilInit = async () => {
@@ -59,7 +59,7 @@ const Landing = () => {
                     });
                     window.clearInterval(temp);
                 }
-            }, 10);
+            }, 30);
         }
 
         window.scrollTo(0, 0);

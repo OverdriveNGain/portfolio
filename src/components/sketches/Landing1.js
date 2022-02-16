@@ -97,7 +97,7 @@ const debounce = (func) => {
             promise = false;
             debounce(func);
         }
-    }, 1000);
+    }, 500);
 }
 //}
 
