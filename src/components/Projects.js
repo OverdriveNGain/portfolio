@@ -79,7 +79,8 @@ const Projects = () => {
                     height: height + "px",
                     left: `${Math.floor(shownIndex % cols) * width}%`,
                     top: `${Math.floor(shownIndex / cols) * height}px`,
-                    opacity: '1'
+                    opacity: '1',
+                    pointerEvents: "auto"
                 };
                 shownIndex++;
             }
@@ -89,7 +90,8 @@ const Projects = () => {
                     height: height + "px",
                     left: "0px",
                     top: "0px",
-                    opacity: '0'
+                    opacity: '0',
+                    pointerEvents: "none"
                 };
             }
             toReturn.push(<div key={project.id} style={tileDivStyle} className="d-inline-block position-absolute p-1 animated-all anim-hover-lighten-light">
