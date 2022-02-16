@@ -18,7 +18,7 @@ const Landing = () => {
         "My name is ",
         "Jeremy",
         " , and I am a ",
-        "full‑stack developer"
+        "full‑stack developer"
     ], 35, 1000);
 
     useLayoutEffect(() => {
@@ -81,7 +81,7 @@ const Landing = () => {
                 <Landing1 />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center h-100">
                     <div className="display-6 pt-5 pb-2 d-inline-block text-muted fs-5 fs-md-4">So let me introduce myself...</div>
-                    <div className="display-4 px-3 pb-3 d-inline-block">
+                    <div className="display-6 display-md-4 px-3 pb-3 d-inline-block">
                         <span>{twSpan(0)}</span>
                         <span className="text-primary">{twSpan(1)}</span>
                         <span>{twSpan(2)}</span>
