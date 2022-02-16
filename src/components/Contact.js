@@ -87,7 +87,7 @@ const Contact = () => {
             return breakpointSelector(null, null, null, null,
                 (
                     <div className="col-xl-5 col-xxl-4 bg-light p-5" >
-                        {/* <p className="d-xl-block p-5" /> */}
+                        <p className="d-xl-block p-5" />
                         <div className="pb-4">
                             <i className="bi bi-envelope-fill pe-3"></i>
                             <span className="">jeremyamon@gmail.com</span>
