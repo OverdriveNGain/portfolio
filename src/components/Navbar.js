@@ -34,6 +34,9 @@ const Navbar = () => {
                 if (scrollTop <= 150)
                     isBgTransparent = true;
                 break;
+            case "/contact":
+                isBgTransparent = false;
+                break;
             default:
                 if (scrollTop <= 50)
                     isBgTransparent = true;

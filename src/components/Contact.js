@@ -86,7 +86,7 @@ const Contact = () => {
         if (part === "right") {
             return breakpointSelector(null, null, null,
                 (
-                    <div className="col-lg-4 bg-light p-5">
+                    <div className="col-lg-4 bg-light p-5" >
                         <p className="d-lg-block p-5" />
                         <div className="pb-4">
                             <i className="bi bi-envelope-fill pe-3"></i>
@@ -137,7 +137,7 @@ const Contact = () => {
             {getModal()}
             <div className="container">
                 <div className="px-lg-5">
-                    <div className="row">
+                    <div className="row" style={{minHeight:"85vh"}}>
                         <div className="col-12 col-lg-8 px-4">
                             <p className="py-5" />
                             <p className="display-1 font-title text-primary">Contact Me</p>
@@ -152,7 +152,7 @@ const Contact = () => {
                                             <input type="name" className="form-control" id="contactName" placeholder="Your Name" name="fname" value={formName} onChange={onNameChange} />
                                         </div>
                                         <div className="mb-3">
-                                            <textarea className="form-control" id="contactMessage" placeholder="Type your message here..." rows="10" name="message" value={formBody} onChange={onBodyChange} ></textarea>
+                                            <textarea className="form-control" id="contactMessage" placeholder="Type your message here..." rows="15" name="message" value={formBody} onChange={onBodyChange} ></textarea>
                                         </div>
                                         <div className="text-center"><button className="btn btn-primary text-light" disabled={sendButtonLabel !== "Send"} type="submit"><i className="bi bi-envelope-fill pe-2"></i>{sendButtonLabel}</button></div>
                                     </form>
