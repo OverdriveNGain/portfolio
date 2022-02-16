@@ -84,10 +84,10 @@ const Contact = () => {
     }, []);
     const getOtherInfoPanel = (part) => {
         if (part === "right") {
-            return breakpointSelector(null, null, null,
+            return breakpointSelector(null, null, null, null,
                 (
-                    <div className="col-lg-4 bg-light p-5" >
-                        <p className="d-lg-block p-5" />
+                    <div className="col-xl-5 col-xxl-4 bg-light p-5" >
+                        {/* <p className="d-xl-block p-5" /> */}
                         <div className="pb-4">
                             <i className="bi bi-envelope-fill pe-3"></i>
                             <span className="">jeremyamon@gmail.com</span>
@@ -112,33 +112,33 @@ const Contact = () => {
                     <div className="bg-light">
                         <div className="container p-4 text-center">
                             <div className="row px-3 ps-sm-0 justify-content-center">
-                                <div className="pb-4 col-12 col-sm-6">
+                                <div className="pb-4 col-12 col-md-6">
                                     <i className="bi bi-envelope-fill pe-3"></i>
                                     <span className="">jeremyamon@gmail.com</span>
                                 </div>
-                                <div className="pb-4 col-12 col-sm-6">
+                                <div className="pb-4 col-12 col-md-6">
                                     <i className="bi bi-phone-fill pe-3"></i>
                                     <span className="">+63 995 963 2500</span>
                                 </div>
-                                <div className="pb-4 col-12 col-sm-6">
+                                <div className="pb-4 col-12 col-md-6">
                                     <i className="bi bi-linkedin pe-3"></i>
                                     <span className=""><a href="https://www.linkedin.com/in/jeremy-amon-b0548a124/">Jeremy Amon on LinkedIn</a></span>
                                 </div>
-                                <div className="col-12 col-sm-6">
+                                <div className="col-12 col-md-6">
                                     <i className="bi bi-github pe-3"></i>
                                     <span className=""><a href="https://github.com/OverdriveNGain">Jeremy Amon on Github</a></span>
                                 </div>
                             </div>
                         </div>
-                    </div>), null, null, <div></div>);
+                    </div>), null, null, null, <div></div>);
     }
     return (
         <div>
             {getModal()}
             <div className="container">
-                <div className="px-lg-5">
+                <div className="px-xl-5">
                     <div className="row" style={{minHeight:"85vh"}}>
-                        <div className="col-12 col-lg-8 px-4">
+                        <div className="col-12 col-xl-7 col-xxl-8 px-4">
                             <p className="py-5" />
                             <p className="display-1 font-title text-primary">Contact Me</p>
                             <div className="lead text-primary pb-4">I would love to hear from you!</div>
