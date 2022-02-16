@@ -94,10 +94,10 @@ const About3 = ({ response }) => {
                     <div className="display-1 text-primary m-3 font-title">Projects</div>
                     <div className="row mx-xs-2 mx-md-5 gx-2">
                         {getProjectTile('kairoscore')}
-                        {getProjectTile('up-crest-25')}
+                        {getProjectTile('loose-blocks')}
                     </div>
                     <div className="row mx-xs-2 mx-md-5 gx-2">
-                        {getProjectTile('loose-blocks')}
+                        {getProjectTile('up-crest-25')}
                         {breakpointSelector(<span />, null, getProjectTile('simple-money-counter'))}
                     </div>
 
