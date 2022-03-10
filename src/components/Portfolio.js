@@ -78,8 +78,14 @@ const Portfolio = () => {
                 return { backgroundColor: "rgb(224, 224, 224)", color: "black" };
             case "Webflow":
                 return { backgroundColor: "rgb(67, 83, 255)", color: "white" };
-            case "tailwindcss":
+            case "Tailwind CSS":
                 return { backgroundColor: "rgb(11, 182, 212)", color: "white" };
+            case "Docker":
+                return { backgroundColor: "rgb(78, 150, 232)", color: "white" };
+            case "Node.js":
+                return { backgroundColor: "rgb(51, 51, 51)", color: "rgb(149, 201, 66)" };
+            case "Figma":
+                return { backgroundColor: "rgb(240, 240, 240)", color: "rgb(214, 89, 39)" };
             default:
                 return { backgroundColor: "black", color: "white" };
         }
@@ -128,7 +134,7 @@ const Portfolio = () => {
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5">
                             {toHeader("Professional Goals")}
-                            <p className="text-center">I am aiming to be a professional software engineer, to allow for more innovative solutions and new technological advances in the future of different businesses in our country, today.</p>
+                            <p className="text-center">I am aiming to be a professional full stack web developer, to give companies and businesses better tools and services in order to establish better connections and interactions to their userbase and stakeholders.</p>
                         </div>
                         <hr className="my-0" />
                         <div className={"content pb-3 pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
@@ -148,20 +154,19 @@ const Portfolio = () => {
                             {toHeader("Skills & Experience")}
                             <div className="">
                                 {toSkillsHeader(Nbspify("Mobile and Web App Developer"))}
-                                {toSkillBadges("React JS, Flutter, Unity 3D, Firebase, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap, Webflow, tailwindcss")}
+                                {toSkillBadges("Node.js, React JS, Flutter, Unity 3D, Firebase, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap, Webflow, Tailwind CSS, Docker, p5.js")}
+                                {toSkillsBullet("Created a student management database for the Colegio de Santo Cristo de Burgos school using a Flutter framework with a Firebase backend, as well as developed a separate enrollment form system with automatic integration to the student database.")}
+                                {toSkillsBullet("Managed in updating the Kairos Core NFT Minting Launch frontend layout for better responsive design, better element interactivity, and dynamic JavaScript countdown timer, as well as the front-end of the Kairos Core minting website")}
+                                {toSkillsBullet("Experienced with Mobile App/Web App development including Firebase integration, website hosting and Google cloud functions.")}
                                 {toSkillsBullet("Uses Flutter for Android, IOs app development, as well as web applications.")}
-                                {toSkillsBullet("Created a student management database for the Colegio de Santo Cristo de Burgos school within the Flutter framework with a Firebase backend.")}
-                                {toSkillsBullet("Managed in updating the Kairos Core NFT Minting Launch frontend layout for better responsive design, better element interactivity, and dynamic JavaScript countdown timer")}
-                                {toSkillsBullet("Experienced with Mobile App/Web App development including optional Firebase integration, including website hosting and Google cloud functions. ")}
-                                {toSkillsBullet("Developed an online portfolio from scratch using a react framework together with a Bootstrap + SASS format structure")}
+                                {toSkillsBullet("Developed an online portfolio from scratch using a react framework together with a Bootstrap + SASS format structure, incorporating animated backgrounds using p5.js")}
                                 {toSkillsBullet("Experienced uploading to the Google Play Store with a Google Play developer account, while having uploaded multiple Unity 3D games")}
 
                                 {toSkillsHeader(Nbspify("Digital Artist and Illustrator"))}
-                                {toSkillBadges("Adobe Illustrator, Adobe Photoshop, Processing, p5.js, Inkscape")}
-                                {toSkillsBullet("Creates digital designs to be made into products such as stickers, magnets, and vector art for Just Crafts PH, an online sticker shop, where 90% of all social media pubs, and 100% of all sticker designs are developed by him using Adobe Illustrator")}
-                                {toSkillsBullet("Sketches and constructs digital shirt designs and ID lace designs for Trinity University of Asia")}
-                                {toSkillsBullet("Created billboards and publications for the Colegio de Santo Cristo de Burgos school, as well as designed the school's yearbooks from 2014 to 2020")}
-                                {toSkillsBullet("Creates computerized digital media using Processing, an open-source graphical library that enables programmers to produce computer-driven digital arts and simulations")}
+                                {toSkillBadges("Adobe Illustrator, Adobe Photoshop, Figma, Processing")}
+                                {toSkillsBullet("Designed billboards and publications for the Colegio de Santo Cristo de Burgos school, as well as designed the school's yearbooks from 2014 to 2020")}
+                                {toSkillsBullet("Sketches and illustrated digital shirt designs and ID lace designs for Trinity University of Asia")}
+                                {toSkillsBullet("Created digital designs to be made into products such as stickers, magnets, and vector art for Just Crafts PH, an online sticker shop, where 90% of all social media pubs, and 100% of all sticker designs are developed by him using Adobe Illustrator")}
 
                                 {toSkillsHeader(Nbspify("Educator and Education Content Creator"))}
                                 {toSkillBadges("Unity 3D, C#, Python, Java")}
@@ -171,18 +176,16 @@ const Portfolio = () => {
                                 {toSkillsBullet("Python For Teens 1 & 2", 1)}
                                 {toSkillsBullet("Intro to C# Programming", 1)}
                                 {toSkillsBullet("Intro to Google Apps", 1)}
-                                {toSkillsBullet("Revamped and structured the 'Intro to C# Programming' 10-hour programming course")}
+                                {toSkillsBullet("Revamped and restructured the 'Intro to C# Programming' 10-hour programming course in The Coding School Philippines")}
                                 {toSkillsBullet("Comanaged the 2021 TCS Coding Masters Coding Competition")}
-                                {toSkillsBullet("Teached part time in Colegio de Santo Cristo de Burgos, teaching and creating course material for different Information Technology and Computer Science subjects, including the following:")}
+                                {toSkillsBullet("Teached part time in Colegio de Santo Cristo de Burgos, teaching and creating course material for different Information Technology and Computer Science courses, including the following:")}
                                 {toSkillsBullet("Computer Programming 1", 1)}
                                 {toSkillsBullet("Object-Oriented Programming", 1)}
                                 {toSkillsBullet("Data Structures and Algorithms", 1)}
 
                                 {toSkillsHeader("Game Developer")}
                                 {toSkillBadges("Unity 3D, C#")}
-                                {toSkillsBullet("Creates 2D as well as 3D android games using Unity Game Engine, uploads to the Google Play store under the developer name Jeremy Develops")}
-                                {toSkillsBullet("Self produces all assets used for all games made including sprites and sound files")}
-                                {toSkillsBullet("Utilizes C# in writing video game scripts and behaviors")}
+                                {toSkillsBullet("Creates 2D as well as 3D android games using Unity Game Engine, uploads to the Google Play store under the developer name Jeremy Develops, with self produced assets and resources")}
 
                                 {toSkillsHeader("General Programmer")}
                                 {toSkillBadges("Python, C#, Git + Github")}
@@ -200,7 +203,7 @@ const Portfolio = () => {
                             <p>Member since November 2021</p>
                         </div>
                     </div>
-                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%203.pdf?alt=media&token=2da4bc86-b2fb-49a8-a5a9-b32d0f3aeb97">here</a></p>
+                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%203.pdf?alt=media&token=830b6243-760b-46d0-b660-f47631c2a78e">here</a></p>
                 </div>
             </div>
         </div>
