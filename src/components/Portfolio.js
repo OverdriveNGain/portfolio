@@ -153,7 +153,7 @@ const Portfolio = () => {
                         <div className="content pb-3 pt-2 px-2 px-md-5" style={{ textAlign: ((dimensions.width > 576) ? "justify" : "start") }}>
                             {toHeader("Skills & Experience")}
                             <div className="">
-                                {toSkillsHeader(Nbspify("Mobile and Web App Developer"))}
+                                {toSkillsHeader(Nbspify("Mobile & Web App Developer"))}
                                 {toSkillBadges("Node.js, React JS, Flutter, Unity 3D, Firebase, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap, Webflow, Tailwind CSS, Docker, p5.js")}
                                 {toSkillsBullet("Created a student management database for the Colegio de Santo Cristo de Burgos school using a Flutter framework with a Firebase backend, as well as developed a separate enrollment form system with automatic integration to the student database.")}
                                 {toSkillsBullet("Managed in updating the Kairos Core NFT Minting Launch frontend layout for better responsive design, better element interactivity, and dynamic JavaScript countdown timer, as well as the front-end of the Kairos Core minting website")}
@@ -162,13 +162,13 @@ const Portfolio = () => {
                                 {toSkillsBullet("Developed an online portfolio from scratch using a react framework together with a Bootstrap + SASS format structure, incorporating animated backgrounds using p5.js")}
                                 {toSkillsBullet("Experienced uploading to the Google Play Store with a Google Play developer account, while having uploaded multiple Unity 3D games")}
 
-                                {toSkillsHeader(Nbspify("Digital Artist and Illustrator"))}
+                                {toSkillsHeader(Nbspify("Digital Illustrator & Web Illustrator"))}
                                 {toSkillBadges("Adobe Illustrator, Adobe Photoshop, Figma, Processing")}
                                 {toSkillsBullet("Designed billboards and publications for the Colegio de Santo Cristo de Burgos school, as well as designed the school's yearbooks from 2014 to 2020")}
                                 {toSkillsBullet("Sketches and illustrated digital shirt designs and ID lace designs for Trinity University of Asia")}
                                 {toSkillsBullet("Created digital designs to be made into products such as stickers, magnets, and vector art for Just Crafts PH, an online sticker shop, where 90% of all social media pubs, and 100% of all sticker designs are developed by him using Adobe Illustrator")}
 
-                                {toSkillsHeader(Nbspify("Educator and Education Content Creator"))}
+                                {toSkillsHeader(Nbspify("Educator & Education Content Creator"))}
                                 {toSkillBadges("Unity 3D, C#, Python, Java")}
                                 {toSkillsBullet("Worked part time at the Coding School Philippines, while educating children and teens on the following courses:")}
                                 {toSkillsBullet("Make Your Own Game with Unity 1 & 2", 1)}
