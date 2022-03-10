@@ -200,7 +200,7 @@ const Portfolio = () => {
                             <p>Member since November 2021</p>
                         </div>
                     </div>
-                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%202.pdf?alt=media&token=d1f93515-8925-4fb8-b1a6-9d80a13abe23">here</a></p>
+                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%203.pdf?alt=media&token=2da4bc86-b2fb-49a8-a5a9-b32d0f3aeb97">here</a></p>
                 </div>
             </div>
         </div>
