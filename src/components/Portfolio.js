@@ -86,6 +86,12 @@ const Portfolio = () => {
                 return { backgroundColor: "rgb(51, 51, 51)", color: "rgb(149, 201, 66)" };
             case "Figma":
                 return { backgroundColor: "rgb(240, 240, 240)", color: "rgb(214, 89, 39)" };
+            case "Laravel":
+                return { backgroundColor: "rgb(232, 57, 44)", color: "white" };
+            case "Nginx":
+                return { backgroundColor: "rgb(0, 145, 55)", color: "white" };
+            case "VBA":
+                return { backgroundColor: "rgb(250, 237, 213)", color: "rgb(63, 80, 151)" };
             default:
                 return { backgroundColor: "black", color: "white" };
         }
@@ -154,8 +160,11 @@ const Portfolio = () => {
                             {toHeader("Skills & Experience")}
                             <div className="">
                                 {toSkillsHeader(Nbspify("Mobile & Web App Developer"))}
-                                {toSkillBadges("Node.js, React JS, Flutter, Unity 3D, Firebase, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap, Webflow, Tailwind CSS, Docker, p5.js")}
+                                {toSkillBadges("Node.js, React JS, Laravel, Nginx, Flutter, Unity 3D, Firebase, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap, Webflow, Tailwind CSS, Docker, p5.js, VBA")}
                                 {toSkillsBullet("Created a student management database for the Colegio de Santo Cristo de Burgos school using a Flutter framework with a Firebase backend, as well as developed a separate enrollment form system with automatic integration to the student database.")}
+                                {toSkillsBullet("Managed the SQL Server Database for Kimbel International from March 2022 to June 2022, while integrating features through Microsoft Access using VBA during part-time work under Technomancer.")}
+                                {toSkillsBullet("Managed the backend of a recruitment process server, using docker-compose, together with Nginx to serve various Docker container services from a Linux server during my internship at Azeus Systems Limited from June 2022 to August 2022.")}
+                                {toSkillsBullet("Team Leader for the Examination Module team during my internship at Azeus Systems Limited. The Examination Module is a full-stack web application that uses Quasar and Falcon API.")}
                                 {toSkillsBullet("Managed in updating the Kairos Core NFT Minting Launch frontend layout for better responsive design, better element interactivity, and dynamic JavaScript countdown timer, as well as the front-end of the Kairos Core minting website")}
                                 {toSkillsBullet("Experienced with Mobile App/Web App development including Firebase integration, website hosting and Google cloud functions.")}
                                 {toSkillsBullet("Uses Flutter for Android, IOs app development, as well as web applications.")}
@@ -195,15 +204,17 @@ const Portfolio = () => {
                         <hr className="my-0" />
                         <div className={"content pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
                             {toHeader("University Affiliations")}
-                            {/* {toSkillsHeader("UP CURSOR")} */}
-                            <h6 className="text-secondary mb-0">UP CURSOR</h6>
-                            <p>Member since December 2019</p>
                             {/* {toSkillsHeader("UP CREST")} */}
-                            <h6 className="text-secondary mb-0">UP CREST</h6>
-                            <p>Member since November 2021</p>
+                            <h6 className="text-secondary mb-1">UP CREST</h6>
+                            <p className="mb-0">• President <i>(August 2022 onwards)</i></p>
+                            <p className="mb-0">• Publicity Committee Director <i>(February 2022 to May 2022)</i></p>
+                            <p className="mb-0">• Member <i>(November 2021 onwards)</i></p>
+                            {/* {toSkillsHeader("UP CURSOR")} */}
+                            <h6 className="text-secondary mb-1 mt-4">UP CURSOR</h6>
+                            <p className="mb-0">• Member <i>(December 2019 onwards)</i></p>
                         </div>
                     </div>
-                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%203.pdf?alt=media&token=830b6243-760b-46d0-b660-f47631c2a78e">here</a></p>
+                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%204.pdf?alt=media&token=c2fad8c5-b232-49e2-9339-3ef9c52514a7">here</a></p>
                 </div>
             </div>
         </div>
