@@ -138,7 +138,7 @@ const Landing1 = () => {
         const canv = p5.createCanvas(
             p5.ceil(about1.offsetWidth),
             p5.ceil(about1.offsetHeight + (about2.offsetHeight * 0.6)),
-            p5.WEBGL
+            // p5.WEBGL
         );
         topAreaHeight = about1.offsetHeight;
         col1 = p5.color(col1Vals[0], col1Vals[1], col1Vals[2]);
@@ -188,7 +188,7 @@ const Landing1 = () => {
         }
         else if (element === null)
             return;
-        p5.translate(-p5.width / 2, -p5.height / 2);
+        // p5.translate(-p5.width / 2, -p5.height / 2);
         p5.background(255);
 
         dustM.step()

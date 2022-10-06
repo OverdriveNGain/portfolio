@@ -83,7 +83,7 @@ const Landing3 = () => {
             return;
         }
         const about4 = document.getElementById("about4");
-        const canv = p5.createCanvas(p5.round(about4.offsetWidth), p5.round(about4.offsetHeight), p5.WEBGL);
+        const canv = p5.createCanvas(p5.round(about4.offsetWidth), p5.round(about4.offsetHeight));
         containerWidth = getContainerWidthModified(p5.width);
         setupBoundsArray();
         canv.parent('landing3');
@@ -116,7 +116,7 @@ const Landing3 = () => {
         }
         else if (element === null)
             return;
-        p5.translate(-p5.width / 2, -p5.height / 2);
+        // p5.translate(-p5.width / 2, -p5.height / 2);
         p5.background(255);
         p5.fill(78, 104, 255);
         p5.rect(0, 0, p5.width, p5.height);
