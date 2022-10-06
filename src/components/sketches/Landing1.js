@@ -2,13 +2,13 @@ import React from "react";
 import Sketch from "react-p5";
 import { ParticleManager, DustManager, Rect } from "./Managers";
 
-const DUSTNEIGHBORMAXDIST = 200;
+const DUSTNEIGHBORMAXDIST = 300;
 const floatingPointArea = 2 / 3;
 let col1Vals = [78, 104, 255];
 let col2Vals = [255, 255, 255];
 const md_bp = 768;
 const getDustCount = (area) => {
-    return area * 0.00002 + 16;
+    return (area * 0.00002 + 16) * 0.25; // Halved to mirror
 }
 
 let p5;
@@ -40,8 +40,12 @@ const drawFloatingPoints = () => {
         dustM.quadtree.queryUppers(neighborRect, neighbors, i);
         let m = point.x;
         let n = point.y;
+        let lowerBound = (p5.height * floatingPointArea)
         for (let j = 0; j < neighbors.length; j++) {
             p5.line(m, n, neighbors[j].x, neighbors[j].y);
+            p5.line(p5.width - m, n, p5.width - neighbors[j].x, neighbors[j].y);
+            p5.line(m, lowerBound - n, neighbors[j].x, lowerBound - neighbors[j].y);
+            p5.line(p5.width - m, lowerBound - n, p5.width - neighbors[j].x, lowerBound - neighbors[j].y);
         }
     };
 }
@@ -144,7 +148,11 @@ const Landing1 = () => {
         col1 = p5.color(col1Vals[0], col1Vals[1], col1Vals[2]);
         col2 = p5.color(col2Vals[0], col2Vals[1], col2Vals[2]);
 
-        dustM = new DustManager(Math.round(getDustCount(p5.height * p5.width)), p5.width, Math.floor(p5.height * floatingPointArea), 1);
+        dustM = new DustManager(
+            Math.round(getDustCount(p5.height * p5.width)),
+            p5.width  * 0.5,  // Halved to mirror
+            Math.floor(p5.height * floatingPointArea), 
+            1);
         borderM = new ParticleManager(
             p5.width,
             p5.height - topAreaHeight * 0.5,
@@ -173,9 +181,9 @@ const Landing1 = () => {
                 p5.ceil(about1.offsetHeight + (about2.offsetHeight * 0.6))
             );
             topAreaHeight = about1.offsetHeight;
-            dustM.resize(p5.width, Math.floor(p5.height * floatingPointArea));
+            dustM.resize(p5.width * 0.5, Math.floor(p5.height * floatingPointArea));
             borderM.resize(
-                p5.width,
+                p5.width * 0.5,  // Halved to mirror
                 p5.height - topAreaHeight * 0.5,
                 topAreaHeight * 0.5);
         })
