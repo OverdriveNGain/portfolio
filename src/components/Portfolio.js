@@ -9,11 +9,30 @@ const Portfolio = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const toSkillsHeader = (t) => {
+    const toWorkHeader = (t, location) => {
         if (dimensions.width < 576)
-            return <div className="text-secondary h4 mt-3 text-center">{t}</div>;
-        return <div className="text-secondary h4 mt-3 text-start">{t}</div>;
+            return (<div className="mt-4">
+                <span className="text-secondary h4 mt-3 text-center">{t}</span>
+                <span className="mx-2 text-muted opacity-50 h4">{location}</span>
+            </div>);
+        return (<div className="mt-4">
+            <span className="text-secondary h4 mt-3 text-start">{t}</span>
+            <span className="mx-2 text-muted opacity-50 h4">{location}</span>
+        </div>);
     }
+
+    const toPositionDetails = (position, timespan) => {
+        if (dimensions.width < 576)
+            return (<div className="mb-2">
+                <span className="mt-3 text-center">{position}</span>
+                <span className="mx-2 text-muted opacity-50 h4">{timespan}</span>
+            </div>);
+        return (<div className="mb-2">
+            <span className="mt-3 text-start">{position}</span>
+            <span className="mx-2 text-muted opacity-50">{timespan}</span>
+        </div>);
+    }
+
     const toSkillsBullet = (p, level) => {
         if (level == null)
             level = 0;
@@ -92,6 +111,10 @@ const Portfolio = () => {
                 return { backgroundColor: "rgb(0, 145, 55)", color: "white" };
             case "VBA":
                 return { backgroundColor: "rgb(250, 237, 213)", color: "rgb(63, 80, 151)" };
+            case "SQL":
+                return { backgroundColor: "rgb(111, 147, 218)", color: "white" };
+            case "Java":
+                return { backgroundColor: "rgb(190, 73, 45)", color: "white" };
             default:
                 return { backgroundColor: "black", color: "white" };
         }
@@ -118,7 +141,7 @@ const Portfolio = () => {
     return (
         <div>
             <div className="container" align="center">
-                <div className="px-1 px-sm-5">
+                <div className="px-1 px-sm-0">
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">CV</p>
                     <div className="bg-white rounded-3 shadow-lg p-2 p-sm-4 mb-5">
@@ -133,7 +156,7 @@ const Portfolio = () => {
                                     <label className="text-secondary h6 mb-0">Mobile</label>
                                     <p>+63 995 963 2500</p>
                                     <label className="text-secondary h6 mb-0">Email</label>
-                                    <p>jeremyamon@gmail.com</p>
+                                    <p><a href="mailto:jeremyamon@gmail.com">jeremyamon@gmail.com</a> <span className="text-secondary italic">or</span> <a href="mailto:jdamon@up.edu.ph">jdamon@up.edu.ph</a></p>
                                 </div>
                             </div>
                         </div>
@@ -144,40 +167,43 @@ const Portfolio = () => {
                         </div>
                         <hr className="my-0" />
                         <div className={"content pb-3 pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
-                            {toHeader("Educational History")}
+                            {toHeader("Academic History")}
                             {/* {toSkillsHeader("University of the Philippines Diliman")} */}
-                            <h6 className="text-secondary mb-0">University of the Philippines Diliman</h6>
-                            <p>BS Computer Science | 2023 (Expected Graduation Date)</p>
+                            <h6 className="h4 text-secondary mb-2 mt-4">University of the Philippines Diliman</h6>
+                            <p className="ms-4 mb-1">• BS Computer Science | 2023 expected</p>
+                            <p className="ms-4">• Magna Cum Laude Standing</p>
                             {/* {toSkillsHeader("Trinity University of Asia")} */}
-                            <h6 className="text-secondary mb-0">Trinity University of Asia</h6>
-                            <p>Junior High School and Senior High School STEM Track | 2012-2018</p>
+                            <h6 className="h4 text-secondary mb-2 mt-4">Trinity University of Asia</h6>
+                            <p className="ms-4 ">• Junior High School and Senior High School STEM Track | 2012-2018</p>
                             {/* {toSkillsHeader("Asian College of Technology")} */}
-                            <h6 className="text-secondary mb-0">Asian College of Technology</h6>
-                            <p>Elementary Education | 2004-2012</p>
+                            <h6 className="h4 text-secondary mb-2 mt-4">Asian College of Technology</h6>
+                            <p className="ms-4 ">• Elementary Education | 2004-2012</p>
                         </div>
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5" style={{ textAlign: ((dimensions.width > 576) ? "justify" : "start") }}>
-                            {toHeader("Skills & Experience")}
+                            {toHeader("Work Experience")}
                             <div className="">
-                                {toSkillsHeader(Nbspify("Mobile & Web App Developer"))}
-                                {toSkillBadges("Node.js, React JS, Laravel, Nginx, Flutter, Unity 3D, Firebase, Git + Github, HTML, CSS, Javascript, SASS, Bootstrap, Webflow, Tailwind CSS, Docker, p5.js, VBA")}
-                                {toSkillsBullet("Created a student management database for the Colegio de Santo Cristo de Burgos school using a Flutter framework with a Firebase backend, as well as developed a separate enrollment form system with automatic integration to the student database.")}
-                                {toSkillsBullet("Managed the SQL Server Database for Kimbel International from March 2022 to June 2022, while integrating features through Microsoft Access using VBA during part-time work under Technomancer.")}
-                                {toSkillsBullet("Managed the backend of a recruitment process server, using docker-compose, together with Nginx to serve various Docker container services from a Linux server during my internship at Azeus Systems Limited from June 2022 to August 2022.")}
-                                {toSkillsBullet("Team Leader for the Examination Module team during my internship at Azeus Systems Limited. The Examination Module is a full-stack web application that uses Quasar and Falcon API.")}
-                                {toSkillsBullet("Managed in updating the Kairos Core NFT Minting Launch frontend layout for better responsive design, better element interactivity, and dynamic JavaScript countdown timer, as well as the front-end of the Kairos Core minting website")}
-                                {toSkillsBullet("Experienced with Mobile App/Web App development including Firebase integration, website hosting and Google cloud functions.")}
-                                {toSkillsBullet("Uses Flutter for Android, IOs app development, as well as web applications.")}
-                                {toSkillsBullet("Developed an online portfolio from scratch using a react framework together with a Bootstrap + SASS format structure, incorporating animated backgrounds using p5.js")}
-                                {toSkillsBullet("Experienced uploading to the Google Play Store with a Google Play developer account, while having uploaded multiple Unity 3D games")}
+                                {toWorkHeader(Nbspify("Colegio de Santo Cristo de Burgos"), "- Remote")}
+                                {toPositionDetails("Database Administrator & Developer", "( July 2021 - Present )")}
+                                {toSkillBadges("React JS, Flutter, Firebase, Tailwind CSS")}
+                                {toSkillsBullet("Developed a student management database that is capable of managing student information, documents, and enrollment history.")}
+                                {toSkillsBullet("Developed an integrated enrollment system that remotely sends form information to the student database.")}
 
-                                {toSkillsHeader(Nbspify("Digital Illustrator & Web Illustrator"))}
-                                {toSkillBadges("Adobe Illustrator, Adobe Photoshop, Figma, Processing")}
-                                {toSkillsBullet("Designed billboards and publications for the Colegio de Santo Cristo de Burgos school, as well as designed the school's yearbooks from 2014 to 2020")}
-                                {toSkillsBullet("Sketches and illustrated digital shirt designs and ID lace designs for Trinity University of Asia")}
-                                {toSkillsBullet("Created digital designs to be made into products such as stickers, magnets, and vector art for Just Crafts PH, an online sticker shop, where 90% of all social media pubs, and 100% of all sticker designs are developed by him using Adobe Illustrator")}
+                                {toWorkHeader(Nbspify("Technomancer"), "- Quezon City")}
+                                {toPositionDetails("Part Time Web Developer", "( March 2022 - October 2022 )")}
+                                {toSkillBadges("React JS, VBA, SQL, Laravel, Bootstrap")}
+                                {toSkillsBullet("Managed an SQL Server Database for Kimbel International, delivering continuous updates to company accountancy forms through Microsoft Access using VBA.")}
+                                {toSkillsBullet("Developed web applications for international clients with multi-language support and responsive design.")}
 
-                                {toSkillsHeader(Nbspify("Educator & Education Content Creator"))}
+                                {toWorkHeader(Nbspify("Azeus Systems Limited"), "- Quezon City")}
+                                {toPositionDetails("Backend Developer Intern", "( July 2022 - August 2022 )")}
+                                {toSkillBadges("Docker, Nginx, Python")}
+                                {toSkillsBullet("Served as the team leader for an examination module development team who worked on the backend of a recruitment process server, hosted on a company Linux server.")}
+                                {toSkillsBullet("Collaborated with other teams to synchronize weekly development tasks and application updates.")}
+
+                                {/* {toWorkHeader(Nbspify("Educator & Education Content Creator"))} */}
+                                {toWorkHeader(Nbspify("The Coding School"), "- Quezon City")}
+                                {toPositionDetails("Part Time Teaching Coach", "( July 2020 - June 2021 )")}
                                 {toSkillBadges("Unity 3D, C#, Python, Java")}
                                 {toSkillsBullet("Worked part time at the Coding School Philippines, while educating children and teens on the following courses:")}
                                 {toSkillsBullet("Make Your Own Game with Unity 1 & 2", 1)}
@@ -187,34 +213,50 @@ const Portfolio = () => {
                                 {toSkillsBullet("Intro to Google Apps", 1)}
                                 {toSkillsBullet("Revamped and restructured the 'Intro to C# Programming' 10-hour programming course in The Coding School Philippines")}
                                 {toSkillsBullet("Comanaged the 2021 TCS Coding Masters Coding Competition")}
-                                {toSkillsBullet("Teached part time in Colegio de Santo Cristo de Burgos, teaching and creating course material for different Information Technology and Computer Science courses, including the following:")}
+                                {/* {toSkillsBullet("Teached part time in Colegio de Santo Cristo de Burgos, teaching and creating course material for different Information Technology and Computer Science courses, including the following:")}
                                 {toSkillsBullet("Computer Programming 1", 1)}
                                 {toSkillsBullet("Object-Oriented Programming", 1)}
-                                {toSkillsBullet("Data Structures and Algorithms", 1)}
+                                {toSkillsBullet("Data Structures and Algorithms", 1)} */}
 
-                                {toSkillsHeader("Game Developer")}
+                                {/* {toWorkHeader("Game Developer")}
                                 {toSkillBadges("Unity 3D, C#")}
                                 {toSkillsBullet("Creates 2D as well as 3D android games using Unity Game Engine, uploads to the Google Play store under the developer name Jeremy Develops, with self produced assets and resources")}
 
-                                {toSkillsHeader("General Programmer")}
+                                {toWorkHeader("General Programmer")}
                                 {toSkillBadges("Python, C#, Git + Github")}
-                                {toSkillsBullet("Writes specific software that can help in a multitude of bulk operations including (but not limited) to the manufacturing of sticker graphics, bulk data manipulation, online website data scraping, etc.")}
+                                {toSkillsBullet("Writes specific software that can help in a multitude of bulk operations including (but not limited) to the manufacturing of sticker graphics, bulk data manipulation, online website data scraping, etc.")} */}
                             </div>
                         </div>
                         <hr className="my-0" />
                         <div className={"content pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
+                            {toHeader("Professional References")}
+                            {/* {toSkillsHeader("UP CREST")} */}
+                            <h6 className="h4 text-secondary mb-1">Zhen Cua</h6>
+                            <div className="ms-4">Azeus Systems Limited (Internship Director)</div>
+                            <div className="ms-4"><a href="zhen_cua@azeus.com"><i class="bi bi-envelope-fill me-2 mt-1"></i>zhen_cua@azeus.com</a></div>
+                            {/* {toSkillsHeader("UP CURSOR")} */}
+                            <h6 className="h4 text-secondary mb-1 mt-4">Mary Joyce Monzon</h6>
+                            <div className="ms-4">Colegio de Santo Cristo de Burgos (Vice President)</div>
+                            <div className="ms-4"><a href="maryjoycemanigbas@gmail.com"><i class="bi bi-envelope-fill me-2 mt-1"></i>maryjoycemanigbas@gmail.com</a></div>
+
+                            <h6 className="h4 text-secondary mb-1 mt-4">James Kim</h6>
+                            <div className="ms-4">Technomancer (Chief Technology Officer)</div>
+                            <div className="ms-4"><a href="james.kim@technomancer.biz"><i class="bi bi-envelope-fill me-2 mt-1"></i>james.kim@technomancer.biz</a></div>
+                        </div>
+                        <hr className="mb-0 mt-4" />
+                        <div className={"content pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
                             {toHeader("University Affiliations")}
                             {/* {toSkillsHeader("UP CREST")} */}
-                            <h6 className="text-secondary mb-1">UP CREST</h6>
-                            <p className="mb-0">• President <i>(August 2022 onwards)</i></p>
-                            <p className="mb-0">• Publicity Committee Director <i>(February 2022 to May 2022)</i></p>
-                            <p className="mb-0">• Member <i>(November 2021 onwards)</i></p>
+                            <h6 className="h4 text-secondary mb-1">UP CREST</h6>
+                            <p className="ms-4 mb-0">• <span className="">President</span> <i className="opacity-50">(August 2022 onwards)</i></p>
+                            <p className="ms-4 mb-0">• <span className="">Publicity</span> Committee Director <i className="opacity-50">(February 2022 to May 2022)</i></p>
+                            <p className="ms-4 mb-0">• <span className="">Publicity Committee Associate</span> <i className="opacity-50">(November 2021 to January 2022)</i></p>
                             {/* {toSkillsHeader("UP CURSOR")} */}
-                            <h6 className="text-secondary mb-1 mt-4">UP CURSOR</h6>
-                            <p className="mb-0">• Member <i>(December 2019 onwards)</i></p>
+                            <h6 className="h4 text-secondary mb-1 mt-4">UP CURSOR</h6>
+                            <p className="ms-4 mb-0">• <span className="">Member</span> <i className="opacity-50">(December 2019 onwards)</i></p>
                         </div>
                     </div>
-                    <p className="my-5 pt-sm-5"> Alternatively, you can download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%204.pdf?alt=media&token=c2fad8c5-b232-49e2-9339-3ef9c52514a7">here</a></p>
+                    <p className="my-5 pt-sm-5"> Download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%208.pdf?alt=media&token=deeba9d5-b9dc-4feb-a74b-2c505a345528">here</a>, which includes a full list of languages, frameworks, web services and tools that I am capable of using. </p>
                 </div>
             </div>
         </div>
