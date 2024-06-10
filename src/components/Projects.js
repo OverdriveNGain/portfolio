@@ -7,14 +7,13 @@ import {
     Route,
 } from "react-router-dom";
 import ProjectDetailsPage from "./ProjectsComponents";
+import 'dotenv/config';
 
 const Projects = () => {
     const [filters, setFilters] = useState([]);
     const [currentProjectData, setCurrentProjectData] = useState(null);
     const { breakpointSelector } = useResize();
-    const { response } = useRequest("https://portfolio-api-jeremy.web.app/projects", {
-        alt: "http://localhost:3004/data"
-    });
+    const { response } = useRequest(`${process.env.API_ENDPOINT}/projects`);
     const allFilters = [
         "Flutter",
         "Unity 3D",
@@ -31,7 +30,6 @@ const Projects = () => {
         "p5.js",
         // "C#",
         "Python",
-        "Git"
     ]
 
     useEffect(() => {

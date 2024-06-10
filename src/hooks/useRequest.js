@@ -8,10 +8,9 @@ const useRequest = (uri, options = {}) => {
         if (response != null)
             return;
         const getDataFromServer = async () => {
-            if (options.enable === true)
-                return;
-            let uriToUse = uri;
-            axios.get(uriToUse).then((res) => {
+            console.log(`Sending get request: ${uri}`);
+            axios.get(uri).then((res) => {
+                console.log(`Got response: ${res}`);
                 setResponse(res.data.data);
             });
         }

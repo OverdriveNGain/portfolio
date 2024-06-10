@@ -24,3 +24,5 @@ yarn-error.log*
 
 *.cache
 *debug.js
+
+.env

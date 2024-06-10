@@ -8,6 +8,7 @@ import {
     Link
 } from "react-router-dom";
 import { tern } from "./helpers/Helpers";
+import 'dotenv/config';
 
 const ProjectDetailsPage = ({ projectData, backFunction }) => {
     const { id } = useParams();
@@ -15,7 +16,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
     const [fullscreen, setFullscreen] = useState(false);
     const { breakpointSelector } = useResize();
     const [imagesLoaded, setImagesLoaded] = useState(0);
-    const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects/${id}`, {
+    const { response } = useRequest(`${process.env.API_ENDPOINT}projects/${id}`, {
         enable: projectData != null,
         alt: `http://localhost:3004/data/${id}`
     });

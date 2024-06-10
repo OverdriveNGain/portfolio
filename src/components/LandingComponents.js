@@ -7,6 +7,7 @@ import {
 import Nbsp from "../helpers/Nbsp";
 import { useState } from "react";
 import axios from 'axios';
+import 'dotenv/config';
 
 const About4 = () => {
     const { breakpointSelector } = useResize();
@@ -143,7 +144,7 @@ const About6 = () => {
                 name: formName,
                 body: formBody
             });
-            axios.post('https://portfolio-api-jeremy.web.app/sendmail', null, {
+            axios.post(`${process.env.API_ENDPOINT}sendmail`, null, {
                 params: {
                     email: formEmail,
                     name: formName,

@@ -7,12 +7,11 @@ import Landing1, { Landing1RefreshState } from './sketches/Landing1';
 import { Landing2RefreshState } from './sketches/Landing2';
 import { Landing3RefreshState } from './sketches/Landing3';
 import useTypewriter from "../hooks/useTypewriter";
+import 'dotenv/config';
 
 const Landing = () => {
     const { breakpointSelector } = useResize();
-    const { response } = useRequest(`https://portfolio-api-jeremy.web.app/projects`, {
-        alt: "http://localhost:3004/data"
-    });
+    const { response } = useRequest(`${process.env.API_ENDPOINT}projects`);
 
     const [twSpan] = useTypewriter([
         "My name is ",
