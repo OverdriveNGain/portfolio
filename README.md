@@ -13,3 +13,15 @@
     ```
     Source: https://stackoverflow.com/a/75961537
 4. Run `npm run start`
+
+# To build and deploy the application
+
+1. `npm run build`
+2. `firebase deploy`
+
+# TODOs
+
+1. Update 'About Me' Section
+2. Update 'Projects' Section
+3. Fix Projects section in landing page (uneven squares)
+4. Update Skills and Services section in landing page
