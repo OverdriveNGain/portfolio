@@ -115,10 +115,13 @@ const Portfolio = () => {
                 return { backgroundColor: "rgb(111, 147, 218)", color: "white" };
             case "Java":
                 return { backgroundColor: "rgb(190, 73, 45)", color: "white" };
+            case "Appian":
+                return { backgroundColor: "rgb(33, 32, 232)", color: "white" };
             default:
                 return { backgroundColor: "black", color: "white" };
         }
     }
+    
     const toSkillBadges = (s) => {
         const skillsArray = s.split(",").map((s) => s.trim());
         const badges = [];
@@ -144,10 +147,11 @@ const Portfolio = () => {
                 <div className="px-1 px-sm-0">
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">CV</p>
+                    <p className="my-5">Hello! If you're hiring for your company, feel free to download my resume <a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%208.pdf?alt=media&token=deeba9d5-b9dc-4feb-a74b-2c505a345528">here</a>, which includes a more comprehensive list of languages, frameworks, web services and tools that I am capable of using. </p>
                     <div className="bg-white rounded-3 shadow-lg p-2 p-sm-4 mb-5">
                         <div className="d-flex flex-column flex-md-row justify-content-center ">
                             <div className="text-center">
-                                <img src="https://drive.google.com/uc?id=1-JhEApFN6ssYHG04MLXmYd1wWhEx7UiR" className="rounded-circle portfolio-pic m-3" alt="Jeremy" />
+                                <img src="https://lh3.googleusercontent.com/d/1loAxdY7O_G8VAt7qxsRlIqoggvXEbIU6" className="rounded-circle portfolio-pic m-3" alt="Jeremy" />
                             </div>
                             <div className="flex-fill mx-3 my-0 my-sm-3 px-0">
                                 <div className="flex-fill text-center text-md-start">
@@ -156,53 +160,49 @@ const Portfolio = () => {
                                     <label className="text-secondary h6 mb-0">Mobile</label>
                                     <p>+63 995 963 2500</p>
                                     <label className="text-secondary h6 mb-0">Email</label>
-                                    <p><a href="mailto:jeremyamon@gmail.com">jeremyamon@gmail.com</a> <span className="text-secondary italic">or</span> <a href="mailto:jdamon@up.edu.ph">jdamon@up.edu.ph</a></p>
+                                    <p><a href="mailto:jeremyamon@gmail.com">jeremyamon@gmail.com</a></p>
                                 </div>
                             </div>
                         </div>
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5">
                             {toHeader("Professional Goals")}
-                            <p className="text-center">I am aiming to be a professional full stack web developer, to give companies and businesses better tools and services in order to establish better connections and interactions to their userbase and stakeholders.</p>
-                        </div>
-                        <hr className="my-0" />
-                        <div className={"content pb-3 pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
-                            {toHeader("Academic History")}
-                            {/* {toSkillsHeader("University of the Philippines Diliman")} */}
-                            <h6 className="h4 text-secondary mb-2 mt-4">University of the Philippines Diliman</h6>
-                            <p className="ms-4 mb-1">• BS Computer Science | 2023 expected</p>
-                            <p className="ms-4">• Magna Cum Laude Standing</p>
-                            {/* {toSkillsHeader("Trinity University of Asia")} */}
-                            <h6 className="h4 text-secondary mb-2 mt-4">Trinity University of Asia</h6>
-                            <p className="ms-4 ">• Junior High School and Senior High School STEM Track | 2012-2018</p>
-                            {/* {toSkillsHeader("Asian College of Technology")} */}
-                            <h6 className="h4 text-secondary mb-2 mt-4">Asian College of Technology</h6>
-                            <p className="ms-4 ">• Elementary Education | 2004-2012</p>
+                            <p className="text-center">I am a professional software developer that strives to give companies and businesses the means of digital tools and services for the extra competitive edge within a developing digital climate of ever-increasing complexity.</p>
                         </div>
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5" style={{ textAlign: ((dimensions.width > 576) ? "justify" : "start") }}>
                             {toHeader("Work Experience")}
                             <div className="">
-                                {toWorkHeader(Nbspify("Colegio de Santo Cristo de Burgos"), "- Remote")}
-                                {toPositionDetails("Database Administrator & Developer", "( July 2021 - Present )")}
-                                {toSkillBadges("React JS, Flutter, Firebase, Tailwind CSS")}
-                                {toSkillsBullet("Developed a student management database that is capable of managing student information, documents, and enrollment history.")}
-                                {toSkillsBullet("Developed an integrated enrollment system that remotely sends form information to the student database.")}
+                                {toWorkHeader(Nbspify("Maya Philippines Inc."), "- Mandaluyong")}
+                                {toPositionDetails("Software Engineer", "( September 2023 - Present )")}
+                                {toSkillBadges("Flutter, Appian, Python, SQL")}
+                                {toSkillsBullet("Implemented data validation on a 2.75 billion peso loan channeling deal in cooperation with WeFund.")}
+                                {toSkillsBullet("Worked on the user interface for the Landers rewards page of the Maya mobile application, as well as the integration to it's own backend service.")}
+                                {toSkillsBullet("Integrated analytics events for application user analysis within the Maya inbox user journey.")}
+                                {toSkillsBullet("Executed on a Feature Enrichment Data Science API, which aims to aid in the internal execution of a merchant segmentation data analysis project within Maya Philippines.")}
 
                                 {toWorkHeader(Nbspify("Technomancer"), "- Quezon City")}
                                 {toPositionDetails("Part Time Web Developer", "( March 2022 - October 2022 )")}
-                                {toSkillBadges("React JS, VBA, SQL, Laravel, Bootstrap")}
+                                {toSkillBadges("React JS, VBA, SQL, Laravel")}
                                 {toSkillsBullet("Managed an SQL Server Database for Kimbel International, delivering continuous updates to company accountancy forms through Microsoft Access using VBA.")}
                                 {toSkillsBullet("Developed web applications for international clients with multi-language support and responsive design.")}
+                                {toSkillsBullet("Worked on internal website servers that delivers client website content.")}
 
-                                {toWorkHeader(Nbspify("Azeus Systems Limited"), "- Quezon City")}
+                                {toWorkHeader(Nbspify("Azeus Systems Limited"), "- Pasig")}
                                 {toPositionDetails("Backend Developer Intern", "( July 2022 - August 2022 )")}
                                 {toSkillBadges("Docker, Nginx, Python")}
                                 {toSkillsBullet("Served as the team leader for an examination module development team who worked on the backend of a recruitment process server, hosted on a company Linux server.")}
                                 {toSkillsBullet("Collaborated with other teams to synchronize weekly development tasks and application updates.")}
 
+                                {toWorkHeader(Nbspify("Colegio de Santo Cristo de Burgos"), "- Sariaya (Remote)")}
+                                {toPositionDetails("Freelance Database Administrator & Developer", "( July 2021 - Present )")}
+                                {toSkillBadges("React JS, Flutter, Firebase, Tailwind CSS")}
+                                {toSkillsBullet("Built a student management database that manages student information, documents, and enrollment data of more than 2500 students.")}
+                                {toSkillsBullet("Developed an online enrollment system that sends form information to the integrated student database.")}
+                                {toSkillsBullet("Continued to deliver updates to the database system such as audit logs on all accounting and enrollment data, database integrity reports, built-in account management, accounting functions and summarization of payments.")}
+
                                 {/* {toWorkHeader(Nbspify("Educator & Education Content Creator"))} */}
-                                {toWorkHeader(Nbspify("The Coding School"), "- Quezon City")}
+                                {toWorkHeader(Nbspify("The Coding School"), "- San Juan (Remote)")}
                                 {toPositionDetails("Part Time Teaching Coach", "( July 2020 - June 2021 )")}
                                 {toSkillBadges("Unity 3D, C#, Python, Java")}
                                 {toSkillsBullet("Worked part time at the Coding School Philippines, while educating children and teens on the following courses:")}
@@ -211,7 +211,7 @@ const Portfolio = () => {
                                 {toSkillsBullet("Python For Teens 1 & 2", 1)}
                                 {toSkillsBullet("Intro to C# Programming", 1)}
                                 {toSkillsBullet("Intro to Google Apps", 1)}
-                                {toSkillsBullet("Revamped and restructured the 'Intro to C# Programming' 10-hour programming course in The Coding School Philippines")}
+                                {toSkillsBullet("Revamped and restructured the 'Intro to C# Programming' 10-hour programming course for children and teenagers.")}
                                 {toSkillsBullet("Comanaged the 2021 TCS Coding Masters Coding Competition")}
                                 {/* {toSkillsBullet("Teached part time in Colegio de Santo Cristo de Burgos, teaching and creating course material for different Information Technology and Computer Science courses, including the following:")}
                                 {toSkillsBullet("Computer Programming 1", 1)}
@@ -227,36 +227,37 @@ const Portfolio = () => {
                                 {toSkillsBullet("Writes specific software that can help in a multitude of bulk operations including (but not limited) to the manufacturing of sticker graphics, bulk data manipulation, online website data scraping, etc.")} */}
                             </div>
                         </div>
-                        <hr className="my-0" />
-                        <div className={"content pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
-                            {toHeader("Professional References")}
-                            {/* {toSkillsHeader("UP CREST")} */}
-                            <h6 className="h4 text-secondary mb-1">Zhen Cua</h6>
-                            <div className="ms-4">Azeus Systems Limited (Internship Director)</div>
-                            <div className="ms-4"><a href="zhen_cua@azeus.com"><i class="bi bi-envelope-fill me-2 mt-1"></i>zhen_cua@azeus.com</a></div>
-                            {/* {toSkillsHeader("UP CURSOR")} */}
-                            <h6 className="h4 text-secondary mb-1 mt-4">Mary Joyce Monzon</h6>
-                            <div className="ms-4">Colegio de Santo Cristo de Burgos (Vice President)</div>
-                            <div className="ms-4"><a href="maryjoycemanigbas@gmail.com"><i class="bi bi-envelope-fill me-2 mt-1"></i>maryjoycemanigbas@gmail.com</a></div>
-
-                            <h6 className="h4 text-secondary mb-1 mt-4">James Kim</h6>
-                            <div className="ms-4">Technomancer (Chief Technology Officer)</div>
-                            <div className="ms-4"><a href="james.kim@technomancer.biz"><i class="bi bi-envelope-fill me-2 mt-1"></i>james.kim@technomancer.biz</a></div>
+                        <hr className="mb-0 mt-4" /><div className={"content pb-3 pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
+                            {toHeader("Academic History")}
+                            {/* {toSkillsHeader("University of the Philippines Diliman")} */}
+                            <h6 className="h4 text-secondary mb-2 mt-4">University of the Philippines Diliman</h6>
+                            <p className="ms-4 mb-1">• BS Computer Science | 2018-2024</p>
+                            <p className="ms-4">• Magna Cum Laude</p>
+                            {/* {toSkillsHeader("Trinity University of Asia")} */}
+                            <h6 className="h4 text-secondary mb-2 mt-4">Trinity University of Asia</h6>
+                            <p className="ms-4 ">• Junior High School and Senior High School STEM Track | 2012-2018</p>
+                            {/* {toSkillsHeader("Asian College of Technology")} */}
+                            <h6 className="h4 text-secondary mb-2 mt-4">Asian College of Technology</h6>
+                            <p className="ms-4 ">• Elementary Education | 2004-2012</p>
                         </div>
                         <hr className="mb-0 mt-4" />
                         <div className={"content pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
                             {toHeader("University Affiliations")}
                             {/* {toSkillsHeader("UP CREST")} */}
                             <h6 className="h4 text-secondary mb-1">UP CREST</h6>
-                            <p className="ms-4 mb-0">• <span className="">President</span> <i className="opacity-50">(August 2022 onwards)</i></p>
+                            <p className="ms-4 mb-0">• <span className="">President</span> <i className="opacity-50">(2022 - 2023)</i></p>
                             <p className="ms-4 mb-0">• <span className="">Publicity</span> Committee Director <i className="opacity-50">(February 2022 to May 2022)</i></p>
                             <p className="ms-4 mb-0">• <span className="">Publicity Committee Associate</span> <i className="opacity-50">(November 2021 to January 2022)</i></p>
                             {/* {toSkillsHeader("UP CURSOR")} */}
                             <h6 className="h4 text-secondary mb-1 mt-4">UP CURSOR</h6>
-                            <p className="ms-4 mb-0">• <span className="">Member</span> <i className="opacity-50">(December 2019 onwards)</i></p>
+                            <p className="ms-4 mb-0">• <span className="">Member</span> <i className="opacity-50">(2019-2023)</i></p>
+                        </div>
+                        <hr className="mb-0 mt-4" />
+                        <div className={"content pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
+                            {toHeader("Professional References")}
+                            <p className="text-center"><i>Professional references available upon request.</i></p>
                         </div>
                     </div>
-                    <p className="my-5 pt-sm-5"> Download a pdf<Nbsp />version<Nbsp /><a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%208.pdf?alt=media&token=deeba9d5-b9dc-4feb-a74b-2c505a345528">here</a>, which includes a full list of languages, frameworks, web services and tools that I am capable of using. </p>
                 </div>
             </div>
         </div>

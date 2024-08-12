@@ -48,7 +48,6 @@ const Contact = () => {
                 body: formBody
             });
 
-            // TODO: test if still working
             axios.post(`${process.env.REACT_APP_API_ENDPOINT}sendmail`, null, {
                 params: {
                     email: formEmail,

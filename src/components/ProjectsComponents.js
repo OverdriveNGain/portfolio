@@ -17,7 +17,6 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
     const { breakpointSelector } = useResize();
     const [imagesLoaded, setImagesLoaded] = useState(0);
 
-    // TODO: test if still working
     const { response } = useRequest(`${process.env.REACT_APP_API_ENDPOINT}projects/${id}`); 
 
     const getGitHubLink = (proj) => tern(
