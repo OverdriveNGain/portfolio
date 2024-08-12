@@ -16,10 +16,9 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
     const [fullscreen, setFullscreen] = useState(false);
     const { breakpointSelector } = useResize();
     const [imagesLoaded, setImagesLoaded] = useState(0);
-    const { response } = useRequest(`${process.env.API_ENDPOINT}projects/${id}`, {
-        enable: projectData != null,
-        alt: `http://localhost:3004/data/${id}`
-    });
+
+    // TODO: test if still working
+    const { response } = useRequest(`${process.env.REACT_APP_API_ENDPOINT}projects/${id}`); 
 
     const getGitHubLink = (proj) => tern(
         proj.github != null,

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-const useRequest = (uri, options = {}) => {
+const useRequest = (uri) => {
     const [response, setResponse] = useState(null);
 
     useEffect(() => {
@@ -15,7 +15,7 @@ const useRequest = (uri, options = {}) => {
             });
         }
         getDataFromServer();
-    }, [response, uri, options.alt, options.enable]);
+    }, [response, uri]);
     return { response };
 };
 

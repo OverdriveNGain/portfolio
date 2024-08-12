@@ -13,7 +13,7 @@ const Projects = () => {
     const [filters, setFilters] = useState([]);
     const [currentProjectData, setCurrentProjectData] = useState(null);
     const { breakpointSelector } = useResize();
-    const { response } = useRequest(`${process.env.API_ENDPOINT}/projects`);
+    const { response } = useRequest(`${process.env.REACT_APP_API_ENDPOINT}/projects`);
     const allFilters = [
         "Flutter",
         "Unity 3D",

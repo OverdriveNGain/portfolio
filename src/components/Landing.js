@@ -11,7 +11,9 @@ import 'dotenv/config';
 
 const Landing = () => {
     const { breakpointSelector } = useResize();
-    const { response } = useRequest(`${process.env.API_ENDPOINT}projects`);
+
+    // TODO: test if still working
+    const { response } = useRequest(`${process.env.REACT_APP_API_ENDPOINT}projects`);
 
     const [twSpan] = useTypewriter([
         "My name is ",
