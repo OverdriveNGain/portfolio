@@ -21,15 +21,15 @@ const Portfolio = () => {
         </div>);
     }
 
-    const toPositionDetails = (position, timespan) => {
+    const toPositionDetails = (position, timeSpan) => {
         if (dimensions.width < 576)
             return (<div className="mb-2">
                 <span className="mt-3 text-center">{position}</span>
-                <span className="mx-2 text-muted opacity-50 h4">{timespan}</span>
+                <span className="mx-2 text-muted opacity-50 h4">{timeSpan}</span>
             </div>);
         return (<div className="mb-2">
             <span className="mt-3 text-start">{position}</span>
-            <span className="mx-2 text-muted opacity-50">{timespan}</span>
+            <span className="mx-2 text-muted opacity-50">{timeSpan}</span>
         </div>);
     }
 
@@ -51,11 +51,11 @@ const Portfolio = () => {
         </div>);
     }
     const toHeader = (t) => {
-        const dstyle = {
+        const dStyle = {
             padding: "10px 0px",
         };
         return (
-            <div style={dstyle}>
+            <div style={dStyle}>
                 <p className="text-muted h5 opacity-50 fw-bold text-center">{t}</p>
             </div>
         );
@@ -212,8 +212,8 @@ const Portfolio = () => {
                                 {toSkillsBullet("Intro to C# Programming", 1)}
                                 {toSkillsBullet("Intro to Google Apps", 1)}
                                 {toSkillsBullet("Revamped and restructured the 'Intro to C# Programming' 10-hour programming course for children and teenagers.")}
-                                {toSkillsBullet("Comanaged the 2021 TCS Coding Masters Coding Competition")}
-                                {/* {toSkillsBullet("Teached part time in Colegio de Santo Cristo de Burgos, teaching and creating course material for different Information Technology and Computer Science courses, including the following:")}
+                                {toSkillsBullet("Co-managed the 2021 TCS Coding Masters Coding Competition")}
+                                {/* {toSkillsBullet("Taught part time in Colegio de Santo Cristo de Burgos, teaching and creating course material for different Information Technology and Computer Science courses, including the following:")}
                                 {toSkillsBullet("Computer Programming 1", 1)}
                                 {toSkillsBullet("Object-Oriented Programming", 1)}
                                 {toSkillsBullet("Data Structures and Algorithms", 1)} */}

@@ -99,21 +99,8 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
-            <About3 response={response} />
+            <About3 />
             <About4 />
-            <div id="about5" className="d-none">
-                <div className="align-middle container px-0 my-5 text-center d-flex flex-column justify-content-center align-items-stretch h-100">
-                    <div className="display-1 text-primary mb-5 font-title">Testimonials</div>
-                    <div className="px-5">
-                        <blockquote>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste quisquam magni adipisci neque vero! Odit ab, expedita repellat aliquam magnam, vitae sed totam ea sequi eaque, laborum accusantium minima officiis."</blockquote>
-                        <div className="rounded-circle border mx-auto border-secondary border-2 my-4" id="testimonial-portrait-holder">
-                            <img src="https://previews.123rf.com/images/gladkov/gladkov1312/gladkov131200051/24403725-closeup-portrait-of-young-man-call-center-employee-with-a-headset-isolated-on-white-background.jpg" alt="Testimonial Person Portrait" />
-                        </div>
-                        <div className="fw-bold">Firstname M. Last</div>
-                        <p className="text-muted">President of Cuba</p>
-                    </div>
-                </div>
-            </div>
             <About6 />
         </div>
     );

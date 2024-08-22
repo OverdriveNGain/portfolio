@@ -8,6 +8,7 @@ import Nbsp from "../helpers/Nbsp";
 import { useState } from "react";
 import axios from 'axios';
 import 'dotenv/config';
+import { allProjects } from "../projects.js";
 
 const About4 = () => {
     const { breakpointSelector } = useResize();
@@ -20,7 +21,7 @@ const About4 = () => {
     const tileIcon = ["bi bi-brush", "bi bi-globe2", "bi bi-phone"];
     const tileTitle = ["     Graphic Design", "     Website Development", "     Mobile App Development"]
     const tileDesc = [
-        "Graphic eye-candy to catch viewer's attention, and to present your information, profesionally.",
+        "Graphic eye-candy to catch viewer's attention, and to present your information, professionally.",
         "Fast and responsive websites for your business, built with modern designs and tools to deliver intuitive user interactions.",
         "Mobile software to bring convenience your brand can provide, to you audience's pocket."
     ]
@@ -63,20 +64,18 @@ const About4 = () => {
     );
 }
 
-const About3 = ({ response }) => {
+const About3 = () => {
     const { breakpointSelector } = useResize();
 
+    // TODO: fix ths
+
+    let _allProjects = allProjects();
+
+    console.log(_allProjects);
+
     const getProjectTile = (id) => {
-        if (response == null)
-            return (<div className="col-12 col-md-6 mb-2">
-                <div className="card">
-                    <div className="card-body m-1 m-md-4">
-                        <h5 className="card-title no-underline text-secondary"> </h5>
-                        <p className="card-text text-dark">Loading...</p>
-                    </div>
-                </div>
-            </div>);
-        const proj = response.find((p) => p.id === id);
+        const proj = _allProjects.find((p) => p.id === id);
+        console.log(proj);
         return (<div className="col-12 col-md-6 mb-2">
             <Link to={`/projects/${id}`} className="link-no-underline"><div className="card">
                 <div className="card-body m-1 m-md-4">

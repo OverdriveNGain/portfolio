@@ -7,5 +7,29 @@
             "savePath": "/src/css"
         }
     ],
-    "liveServer.settings.port": 5501
+    "liveServer.settings.port": 5501,
+    "cSpell.words": [
+        "Appian",
+        "Azeus",
+        "buwad",
+        "Colegio",
+        "Cristo",
+        "Diliman",
+        "Inkscape",
+        "kairoscore",
+        "Kimbel",
+        "labelledby",
+        "Laravel",
+        "Mandaluyong",
+        "Mattheu",
+        "Nbspify",
+        "Pasig",
+        "Photoshop",
+        "playstore",
+        "Santo",
+        "Sariaya",
+        "Technomancer",
+        "Tetris",
+        "Webflow"
+    ]
 }
