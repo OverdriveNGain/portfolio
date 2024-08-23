@@ -38,7 +38,7 @@ const About4 = () => {
                         <div className="col-2 col-md-8"><i className={`${tileIcon[i]} display-1 text-secondary d-none d-md-inline`}></i></div>
                         <div className="col-12">
                             <h5 className="card-title no-underline text-secondary">
-                                <i className={`${tileIcon[i]} text-secondary d-inline d-md-none`}></i>{tileTitle[i]}</h5>
+                                <i className={`${tileIcon[i]} text-secondary d-inline d-md-none`}/>{tileTitle[i]}</h5>
                             <p className="card-text text-dark">{tileDesc[i]}</p>
                             <small className="text-muted">{tileTools[i]}</small>
                         </div>
@@ -70,7 +70,7 @@ const LandingProjectsSection = () => {
     const getProjectTile = (id) => {
         const proj = getProject(id);
         return (<div className="col-12 mb-2">
-            <Link to={`/projects/${id}`} className="link-no-underline"><div className="card">
+            <Link to={`/projects/${id}`} className="link-no-underline"><div className="card animated-all-quick">
                 <div className="card-body m-1 hover:bg-primary">
                     <h5 className="card-title no-underline text-secondary">{proj.title}</h5>
                     <p className="card-text text-dark">{proj.descShort}</p>

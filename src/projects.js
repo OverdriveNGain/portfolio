@@ -71,7 +71,7 @@ const _projects = [
         "descShort": "A simple money counter app with a ready to use calculator at any time",
         "descLong": "This is a simple android application that helps you counts physical cash with single taps for each denomination. The app also includes an easy-to-access calculator at a moments notice.",
         "languages": ["Flutter"],
-        "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.simplemoneycounter",
+        "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.simplemoneycounter",
         "github": "https://github.com/OverdriveNGain/counter-calc",
         "img": [
             "https://lh3.googleusercontent.com/d/1LDQwo0PF8nGWi1lasNa6R_Jb1nw2LgS3",
@@ -100,7 +100,7 @@ const _projects = [
         "descShort": "A classic game without the training wheels",
         "descLong": "A classic game without the training wheels. This game was one of the few projects that I have completed with Unity 3D; complete with self-produced assets. The game is currently still available on the Google Play store.",
         "languages": ["Unity 3D", "Adobe Illustrator"],
-        "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.looseblocks",
+        "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.looseblocks",
         "img": [
             "https://lh3.googleusercontent.com/d/1bI_fOm0DWA1Gnu1B4O3z7T5Z5IhaAYvE",
             "https://lh3.googleusercontent.com/d/1S2ZZpoXhNBY3_ClNMtLVAJUWYX2cwa6A",
@@ -115,7 +115,7 @@ const _projects = [
         "descShort": "A simple mobile puzzle game",
         "descLong": "This is a game created in late 2019 that was created using Unity 3D. This was my first mobile game application at the time, and it was during Christmas break. The aim of the game is to clear out the cells on the board without lifting your finger.",
         "languages": ["Unity 3D", "Adobe Illustrator"],
-        "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.celltrace",
+        "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.celltrace",
         "img": [
             "https://lh3.googleusercontent.com/d/1T7Eu6_OAzt9H2o4rgH4pE5BwP9SHa2hp",
             "https://lh3.googleusercontent.com/d/1MRNwUd5v74Fg9vxgpkG5JrTNfyzRwgW8",
@@ -130,7 +130,7 @@ const _projects = [
         "descShort": "A 3D mobile game where you create a tower",
         "descLong": "This is a game created in early 2020 that was created using Unity 3D. This was done during my free time in my early college years. The aim of the game is to stack a tower as high as possible without letting it crash down. It is inspired by the games Tetris and Stack.",
         "languages": ["Unity 3D", "Adobe Illustrator"],
-        "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.loosetower",
+        "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.loosetower",
         "img": [
             "https://lh3.googleusercontent.com/d/1ZfDGpPkO1mduScsUl_WbdfCUN2beYFFA",
             "https://lh3.googleusercontent.com/d/1q-tHsPYNj0zPbC7m8zj-iCIO3BkrM39-",

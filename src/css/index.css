@@ -150,6 +150,11 @@ code {
     width:150px;
     height:150px;
 }
+
+#landingProjectsSection div.card:hover {
+    background-color: rgb(168, 181, 255);
+}
+
 @media only screen and (min-width: 1200px){
     .portfolio-pic{
         width:200px;
