@@ -18,11 +18,3 @@
 
 1. `npm run build`
 2. `firebase deploy`
-
-# TODOs
-
-    0. Transfer API data to within this project entirely
-1. Update 'About Me' Section
-2. Update 'Projects' Section
-3. Fix Projects section in landing page (uneven squares)
-4. Update Skills and Services section in landing page
