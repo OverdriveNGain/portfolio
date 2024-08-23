@@ -8,7 +8,7 @@ import Nbsp from "../helpers/Nbsp";
 import { useState } from "react";
 import axios from 'axios';
 import 'dotenv/config';
-import { allProjects } from "../projects.js";
+import { getProject } from "../projects.js";
 
 const About4 = () => {
     const { breakpointSelector } = useResize();
@@ -67,15 +67,8 @@ const About4 = () => {
 const About3 = () => {
     const { breakpointSelector } = useResize();
 
-    // TODO: fix ths
-
-    let _allProjects = allProjects();
-
-    console.log(_allProjects);
-
     const getProjectTile = (id) => {
-        const proj = _allProjects.find((p) => p.id === id);
-        console.log(proj);
+        const proj = getProject(id);
         return (<div className="col-12 col-md-6 mb-2">
             <Link to={`/projects/${id}`} className="link-no-underline"><div className="card">
                 <div className="card-body m-1 m-md-4">

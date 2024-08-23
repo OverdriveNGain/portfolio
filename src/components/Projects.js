@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
-import useRequest from "../hooks/useRequest";
 import {
     Link,
     Switch,
@@ -8,13 +7,13 @@ import {
 } from "react-router-dom";
 import ProjectDetailsPage from "./ProjectsComponents";
 import 'dotenv/config';
+import { allProjects } from "../projects";
 
 
 const Projects = () => {
     const [filters, setFilters] = useState([]);
     const [currentProjectData, setCurrentProjectData] = useState(null);
     const { breakpointSelector } = useResize();
-    const { response } = useRequest(`${process.env.REACT_APP_API_ENDPOINT}projects`);
     
     const allFilters = [
         "Flutter",
@@ -56,22 +55,20 @@ const Projects = () => {
 
     const getProjectTiles = () => {
         const isProjectShown = (project) => {
-            for (let filter of filters) {
+            for (const filter of filters) {
                 if (!project.languages.includes(filter))
                     return false;
             }
             return true;
         }
-        let toReturn = [];
+        const toReturn = [];
         const cols = breakpointSelector(1, 2, 3, 4);
         const height = breakpointSelector(140, 150, 200);
         const width = `${Math.floor(100 / cols)}`;
-        let projectsToDisplay = [];
-        if (response != null)
-            projectsToDisplay = response;
+        let projectsToDisplay = allProjects();
         let shownIndex = 0;
         for (let i = 0; i < projectsToDisplay.length; i++) {
-            let project = projectsToDisplay[i];
+            const project = projectsToDisplay[i];
             let tileDivStyle;
             if (isProjectShown(project)) {
                 tileDivStyle = {

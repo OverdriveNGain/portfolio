@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import useRequest from "../hooks/useRequest";
 import {
     useParams,
 } from "react-router-dom";
@@ -9,6 +8,7 @@ import {
 } from "react-router-dom";
 import { tern } from "./helpers/Helpers";
 import 'dotenv/config';
+import { getProject } from "../projects";
 
 const ProjectDetailsPage = ({ projectData, backFunction }) => {
     const { id } = useParams();
@@ -17,7 +17,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
     const { breakpointSelector } = useResize();
     const [imagesLoaded, setImagesLoaded] = useState(0);
 
-    const { response } = useRequest(`${process.env.REACT_APP_API_ENDPOINT}projects/${id}`); 
+    const response = getProject(id); 
 
     const getGitHubLink = (proj) => tern(
         proj.github != null,

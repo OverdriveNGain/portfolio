@@ -12,10 +12,12 @@
         "Appian",
         "Azeus",
         "buwad",
+        "cdscdb",
         "Colegio",
         "Cristo",
         "Diliman",
         "Inkscape",
+        "Kairos",
         "kairoscore",
         "Kimbel",
         "labelledby",
@@ -23,13 +25,17 @@
         "Mandaluyong",
         "Mattheu",
         "Nbspify",
+        "noopener",
+        "noreferrer",
         "Pasig",
         "Photoshop",
+        "Photoshow",
         "playstore",
         "Santo",
         "Sariaya",
         "Technomancer",
         "Tetris",
-        "Webflow"
+        "Webflow",
+        "wireframe"
     ]
 }

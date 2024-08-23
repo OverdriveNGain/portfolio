@@ -21,6 +21,7 @@
 
 # TODOs
 
+    0. Transfer API data to within this project entirely
 1. Update 'About Me' Section
 2. Update 'Projects' Section
 3. Fix Projects section in landing page (uneven squares)

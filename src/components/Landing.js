@@ -1,6 +1,5 @@
 
 import { useLayoutEffect } from 'react';
-import useRequest from "../hooks/useRequest";
 import useResize from '../hooks/useResize';
 import { About3, About4, About6 } from './LandingComponents';
 import Landing1, { Landing1RefreshState } from './sketches/Landing1';
@@ -11,8 +10,6 @@ import 'dotenv/config';
 
 const Landing = () => {
     const { breakpointSelector } = useResize();
-
-    const { response } = useRequest(`${process.env.REACT_APP_API_ENDPOINT}projects`);
 
     const [twSpan] = useTypewriter([
         "My name is ",
