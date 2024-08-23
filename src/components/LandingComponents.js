@@ -64,14 +64,14 @@ const About4 = () => {
     );
 }
 
-const About3 = () => {
+const LandingProjectsSection = () => {
     const { breakpointSelector } = useResize();
 
     const getProjectTile = (id) => {
         const proj = getProject(id);
-        return (<div className="col-12 col-md-6 mb-2">
+        return (<div className="col-12 mb-2">
             <Link to={`/projects/${id}`} className="link-no-underline"><div className="card">
-                <div className="card-body m-1 m-md-4">
+                <div className="card-body m-1 hover:bg-primary">
                     <h5 className="card-title no-underline text-secondary">{proj.title}</h5>
                     <p className="card-text text-dark">{proj.descShort}</p>
                 </div>
@@ -80,7 +80,7 @@ const About3 = () => {
     }
 
     return (
-        <div id="about3">
+        <div id="landingProjectsSection">
             <div style={{ padding: `${breakpointSelector(10, 30, null, 80, 100, 120)}px 0px` }}>
                 <Landing2 />
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
@@ -88,12 +88,9 @@ const About3 = () => {
                     <div className="row mx-xs-2 mx-md-5 gx-2">
                         {getProjectTile('kairoscore')}
                         {getProjectTile('loose-blocks')}
-                    </div>
-                    <div className="row mx-xs-2 mx-md-5 gx-2">
                         {getProjectTile('up-crest-25')}
-                        {breakpointSelector(<span />, null, getProjectTile('simple-money-counter'))}
+                        {getProjectTile('simple-money-counter')}
                     </div>
-
                     <Link to="/projects">
                         <button className="btn btn-primary align-self-center m-3 text-light">See More Projects ❯</button>
                     </Link>
@@ -212,4 +209,4 @@ const About6 = () => {
 
     );
 }
-export { About3, About4, About6 };
+export { LandingProjectsSection, About4, About6 };

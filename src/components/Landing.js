@@ -1,7 +1,7 @@
 
 import { useLayoutEffect } from 'react';
 import useResize from '../hooks/useResize';
-import { About3, About4, About6 } from './LandingComponents';
+import { LandingProjectsSection, About4, About6 } from './LandingComponents';
 import Landing1, { Landing1RefreshState } from './sketches/Landing1';
 import { Landing2RefreshState } from './sketches/Landing2';
 import { Landing3RefreshState } from './sketches/Landing3';
@@ -96,7 +96,7 @@ const Landing = () => {
                     </div>
                 </div>
             </div>
-            <About3 />
+            <LandingProjectsSection />
             <About4 />
             <About6 />
         </div>

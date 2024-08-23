@@ -116,7 +116,7 @@
     position: absolute;
     z-index:-1;
 }
-#about1, #about3, #about4{
+#about1, #landingProjectsSection, #about4{
     position:relative;
 }
 #about4 .behind{

@@ -75,11 +75,11 @@ const Landing2 = () => {
             return;
         }
         const about2 = document.getElementById("about2");
-        const about3 = document.getElementById("about3");
+        const landingProjectsSection = document.getElementById("landingProjectsSection");
         element.style.top = `calc(-0.5 * ${about2.offsetHeight}px)`;
         const canv = p5.createCanvas(
             p5.round(about2.offsetWidth),
-            p5.round((about2.offsetHeight + about3.offsetHeight) / 2),
+            p5.round((about2.offsetHeight + landingProjectsSection.offsetHeight) / 2),
             // p5.WEBGL
         );
         topAreaHeight = about2.offsetHeight * 0.5;
@@ -108,11 +108,11 @@ const Landing2 = () => {
             return;
         }
         const about2 = document.getElementById("about2");
-        const about3 = document.getElementById("about3");
+        const landingProjectsSection = document.getElementById("landingProjectsSection");
         element.style.top = `calc(-0.5 * ${about2.offsetHeight}px)`;
         p5.resizeCanvas(
             p5.round(about2.offsetWidth),
-            p5.round((about2.offsetHeight + about3.offsetHeight) / 2)
+            p5.round((about2.offsetHeight + landingProjectsSection.offsetHeight) / 2)
         );
         topAreaHeight = about2.offsetHeight * 0.5;
         // eslint-disable-next-line no-undef
