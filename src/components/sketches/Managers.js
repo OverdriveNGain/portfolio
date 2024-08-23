@@ -274,7 +274,7 @@ class SnowManager {
     }
     step(leftBound, rightBound) {
         for (let i = 0; i < this.count; i++) {
-            let snow = this.snow[i];
+            const snow = this.snow[i];
             snow.y += 1;
             if (!snow.isStatic) {
                 snow.x += snow.velx;
@@ -287,6 +287,7 @@ class SnowManager {
                     }
                     else {
                         snow.velx *= 0.98;
+                        snow.y += snow.depth * 6;
                     }
                 }
                 else {
