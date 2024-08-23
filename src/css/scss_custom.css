@@ -358,6 +358,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
+  appearance: button;
   -webkit-appearance: button;
 }
 
@@ -419,6 +420,7 @@ legend + * {
 
 [type="search"] {
   outline-offset: -2px;
+  appearance: textfield;
   -webkit-appearance: textfield;
 }
 
@@ -11707,4 +11709,4 @@ fieldset:disabled .btn {
     display: none !important;
   }
 }
-/*# sourceMappingURL=Custom.css.map */
+/*# sourceMappingURL=scss_custom.css.map */

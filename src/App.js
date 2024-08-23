@@ -1,4 +1,4 @@
-import './css/Wrapper.css';
+
 import Navbar from './components/Navbar';
 import AboutMe from './components/AboutMe';
 import Landing from './components/Landing';

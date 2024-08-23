@@ -85,5 +85,5 @@
         "../../node_modules/bootstrap/scss/utilities/_api.scss"
     ],
     "names": [],
-    "file": "Custom.css"
+    "file": "scss_custom.css"
 }
