@@ -12,12 +12,11 @@ const Portfolio = () => {
     const toWorkHeader = (t, location) => {
         if (dimensions.width < 576)
             return (<div className="mt-4">
-                <span className="text-secondary h4 mt-3 text-center">{t}</span>
-                <span className="mx-2 text-muted opacity-50 h4">{location}</span>
+                <div className="text-secondary mt-3 h4">{t}</div>
             </div>);
         return (<div className="mt-4">
             <span className="text-secondary h4 mt-3 text-start">{t}</span>
-            <span className="mx-2 text-muted opacity-50 h4">{location}</span>
+            <span className="mx-2 text-muted opacity-50 h4">- {location}</span>
         </div>);
     }
 
@@ -25,13 +24,16 @@ const Portfolio = () => {
         if (dimensions.width < 576)
             return (<div className="mb-2">
                 <span className="mt-3 text-center">{position}</span>
-                <span className="mx-2 text-muted opacity-50 h4">{timeSpan}</span>
             </div>);
         return (<div className="mb-2">
             <span className="mt-3 text-start">{position}</span>
             <span className="mx-2 text-muted opacity-50">{timeSpan}</span>
         </div>);
     }
+
+    const toOtherDetailsOnMobile = (text) => (dimensions.width < 576)
+        ? (<p className="small text-muted">{text}</p>)
+        : (<div />);
 
     const toSkillsBullet = (p, level) => {
         if (level == null)
@@ -142,7 +144,7 @@ const Portfolio = () => {
     }
 
     return (
-        <div>
+        <div className="portfolio">
             <div className="container" align="center">
                 <div className="px-1 px-sm-0">
                     <p className="py-5" />
@@ -173,37 +175,42 @@ const Portfolio = () => {
                         <div className="content pb-3 pt-2 px-2 px-md-5" style={{ textAlign: ((dimensions.width > 576) ? "justify" : "start") }}>
                             {toHeader("Work Experience")}
                             <div className="">
-                                {toWorkHeader(Nbspify("Maya Philippines Inc."), "- Mandaluyong")}
+                                {toWorkHeader(Nbspify("Maya Philippines Inc."), "Mandaluyong")}
                                 {toPositionDetails("Software Engineer", "( September 2023 - Present )")}
+                                {toOtherDetailsOnMobile("Mandaluyong (Sept. 2022 - Present)")}
                                 {toSkillBadges("Flutter, Appian, Python, SQL")}
                                 {toSkillsBullet("Implemented data validation on a 2.75 billion peso loan channeling deal in cooperation with WeFund.")}
                                 {toSkillsBullet("Worked on the user interface for the Landers rewards page of the Maya mobile application, as well as the integration to it's own backend service.")}
                                 {toSkillsBullet("Integrated analytics events for application user analysis within the Maya inbox user journey.")}
                                 {toSkillsBullet("Executed on a Feature Enrichment Data Science API, which aims to aid in the internal execution of a merchant segmentation data analysis project within Maya Philippines.")}
 
-                                {toWorkHeader(Nbspify("Technomancer"), "- Quezon City")}
+                                {toWorkHeader(Nbspify("Technomancer"), "Quezon City")}
                                 {toPositionDetails("Part Time Web Developer", "( March 2022 - October 2022 )")}
+                                {toOtherDetailsOnMobile("Quezon City (Mar. 2022 - Oct. 2022)")}
                                 {toSkillBadges("React JS, VBA, SQL, Laravel")}
                                 {toSkillsBullet("Managed an SQL Server Database for Kimbel International, delivering continuous updates to company accountancy forms through Microsoft Access using VBA.")}
                                 {toSkillsBullet("Developed web applications for international clients with multi-language support and responsive design.")}
                                 {toSkillsBullet("Worked on internal website servers that delivers client website content.")}
 
-                                {toWorkHeader(Nbspify("Azeus Systems Limited"), "- Pasig")}
+                                {toWorkHeader(Nbspify("Azeus Systems Limited"), "Pasig")}
                                 {toPositionDetails("Backend Developer Intern", "( July 2022 - August 2022 )")}
+                                {toOtherDetailsOnMobile("Pasig (July 2022 - Aug. 2022)")}
                                 {toSkillBadges("Docker, Nginx, Python")}
                                 {toSkillsBullet("Served as the team leader for an examination module development team who worked on the backend of a recruitment process server, hosted on a company Linux server.")}
                                 {toSkillsBullet("Collaborated with other teams to synchronize weekly development tasks and application updates.")}
 
-                                {toWorkHeader(Nbspify("Colegio de Santo Cristo de Burgos"), "- Sariaya (Remote)")}
+                                {toWorkHeader(Nbspify("Colegio de Santo Cristo de Burgos"), "Sariaya (Remote)")}
                                 {toPositionDetails("Freelance Database Administrator & Developer", "( July 2021 - Present )")}
+                                {toOtherDetailsOnMobile("Sariaya - Remote (July 2021 - Present)")}
                                 {toSkillBadges("React JS, Flutter, Firebase, Tailwind CSS")}
                                 {toSkillsBullet("Built a student management database that manages student information, documents, and enrollment data of more than 2500 students.")}
                                 {toSkillsBullet("Developed an online enrollment system that sends form information to the integrated student database.")}
                                 {toSkillsBullet("Continued to deliver updates to the database system such as audit logs on all accounting and enrollment data, database integrity reports, built-in account management, accounting functions and summarization of payments.")}
 
                                 {/* {toWorkHeader(Nbspify("Educator & Education Content Creator"))} */}
-                                {toWorkHeader(Nbspify("The Coding School"), "- San Juan (Remote)")}
+                                {toWorkHeader(Nbspify("The Coding School"), "San Juan (Remote)")}
                                 {toPositionDetails("Part Time Teaching Coach", "( July 2020 - June 2021 )")}
+                                {toOtherDetailsOnMobile("San Juan - Remote (July 2020 - June 2021)")}
                                 {toSkillBadges("Unity 3D, C#, Python, Java")}
                                 {toSkillsBullet("Worked part time at the Coding School Philippines, while educating children and teens on the following courses:")}
                                 {toSkillsBullet("Make Your Own Game with Unity 1 & 2", 1)}
@@ -227,21 +234,24 @@ const Portfolio = () => {
                                 {toSkillsBullet("Writes specific software that can help in a multitude of bulk operations including (but not limited) to the manufacturing of sticker graphics, bulk data manipulation, online website data scraping, etc.")} */}
                             </div>
                         </div>
-                        <hr className="mb-0 mt-4" /><div className={"content pb-3 pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
+                        <hr className="mb-0 mt-4" /><div className="content pb-3 pt-2 px-2 px-md-5 text-start">
                             {toHeader("Academic History")}
                             {/* {toSkillsHeader("University of the Philippines Diliman")} */}
-                            <h6 className="h4 text-secondary mb-2 mt-4">University of the Philippines Diliman</h6>
-                            <p className="ms-4 mb-1">• BS Computer Science | 2018-2024</p>
-                            <p className="ms-4">• Magna Cum Laude</p>
+                            <h6 className="h4 text-secondary mb-0 mt-4">University of the Philippines Diliman</h6>
+                            <p className="text-muted mb-1">2018-2024</p>
+                            <p className="ms-4 mb-1">• BS Computer Science</p>
+                            <p className="ms-4 magna_cum_laude">• Magna Cum Laude</p>
                             {/* {toSkillsHeader("Trinity University of Asia")} */}
-                            <h6 className="h4 text-secondary mb-2 mt-4">Trinity University of Asia</h6>
-                            <p className="ms-4 ">• Junior High School and Senior High School STEM Track | 2012-2018</p>
+                            <h6 className="h4 text-secondary mb-0 mt-4">Trinity University of Asia</h6>
+                            <p className="text-muted mb-1">2012-2018</p>
+                            <p className="ms-4 ">• Junior High School and Senior High School STEM Track</p>
                             {/* {toSkillsHeader("Asian College of Technology")} */}
-                            <h6 className="h4 text-secondary mb-2 mt-4">Asian College of Technology</h6>
-                            <p className="ms-4 ">• Elementary Education | 2004-2012</p>
+                            <h6 className="h4 text-secondary mb-0 mt-4">Asian College of Technology</h6>
+                            <p className="text-muted mb-1">2004-2012</p>
+                            <p className="ms-4 ">• Elementary Education</p>
                         </div>
                         <hr className="mb-0 mt-4" />
-                        <div className={"content pt-2 px-2 px-md-5" + (dimensions.width <= 576 ? "" : " text-start")}>
+                        <div className="content pt-2 px-2 px-md-5 text-start">
                             {toHeader("University Affiliations")}
                             {/* {toSkillsHeader("UP CREST")} */}
                             <h6 className="h4 text-secondary mb-1">UP CREST</h6>
