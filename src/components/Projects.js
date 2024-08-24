@@ -5,7 +5,7 @@ import {
     Switch,
     Route,
 } from "react-router-dom";
-import ProjectDetailsPage from "./ProjectsComponents";
+import ProjectDetailsPage from "./ProjectDetailsPage";
 import 'dotenv/config';
 import { allProjects } from "../projects";
 

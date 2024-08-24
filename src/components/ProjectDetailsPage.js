@@ -24,7 +24,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         <p><a href={proj.github} target="_blank" rel="noopener noreferrer">
             Open this project in Github
         </a></p>,
-        <div />
+        <div/>
     );
 
     const getPlaystoreLink = (proj) => tern(
@@ -32,30 +32,28 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         <p><a href={proj.playstore} target="_blank" rel="noopener noreferrer">
             See this app on the Google Play Store
         </a></p>,
-        <div></div>);
+        <div/>);
 
     const getWebsiteLink = (proj) => tern(
         proj.website != null,
         <p><a href={proj.website} target="_blank" rel="noopener noreferrer">
             Open this project in a new tab
         </a></p>,
-        <div></div>);
+        <div/>);
 
     const getImagePreviews = (proj) => {
         if (proj.img == null)
             return <div />;
 
-        let toReturn = [];
+        const toReturn = [];
 
         for (let i = 0; i < proj.img.length; i++) {
-            let opacity = 0.5;
-            if (i === imageI)
-                opacity = 1;
-            let _style = {
+            const opacity = i === imageI ? 1 : 0.5;
+            const _style = {
                 width: "70px",
                 height: "70px",
                 objectFit: "cover",
-                opacity: opacity
+                opacity
             };
             toReturn.push(
                 <img key={i} src={proj.img[i]} alt={`${proj.title} preview ${i}`} style={_style} onMouseOver={() => { mouseOverPreviewHandler(i) }} />
@@ -170,8 +168,9 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
                 setImageI(imageI - 1);
         }
         else if (e.key === "Escape") {
-            if (fullscreen)
+            if (fullscreen) {
                 setFullscreen(false);
+            }
         }
     }
 
@@ -190,14 +189,12 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         return () => {
             window.removeEventListener('keydown', callback)
         }
-    });
+    }, []);
 
     if (proj == null)
         return (<div>Loading...</div>);
 
-    let horizontal = true;
-    if (proj.imgPortrait === true)
-        horizontal = false;
+    const horizontal = proj.imgPortrait === true ? false : true;
 
     return (
         <div>
