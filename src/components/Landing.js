@@ -15,7 +15,7 @@ const Landing = () => {
         "My name is ",
         "Jeremy",
         " , and I am a ",
-        "full‑stack developer"
+        "software engineer.",
     ], 35, 1000);
 
     useLayoutEffect(() => {
