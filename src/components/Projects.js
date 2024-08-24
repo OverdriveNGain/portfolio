@@ -89,11 +89,12 @@ const Projects = () => {
                     pointerEvents: "none"
                 };
             }
-            toReturn.push(<div key={project.id} style={tileDivStyle} className="d-inline-block position-absolute p-1 animated-all anim-hover-lighten-light">
+
+            toReturn.push(<div key={project.id} style={tileDivStyle} className="project_tile">
                 <Link to={`/projects/${project.id}`} className="link-no-underline" onClick={() => { projectTileClickHandler(project) }}>
-                    <div className="shadow p-3 rounded bg-light h-100">
-                        <div>{project.title}</div>
-                        <small className="text-muted">{project.descShort}</small>
+                    <div className="inner">
+                        <div className="project_title">{project.title}</div>
+                        <small className="project_desc">{project.descShort}</small>
                     </div>
                 </Link>
             </div>);
@@ -113,7 +114,7 @@ const Projects = () => {
     )
 
     return (
-        <div className="container">
+        <div className="container projects">
             <p className="py-4 py-md-5" />
             <p className="py-2 py-md-0" />
             <Switch>

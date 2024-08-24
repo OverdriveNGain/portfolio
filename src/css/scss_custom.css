@@ -9977,6 +9977,31 @@ textarea.form-control-lg {
   color: white;
 }
 
+.projects .project_tile {
+  display: inline-block;
+  position: absolute;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+  height: 200px;
+}
+.projects .project_tile .inner {
+  padding: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.6rem;
+  height: 100%;
+}
+.projects .project_tile .inner .project_desc {
+  color: black;
+}
+.projects .project_tile:hover {
+  transform: scale(1.05);
+}
+.projects .project_tile:hover .inner {
+  background: rgb(208, 215, 255);
+}
+
 .portfolio .magna_cum_laude {
   color: green;
 }/*# sourceMappingURL=SCSS_Custom.css.map */

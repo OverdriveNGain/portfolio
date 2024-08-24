@@ -1,6 +1,7 @@
 $font-size-base: 1.15rem;
 $primary:  rgb(78, 104, 255);
 $primary_light:  rgb(128, 147, 255);
+$primary_light_2:  rgb(208, 215, 255);
 $secondary:  rgb(197, 79, 0);
 
 $border-radius:               .6rem;
@@ -106,6 +107,41 @@ $utilities: (
         }
       }
     }
+  }
+}
+
+.projects {
+  .project_tile {
+    display: inline-block;
+    position: absolute;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+    height: 200px;
+
+    .inner {
+      padding: 1rem;
+      transition: all 0.3s ease;
+      background: white;
+      box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.15);
+      border-radius: $border-radius;
+      height: 100%;
+
+      .project_desc{
+        color: black;
+      }
+    }
+
+
+    &:hover {
+      transform: scale(1.05);
+
+      .inner {
+        background: $primary_light_2;
+      }
+    }
+
+    // shadow p-3 rounded bg-light h-100
+    // d-inline-block position-absolute p-1 animated-all anim-hover-lighten-light
   }
 }
 
