@@ -220,7 +220,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
                                     <p key={i}>{line}</p>
                                 );
                             })}
-                            <div>This project uses the following frameworks and tools:</div>
+                            <div className="text-muted font-italic mb-2"><i>This project uses the following frameworks and tools:</i></div>
                             <SkillBadgesRow skills={proj.languages.join(", ")}/>
                             <hr />
                             {getPlaystoreLink(proj)}
