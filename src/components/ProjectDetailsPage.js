@@ -200,7 +200,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
     return (
         <div className="project_details">
             <div className="mb-3 container">
-                <Link to="/projects" className="btn btn-outline-primary btn-sm link-no-underline px-3"><i className="bi bi-caret-left-fill"/> Back to Projects</Link>
+                <Link to="/projects" className="back_button btn btn-outline-primary btn-sm px-3"><i className="bi bi-caret-left-fill"/> Back to Projects</Link>
             </div>
             <div className="d-flex flex-row mx-3">
                 <span className="d-flex flex-column d-none d-md-inline me-2" style={{ width: tern(proj.img == null || proj.img.length === 0, "0px", "70px") }}>

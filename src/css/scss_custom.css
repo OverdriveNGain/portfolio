@@ -9997,6 +9997,9 @@ textarea.form-control-lg {
   margin-bottom: 5px;
   border: 2px solid grey;
 }
+.project_details .back_button:hover {
+  color: white;
+}
 
 .projects .project_tile {
   display: inline-block;

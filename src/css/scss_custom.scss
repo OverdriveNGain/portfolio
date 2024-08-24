@@ -135,6 +135,12 @@ $utilities: (
 
     border: 2px solid grey;
   }
+
+  .back_button {
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 .projects {
