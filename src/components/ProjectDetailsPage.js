@@ -9,6 +9,7 @@ import {
 import { tern } from "./helpers/Helpers";
 import 'dotenv/config';
 import { getProject } from "../projects";
+import SkillBadgesRow from "./SkillBadgesRow";
 
 const ProjectDetailsPage = ({ projectData, backFunction }) => {
     const { id } = useParams();
@@ -220,7 +221,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
                                 );
                             })}
                             <div>This project uses the following frameworks and tools:</div>
-                            <p className="text-muted fw-bold">{proj.languages.join(", ")}</p>
+                            <SkillBadgesRow skills={proj.languages.join(", ")}/>
                             <hr />
                             {getPlaystoreLink(proj)}
                             {getWebsiteLink(proj)}

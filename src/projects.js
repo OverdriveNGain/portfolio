@@ -61,7 +61,7 @@ const _projects = [
 
         For a bit of context, the photoshow was somewhat of an annual event for the organization that was held in the university campus; But since a certain pandemic was happening during this time, a physical photoshow was just not possible. So I proposed a virtual version of the annual photoshow which still highlights the organization's history. It was approved, thus I proceeded with the project, whilst taking full advantage of the online medium.
         `,
-        "languages": ["React JS", "Tailwind", "p5.js"],
+        "languages": ["React JS", "Tailwind CSS", "p5.js"],
         "img": [
             "https://lh3.googleusercontent.com/d/1wx1PIatFufyiNLKeUbiUJHV18H0coaTR",
             "https://lh3.googleusercontent.com/d/1EqC-7i4J_6H8GxCfzfmDgJEVu8i-WlXp",
@@ -76,7 +76,7 @@ const _projects = [
         "descLong": `I Can't Decide is a simple web application that aims to help you in making difficult decision between choices. The app takes in your choices, what your factors are, which factors matter the most to you, rating each choice per factor, then generating a weighted sum to give your choices a numerical value.
         
         The idea for this application stemmed from the need of deciding between two or more options where the factors to consider are too complex to mentally think over. The application considers the fact that not all factors are of equal value to the decider, and that each option has different weights in different factors. This was just a fun little project that I wanted to make during the times where I actually had free time.`,
-        "languages": ["React JS", "Tailwind", "p5.js"],
+        "languages": ["React JS", "Tailwind CSS", "p5.js"],
         "img": [
             "https://lh3.googleusercontent.com/d/1uK4xWSjS5JI6dtwXYjX33kFGjQHOPM_V",
             "https://lh3.googleusercontent.com/d/1xr1f-uTDDA6XmNyFHKBItg9gINJsqoY2",

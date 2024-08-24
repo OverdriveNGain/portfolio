@@ -1,6 +1,7 @@
 import { useEffect } from "react";
-import Nbsp, { Nbspify } from "../helpers/Nbsp";
+import { Nbspify } from "../helpers/Nbsp";
 import useResize from "../hooks/useResize";
+import SkillBadgesRow from "./SkillBadgesRow";
 
 const Portfolio = () => {
     const { dimensions } = useResize();
@@ -63,85 +64,6 @@ const Portfolio = () => {
         );
 
     }
-    const getBadgeStyle = (b) => {
-        switch (b) {
-            case "Flutter":
-                return { backgroundColor: "rgb(0, 180, 232)", color: "rgb(255, 255, 255)" };
-            case "Unity 3D":
-                return { backgroundColor: "rgb(240, 240, 240)", color: "rgb(30, 30, 30)" };
-            case "Firebase":
-                return { backgroundColor: "rgb(255, 202, 41)", color: "rgb(90, 90, 90)" };
-            case "React JS":
-                return { backgroundColor: "rgb(32, 34, 36)", color: "rgb(96, 216, 249)" };
-            case "HTML":
-                return { backgroundColor: "rgb(228, 77, 38)", color: "white" };
-            case "CSS":
-                return { backgroundColor: "rgb(55, 154, 214)", color: "white" };
-            case "Javascript":
-                return { backgroundColor: "rgb(247, 223, 30)", color: "black" };
-            case "SASS":
-                return { backgroundColor: "rgb(205, 102, 154)", color: "white" };
-            case "Bootstrap":
-                return { backgroundColor: "rgb(140, 19, 253)", color: "white" };
-            case "C#":
-                return { backgroundColor: "rgb(104, 33, 122)", color: "white" };
-            case "Python":
-                return { backgroundColor: "rgb(54, 110, 156)", color: "rgb(255, 226, 130)" };
-            case "Adobe Illustrator":
-                return { backgroundColor: "rgb(51, 0, 0)", color: "rgb(255, 154, 0)" };
-            case "Processing":
-                return { backgroundColor: "rgb(1, 37, 66)", color: "white" };
-            case "p5.js":
-                return { backgroundColor: "rgb(234, 37, 96)", color: "white" };
-            case "Adobe Photoshop":
-                return { backgroundColor: "rgb(0,30,54)", color: "rgb(49,168,255)" };
-            case "Inkscape":
-                return { backgroundColor: "rgb(224, 224, 224)", color: "black" };
-            case "Webflow":
-                return { backgroundColor: "rgb(67, 83, 255)", color: "white" };
-            case "Tailwind CSS":
-                return { backgroundColor: "rgb(11, 182, 212)", color: "white" };
-            case "Docker":
-                return { backgroundColor: "rgb(78, 150, 232)", color: "white" };
-            case "Node.js":
-                return { backgroundColor: "rgb(51, 51, 51)", color: "rgb(149, 201, 66)" };
-            case "Figma":
-                return { backgroundColor: "rgb(240, 240, 240)", color: "rgb(214, 89, 39)" };
-            case "Laravel":
-                return { backgroundColor: "rgb(232, 57, 44)", color: "white" };
-            case "Nginx":
-                return { backgroundColor: "rgb(0, 145, 55)", color: "white" };
-            case "VBA":
-                return { backgroundColor: "rgb(250, 237, 213)", color: "rgb(63, 80, 151)" };
-            case "SQL":
-                return { backgroundColor: "rgb(111, 147, 218)", color: "white" };
-            case "Java":
-                return { backgroundColor: "rgb(190, 73, 45)", color: "white" };
-            case "Appian":
-                return { backgroundColor: "rgb(33, 32, 232)", color: "white" };
-            default:
-                return { backgroundColor: "black", color: "white" };
-        }
-    }
-    
-    const toSkillBadges = (s) => {
-        const skillsArray = s.split(",").map((s) => s.trim());
-        const badges = [];
-        for (let i = 0; i < skillsArray.length; i++) {
-            badges.push(<span key={i} className="badge me-1 mb-1 fw-normal fw-bold" style={getBadgeStyle(skillsArray[i])}>{skillsArray[i]}</span>);
-        }
-        if (dimensions.width < 576)
-            return (
-                <div className="mb-3 text-center">
-                    {badges}
-                </div>
-            );
-        return (
-            <div className="mb-3">
-                {badges}
-            </div>
-        );
-    }
 
     return (
         <div className="portfolio">
@@ -178,7 +100,7 @@ const Portfolio = () => {
                                 {toWorkHeader(Nbspify("Maya Philippines Inc."), "Mandaluyong")}
                                 {toPositionDetails("Software Engineer", "( September 2023 - Present )")}
                                 {toOtherDetailsOnMobile("Mandaluyong (Sept. 2022 - Present)")}
-                                {toSkillBadges("Flutter, Appian, Python, SQL")}
+                                <SkillBadgesRow skills="Flutter, Appian, Python, SQL"/>
                                 {toSkillsBullet("Implemented data validation on a 2.75 billion peso loan channeling deal in cooperation with WeFund.")}
                                 {toSkillsBullet("Worked on the user interface for the Landers rewards page of the Maya mobile application, as well as the integration to it's own backend service.")}
                                 {toSkillsBullet("Integrated analytics events for application user analysis within the Maya inbox user journey.")}
@@ -187,7 +109,7 @@ const Portfolio = () => {
                                 {toWorkHeader(Nbspify("Technomancer"), "Quezon City")}
                                 {toPositionDetails("Part Time Web Developer", "( March 2022 - October 2022 )")}
                                 {toOtherDetailsOnMobile("Quezon City (Mar. 2022 - Oct. 2022)")}
-                                {toSkillBadges("React JS, VBA, SQL, Laravel")}
+                                <SkillBadgesRow skills="React JS, VBA, SQL, Laravel"/>
                                 {toSkillsBullet("Managed an SQL Server Database for Kimbel International, delivering continuous updates to company accountancy forms through Microsoft Access using VBA.")}
                                 {toSkillsBullet("Developed web applications for international clients with multi-language support and responsive design.")}
                                 {toSkillsBullet("Worked on internal website servers that delivers client website content.")}
@@ -195,14 +117,14 @@ const Portfolio = () => {
                                 {toWorkHeader(Nbspify("Azeus Systems Limited"), "Pasig")}
                                 {toPositionDetails("Backend Developer Intern", "( July 2022 - August 2022 )")}
                                 {toOtherDetailsOnMobile("Pasig (July 2022 - Aug. 2022)")}
-                                {toSkillBadges("Docker, Nginx, Python")}
+                                <SkillBadgesRow skills="Docker, Nginx, Python"/>
                                 {toSkillsBullet("Served as the team leader for an examination module development team who worked on the backend of a recruitment process server, hosted on a company Linux server.")}
                                 {toSkillsBullet("Collaborated with other teams to synchronize weekly development tasks and application updates.")}
 
                                 {toWorkHeader(Nbspify("Colegio de Santo Cristo de Burgos"), "Sariaya (Remote)")}
                                 {toPositionDetails("Freelance Database Administrator & Developer", "( July 2021 - Present )")}
                                 {toOtherDetailsOnMobile("Sariaya - Remote (July 2021 - Present)")}
-                                {toSkillBadges("React JS, Flutter, Firebase, Tailwind CSS")}
+                                <SkillBadgesRow skills="React JS, Flutter, Firebase, Tailwind CSS"/>
                                 {toSkillsBullet("Built a student management database that manages student information, documents, and enrollment data of more than 2500 students.")}
                                 {toSkillsBullet("Developed an online enrollment system that sends form information to the integrated student database.")}
                                 {toSkillsBullet("Continued to deliver updates to the database system such as audit logs on all accounting and enrollment data, database integrity reports, built-in account management, accounting functions and summarization of payments.")}
@@ -211,7 +133,7 @@ const Portfolio = () => {
                                 {toWorkHeader(Nbspify("The Coding School"), "San Juan (Remote)")}
                                 {toPositionDetails("Part Time Teaching Coach", "( July 2020 - June 2021 )")}
                                 {toOtherDetailsOnMobile("San Juan - Remote (July 2020 - June 2021)")}
-                                {toSkillBadges("Unity 3D, C#, Python, Java")}
+                                <SkillBadgesRow skills="Unity 3D, C#, Python, Java"/>
                                 {toSkillsBullet("Worked part time at the Coding School Philippines, while educating children and teens on the following courses:")}
                                 {toSkillsBullet("Make Your Own Game with Unity 1 & 2", 1)}
                                 {toSkillsBullet("Python For Kids 1 & 2", 1)}
@@ -226,11 +148,11 @@ const Portfolio = () => {
                                 {toSkillsBullet("Data Structures and Algorithms", 1)} */}
 
                                 {/* {toWorkHeader("Game Developer")}
-                                {toSkillBadges("Unity 3D, C#")}
+                                <SkillBadgesRow skills="Unity 3D, C#"/>
                                 {toSkillsBullet("Creates 2D as well as 3D android games using Unity Game Engine, uploads to the Google Play store under the developer name Jeremy Develops, with self produced assets and resources")}
 
                                 {toWorkHeader("General Programmer")}
-                                {toSkillBadges("Python, C#, Git + Github")}
+                                <SkillBadgesRow skills="Python, C#, Git + Github"/>
                                 {toSkillsBullet("Writes specific software that can help in a multitude of bulk operations including (but not limited) to the manufacturing of sticker graphics, bulk data manipulation, online website data scraping, etc.")} */}
                             </div>
                         </div>
