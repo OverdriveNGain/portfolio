@@ -1,13 +1,13 @@
 /* eslint-disable */
 
-// TODO: test
-
 const _projects = [
     {
         "id": "pay-up-or-else",
         "title": "Pay Up or Else",
         "descShort": "A web application that provides comprehensive transaction breakdowns.",
-        "descLong": "I used to compute the reimbursements that need to be made within my group of friends, usually after a group staycation or get-together. I wrote a program written in dart that allowed me to easily compute the needed reimbursements. Once I saw the value of sharing this application to the internet, I moved the logic to a Flutter Web app and Pay Up or Else was born.\n\nThe web application allows for advanced value configurations for both payers and buyers, sharing of breakdowns through JSON exports and JSON loading, and browser autosaves. The application also pushes analytics events to Google Analytics for easy application observability.",
+        "descLong": `Pay Up or Else is a web application that provides comprehensive transaction breakdowns. The application allows for advanced value configurations for both payers and buyers, sharing of breakdowns through JSON exports and JSON loading, and browser autosaves. The application also pushes analytics events to Google Analytics for easy application observability.
+        
+        I used to compute the reimbursements that need to be made within my group of friends, usually after a group staycation or get-together. I wrote a program written in dart that allowed me to easily compute the needed reimbursements. Once I saw the value of sharing this application to the internet, I moved the logic to a Flutter Web app and Pay Up or Else was born.`,
         "languages": ["Flutter", "Firebase"],
         "img": [
             "https://lh3.googleusercontent.com/d/1IbVjC1g_0cgppODezlVOyyHvpRqiP4CE",
@@ -22,7 +22,11 @@ const _projects = [
         "id": "cdscdb-database",
         "title": "CDSCDB Student Database",
         "descShort": "A student database that manages college and senior highschool level students.",
-        "descLong": "A student database that manages college and senior highschool level students of the Colegio de Santo Cristo de Burgos. The database currently has more than 2000 students stored, and the system is continually growing in functionality and data integrity.",
+        "descLong": `The CDSCDB Database manages college, senior highschool, junior highschool, and TESDA level students information of the Quezon-based school of the Colegio de Santo Cristo de Burgos. For each student, student information including parent information; contact information; student file documents such as birth certificates, good moral certificates, diplomas, and barangay residencies; subject enrollments and grades information are managed throughout the application. Additionally, the system shares the same database with an integrated enrollment front-end deployed elsewhere, but programmed to be orchestrated into one seamless enrollment system.
+        
+        I am really proud of this project since it has came a long way since its initial deployment. I've started this project as a personal test for myself on my knowledge of Flutter Web, with no intention of releasing it to the school; but when I initially implemented the basic usecases needed, I presented it to my friend (who was working in the school) just to share as a personal achievement, but they were impressed to the point of actually using paying and using for the application.
+        
+        Initial deployment for the application started on July 21, 2021; and the application is still in use until this day.`,
         "languages": ["Flutter", "Firebase"],
         "img": [
             "https://lh3.googleusercontent.com/d/1PfDj8GDaIJjSIaRiNXDdaQMpYHE6xH4F",
@@ -36,7 +40,11 @@ const _projects = [
         "id": "kairoscore",
         "title": "Kairos Core Website",
         "descShort": "Promotional website for the Kairos Cores NFT minting launch.",
-        "descLong": "This website promotes for the Kairos Cores NFT minting launch during the month of February in 2022. The webflow plan was provided, as well as a Figma wireframe, and I was commisioned to polish and beautify the initial layout using CSS and implement a countdown timer for different events in the minting process using Javascript.\nThis entry was added to my portfolio with permission from the Kairos Core team.",
+        "descLong": `This website promotes the Kairos Cores NFT minting launch during the month of February in 2022. The webflow plan was provided, as well as a Figma wireframe, and I was commissioned to polish and improve the initial layout using CSS and implement a countdown timer for different events in the minting process using Javascript.
+
+        This was one of the weird part-time commissions that I accepted during my time studying for my Bachelor's Degree. It was weird since the stance of the company towards NFTs and the use of blockchain technology did not really match my own interests, but I did what I had to do in order to deliver the tasks I signed up to do.
+        
+        This entry was added to my portfolio with permission from the Kairos Core team.`,
         "languages": ["Webflow", "CSS", "Javascript"],
         "img": [
             "https://lh3.googleusercontent.com/d/1r9xp6Jqe8Oke_vs0es2q-DC9HcLs_ZyZ",
@@ -49,8 +57,11 @@ const _projects = [
         "id": "up-crest-25",
         "title": "UP CREST Photoshow",
         "descShort": "A virtual photoshow for the 25th Anniversary of UP CREST.",
-        "descLong": "From buddy hangouts to iconic events organized by the organization, this fully-responsive web app is an online photoshow that walks the user through the history of UP CREST.",
-        "languages": ["React JS", "HTML", "CSS", "Javascript", "TailwindCSS", "p5.js", "Git"],
+        "descLong": `This website serves as a virtual photoshow for the 25th Anniversary of UP CREST, an organization I was part of during my last few years in college. The website features a timeline of events and activities along the organization's history, as well as an animated background to mimic the theme of one of Taylor Swift's music videos, as per the organization's request.
+
+        For a bit of context, the photoshow was somewhat of an annual event for the organization that was held in the university campus; But since a certain pandemic was happening during this time, a physical photoshow was just not possible. So I proposed a virtual version of the annual photoshow which still highlights the organization's history. It was approved, thus I proceeded with the project, whilst taking full advantage of the online medium.
+        `,
+        "languages": ["React JS", "Tailwind", "p5.js"],
         "img": [
             "https://lh3.googleusercontent.com/d/1wx1PIatFufyiNLKeUbiUJHV18H0coaTR",
             "https://lh3.googleusercontent.com/d/1EqC-7i4J_6H8GxCfzfmDgJEVu8i-WlXp",
@@ -62,8 +73,10 @@ const _projects = [
         "id": "i-cant-decide",
         "title": "I Can't Decide",
         "descShort": "A simple tool aims to help solve difficult decisions between choices.",
-        "descLong": "I Can't Decide is a simple web application that aims to help you in making difficult decision between choices. The app takes in your choices, what your factors are, which factors matter the most to you, rating each choice per factor, then generating a weighted sum to give your choices a numerical value.",
-        "languages": ["React JS", "HTML", "CSS", "TailwindCSS", "p5.js", "Git"],
+        "descLong": `I Can't Decide is a simple web application that aims to help you in making difficult decision between choices. The app takes in your choices, what your factors are, which factors matter the most to you, rating each choice per factor, then generating a weighted sum to give your choices a numerical value.
+        
+        The idea for this application stemmed from the need of deciding between two or more options where the factors to consider are too complex to mentally think over. The application considers the fact that not all factors are of equal value to the decider, and that each option has different weights in different factors. This was just a fun little project that I wanted to make during the times where I actually had free time.`,
+        "languages": ["React JS", "Tailwind", "p5.js"],
         "img": [
             "https://lh3.googleusercontent.com/d/1uK4xWSjS5JI6dtwXYjX33kFGjQHOPM_V",
             "https://lh3.googleusercontent.com/d/1xr1f-uTDDA6XmNyFHKBItg9gINJsqoY2",
@@ -75,19 +88,25 @@ const _projects = [
     {
         "id": "website-portfolio",
         "title": "Website Portfolio",
-        "descShort": "This website, actually!",
-        "descLong": "The website you are on right now is built upon a React.js framework accompanied styling from Bootstrap 5, and p5.js for sketch backgrounds.",
-        "languages": ["React JS", "HTML", "CSS", "Javascript", "Bootstrap", "SASS", "p5.js"],
-        "github": "https://github.com/OverdriveNGain/portfolio"
+        "descShort": "This website you are on right now!",
+        "descLong": `Literally, this website. This website serves as my online portfolio where you can see an overview of my skills and projects, as well as the option to send me a message, or download my CV as a PDF file.
+        
+        I hope you are enjoying your stay :)`,
+        "languages": ["React JS", "Bootstrap", "SASS", "p5.js"],
+        "DO_NOT_USE_github": "https://github.com/OverdriveNGain/portfolio"
     },
     {
         "id": "simple-money-counter",
         "title": "Simple Money Counter",
-        "descShort": "A simple money counter app with a ready to use calculator at any time",
-        "descLong": "This is a simple android application that helps you counts physical cash with single taps for each denomination. The app also includes an easy-to-access calculator at a moments notice.",
+        "descShort": "A simple money counter app that adds up different cash denominations.",
+        "descLong": `This is a simple android application that helps you counts physical cash with single taps for each denomination. The app also includes an easy-to-access calculator at a moments notice.
+        
+        This was my actual first mobile application created using Flutter. I always wanted to learn mobile app development; and the moment I finished my online course, this was the app idea that I wanted to try and create first (my dad gave me the idea, thanks dad!).
+        
+        This app is uploaded to the Google Play Store; although it may have been taken down since yearly updates are needed for all applications.`,
         "languages": ["Flutter"],
         "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.simplemoneycounter",
-        "github": "https://github.com/OverdriveNGain/counter-calc",
+        // "github": "https://github.com/OverdriveNGain/counter-calc",
         "img": [
             "https://lh3.googleusercontent.com/d/1LDQwo0PF8nGWi1lasNa6R_Jb1nw2LgS3",
             "https://lh3.googleusercontent.com/d/1lHo9kgjF-uh8vNjrwnMFvclfBmmjW2O6",
@@ -95,25 +114,29 @@ const _projects = [
         ],
         "imgPortrait": true
     },
-    {
-        "id": "buwad-republic",
-        "title": "Buwad Republic",
-        "descShort": "A promotional website for a growing dried fish business",
-        "descLong": "A promotional website for a growing dried fish business started by both of my parents. It uses the Flutter framework to build the actual web application.",
-        "languages": ["Flutter", "Firebase"],
-        "website": "https://buwad-republic.web.app/",
-        "img": [
-            "https://lh3.googleusercontent.com/d/1zJkTLpSRr9CE1emI62uEL05MrpPL2Iig",
-            "https://lh3.googleusercontent.com/d/1o53HYkCmnx1gc_H5zWhkQjIpfeOadbZt",
-            "https://lh3.googleusercontent.com/d/1JNptpt0ZoJo5RIfMg7UrpNLp7gVNoKFx",
-            "https://lh3.googleusercontent.com/d/1rt19o5e_Skcz_gTSWFdNh5Knl2nRnJTH"
-        ]
-    },
+    // {
+    //     "id": "buwad-republic",
+    //     "title": "Buwad Republic",
+    //     "descShort": "A promotional website for a growing dried fish business",
+    //     "descLong": "This promotional website for a growing dried fish (buwad) business was aimed to help with the online order management of this business. It features a simple product selection with an add-to-cart design, which also integrates into a local order delivery service.",
+    //     "languages": ["Flutter", "Firebase"],
+    //     // "website": "https://buwad-republic.web.app/",
+    //     "img": [
+    //         "https://lh3.googleusercontent.com/d/1zJkTLpSRr9CE1emI62uEL05MrpPL2Iig",
+    //         "https://lh3.googleusercontent.com/d/1o53HYkCmnx1gc_H5zWhkQjIpfeOadbZt",
+    //         "https://lh3.googleusercontent.com/d/1JNptpt0ZoJo5RIfMg7UrpNLp7gVNoKFx",
+    //         "https://lh3.googleusercontent.com/d/1rt19o5e_Skcz_gTSWFdNh5Knl2nRnJTH"
+    //     ]
+    // },
     {
         "id": "loose-blocks",
         "title": "Loose Blocks",
         "descShort": "A classic game without the training wheels",
-        "descLong": "A classic game without the training wheels. This game was one of the few projects that I have completed with Unity 3D; complete with self-produced assets. The game is currently still available on the Google Play store.",
+        "descLong": `This game was essentially a Tetris clone, but the pieces are not constrained to 90 degree rotations. This *does* make the game a lot harder, but it makes the line clears much more fun.
+        
+        This game was one of the few projects that I have completed with Unity 3D; complete with self-produced assets.
+
+        This app is uploaded to the Google Play Store; although it may have been taken down since yearly updates are needed for all applications.`,
         "languages": ["Unity 3D", "Adobe Illustrator"],
         "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.looseblocks",
         "img": [
@@ -128,7 +151,11 @@ const _projects = [
         "id": "cell-trace",
         "title": "Cell Trace",
         "descShort": "A simple mobile puzzle game",
-        "descLong": "This is a game created in late 2019 that was created using Unity 3D. This was my first mobile game application at the time, and it was during Christmas break. The aim of the game is to clear out the cells on the board without lifting your finger.",
+        "descLong": `This mobile puzzle game is a game created in late 2019 that was created using Unity 3D. The goal is to clear the grid of all numbered cells by tracing your finger to each cell by that amount of times per cell, without lifting your finger.
+        
+        This was my first mobile game app, and its progress was almost entirely done during the Christmas season of 2019.
+
+        This app is uploaded to the Google Play Store; although it may have been taken down since yearly updates are needed for all applications.`,
         "languages": ["Unity 3D", "Adobe Illustrator"],
         "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.celltrace",
         "img": [
@@ -143,7 +170,11 @@ const _projects = [
         "id": "loose-tower",
         "title": "Loose Tower",
         "descShort": "A 3D mobile game where you create a tower",
-        "descLong": "This is a game created in early 2020 that was created using Unity 3D. This was done during my free time in my early college years. The aim of the game is to stack a tower as high as possible without letting it crash down. It is inspired by the games Tetris and Stack.",
+        "descLong": `In this mobile game, you carefully drop 3D Tetris pieces on an ever-growing 3D tower. If any of the pieces fall down from the tower, you lose. It was somewhat like the illegal child of Tetris and Stack, another famous mobile game.
+        
+        This was done during my free time in my early college years, and is the only game that I have fully completed in full 3D.
+
+        This app is uploaded to the Google Play Store; although it may have been taken down since yearly updates are needed for all applications."`,
         "languages": ["Unity 3D", "Adobe Illustrator"],
         "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.loosetower",
         "img": [
@@ -154,13 +185,15 @@ const _projects = [
         ],
         "imgPortrait": true
     },
-    {
-        "id": "just-crafts-ph",
-        "title": "Just Crafts PH App",
-        "descShort": "A mobile app that showcases a sticker business' designs",
-        "descLong": "This mobile apps showcases the sticker designs of Just Crafts PH, a sticker business which provides various designs and sticker categories.",
-        "languages": ["Flutter"]
-    }
+    // {
+    //     "id": "just-crafts-ph",
+    //     "title": "Just Crafts PH App",
+    //     "descShort": "A mobile app that showcases a sticker business' designs",
+    //     "descLong": `This mobile app showcases the sticker designs of Just Crafts PH, a sticker business which provides various designs and sticker categories.
+        
+    //     This was one of my personal mobile app projects to test my skills in Flutter. As to the concerning sticker business, it   was me and my ex-girlfriend's business. She's now my ex-girlfriend, because she's now my wife :)`,
+    //     "languages": ["Flutter"]
+    // }
 ];
 const allProjects = () => _projects;
 
