@@ -4,6 +4,21 @@
 
 const _projects = [
     {
+        "id": "pay-up-or-else",
+        "title": "Pay Up or Else",
+        "descShort": "A web application that provides comprehensive transaction breakdowns.",
+        "descLong": "I used to compute the reimbursements that need to be made within my group of friends, usually after a group staycation or get-together. I wrote a program written in dart that allowed me to easily compute the needed reimbursements. Once I saw the value of sharing this application to the internet, I moved the logic to a Flutter Web app and Pay Up or Else was born.\n\nThe web application allows for advanced value configurations for both payers and buyers, sharing of breakdowns through JSON exports and JSON loading, and browser autosaves. The application also pushes analytics events to Google Analytics for easy application observability.",
+        "languages": ["Flutter", "Firebase"],
+        "img": [
+            "https://lh3.googleusercontent.com/d/1IbVjC1g_0cgppODezlVOyyHvpRqiP4CE",
+            "https://lh3.googleusercontent.com/d/19hjTH-VW2Qn5FJUEEWcExmoqhT8ayGRC",
+            "https://lh3.googleusercontent.com/d/1BIH00e30ViUKEbKJqd2XdupxBE6vNVmQ",
+            "https://lh3.googleusercontent.com/d/13cduNhQgyoONYcP309rIYB4MEztV1rz6",
+            "https://lh3.googleusercontent.com/d/1cSVYsnsvJOEO2NGUlpQgfutLFQSCsE5M"
+        ],
+        "website": "https://pay-up-or-else.web.app/",
+    },
+    {
         "id": "cdscdb-database",
         "title": "CDSCDB Student Database",
         "descShort": "A student database that manages college and senior highschool level students of the Colegio de Santo Cristo de Burgos.",
