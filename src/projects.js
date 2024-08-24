@@ -21,7 +21,7 @@ const _projects = [
     {
         "id": "cdscdb-database",
         "title": "CDSCDB Student Database",
-        "descShort": "A student database that manages college and senior highschool level students of the Colegio de Santo Cristo de Burgos.",
+        "descShort": "A student database that manages college and senior highschool level students.",
         "descLong": "A student database that manages college and senior highschool level students of the Colegio de Santo Cristo de Burgos. The database currently has more than 2000 students stored, and the system is continually growing in functionality and data integrity.",
         "languages": ["Flutter", "Firebase"],
         "img": [
