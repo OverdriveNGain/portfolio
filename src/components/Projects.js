@@ -41,25 +41,27 @@ const Projects = () => {
         setFilters(newFilterList);
     }
 
-    const projectTileClickHandler = (project) => {
-        setCurrentProjectData(project);
+    const projectTileClickHandler = (project) => setCurrentProjectData(project);
+
+    const isProjectShown = (project) => {
+        for (const filter of filters) {
+            if (!project.languages.includes(filter))
+                return false;
+        }
+
+        const _searchFilter = searchFilter.trim().toLowerCase()
+        if (_searchFilter.length > 0) {
+            if (!project.title.toLowerCase().includes(_searchFilter) && !project.descShort.toLowerCase().includes(_searchFilter)) {
+                return false;
+            }
+        }
+        return true;
     }
 
-    const getProjectTiles = () => {
-        const isProjectShown = (project) => {
-            for (const filter of filters) {
-                if (!project.languages.includes(filter))
-                    return false;
-            }
+    const filtersOnNoProjects = () => (filters.length > 0 || searchFilter.trim().length > 0) && allProjects().filter((proj) => isProjectShown(proj)).length == 0;
 
-            const _searchFilter = searchFilter.trim().toLowerCase()
-            if (_searchFilter.length > 0) {
-                if (!project.title.toLowerCase().includes(_searchFilter) && !project.descShort.toLowerCase().includes(_searchFilter)) {
-                    return false;
-                }
-            }
-            return true;
-        }
+    const getProjectTiles = () => {
+        
         const toReturn = [];
         const cols = breakpointSelector(1, 2, 3, 4);
         const height = breakpointSelector(140, 150, 200);
@@ -128,6 +130,7 @@ const Projects = () => {
                     <hr />
                     {getProjectTiles()}
                     <div className="p-4" />
+                    <p className={`no_projects_message${filtersOnNoProjects() ? '': ' hidden'}`}>Filters active. 0 projects found.</p>
                 </Route>
                 <Route path="/projects/:id">
                     <ProjectDetailsPage projectData={currentProjectData} backFunction={() => { setCurrentProjectData(null); }} />

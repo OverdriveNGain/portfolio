@@ -170,6 +170,15 @@ $utilities: (
     // shadow p-3 rounded bg-light h-100
     // d-inline-block position-absolute p-1 animated-all anim-hover-lighten-light
   }
+
+  .no_projects_message {
+    color: grey;
+    text-align: center;
+
+    &.hidden {
+      color: transparent;
+    }
+  }
 }
 
 .portfolio {

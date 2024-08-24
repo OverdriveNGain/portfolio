@@ -10022,6 +10022,13 @@ textarea.form-control-lg {
 .projects .project_tile:hover .inner {
   background: rgb(208, 215, 255);
 }
+.projects .no_projects_message {
+  color: grey;
+  text-align: center;
+}
+.projects .no_projects_message.hidden {
+  color: transparent;
+}
 
 .portfolio .magna_cum_laude {
   color: green;
