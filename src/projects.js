@@ -28,7 +28,7 @@ const _projects = [
         
         I am really proud of this project since it has came a long way since its initial deployment. I've started this project as a personal test for myself on my knowledge of Flutter Web, with no intention of releasing it to the school; but when I initially implemented the basic usecases needed, I presented it to my friend (who was working in the school) just to share as a personal achievement, but they were impressed to the point of actually using paying and using for the application.
         
-        Initial deployment for the application started on July 21, 2021; and the application is still in use until this day.`,
+        Initial deployment for the application started on July 2021; and the application is still in use until this day.`,
         "languages": ["Flutter", "Firebase"],
         "img": [
             "https://lh3.googleusercontent.com/d/1PfDj8GDaIJjSIaRiNXDdaQMpYHE6xH4F",
@@ -37,6 +37,26 @@ const _projects = [
 
         ],
         "website": "https://cdscdbdb.web.app/",
+    },
+    {
+        "id": "cdscdb-enrollment",
+        "title": "CDSCDB Enrollment Form",
+        "descShort": "An online enrollment form for students to enter information and documents.",
+        "descLong": `The CDSCDB Enrollment Form allows students to enroll into a certain semester in the Quezon-based school of the Colegio de Santo Cristo de Burgos. All student types including college, senior highschool, junior highschool, and TESDA level students are allowed and can be handled by the system. New and existing students have appropriately separate logic upon data input and submission. The form directly sends data to the CDSCDB Database backend, for processing by the administrators and registrars of the school.
+
+        With regards to enrollment form access control, the main CDSCDB Database system controls the access of all student types that the enrollment form can accommodate (e.g. disable for old college students, enable for new college students, enable for old TESDA students, etc.).
+
+        This project is in close development of the CDSCDB Database system. Over the years, the form has mostly stayed the same; but the systems grew along the years, and new student types have been progressively added. As such, Appropriate duplicating and editing of enrollment form data and validation have been performed to the application.
+
+        Initial deployment for the application started on 2022; and the application is still in use until this day.`,
+        "languages": ["React JS", "Firebase", "Tailwind CSS"],
+        "img": [
+            "https://lh3.googleusercontent.com/d/1BmEra1SJWcWcTP5CB3QPYCsY28HcaPC_",
+            "https://lh3.googleusercontent.com/d/1pUh2ieFZxVt9InCW6BH3zcJAvTc1vbNf",
+            "https://lh3.googleusercontent.com/d/1A3QnS_OBZcdwky_de6UhmF1AI-wl37E7",
+            "https://lh3.googleusercontent.com/d/1WzD17ooeyBTUn27v-7hWULCZKDi5n0Dx",
+        ],
+        "website": "https://cdscdbenrollment.web.app/",
     },
     {
         "id": "kairoscore",
