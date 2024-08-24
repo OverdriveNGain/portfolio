@@ -19,16 +19,16 @@ const About4 = () => {
 
     const tiles = [];
     const tileIcon = ["bi bi-brush", "bi bi-globe2", "bi bi-phone"];
-    const tileTitle = ["     Graphic Design", "     Website Development", "     Mobile App Development"]
+    const tileTitle = ["     Graphic Design", "     Software Development", "     Data Science"]
     const tileDesc = [
-        "Graphic eye-candy to catch viewer's attention, and to present your information, professionally.",
-        "Fast and responsive websites for your business, built with modern designs and tools to deliver intuitive user interactions.",
-        "Mobile software to bring convenience your brand can provide, to you audience's pocket."
+        "Visual emphasis to support your business's brand and identity.",
+        "Leveraging desktop, web, and mobile platforms to optimize business operations and productivity.",
+        "Using data and automation to drive process throughput and business outcomes."
     ]
     const tileTools = [
         "Adobe Illustrator • Adobe Photoshop • p5.js • Processing • Python",
-        "HTML • CSS • Javascript • SASS • React • Flutter • Firebase • Bootstrap 5 • git • GitHub",
-        "React • Flutter • Adobe XD • Firebase • Unity 3D • git • GitHub"
+        "Flutter • Firebase • React JS • SASS • Bootstrap 5 • git",
+        "Python • Dart • Flutter • "
     ]
     for (let i = 0; i < 3; i++) {
         tiles.push(<div key={i} className="col-12 col-md-4">
