@@ -1,5 +1,4 @@
-
-import Navbar from './components/Navbar';
+import Navbar from './components/navbar/Navbar';
 import AboutMe from './components/AboutMe';
 import Landing from './components/Landing';
 import Footer from './components/Footer';

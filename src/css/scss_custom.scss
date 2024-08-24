@@ -1,5 +1,6 @@
 $font-size-base: 1.15rem;
 $primary:  rgb(78, 104, 255);
+$primary_light:  rgb(128, 147, 255);
 $secondary:  rgb(197, 79, 0);
 
 $border-radius:               .6rem;
@@ -30,3 +31,80 @@ $utilities: (
 );
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+#navbar-main {
+  .links {
+    @media (max-width: 768px) {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .dropdown_panel_button {
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    border: none;
+    padding: 0.0rem 0.6rem;
+    background: none;
+    border-radius: $border-radius;
+    border: 2px solid $primary;
+    color: $primary;
+    transition: all 0.2s ease;
+    font-size: 1.2em;
+
+    &:hover {
+      background: $primary;
+      color: white;
+    }
+  }
+
+  .mobile_dropdown_panel {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(188, 214, 255, 0.85);
+    backdrop-filter: blur(5px) !important;
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 0.3s ease;
+
+    &.expanded {
+      clip-path: inset(0 0 0 0);
+    }
+
+    .top_bar {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem;
+
+      span {
+        flex-grow: 1;
+        font-style: italic;
+      }
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 1rem;
+        background: $primary;
+        margin-bottom: 2px;
+
+        a {
+          text-decoration: none;
+          display: block;
+          color: white;
+        }
+      }
+    }
+  }
+}
