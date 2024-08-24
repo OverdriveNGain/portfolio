@@ -12,6 +12,7 @@ import { allProjects } from "../projects";
 
 const Projects = () => {
     const [filters, setFilters] = useState([]);
+    const [searchFilter, setSearchFilter] = useState('');
     const [currentProjectData, setCurrentProjectData] = useState(null);
     const { breakpointSelector } = useResize();
     
@@ -20,17 +21,8 @@ const Projects = () => {
         "Unity 3D",
         "Firebase",
         "React JS",
-        // "HTML",
-        // "CSS",
-        // "Javascript",
-        // "SASS",
         "Bootstrap",
-        // "Adobe Illustrator",
-        // "Adobe Photoshop",
-        // "Processing",
         "p5.js",
-        // "C#",
-        "Python",
     ]
 
     useEffect(() => {
@@ -59,21 +51,27 @@ const Projects = () => {
                 if (!project.languages.includes(filter))
                     return false;
             }
+
+            const _searchFilter = searchFilter.trim().toLowerCase()
+            if (_searchFilter.length > 0) {
+                if (!project.title.toLowerCase().includes(_searchFilter) && !project.descShort.toLowerCase().includes(_searchFilter)) {
+                    return false;
+                }
+            }
             return true;
         }
         const toReturn = [];
         const cols = breakpointSelector(1, 2, 3, 4);
         const height = breakpointSelector(140, 150, 200);
         const width = `${Math.floor(100 / cols)}`;
-        let projectsToDisplay = allProjects();
+        const projectsToDisplay = allProjects();
         let shownIndex = 0;
-        for (let i = 0; i < projectsToDisplay.length; i++) {
-            const project = projectsToDisplay[i];
+        for (const project of projectsToDisplay) {
             let tileDivStyle;
             if (isProjectShown(project)) {
                 tileDivStyle = {
-                    width: width + "%",
-                    height: height + "px",
+                    width: `${width}%`,
+                    height: `${height}px`,
                     left: `${Math.floor(shownIndex % cols) * width}%`,
                     top: `${Math.floor(shownIndex / cols) * height}px`,
                     opacity: '1',
@@ -83,8 +81,8 @@ const Projects = () => {
             }
             else {
                 tileDivStyle = {
-                    width: width + "%",
-                    height: height + "px",
+                    width: `${width}%`,
+                    height: `${height}px`,
                     left: "0px",
                     top: "0px",
                     opacity: '0',
@@ -109,16 +107,11 @@ const Projects = () => {
         }} className="animated-all">{toReturn}</div>;
     }
 
-    const getFilterButtons = () => {
-        return allFilters.map((filter, i) => {
-            if (filters.includes(filter)) {
-                return <button key={i} className="btn btn-sm btn-primary text-white me-2 mb-2" onClick={() => { onFilterButtonToggle(filter, false) }}>{filter}</button>;
-            }
-            else {
-                return <button key={i} className="btn btn-sm btn-outline-muted me-2 mb-2" onClick={() => { onFilterButtonToggle(filter, true) }}>{filter}</button>;
-            }
-        })
-    }
+    const getFilterButtons = () => allFilters.map((filter, i) => filters.includes(filter)
+        ? <button key={i} className="btn btn-sm btn-primary text-white me-2 mb-2" onClick={() => { onFilterButtonToggle(filter, false) }}>{filter}</button>
+        : <button key={i} className="btn btn-sm btn-outline-muted me-2 mb-2" onClick={() => { onFilterButtonToggle(filter, true) }}>{filter}</button>
+    )
+
     return (
         <div className="container">
             <p className="py-4 py-md-5" />
@@ -126,7 +119,7 @@ const Projects = () => {
             <Switch>
                 <Route path="/projects" exact>
                     <p className="display-1 font-title text-primary text-center">Projects</p>
-                    <input className="form-control my-4" type="text" placeholder="Search for Projects" aria-label="default input example" />
+                    <input className="form-control my-4" type="text" placeholder="Search for Projects" onChange={(e) => { setSearchFilter(e.target.value) }}/>
                     <small className="d-block text-muted mb-2">Filters:</small>
                     <div className="text-center">
                         {getFilterButtons()}
