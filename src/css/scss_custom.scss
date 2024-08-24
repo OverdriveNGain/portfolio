@@ -110,6 +110,33 @@ $utilities: (
   }
 }
 
+.project_details {
+  .project_preview {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    box-shadow: 0 0.6rem 1rem rgba(0, 0, 0, 0.15);
+    transition: all 0.1s ease;
+
+    &.clickable:hover {
+      transform: scale(1.01);
+    }
+  }
+
+  .project_image_preview {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    margin-bottom: 5px;
+
+    border: 2px solid grey;
+  }
+}
+
 .projects {
   .project_tile {
     display: inline-block;

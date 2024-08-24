@@ -57,7 +57,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
                 opacity
             };
             toReturn.push(
-                <img key={i} src={proj.img[i]} alt={`${proj.title} preview ${i}`} style={_style} onMouseOver={() => { mouseOverPreviewHandler(i) }} />
+                <img key={i} src={proj.img[i]} alt={`${proj.title} preview ${i}`} style={_style} className="project_image_preview" onMouseOver={() => { mouseOverPreviewHandler(i) }} />
             );
         }
 
@@ -73,8 +73,8 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
             }
 
             for (let i = 0; i < proj.img.length; i++) {
-                let thisClassName = "unselectable" + tern(i === imageI, "", " d-none");
-                let style = tern(
+                const thisClassName = `project_preview ${fullscreen ? '' : ' clickable'}` + tern(i === imageI, "", " d-none");
+                const style = tern(
                     fullscreen,
                     {
                         maxHeight: "100vh",
@@ -198,7 +198,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
     const horizontal = proj.imgPortrait === true ? false : true;
 
     return (
-        <div>
+        <div className="project_details">
             <div className="mb-3 container">
                 <Link to="/projects" className="btn btn-outline-primary btn-sm link-no-underline px-3"><i className="bi bi-caret-left-fill"/> Back to Projects</Link>
             </div>
