@@ -44,11 +44,8 @@ const Landing = () => {
         }
 
         const waitUntilInit = async () => {
-            let temp;
-            temp = window.setInterval(() => {
-                if (refreshLoopStates() === false) {
-                }
-                else {
+            const temp = window.setInterval(() => {
+                if (refreshLoopStates() !== false) {
                     window.addEventListener('scroll', () => {
                         debounce(() => {
                             refreshLoopStates();

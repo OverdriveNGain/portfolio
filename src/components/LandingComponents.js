@@ -86,10 +86,10 @@ const LandingProjectsSection = () => {
                 <div className="align-middle container py-3 text-center d-flex flex-column justify-content-center align-items-stretch border-0 h-100">
                     <div className="display-1 text-primary m-3 font-title">Projects</div>
                     <div className="row mx-xs-2 mx-md-5 gx-2">
-                        {getProjectTile('kairoscore')}
-                        {getProjectTile('loose-blocks')}
+                        {getProjectTile('pay-up-or-else')}
+                        {getProjectTile('i-cant-decide')}
+                        {getProjectTile('cdscdb-database')}
                         {getProjectTile('up-crest-25')}
-                        {getProjectTile('simple-money-counter')}
                     </div>
                     <Link to="/projects">
                         <button className="btn btn-primary align-self-center m-3 text-light">See More Projects ❯</button>
