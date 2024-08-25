@@ -61,10 +61,9 @@ const Projects = () => {
     const filtersOnNoProjects = () => (filters.length > 0 || searchFilter.trim().length > 0) && allProjects().filter((proj) => isProjectShown(proj)).length == 0;
 
     const getProjectTiles = () => {
-        
         const toReturn = [];
         const cols = breakpointSelector(1, 2, 3, 4);
-        const height = breakpointSelector(140, 150, 200);
+        const height = breakpointSelector(155, 210);
         const width = `${Math.floor(100 / cols)}`;
         const projectsToDisplay = allProjects();
         let shownIndex = 0;
@@ -129,8 +128,8 @@ const Projects = () => {
                     </div>
                     <hr />
                     {getProjectTiles()}
-                    <div className="p-4" />
-                    <p className={`no_projects_message${filtersOnNoProjects() ? '': ' hidden'}`}>Filters active. 0 projects found.</p>
+                    {/* <div className="p-4" /> */}
+                    <p className={`py-4 no_projects_message${filtersOnNoProjects() ? '': ' hidden'}`}>Filters active. 0 projects found.</p>
                 </Route>
                 <Route path="/projects/:id">
                     <ProjectDetailsPage projectData={currentProjectData} backFunction={() => { setCurrentProjectData(null); }} />

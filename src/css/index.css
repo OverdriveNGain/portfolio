@@ -33,7 +33,7 @@ code {
     fill: white;
 }
 .navbar-logo-brand{
-    fill: rgb(78, 104, 255);
+    fill: rgb(41, 141, 255); /* rgb(78, 104, 255); */
 }
 .bg-muted{
     background-color: rgb(158, 158, 158);
@@ -152,7 +152,7 @@ code {
 }
 
 #landingProjectsSection div.card:hover {
-    background-color: rgb(168, 181, 255);
+    background-color: rgb(168, 204, 255);
 }
 
 @media only screen and (min-width: 1200px){

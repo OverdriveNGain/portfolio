@@ -118,7 +118,7 @@ const Landing3 = () => {
             return;
         // p5.translate(-p5.width / 2, -p5.height / 2);
         p5.background(255);
-        p5.fill(78, 104, 255);
+        p5.fill(41, 141, 255); //78, 104, 255
         p5.rect(0, 0, p5.width, p5.height);
         p5.fill(255);
         if (choiceIndex > -1 && p5.width > md_bp) {

@@ -2,7 +2,7 @@ import React from "react";
 import Sketch from "react-p5";
 import { ParticleManager } from "./Managers";
 
-const col2Vals = [78, 104, 255];
+const col2Vals = [41, 141, 255]; // [78, 104, 255];
 const col1Vals = [255, 255, 255];
 
 let p5;

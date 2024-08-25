@@ -2,14 +2,12 @@ import React from "react";
 import Sketch from "react-p5";
 import { ParticleManager, DustManager, Rect } from "./Managers";
 
-const DUSTNEIGHBORMAXDIST = 300;
+const dustNeighborMaxDistance = 300;
 const floatingPointArea = 2 / 3;
-let col1Vals = [78, 104, 255];
-let col2Vals = [255, 255, 255];
+const color1Values = [41, 141, 255];//[78, 104, 255];
+const color2Values = [255, 255, 255];
 const md_bp = 768;
-const getDustCount = (area) => {
-    return (area * 0.00002 + 16) * 0.25; // Halved to mirror
-}
+const getDustCount = (area) => (area * 0.00002 + 16) * 0.25
 
 let p5;
 let shouldRemove = false;
@@ -21,7 +19,8 @@ let dustM;
 let topAreaHeight;
 
 const drawFloatingPoints = () => {
-    let totalLength, property;
+    let totalLength;
+    let property;
     p5.strokeWeight(1);
     if (p5.width > md_bp) {
         totalLength = p5.width;
@@ -35,12 +34,12 @@ const drawFloatingPoints = () => {
     for (let i = 0; i < dustM.points.length; i++) {
         const point = dustM.points[i];
         p5.stroke(255 + -100 * ((p5.abs(point[property] * 2 - totalLength) / totalLength)));
-        let neighborRect = new Rect(point.x, point.y, DUSTNEIGHBORMAXDIST, DUSTNEIGHBORMAXDIST);
-        let neighbors = [];
+        const neighborRect = new Rect(point.x, point.y, dustNeighborMaxDistance, dustNeighborMaxDistance);
+        const neighbors = [];
         dustM.quadtree.queryUppers(neighborRect, neighbors, i);
-        let m = point.x;
-        let n = point.y;
-        let lowerBound = (p5.height * floatingPointArea)
+        const m = point.x;
+        const n = point.y;
+        const lowerBound = (p5.height * floatingPointArea)
         for (let j = 0; j < neighbors.length; j++) {
             p5.line(m, n, neighbors[j].x, neighbors[j].y);
             p5.line(p5.width - m, n, p5.width - neighbors[j].x, neighbors[j].y);
@@ -59,14 +58,15 @@ const Landing1RefreshState = (remove) => {
             shouldRemove = true;
             return;
         }
-        let position = element.getBoundingClientRect();
+        const position = element.getBoundingClientRect();
         const isVisible = (position.top < window.innerHeight && position.bottom >= 0);
         if (isVisible)
             p5.loop();
         else
             p5.noLoop();
+        return;
     }
-    else if (remove)
+    if (remove)
         shouldRemove = true;
 }
 
@@ -78,7 +78,7 @@ const drawBorderWaves = () => {
     p5.rectMode(p5.CORNERS);
     p5.rect(0, topAreaHeight * 0.5, p5.width, p5.height);
     for (let i = borderM.particles.length - 1; i >= 0; i--) {
-        let particle = borderM.particles[i];
+        const particle = borderM.particles[i];
         p5.fill(particle.col);
         p5.circle(particle.x, particle.y, particle.rad)
     }
@@ -125,7 +125,6 @@ const borderWaveSplashCheck = () => {
     pFrameMouseX = p5.mouseX;
     pFrameMouseY = p5.mouseY;
 }
-//}
 
 const Landing1 = () => {
     const setup = (sketch) => {
@@ -139,14 +138,14 @@ const Landing1 = () => {
         }
         const about1 = document.getElementById("about1");
         const about2 = document.getElementById("about2");
-        const canv = p5.createCanvas(
+        const canvas = p5.createCanvas(
             p5.ceil(about1.offsetWidth),
             p5.ceil(about1.offsetHeight + (about2.offsetHeight * 0.6)),
             // p5.WEBGL
         );
         topAreaHeight = about1.offsetHeight;
-        col1 = p5.color(col1Vals[0], col1Vals[1], col1Vals[2]);
-        col2 = p5.color(col2Vals[0], col2Vals[1], col2Vals[2]);
+        col1 = p5.color(color1Values[0], color1Values[1], color1Values[2]);
+        col2 = p5.color(color2Values[0], color2Values[1], color2Values[2]);
 
         dustM = new DustManager(
             Math.round(getDustCount(p5.height * p5.width)),
@@ -162,7 +161,7 @@ const Landing1 = () => {
             col2,
             1, 0.5);
 
-        canv.parent('landing1');
+        canvas.parent('landing1');
     }
 
     const windowResized = () => {
