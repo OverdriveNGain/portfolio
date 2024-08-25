@@ -87,8 +87,8 @@ const Landing = () => {
                 <div style={{ padding: `${breakpointSelector(30, 60, null, 80, 100, 120)}px 0px` }}>
                     <div className="align-middle container py-3 text-center text-light h-100 px-3 px-sm-5">
                         <div className="display-1 m-3 font-title">About Me</div>
-                        <div className="mb-3">I create mobile apps, websites, web apps, Unity games to be played on multiple platforms.</div>
-                        <p> I highly believe that the mastery of a certain framework requires the mastery of all skills relevant to that framework. Thus, I take understanding of a certain project very seriously. In any case, whether it be a website for your aspiring business, or a mobile app that unites your entire customer base,</p>
+                        <div className="mb-3">I create systems and software for desktop, mobile or web, for any goal of your beloved business or yourself.</div>
+                        <p>There is so much untapped potential in systems and software that people are not using in this modern age. I bridge the gap so you can focus on what matters, now with greater reach. If you have a personal project that you want to bring to life, we can work together to see what is possible. Whether it be a website for your aspiring business, or a mobile app that extends your business's functions,</p>
                         <p className="lead fw-bold">I get the job done, and more.</p>
                     </div>
                 </div>
