@@ -2,14 +2,18 @@ import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
 import axios from 'axios';
 import 'dotenv/config';
+import Dialog from './Dialog.js'
 
 const Contact = () => {
     const [formEmail, setFormEmail] = useState('');
     const [formName, setFormName] = useState('');
     const [formBody, setFormBody] = useState('');
 
-    const [modalMessage, setModalMessage] = useState(null);
-    const [sendButtonLabel, setSendButtonLabel] = useState("Send");
+    const [dialogData, setDialogData] = useState(null);
+    // Can be null
+    // {title: string, message: string}
+
+    const [sendButtonLoading, setSendButtonLoading] = useState(false);
 
     const { breakpointSelector } = useResize();
 
@@ -24,66 +28,26 @@ const Contact = () => {
     }
 
     const submitCallback = (e) => {
-        const openModal = () => {
-            document.getElementById("modalButton").click();
-        }
         e.preventDefault();
-        if (formEmail.trim().length === 0) {
-            setModalMessage("Please enter an email");
-            openModal();
-        }
-        else if (formName.trim().length === 0) {
-            setModalMessage("Please enter your name");
-            openModal();
-        }
-        else if (formBody.trim().length === 0) {
-            setModalMessage("Please enter your message");
-            openModal();
-        }
-        else {
-            setSendButtonLabel("Please wait...");
-            console.log({
+        setSendButtonLoading(true);
+        axios.post(`${process.env.REACT_APP_API_ENDPOINT}sendmail`, null, {
+            params: {
                 email: formEmail,
                 name: formName,
                 body: formBody
-            });
-
-            axios.post(`${process.env.REACT_APP_API_ENDPOINT}sendmail`, null, {
-                params: {
-                    email: formEmail,
-                    name: formName,
-                    body: formBody
-                }
-            }).then((response) => {
-                setModalMessage("Message successfully sent!");
-                setSendButtonLabel("Send");
-                openModal();
-            })
-        }
+            }
+        }).then((response) => {
+            setDialogData({ message: "Message successfully sent!", title: "Success" });;
+            setSendButtonLoading(false);
+        })
     }
 
-    const getModal = () => {
-        return <div>
-            <button id="modalButton" type="button" className="d-none" data-bs-toggle="modal" data-bs-target="#sendConfirmModal" />
-            <div className="modal fade" id="sendConfirmModal" tabIndex="-1" aria-labelledby="sendConfirmModalLabel" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
-                    <div className="modal-content">
-                        <div className="modal-body">
-                            <div className="text-center my-5">
-                                {modalMessage}
-                            </div>
-                            <div className="text-center mt-3">
-                                <button type="button" className="btn btn-primary text-white" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    }
     useEffect(() => {
         window.scrollTo(0, 0);
     }, []);
+
+    const sendButtonEnabled = formEmail.trim().length > 0 && formName.trim().length > 0 && formBody.trim().length > 0 && !sendButtonLoading;
+
     const getOtherInfoPanel = (part) => {
         if (part === "right") {
             return breakpointSelector(null, null, null, null,
@@ -136,7 +100,11 @@ const Contact = () => {
     }
     return (
         <div>
-            {getModal()}
+            {dialogData && <Dialog
+                title={dialogData.title}
+                description={dialogData.message}
+                onClose={() => { setDialogData(null) }}
+                buttonData={[{ label: "Close", callback: () => { setDialogData(null) } }]} />}
             <div className="container">
                 <div className="px-xl-5">
                     <div className="row" style={{minHeight:"85vh"}}>
@@ -154,9 +122,9 @@ const Contact = () => {
                                             <input type="name" className="form-control" id="contactName" placeholder="Your Name" name="fname" value={formName} onChange={onNameChange} />
                                         </div>
                                         <div className="mb-3">
-                                            <textarea className="form-control" id="contactMessage" placeholder="Type your message here..." rows="15" name="message" value={formBody} onChange={onBodyChange} ></textarea>
+                                            <textarea className="form-control" id="contactMessage" placeholder="Type your message here..." rows="15" name="message" value={formBody} onChange={onBodyChange} />
                                         </div>
-                                        <div className="text-center"><button className="btn btn-primary text-light" disabled={sendButtonLabel !== "Send"} type="submit"><i className="bi bi-envelope-fill pe-2"></i>{sendButtonLabel}</button></div>
+                                        <div className="text-center"><button className="btn btn-primary text-light" disabled={!sendButtonEnabled} type="submit"><i className="bi bi-envelope-fill pe-2"></i>{sendButtonLoading ? "Loading..." : "Send"}</button></div>
                                     </form>
                                 </div>
                             </div>

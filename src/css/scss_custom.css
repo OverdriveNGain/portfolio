@@ -10035,4 +10035,56 @@ textarea.form-control-lg {
 
 .portfolio .magna_cum_laude {
   color: green;
+}
+
+.darkener {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.darkener .dialog {
+  display: fixed;
+  width: 500px;
+}
+.darkener .dialog .top_bar {
+  background-color: rgb(41, 141, 255);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 0 0 1em;
+  color: white;
+  border-radius: 0.6rem 0.6rem 0 0;
+}
+.darkener .dialog .top_bar span {
+  flex-grow: 1;
+}
+.darkener .dialog .top_bar button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5em;
+}
+.darkener .dialog .top_bar button:hover {
+  color: rgb(128, 185, 255);
+}
+.darkener .dialog .description {
+  padding: 0.5rem 1em;
+  background-color: white;
+}
+.darkener .dialog .button_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0rem 0.5rem 0.5rem 0.5rem;
+  background-color: white;
+  border-radius: 0 0 0.6rem 0.6rem;
 }/*# sourceMappingURL=SCSS_Custom.css.map */

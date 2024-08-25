@@ -60,7 +60,7 @@ const Landing = () => {
 
         waitUntilInit();
         return () => {
-            window.removeEventListener('scroll', function () {
+            window.removeEventListener('scroll', () => {
                 refreshLoopStates();
             });
             Landing1RefreshState(true);
