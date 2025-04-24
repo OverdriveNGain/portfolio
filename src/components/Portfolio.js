@@ -102,7 +102,7 @@ const Portfolio = () => {
                                 {toOtherDetailsOnMobile("Mandaluyong (Sept. 2022 - Present)")}
                                 <SkillBadgesRow skills="Flutter, Appian, Python, SQL"/>
                                 {toSkillsBullet("Implemented data validation on a 2.75 billion peso loan channeling deal in cooperation with WeFund.")}
-                                {toSkillsBullet("Worked on the user interface for the Landers rewards page of the Maya mobile application, as well as the integration to it's own backend service.")}
+                                {toSkillsBullet("Worked on the front end for the reward pages for both Maya’s Landers Credit Card program and Maya’s Maya Black Credit Card program, as well as the integration to its own backend service.")}
                                 {toSkillsBullet("Integrated analytics events for application user analysis within the Maya inbox user journey.")}
                                 {toSkillsBullet("Executed on a Feature Enrichment Data Science API, which aims to aid in the internal execution of a merchant segmentation data analysis project within Maya Philippines.")}
 
