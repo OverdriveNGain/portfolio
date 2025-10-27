@@ -6,6 +6,8 @@ const SkillBadgesRow = ({skills}) => {
 
     const getBadgeStyle = (b) => {
         switch (b) {
+            case "Swift":
+                return { backgroundColor: "rgb(235, 78, 55)", color: "white" };
             case "Flutter":
                 return { backgroundColor: "rgb(0, 180, 232)", color: "rgb(255, 255, 255)" };
             case "Unity 3D":

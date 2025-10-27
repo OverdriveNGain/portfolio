@@ -71,7 +71,7 @@ const Portfolio = () => {
                 <div className="px-1 px-sm-0">
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">CV</p>
-                    <p className="my-5">Hello! If you're hiring for your company, feel free to download my resume <a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%2010.pdf?alt=media&token=64dca10d-25ef-4e30-9890-ab9c3b6a0993">here</a>, which includes a more comprehensive list of languages, frameworks, web services and tools that I am capable of using. </p>
+                    <p className="my-5">Hello! If you're hiring for your company, feel free to download my resume <a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%2011.pdf?alt=media&token=dbc63e11-59ef-4d7b-8446-67194687cc8f">here</a>, which includes a more comprehensive list of languages, frameworks, web services and tools that I am capable of using. </p>
                     <div className="bg-white rounded-3 shadow-lg p-2 p-sm-4 mb-5">
                         <div className="d-flex flex-column flex-md-row justify-content-center ">
                             <div className="text-center">
@@ -100,8 +100,9 @@ const Portfolio = () => {
                                 {toWorkHeader(Nbspify("Maya Philippines Inc."), "Mandaluyong")}
                                 {toPositionDetails("Software Engineer", "( September 2023 - Present )")}
                                 {toOtherDetailsOnMobile("Mandaluyong (Sept. 2022 - Present)")}
-                                <SkillBadgesRow skills="Flutter, Appian, Python, SQL"/>
+                                <SkillBadgesRow skills="Flutter, Swift, Appian, Python, SQL"/>
                                 {toSkillsBullet("Implemented data validation on a 2.75 billion peso loan channeling deal in cooperation with WeFund.")}
+                                {toSkillsBullet("Integrated Google Ads on the Maya iOS application, allowing for the company’s revenue expansion through regulated and programmatic ads through different native and Flutter screens")}
                                 {toSkillsBullet("Worked on the front end for the reward pages for both Maya’s Landers Credit Card program and Maya’s Maya Black Credit Card program, as well as the integration to its own backend service.")}
                                 {toSkillsBullet("Integrated analytics events for application user analysis within the Maya inbox user journey.")}
                                 {toSkillsBullet("Executed on a Feature Enrichment Data Science API, which aims to aid in the internal execution of a merchant segmentation data analysis project within Maya Philippines.")}
