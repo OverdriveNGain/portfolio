@@ -71,7 +71,7 @@ const Portfolio = () => {
                 <div className="px-1 px-sm-0">
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">CV</p>
-                    <p className="my-5">Hello! If you're hiring for your company, feel free to download my resume <a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%209.pdf?alt=media&token=c184a32b-e653-4b12-ae02-ab42ce23e29f">here</a>, which includes a more comprehensive list of languages, frameworks, web services and tools that I am capable of using. </p>
+                    <p className="my-5">Hello! If you're hiring for your company, feel free to download my resume <a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%2010.pdf?alt=media&token=64dca10d-25ef-4e30-9890-ab9c3b6a0993">here</a>, which includes a more comprehensive list of languages, frameworks, web services and tools that I am capable of using. </p>
                     <div className="bg-white rounded-3 shadow-lg p-2 p-sm-4 mb-5">
                         <div className="d-flex flex-column flex-md-row justify-content-center ">
                             <div className="text-center">
