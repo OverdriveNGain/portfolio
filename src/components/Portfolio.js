@@ -84,7 +84,7 @@ const Portfolio = () => {
                                     <label className="text-secondary h6 mb-0">Mobile</label>
                                     <p>+63 995 963 2500</p>
                                     <label className="text-secondary h6 mb-0">Email</label>
-                                    <p><a href="mailto:jeremyamon@gmail.com">jeremyamon@gmail.com</a></p>
+                                    <p><a href="mailto:dev@jeremyamon.com">dev@jeremyamon.com</a></p>
                                 </div>
                             </div>
                         </div>

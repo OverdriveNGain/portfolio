@@ -56,7 +56,7 @@ const Contact = () => {
                         <p className="d-xl-block p-5" />
                         <div className="pb-4">
                             <i className="bi bi-envelope-fill pe-3"></i>
-                            <span className="">jeremyamon@gmail.com</span>
+                            <span className="">dev@jeremyamon.com</span>
                         </div>
                         <div className="pb-4">
                             <i className="bi bi-linkedin pe-3"></i>
@@ -80,7 +80,7 @@ const Contact = () => {
                             <div className="row px-3 ps-sm-0 justify-content-center">
                                 <div className="pb-4 col-12 col-md-6">
                                     <i className="bi bi-envelope-fill pe-3"></i>
-                                    <span className="">jeremyamon@gmail.com</span>
+                                    <span className="">dev@jeremyamon.com</span>
                                 </div>
                                 <div className="pb-4 col-12 col-md-6">
                                     <i className="bi bi-phone-fill pe-3"></i>
