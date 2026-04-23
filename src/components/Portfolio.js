@@ -71,7 +71,7 @@ const Portfolio = () => {
                 <div className="px-1 px-sm-0">
                     <p className="py-5" />
                     <p className="display-1 font-title text-primary text-center mb-4">CV</p>
-                    <p className="my-5">Hello! If you're hiring for your company, feel free to download a copy <a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%2011.pdf?alt=media&token=dbc63e11-59ef-4d7b-8446-67194687cc8f">here</a>, which includes a more comprehensive list of languages, frameworks, web services and tools that I am capable of using. </p>
+                    <p className="my-5">Hello! If you're hiring for your company, feel free to download a copy <a href="https://firebasestorage.googleapis.com/v0/b/online-portfolio-jeremy.appspot.com/o/Jeremy%20Amon%20-%20Resume%2012.pdf?alt=media&token=9699ef16-59da-4ff7-84c4-1f605bcf4c9d">here</a>, which includes a more comprehensive list of languages, frameworks, web services and tools that I am capable of using. </p>
                     <div className="bg-white rounded-3 shadow-lg p-2 p-sm-4 mb-5">
                         <div className="d-flex flex-column flex-md-row justify-content-center ">
                             <div className="text-center">
@@ -91,7 +91,7 @@ const Portfolio = () => {
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5">
                             {toHeader("Professional Goals")}
-                            <p className="text-center">I am a professional software developer that strives to give companies and businesses the means of digital tools and services for the extra competitive edge within a developing digital climate of ever-increasing complexity.</p>
+                            <p className="text-center">Software Engineer & Flutter Expert specializing in fintech. I architect robust, data-driven systems that provide companies with the digital means to connect with their customers through high-impact mobile experiences.</p>
                         </div>
                         <hr className="my-0" />
                         <div className="content pb-3 pt-2 px-2 px-md-5" style={{ textAlign: ((dimensions.width > 576) ? "justify" : "start") }}>
@@ -101,11 +101,11 @@ const Portfolio = () => {
                                 {toPositionDetails("Software Engineer", "( September 2023 - Present )")}
                                 {toOtherDetailsOnMobile("Mandaluyong (Sept. 2022 - Present)")}
                                 <SkillBadgesRow skills="Flutter, Swift, Appian, Python, SQL"/>
-                                {toSkillsBullet("Implemented data validation on a 2.75 billion peso loan channeling deal in cooperation with WeFund.")}
-                                {toSkillsBullet("Integrated Google Ads on the Maya iOS application, allowing for the company’s revenue expansion through regulated and programmatic ads through different native and Flutter screens")}
-                                {toSkillsBullet("Worked on the front end for the reward pages for both Maya’s Landers Credit Card program and Maya’s Maya Black Credit Card program, as well as the integration to its own backend service.")}
-                                {toSkillsBullet("Integrated analytics events for application user analysis within the Maya inbox user journey.")}
-                                {toSkillsBullet("Executed on a Feature Enrichment Data Science API, which aims to aid in the internal execution of a merchant segmentation data analysis project within Maya Philippines.")}
+                                {toSkillsBullet("Engineered the front-end validation logic for a ₱2.75 billion loan channeling partnership with WeFund and Tala, ensuring data integrity and regulatory compliance for high-volume financial transactions.")}
+                                {toSkillsBullet("Integrated the Google Mobile Ads SDK using Swift and developed reusable components for cross-team integration, enabling programmatic revenue expansion across native and Flutter screens.")}
+                                {toSkillsBullet("Developed front-end modules for the Landers and Maya Black Credit Card reward programs, translating backend API specifications into responsive, high-performance Flutter screens.")}
+                                {toSkillsBullet("Implemented event tracking on Flutter credit and reward screens to enable funnel and user behavior analysis.")}
+                                {toSkillsBullet("Built a Python pipeline to aggregate regional socio-economic data for internal merchant segmentation projects.")}
 
                                 {toWorkHeader(Nbspify("Technomancer"), "Quezon City")}
                                 {toPositionDetails("Part Time Web Developer", "( March 2022 - October 2022 )")}
