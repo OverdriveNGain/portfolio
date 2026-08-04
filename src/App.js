@@ -21,8 +21,6 @@ function App() {
             <GenericBackground />
           </Route>
         </Switch>
-        <Switch>
-        </Switch>
         <Navbar />
         <Switch>
           <Route path="/aboutme">

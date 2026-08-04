@@ -2,7 +2,7 @@ import React from "react";
 import Sketch from "react-p5";
 import { ParticleManager } from "./Managers";
 
-const col2Vals = [41, 141, 255]; // [78, 104, 255];
+const col2Vals = [41, 141, 255];
 const col1Vals = [255, 255, 255];
 
 let p5;
@@ -80,7 +80,6 @@ const Landing2 = () => {
         const canv = p5.createCanvas(
             p5.round(about2.offsetWidth),
             p5.round((about2.offsetHeight + landingProjectsSection.offsetHeight) / 2),
-            // p5.WEBGL
         );
         topAreaHeight = about2.offsetHeight * 0.5;
         col1 = p5.color(col1Vals[0], col1Vals[1], col1Vals[2]);
@@ -129,7 +128,6 @@ const Landing2 = () => {
         }
         else if (element === null)
             return;
-        // p5.translate(-p5.width / 2, -p5.height / 2);
         p5.background(255);
         borderM.step();
         borderWaveSplashCheck();

@@ -21,12 +21,12 @@ const NavbarMobileLinks = ({linksData}) => {
     }
 
     return (<>
-        <button button="button" className="dropdown_panel_button" onClick={dropdownPanelExpandCallback}><i class="bi bi-list"></i></button>
+        <button type="button" className="dropdown_panel_button" onClick={dropdownPanelExpandCallback}><i className="bi bi-list"></i></button>
         <div className={`mobile_dropdown_panel ${dropdownExpanded ? 'expanded' : ''}`}>
             <div className="container">
                 <div className="top_bar">
                     <span>Where do you want to go?</span>
-                    <button type="button" className="dropdown_panel_button" onClick={dropdownPanelCollapseCallback}><i class="bi bi-x"></i></button>
+                    <button type="button" className="dropdown_panel_button" onClick={dropdownPanelCollapseCallback}><i className="bi bi-x"></i></button>
                 </div>
                 <ul>
                     {navigationLinks()}

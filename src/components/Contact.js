@@ -37,7 +37,7 @@ const Contact = () => {
                 body: formBody
             }
         }).then((response) => {
-            setDialogData({ message: "Message successfully sent!", title: "Success" });;
+            setDialogData({ message: "Message successfully sent!", title: "Success" });
             setSendButtonLoading(false);
         })
     }

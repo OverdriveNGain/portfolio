@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const _projects = [
     {
         "id": "pay-up-or-else",
@@ -64,7 +62,7 @@ const _projects = [
         "descShort": "Promotional website for the Kairos Cores NFT minting launch.",
         "descLong": `This website promotes the Kairos Cores NFT minting launch during the month of February in 2022. The webflow plan was provided, as well as a Figma wireframe, and I was commissioned to polish and improve the initial layout using CSS and implement a countdown timer for different events in the minting process using Javascript.
 
-        This was one of the weird part-time commissions that I accepted during my time studying for my Bachelor's Degree. It was weird since the stance of the company towards NFTs and the use of blockchain technology did not really match my own interests, but I did what I had to do in order to deliver the tasks I signed up to do.
+        This was one of the freelance commissions that I accepted during my time studying for my Bachelor's Degree. I delivered the tasks I signed up to do despite the company's stance towards NFTs and blockchain technology not aligning with my own interests.
         
         This entry was added to my portfolio with permission from the Kairos Core team.`,
         "languages": ["Webflow", "CSS", "Javascript"],
@@ -115,7 +113,7 @@ const _projects = [
         
         I hope you are enjoying your stay :)`,
         "languages": ["React JS", "Bootstrap", "SASS", "p5.js"],
-        "DO_NOT_USE_github": "https://github.com/OverdriveNGain/portfolio"
+        "github": "https://github.com/OverdriveNGain/portfolio"
     },
     {
         "id": "simple-money-counter",
@@ -127,8 +125,8 @@ const _projects = [
         
         This app is uploaded to the Google Play Store; although it may have been taken down since yearly updates are needed for all applications.`,
         "languages": ["Flutter"],
-        "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.simplemoneycounter",
-        // "github": "https://github.com/OverdriveNGain/counter-calc",
+        "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.simplemoneycounter",
+        "github": "https://github.com/OverdriveNGain/counter-calc",
         "img": [
             "https://lh3.googleusercontent.com/d/1LDQwo0PF8nGWi1lasNa6R_Jb1nw2LgS3",
             "https://lh3.googleusercontent.com/d/1lHo9kgjF-uh8vNjrwnMFvclfBmmjW2O6",
@@ -136,20 +134,6 @@ const _projects = [
         ],
         "imgPortrait": true
     },
-    // {
-    //     "id": "buwad-republic",
-    //     "title": "Buwad Republic",
-    //     "descShort": "A promotional website for a growing dried fish business",
-    //     "descLong": "This promotional website for a growing dried fish (buwad) business was aimed to help with the online order management of this business. It features a simple product selection with an add-to-cart design, which also integrates into a local order delivery service.",
-    //     "languages": ["Flutter", "Firebase"],
-    //     // "website": "https://buwad-republic.web.app/",
-    //     "img": [
-    //         "https://lh3.googleusercontent.com/d/1zJkTLpSRr9CE1emI62uEL05MrpPL2Iig",
-    //         "https://lh3.googleusercontent.com/d/1o53HYkCmnx1gc_H5zWhkQjIpfeOadbZt",
-    //         "https://lh3.googleusercontent.com/d/1JNptpt0ZoJo5RIfMg7UrpNLp7gVNoKFx",
-    //         "https://lh3.googleusercontent.com/d/1rt19o5e_Skcz_gTSWFdNh5Knl2nRnJTH"
-    //     ]
-    // },
     {
         "id": "loose-blocks",
         "title": "Loose Blocks",
@@ -160,7 +144,7 @@ const _projects = [
 
         This app is uploaded to the Google Play Store; although it may have been taken down since yearly updates are needed for all applications.`,
         "languages": ["Unity 3D", "Adobe Illustrator"],
-        "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.looseblocks",
+        "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.looseblocks",
         "img": [
             "https://lh3.googleusercontent.com/d/1bI_fOm0DWA1Gnu1B4O3z7T5Z5IhaAYvE",
             "https://lh3.googleusercontent.com/d/1S2ZZpoXhNBY3_ClNMtLVAJUWYX2cwa6A",
@@ -179,7 +163,7 @@ const _projects = [
 
         This app is uploaded to the Google Play Store; although it may have been taken down since yearly updates are needed for all applications.`,
         "languages": ["Unity 3D", "Adobe Illustrator"],
-        "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.celltrace",
+        "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.celltrace",
         "img": [
             "https://lh3.googleusercontent.com/d/1T7Eu6_OAzt9H2o4rgH4pE5BwP9SHa2hp",
             "https://lh3.googleusercontent.com/d/1MRNwUd5v74Fg9vxgpkG5JrTNfyzRwgW8",
@@ -198,7 +182,7 @@ const _projects = [
 
         This app is uploaded to the Google Play Store; although it may have been taken down since yearly updates are needed for all applications."`,
         "languages": ["Unity 3D", "Adobe Illustrator"],
-        "DO_NOT_USE_playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.loosetower",
+        "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.loosetower",
         "img": [
             "https://lh3.googleusercontent.com/d/1ZfDGpPkO1mduScsUl_WbdfCUN2beYFFA",
             "https://lh3.googleusercontent.com/d/1q-tHsPYNj0zPbC7m8zj-iCIO3BkrM39-",
@@ -207,15 +191,6 @@ const _projects = [
         ],
         "imgPortrait": true
     },
-    // {
-    //     "id": "just-crafts-ph",
-    //     "title": "Just Crafts PH App",
-    //     "descShort": "A mobile app that showcases a sticker business' designs",
-    //     "descLong": `This mobile app showcases the sticker designs of Just Crafts PH, a sticker business which provides various designs and sticker categories.
-        
-    //     This was one of my personal mobile app projects to test my skills in Flutter. As to the concerning sticker business, it   was me and my ex-girlfriend's business. She's now my ex-girlfriend, because she's now my wife :)`,
-    //     "languages": ["Flutter"]
-    // }
 ];
 const allProjects = () => _projects;
 

@@ -130,7 +130,6 @@ const Portfolio = () => {
                                 {toSkillsBullet("Developed an online enrollment system that sends form information to the integrated student database.")}
                                 {toSkillsBullet("Continued to deliver updates to the database system such as audit logs on all accounting and enrollment data, database integrity reports, built-in account management, accounting functions and summarization of payments.")}
 
-                                {/* {toWorkHeader(Nbspify("Educator & Education Content Creator"))} */}
                                 {toWorkHeader(Nbspify("The Coding School"), "San Juan (Remote)")}
                                 {toPositionDetails("Part Time Teaching Coach", "( July 2020 - June 2021 )")}
                                 {toOtherDetailsOnMobile("San Juan - Remote (July 2020 - June 2021)")}
@@ -143,32 +142,17 @@ const Portfolio = () => {
                                 {toSkillsBullet("Intro to Google Apps", 1)}
                                 {toSkillsBullet("Revamped and restructured the 'Intro to C# Programming' 10-hour programming course for children and teenagers.")}
                                 {toSkillsBullet("Co-managed the 2021 TCS Coding Masters Coding Competition")}
-                                {/* {toSkillsBullet("Taught part time in Colegio de Santo Cristo de Burgos, teaching and creating course material for different Information Technology and Computer Science courses, including the following:")}
-                                {toSkillsBullet("Computer Programming 1", 1)}
-                                {toSkillsBullet("Object-Oriented Programming", 1)}
-                                {toSkillsBullet("Data Structures and Algorithms", 1)} */}
-
-                                {/* {toWorkHeader("Game Developer")}
-                                <SkillBadgesRow skills="Unity 3D, C#"/>
-                                {toSkillsBullet("Creates 2D as well as 3D android games using Unity Game Engine, uploads to the Google Play store under the developer name Jeremy Develops, with self produced assets and resources")}
-
-                                {toWorkHeader("General Programmer")}
-                                <SkillBadgesRow skills="Python, C#, Git + Github"/>
-                                {toSkillsBullet("Writes specific software that can help in a multitude of bulk operations including (but not limited) to the manufacturing of sticker graphics, bulk data manipulation, online website data scraping, etc.")} */}
                             </div>
                         </div>
                         <hr className="mb-0 mt-4" /><div className="content pb-3 pt-2 px-2 px-md-5 text-start">
                             {toHeader("Academic History")}
-                            {/* {toSkillsHeader("University of the Philippines Diliman")} */}
                             <h6 className="h4 text-secondary mb-0 mt-4">University of the Philippines Diliman</h6>
                             <p className="text-muted mb-1">2018-2024</p>
                             <p className="ms-4 mb-1">• BS Computer Science</p>
                             <p className="ms-4 magna_cum_laude">• Magna Cum Laude</p>
-                            {/* {toSkillsHeader("Trinity University of Asia")} */}
                             <h6 className="h4 text-secondary mb-0 mt-4">Trinity University of Asia</h6>
                             <p className="text-muted mb-1">2012-2018</p>
                             <p className="ms-4 ">• Junior High School and Senior High School STEM Track</p>
-                            {/* {toSkillsHeader("Asian College of Technology")} */}
                             <h6 className="h4 text-secondary mb-0 mt-4">Asian College of Technology</h6>
                             <p className="text-muted mb-1">2004-2012</p>
                             <p className="ms-4 ">• Elementary Education</p>
@@ -176,12 +160,10 @@ const Portfolio = () => {
                         <hr className="mb-0 mt-4" />
                         <div className="content pt-2 px-2 px-md-5 text-start">
                             {toHeader("University Affiliations")}
-                            {/* {toSkillsHeader("UP CREST")} */}
                             <h6 className="h4 text-secondary mb-1">UP CREST</h6>
                             <p className="ms-4 mb-0">• <span className="">President</span> <i className="opacity-50">(2022 - 2023)</i></p>
                             <p className="ms-4 mb-0">• <span className="">Publicity</span> Committee Director <i className="opacity-50">(February 2022 to May 2022)</i></p>
                             <p className="ms-4 mb-0">• <span className="">Publicity Committee Associate</span> <i className="opacity-50">(November 2021 to January 2022)</i></p>
-                            {/* {toSkillsHeader("UP CURSOR")} */}
                             <h6 className="h4 text-secondary mb-1 mt-4">UP CURSOR</h6>
                             <p className="ms-4 mb-0">• <span className="">Member</span> <i className="opacity-50">(2019-2023)</i></p>
                         </div>

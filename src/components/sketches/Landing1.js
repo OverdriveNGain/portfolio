@@ -4,7 +4,7 @@ import { ParticleManager, DustManager, Rect } from "./Managers";
 
 const dustNeighborMaxDistance = 300;
 const floatingPointArea = 2 / 3;
-const color1Values = [41, 141, 255];//[78, 104, 255];
+const color1Values = [41, 141, 255];
 const color2Values = [255, 255, 255];
 const md_bp = 768;
 const getDustCount = (area) => (area * 0.00002 + 16) * 0.25
@@ -85,7 +85,6 @@ const drawBorderWaves = () => {
     p5.pop();
 }
 
-//{
 let running = false;
 let promise = false;
 const debounce = (func) => {
@@ -103,9 +102,7 @@ const debounce = (func) => {
         }
     }, 500);
 }
-//}
 
-//{
 let pFrameMouseX = -1;
 let pFrameMouseY = -1;
 let lastMouseMoveOnFrame = -1;
@@ -141,7 +138,6 @@ const Landing1 = () => {
         const canvas = p5.createCanvas(
             p5.ceil(about1.offsetWidth),
             p5.ceil(about1.offsetHeight + (about2.offsetHeight * 0.6)),
-            // p5.WEBGL
         );
         topAreaHeight = about1.offsetHeight;
         col1 = p5.color(color1Values[0], color1Values[1], color1Values[2]);

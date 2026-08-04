@@ -154,8 +154,6 @@ class Particle {
         this.y = y;
         this.vx = vx;
         this.vy = vy;
-        // this.accx = -vx * sketch.random(0.01, 0.04);
-        // this.accy = -vy * sketch.random(0.01, 0.04);
         this.accx = 0;
         this.accy = Math.sign(vy) * -0.1;
         this.col = col;
@@ -173,19 +171,6 @@ class QuadTree {
     clear() {
         this.points = [];
         this.hasDivisions = false;
-    }
-
-    query(rect, arr) {
-        for (let point of this.points) {
-            if (rect.containsPoint(point))
-                arr.push(point);
-        }
-        if (this.hasDivisions) {
-            this.nw.query(rect, arr);
-            this.ne.query(rect, arr);
-            this.sw.query(rect, arr);
-            this.se.query(rect, arr);
-        }
     }
 
     queryUppers(rect, arr, value) {
@@ -233,11 +218,6 @@ class Rect {
         this.y = y;
         this.w = w;
         this.h = h
-    }
-
-    intersectsWithRect(rect) {
-        return ((this.rect.x - rect.x) > ((this.rect.w + rect.w) * 0.5)) &&
-            ((this.rect.y - rect.y) > ((this.rect.h + rect.h) * 0.5));
     }
 
     containsPoint(point) {

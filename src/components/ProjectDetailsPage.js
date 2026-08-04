@@ -11,7 +11,7 @@ import 'dotenv/config';
 import { getProject } from "../projects";
 import SkillBadgesRow from "./SkillBadgesRow";
 
-const ProjectDetailsPage = ({ projectData, backFunction }) => {
+const ProjectDetailsPage = ({ projectData }) => {
     const { id } = useParams();
     const [imageI, setImageI] = useState(0);
     const [fullscreen, setFullscreen] = useState(false);
@@ -90,7 +90,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
                 toReturn.push(
                     <img
                         key={i} src={proj.img[i]}
-                        alt="dog"
+                        alt={proj.title}
                         className={thisClassName}
                         style={style}
                         onClick={() => {
@@ -160,7 +160,6 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
     }
     const keyDownHandler = (e, proj) => {
         if (e.key === "ArrowRight") {
-            // console.log(`${proj != null}   ${proj.img != null}   ${imagesLoaded === proj.img.length}   ${imageI < proj.img.length - 1}`)
             if (proj != null && proj.img != null && imagesLoaded === proj.img.length && imageI < proj.img.length - 1)
                 setImageI(imageI + 1);
         }
@@ -190,6 +189,7 @@ const ProjectDetailsPage = ({ projectData, backFunction }) => {
         return () => {
             window.removeEventListener('keydown', callback)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     if (proj == null)

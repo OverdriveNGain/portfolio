@@ -8,7 +8,6 @@ import NavbarMobileLinks from './NavbarMobileLinks';
 
 const Navbar = () => {
     const [scrollTop, setScrollTop] = useState(0);
-    const [navbarExpanded, setNavbarExpanded] = useState(false);
 
     const location = useLocation();
     const refreshScrollTop = () => {
@@ -41,9 +40,6 @@ const Navbar = () => {
                     isBgTransparent = true;
                 break;
         }
-
-        if (navbarExpanded)
-            isBgTransparent = false;
 
         return {
             "backgroundColor": (isBgTransparent ? "transparent" : "rgba(255, 255, 255, 0.92)"),

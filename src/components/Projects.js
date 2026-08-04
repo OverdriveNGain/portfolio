@@ -58,7 +58,7 @@ const Projects = () => {
         return true;
     }
 
-    const filtersOnNoProjects = () => (filters.length > 0 || searchFilter.trim().length > 0) && allProjects().filter((proj) => isProjectShown(proj)).length == 0;
+    const filtersOnNoProjects = () => (filters.length > 0 || searchFilter.trim().length > 0) && allProjects().filter((proj) => isProjectShown(proj)).length === 0;
 
     const getProjectTiles = () => {
         const toReturn = [];
@@ -128,11 +128,10 @@ const Projects = () => {
                     </div>
                     <hr />
                     {getProjectTiles()}
-                    {/* <div className="p-4" /> */}
                     <p className={`py-4 no_projects_message${filtersOnNoProjects() ? '': ' hidden'}`}>Filters active. 0 projects found.</p>
                 </Route>
                 <Route path="/projects/:id">
-                    <ProjectDetailsPage projectData={currentProjectData} backFunction={() => { setCurrentProjectData(null); }} />
+                    <ProjectDetailsPage projectData={currentProjectData} />
                 </Route>
             </Switch>
         </div>
