@@ -29,7 +29,7 @@ const Contact = () => {
     const submitCallback = (e) => {
         e.preventDefault();
         setSendButtonLoading(true);
-        axios.post(`${process.env.REACT_APP_API_ENDPOINT}sendmail`, null, {
+        axios.post(`${process.env.REACT_APP_MAILER_ENDPOINT}sendmail`, null, {
             params: {
                 email: formEmail,
                 name: formName,
