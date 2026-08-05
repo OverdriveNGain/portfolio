@@ -116,25 +116,6 @@ const _projects = [
         "github": "https://github.com/OverdriveNGain/portfolio"
     },
     {
-        "id": "simple-money-counter",
-        "title": "Simple Money Counter",
-        "descShort": "A simple money counter app that adds up different cash denominations.",
-        "descLong": `This is a simple android application that helps you counts physical cash with single taps for each denomination. The app also includes an easy-to-access calculator at a moments notice.
-        
-        This was my actual first mobile application created using Flutter. I always wanted to learn mobile app development; and the moment I finished my online course, this was the app idea that I wanted to try and create first (my dad gave me the idea, thanks dad!).
-        
-        This app is uploaded to the Google Play Store; although it may have been taken down since yearly updates are needed for all applications.`,
-        "languages": ["Flutter"],
-        "playstore": "https://play.google.com/store/apps/details?id=com.jeremydevelops.simplemoneycounter",
-        "github": "https://github.com/OverdriveNGain/counter-calc",
-        "img": [
-            "https://lh3.googleusercontent.com/d/1LDQwo0PF8nGWi1lasNa6R_Jb1nw2LgS3",
-            "https://lh3.googleusercontent.com/d/1lHo9kgjF-uh8vNjrwnMFvclfBmmjW2O6",
-            "https://lh3.googleusercontent.com/d/1X1vtdNIJyhUzwM9mdQrzyzrL4AiDRNH-"
-        ],
-        "imgPortrait": true
-    },
-    {
         "id": "loose-blocks",
         "title": "Loose Blocks",
         "descShort": "A classic game without the training wheels",
