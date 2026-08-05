@@ -2,11 +2,10 @@ import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
 import {
     Link,
-    Switch,
+    Routes,
     Route,
 } from "react-router-dom";
 import ProjectDetailsPage from "./ProjectDetailsPage";
-import 'dotenv/config';
 import { allProjects } from "../projects";
 
 
@@ -118,22 +117,22 @@ const Projects = () => {
         <div className="container projects">
             <p className="py-4 py-md-5" />
             <p className="py-2 py-md-0" />
-            <Switch>
-                <Route path="/projects" exact>
-                    <p className="display-1 font-title text-primary text-center">Projects</p>
-                    <input className="form-control my-4" type="text" placeholder="Search for Projects" onChange={(e) => { setSearchFilter(e.target.value) }}/>
-                    <small className="d-block text-muted mb-2">Filters:</small>
-                    <div className="text-center">
-                        {getFilterButtons()}
-                    </div>
-                    <hr />
-                    {getProjectTiles()}
-                    <p className={`py-4 no_projects_message${filtersOnNoProjects() ? '': ' hidden'}`}>Filters active. 0 projects found.</p>
-                </Route>
-                <Route path="/projects/:id">
-                    <ProjectDetailsPage projectData={currentProjectData} />
-                </Route>
-            </Switch>
+            <Routes>
+                <Route index element={
+                    <>
+                        <p className="display-1 font-title text-primary text-center">Projects</p>
+                        <input className="form-control my-4" type="text" placeholder="Search for Projects" onChange={(e) => { setSearchFilter(e.target.value) }}/>
+                        <small className="d-block text-muted mb-2">Filters:</small>
+                        <div className="text-center">
+                            {getFilterButtons()}
+                        </div>
+                        <hr />
+                        {getProjectTiles()}
+                        <p className={`py-4 no_projects_message${filtersOnNoProjects() ? '': ' hidden'}`}>Filters active. 0 projects found.</p>
+                    </>
+                } />
+                <Route path=":id" element={<ProjectDetailsPage projectData={currentProjectData} />} />
+            </Routes>
         </div>
     );
 }

@@ -7,7 +7,6 @@ import {
     Link
 } from "react-router-dom";
 import { tern } from "./helpers/Helpers";
-import 'dotenv/config';
 import { getProject } from "../projects";
 import SkillBadgesRow from "./SkillBadgesRow";
 

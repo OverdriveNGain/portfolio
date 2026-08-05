@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import useResize from '../hooks/useResize';
 import axios from 'axios';
-import 'dotenv/config';
 import Dialog from './Dialog.js'
 
 const Contact = () => {

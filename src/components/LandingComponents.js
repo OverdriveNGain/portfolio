@@ -7,7 +7,6 @@ import {
 import Nbsp from "../helpers/Nbsp";
 import { useState } from "react";
 import axios from 'axios';
-import 'dotenv/config';
 import { getProject } from "../projects.js";
 import Dialog from './Dialog.js'
 

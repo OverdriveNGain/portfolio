@@ -4,7 +4,7 @@ import Landing from './components/Landing';
 import Footer from './components/Footer';
 import {
   BrowserRouter as Router,
-  Switch,
+  Routes,
   Route,
 } from "react-router-dom";
 import Contact from './components/Contact';
@@ -16,29 +16,20 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Switch>
-          <Route path={["/aboutme", "/contact", "/projects", "/cv"]}>
-            <GenericBackground />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/aboutme" element={<GenericBackground />} />
+          <Route path="/contact" element={<GenericBackground />} />
+          <Route path="/projects/*" element={<GenericBackground />} />
+          <Route path="/cv" element={<GenericBackground />} />
+        </Routes>
         <Navbar />
-        <Switch>
-          <Route path="/aboutme">
-            <AboutMe />
-          </Route>
-          <Route path="/contact">
-            <Contact />
-          </Route>
-          <Route path="/projects">
-            <Projects />
-          </Route>
-          <Route path="/cv">
-            <Portfolio />
-          </Route>
-          <Route path="/">
-            <Landing />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/aboutme" element={<AboutMe />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/projects/*" element={<Projects />} />
+          <Route path="/cv" element={<Portfolio />} />
+          <Route path="/" element={<Landing />} />
+        </Routes>
         <Footer />
       </Router>
     </div>
