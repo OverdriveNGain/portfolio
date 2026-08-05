@@ -9,7 +9,7 @@ The source code for my personal portfolio website, live at **[jeremyamon.com](ht
 | Frontend | React 18, React Router DOM v6 |
 | Styling | Bootstrap 5, SASS, Bootstrap Icons |
 | Animations | p5.js (via react-p5) |
-| HTTP | Axios |
+| HTTP | Axios (contact form mailer) |
 | Deployment | Firebase Hosting |
 
 ## Features
@@ -20,7 +20,7 @@ The source code for my personal portfolio website, live at **[jeremyamon.com](ht
 - **Project gallery** — Filterable by language/tool and searchable by title or description, with responsive tile layout.
 - **Project detail pages** — Image galleries with thumbnail previews, fullscreen mode, keyboard navigation, and links to live projects, GitHub repos, and Play Store listings.
 - **CV page** — Work experience, academic history, university affiliations, and color-coded skill badges.
-- **Contact form** — Sends messages via API endpoint with success dialog.
+- **Contact form** — Sends messages to the [portfolio-api-jeremy](https://github.com/OverdriveNGain/portfolio-api-jeremy) mailer endpoint.
 - **Responsive design** — Fully responsive across mobile, tablet, and desktop breakpoints.
 
 ## Getting Started
@@ -29,7 +29,7 @@ The source code for my personal portfolio website, live at **[jeremyamon.com](ht
 npm install
 ```
 
-Create a `.env` file from the example and set the API endpoint:
+Create a `.env` file from the example with the mailer endpoint:
 
 ```bash
 cp .env.example .env
